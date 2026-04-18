@@ -41,156 +41,330 @@
       "deliverables": ["Faceted Navigation Indexing", "Product Schema & Reviews", "Canonical Tag Management", "Category Content Optimization"]
     },
     {
+      "slug": "seo-for-doctors",
+      "metaTitle": "SEO for Doctors & Clinics | Medical Practice Ranking",
+      "metaDesc": "Attract more patients with specialized medical SEO. Local search domination for doctors and private clinics across GCC.",
+      "keywords": "Doctor SEO Dubai, Clinic Marketing KSA, Medical Practice SEO",
+      "title": "Medical Practice SEO",
+      "heroDesc": "We optimize your medical practice for local search results, connecting you with patients actively searching for your specialty in your area.",
+      "color": "var(--primary-purple)",
+      "deliverables": ["Google Business Optimization", "Patient Review Growth", "Local Service Pages", "HIPAA Compliant Content"]
+    },
+    {
+      "slug": "seo-for-agencies",
+      "metaTitle": "SEO for Digital Agencies | B2B Marketing Authority",
+      "metaDesc": "Position your agency as the industry authority. Dominate B2B searches and attract high-ticket enterprise clients.",
+      "keywords": "Agency SEO Dubai, Marketing Company SEO, B2B Lead Generation",
+      "title": "Agency Authority Builder",
+      "heroDesc": "Build thought leadership and attract enterprise clients looking for premium digital marketing services.",
+      "color": "var(--primary-blue)",
+      "deliverables": ["Thought Leadership Content", "Case Study SEO", "Enterprise Keyword Targeting", "B2B Backlink Acquisition"]
+    }
+  ],
+  "core-seo": [
+    {
       "slug": "technical-seo",
-      "metaTitle": "Technical SEO Agency | Core Web Vitals & Indexing",
+      "metaTitle": "Technical SEO Agency | Core Web Vitals & Indexing | ZAVIROQ",
       "metaDesc": "Flawless site architecture. We optimize crawl budgets, eliminate JavaScript bloat, and max out Core Web Vitals.",
       "keywords": "Technical SEO Audit, Core Web Vitals Optimization, JavaScript SEO",
-      "title": "Algorithmic Technical SEO",
-      "heroDesc": "If Google can't crawl you, you don't exist. We strip away massive technical errors, fix JavaScript rendering bottlenecks, and optimize sever delivery.",
+      "title": "Technical SEO Optimization",
+      "heroDesc": "If Google can't crawl you, you don't exist. We strip away massive technical errors, fix JavaScript rendering bottlenecks, and optimize server delivery.",
       "color": "var(--primary-purple)",
-      "deliverables": ["Crawl Budget Optimization", "Server-side Rendering Fixes", "Core Web Vitals Maxing", "Log File Analysis"]
+      "deliverables": ["Site Speed Optimization", "Core Web Vitals", "Crawlability & Indexing", "XML Sitemap & Robots.txt", "Schema Markup"]
     },
     {
       "slug": "on-page-seo",
-      "metaTitle": "On-Page SEO Optimization | Semantic HTML Structuring",
+      "metaTitle": "On-Page SEO Optimization | Semantic HTML Structuring | ZAVIROQ",
       "metaDesc": "Entity-based optimization matching exact search algorithms. Tighter content clusters and optimized tag architecture.",
       "keywords": "On-page SEO UAE, Semantic Content Optimization, TF-IDF SEO",
-      "title": "On-Page Entity Alignment",
+      "title": "On-Page SEO Strategy",
       "heroDesc": "We map your content directly to Google's NLP entities. Zero keyword stuffing—just pure algorithmic alignment that drives extreme topical authority.",
       "color": "var(--primary-blue)",
-      "deliverables": ["NLP Entity Mapping", "LSI Keyword Injection", "Internal Link Siloing", "Advanced HTML Tags"]
+      "deliverables": ["Title & Meta Optimization", "Heading Structure", "Content Optimization", "Internal Linking", "Keyword Placement"]
     },
     {
       "slug": "off-page-seo",
-      "metaTitle": "Off-Page SEO & Domain Authority | Platinum Link Building",
+      "metaTitle": "Off-Page SEO & Domain Authority | ZAVIROQ",
       "metaDesc": "Acquire high-tier editorial backlinks. Build trust and massive domain authority globally.",
       "keywords": "Backlink Agency UAE, Buy DR 70 Links, Guest Posting KSA",
-      "title": "Platinum PR & Link Arrays",
+      "title": "Off-Page SEO & Link Building",
       "heroDesc": "We build structural trust via aggressive off-page outreach. By securing high-DR editorial placements, we inject massive domain authority straight into your target pages.",
       "color": "var(--primary-purple)",
-      "deliverables": ["Tier 1 Editorial Backlinks", "Digital PR Campaigns", "Toxic Link Disavow", "Brand Mention Tracking"]
+      "deliverables": ["Link Building", "Authority Signals", "Backlinks Strategy", "Anchor Optimization"]
     },
     {
       "slug": "seo-audit",
       "metaTitle": "Comprehensive SEO Audit & Strategy | ZAVIROQ",
       "metaDesc": "Identify ranking blockers instantly. A 100-point deep dive into your technical, on-page, and backlink profile.",
       "keywords": "SEO Audit Dubai, Site Health Check, Penalty Recovery Agency",
-      "title": "Deep Diagnostic SEO Audit",
+      "title": "SEO Audit & Reporting",
       "heroDesc": "Stop guessing why your traffic dropped. We execute forensic algorithmic audits to uncover silent penalties, cannibalization, and technical roadblocks.",
       "color": "var(--primary-purple)",
-      "deliverables": ["Forensic Technical Audit", "Keyword Gap Analysis", "Penalty Recovery Roadmap", "Actionable Execution Plan"]
+      "deliverables": ["Website Analysis", "Technical Errors", "Content Gaps", "Competitor Audit"]
     },
     {
       "slug": "keyword-research",
-      "metaTitle": "Advanced Keyword Mining & Gap Analysis",
+      "metaTitle": "Advanced Keyword Mining & Gap Analysis | ZAVIROQ",
       "metaDesc": "Uncovering zero-volume gems and extremely high-intent commercial keywords competitors missed.",
       "keywords": "Keyword Research Agency, Commercial Intent Keywords, SEO Gap Analysis",
-      "title": "Algorithmic Keyword Mining",
+      "title": "Keyword Research & Search Intent",
       "heroDesc": "We don't target vanity metrics. We mine the absolute bottom-of-the-funnel commercial keywords that guarantee high conversion and rapid ROI.",
       "color": "var(--primary-blue)",
-      "deliverables": ["Commercial Intent Mapping", "Competitor Hijack Planning", "Long-Tail Profit Keywords", "Content Output Blueprints"]
+      "deliverables": ["Search Intent Analysis", "Keyword Clustering", "Long-tail Keywords", "Competitor Keyword Gap"]
     },
     {
       "slug": "ai-seo-optimization",
-      "metaTitle": "AI SEO Optimization | Next-Gen Search Architecture",
+      "metaTitle": "AI SEO Optimization | Next-Gen Search Architecture | ZAVIROQ",
       "metaDesc": "Preparing your brand for SGE (Search Generative Experience) and AI-driven search engines.",
-      "keywords": "AI SEO Optimization, SGE Ranking, Programmatic SEO",
-      "title": "Next-Gen SGE Optimization",
+      "keywords": "AI SEO Optimization, SGE Ranking, Google AI Overview",
+      "title": "AI SEO (AIO Optimization 🔥)",
       "heroDesc": "Google is evolving into an AI assistant. We structure your datasets and content to feed directly into Search Generative Experience LLMs for massive visibility.",
       "color": "var(--primary-purple)",
-      "deliverables": ["Programmatic AI Page Generation", "SGE Content Formatting", "Entity Database structuring", "Automated Update Loops"]
-    }
-  ],
-  "web-development": [
-    {
-      "slug": "custom-website-development",
-      "metaTitle": "Custom Website Development | Bespoke Next.js Solutions",
-      "metaDesc": "Ultra-fast, fully custom codebases. No templates. Built purely for elite branding and zero-latency performance.",
-      "keywords": "Custom Web Development UAE, Bespoke Code Agency, React Development KSA",
-      "title": "Bespoke Code Architecture",
-      "heroDesc": "We discard sluggish drag-and-drop builders. We write pure, scalable React and Next.js layers to build unshakeable brand authority and maximum speed.",
-      "color": "var(--primary-blue)",
-      "deliverables": ["Custom Component Systems", "Database Architecture", "Figma to React Handoff", "Sub-second Page Loads"]
+      "deliverables": ["AI Search Optimization", "Conversational SEO", "Entity-based SEO", "Semantic Search"]
     },
     {
-      "slug": "wordpress-development",
-      "metaTitle": "Premium WordPress Development | Custom CMS",
-      "metaDesc": "Secure, custom-coded WordPress architectures optimized for speed and localized for the GCC and India.",
-      "keywords": "WordPress Agency Dubai, Custom WP Themes KSA, Headless WordPress",
-      "title": "Elite WordPress Frameworks",
-      "heroDesc": "We strip WordPress of external bloat. Taking extreme security measures, we build custom themes that actually pass core web vitals while remaining easy to use.",
+      "slug": "seo-strategy",
+      "metaTitle": "SEO Strategy & Consultation | Custom Roadmap | ZAVIROQ",
+      "metaDesc": "Data-driven SEO roadmaps tailored to your business goals and market position.",
+      "keywords": "SEO Strategy Dubai, SEO Consultation KSA, Digital Strategy",
+      "title": "SEO Strategy & Consultation",
+      "heroDesc": "Every winning campaign starts with a strategy. We build custom roadmaps aligned with your business objectives.",
+      "color": "var(--primary-blue)",
+      "deliverables": ["Competitor Analysis", "Market Positioning", "Growth Roadmap", "Quarterly Planning"]
+    }
+  ],
+  "core-web": [
+    {
+      "slug": "custom-website-development",
+      "metaTitle": "Custom Website Development Services | Custom, Scalable & High Performance",
+      "metaDesc": "Ultra-fast, fully custom codebases. No templates. Built purely for elite branding and zero-latency performance across GCC and India.",
+      "keywords": "Custom Website Development Services UAE, Bespoke Web Development KSA, React Development",
+      "title": "Custom Website Development",
+      "heroDesc": "Custom-built websites with modern UI/UX, fast loading speed, and secure architecture — designed uniquely for every business. We never reuse designs.",
+      "color": "var(--primary-blue)",
+      "deliverables": ["100% Custom Design", "Responsive Design", "SEO-Friendly Structure", "Fast Performance", "Secure Architecture", "Scalable System"]
+    },
+    {
+      "slug": "business-website-design",
+      "metaTitle": "Business Website Design Services | Professional &Scalable",
+      "metaDesc": "Professional business websites designed to build trust and drive conversions. Custom-built for B2B and enterprise clients.",
+      "keywords": "Business Website Design Services Dubai, Corporate Website Design KSA, B2B Website",
+      "title": "Business Website Design",
+      "heroDesc": "Professional business websites that establish credibility and generate leads. Fully custom designs that represent your brand perfectly.",
       "color": "var(--primary-purple)",
-      "deliverables": ["Custom Theme Development", "ACF Dynamic Structures", "Hardened WP Security", "Speed Caching Setup"]
+      "deliverables": ["Corporate UI/UX", "Lead Generation Forms", "Business Analytics", "Team Sections", "Service Pages", "Contact Integration"]
+    },
+    {
+      "slug": "landing-page-design",
+      "metaTitle": "Landing Page Design Services | High-Converting",
+      "metaDesc": "High-converting landing pages designed for campaigns, product launches, and lead generation. A/B tested for maximum ROI.",
+      "keywords": "Landing Page Design Services UAE, Conversion Optimization, Campaign Landing Pages",
+      "title": "Landing Page Design",
+      "heroDesc": "Conversion-focused landing pages built to maximize your campaign ROI. Every element optimized for action.",
+      "color": "var(--primary-blue)",
+      "deliverables": ["A/B Testing Setup", "High-Converting CTA", "Fast Loading Speed", "Mobile Optimized", "Analytics Integration", "Campaign Tracking"]
+    }
+  ],
+  "web-platform": [
+    {
+      "slug": "wordpress-development",
+      "metaTitle": "WordPress Website Design Services | Custom CMS Solutions",
+      "metaDesc": "Secure, custom-coded WordPress architectures optimized for speed and localized for the GCC and India markets.",
+      "keywords": "WordPress Website Design Services Dubai, Custom WP Themes KSA, WordPress Developer",
+      "title": "WordPress Website Design",
+      "heroDesc": "We strip WordPress of external bloat. Taking extreme security measures, we build custom themes that pass core web vitals while remaining easy to manage.",
+      "color": "var(--primary-purple)",
+      "deliverables": ["Custom Theme Development", "ACF Dynamic Structures", "Hardened WP Security", "Speed Caching Setup", "Easy CMS Management"]
     },
     {
       "slug": "php-development",
-      "metaTitle": "Custom PHP Laravel Development | Backend Engineering",
+      "metaTitle": "PHP Website Development Services | Laravel Backend",
       "metaDesc": "Heavy backend logic scaling. We engineer robust, server-side Laravel architectures for complex business logic.",
-      "keywords": "PHP Development Dubai, Laravel Agency KSA, Custom Backend Setup",
-      "title": "Laravel Backend Systems",
+      "keywords": "PHP Website Development Services Dubai, Laravel Development KSA, Backend Engineering",
+      "title": "PHP Website Development",
       "heroDesc": "When standard frameworks fail, we deploy raw PHP and Laravel systems built specifically to process massive data loads securely.",
       "color": "var(--primary-blue)",
-      "deliverables": ["Laravel Ecosystem Setup", "Custom API Endpoints", "Database Scaling", "Legacy Code Refactoring"]
+      "deliverables": ["Laravel Ecosystem Setup", "Custom API Endpoints", "Database Scaling", "Legacy Code Refactoring", "Secure Backend"]
     },
     {
-      "slug": "react-nextjs-development",
-      "metaTitle": "React & Next.js Specialists | Enterprise Frontend",
-      "metaDesc": "Jamstack architecture. Server-side rendered applications designed for infinite scale and SEO perfection.",
-      "keywords": "Next.js Agency UAE, React Developers India, SSR Web Apps",
-      "title": "React & Next.js Dominance",
-      "heroDesc": "The absolute pinnacle of web speed. We build Server-Side Rendered ecosystems on the Next.js App Router for enterprise-grade performance.",
+      "slug": "reactjs-development",
+      "metaTitle": "React.js Website Development Services | Modern Frontend",
+      "metaDesc": "Modern React.js applications with interactive UI and lightning-fast performance for enterprise-grade websites.",
+      "keywords": "React.js Website Development UAE, React Developer KSA, ReactJS Frontend",
+      "title": "React.js Website Development",
+      "heroDesc": "Interactive, modern websites built with React.js. Smooth animations and blazing-fast performance that impresses users.",
       "color": "var(--primary-purple)",
-      "deliverables": ["Next.js App Router Architecture", "Server Component Optimization", "Edge Network Deployment", "Dynamic SEO Structuring"]
+      "deliverables": ["React Component Architecture", "Interactive UI", "State Management", "API Integration", "Fast Rendering"]
+    },
+    {
+      "slug": "nextjs-development",
+      "metaTitle": "Next.js Website Development Services | SSR & SEO Optimized",
+      "metaDesc": "Server-side rendered Next.js applications designed for infinite scale and SEO perfection.",
+      "keywords": "Next.js Website Development UAE, Next.js Developer KSA, SSR Web Apps",
+      "title": "Next.js Website Development",
+      "heroDesc": "The absolute pinnacle of web speed. We build Server-Side Rendered ecosystems on Next.js App Router for enterprise-grade performance.",
+      "color": "var(--primary-blue)",
+      "deliverables": ["Next.js App Router", "Server Component Optimization", "Edge Network Deployment", "Dynamic SEO Structuring", "ISR Support"]
+    }
+  ],
+  "web-ecommerce": [
+    {
+      "slug": "ecommerce-development",
+      "metaTitle": "Ecommerce Website Development Services | Scalable Online Stores",
+      "metaDesc": "Full-featured ecommerce websites with secure payments, inventory management, and conversion-optimized design.",
+      "keywords": "Ecommerce Website Development Services Dubai, Online Store Development KSA, Shopify Alternative",
+      "title": "Ecommerce Website Development",
+      "heroDesc": "Scale your online business with custom ecommerce solutions. Secure payments, inventory management, and mobile-first design.",
+      "color": "var(--primary-purple)",
+      "deliverables": ["Custom Store Design", "Secure Payment Gateway", "Inventory Management", "Order Tracking", "Mobile-First UI", "SEO Optimized"]
+    },
+    {
+      "slug": "custom-ecommerce-development",
+      "metaTitle": "Custom Ecommerce Development Services | Bespoke Solutions",
+      "metaDesc": "Fully custom ecommerce solutions tailored to your unique business model. No templates, unlimited possibilities.",
+      "keywords": "Custom Ecommerce Development Dubai, Bespoke Online Store KSA, Custom Shopping Cart",
+      "title": "Custom Ecommerce Development",
+      "heroDesc": "We never use templates. Every ecommerce solution is built uniquely for your business model with custom workflows and features.",
+      "color": "var(--primary-blue)",
+      "deliverables": ["Bespoke Checkout Flow", "Custom Product Configurator", "Advanced Inventory", "Multi-vendor Support", "Third-party Integrations"]
+    }
+  ],
+  "web-systems": [
+    {
+      "slug": "admin-dashboard-development",
+      "metaTitle": "Admin Dashboard Development Services | Custom CRM",
+      "metaDesc": "Visualize your data with custom admin dashboards and CRM systems tailored to your exact operational logic.",
+      "keywords": "Admin Dashboard Development Dubai, CRM Development KSA, Internal Dashboard",
+      "title": "Admin Dashboard Development",
+      "heroDesc": "Command your business data with custom admin interfaces capable of managing users, revenue, and content seamlessly.",
+      "color": "var(--primary-purple)",
+      "deliverables": ["Data Visualization Graphs", "Real-time Socket Updates", "Role-based Encryption", "Custom CRUD APIs"]
+    },
+    {
+      "slug": "web-application-development",
+      "metaTitle": "Web Application Development Services | Custom Solutions",
+      "metaDesc": "Custom web applications built for specific business needs. From internal tools to customer-facing platforms.",
+      "keywords": "Web Application Development Dubai, Custom Web App KSA, SaaS MVP",
+      "title": "Web Application Development",
+      "heroDesc": "Fully custom web applications designed for your specific business requirements. No generic solutions—just tailored software.",
+      "color": "var(--primary-blue)",
+      "deliverables": ["Custom Functionality", "User Authentication", "Database Architecture", "API Development", "Real-time Features"]
     },
     {
       "slug": "saas-development",
-      "metaTitle": "SaaS Platform Development | Secure Scalable Apps",
-      "metaDesc": "From MVP to Enterprise SaaS. We architect secure, multi-tenant databases and ultra-smooth React interfaces.",
-      "keywords": "SaaS Development Agency, Web App Builder Dubai, MVP Development",
-      "title": "SaaS Infrastructure Build",
-      "heroDesc": "Stop risking your SaaS idea on cheap templates. We engineer hyper-secure multi-tenant logic, payment loops, and seamless Dashboards from day one.",
-      "color": "var(--primary-blue)",
-      "deliverables": ["Multi-tenant DB Setup", "Stripe Checkout Integration", "User Role Protocols", "Serverless API Design"]
-    },
-    {
-      "slug": "admin-dashboard-development",
-      "metaTitle": "Custom Admin & CRM Dashboards",
-      "metaDesc": "Visualize your data perfectly. Secure React admin panels tailored to your exact operational logic.",
-      "keywords": "Custom CRM Builder UAE, Admin Dashboard Design, Internal Tools KSA",
-      "title": "Internal Control Dashboards",
-      "heroDesc": "Command your business data. We construct closed, highly encrypted admin interfaces capable of managing users, revenue, and content seamlessly.",
+      "metaTitle": "SaaS Website Development Services | Multi-tenant Platforms",
+      "metaDesc": "From MVP to Enterprise SaaS platforms with secure multi-tenant architecture and subscription management.",
+      "keywords": "SaaS Development Dubai, SaaS Platform KSA, Subscription Management",
+      "title": "SaaS Website Development",
+      "heroDesc": "We engineer hyper-secure multi-tenant logic, payment subscriptions, and seamless dashboards from day one.",
       "color": "var(--primary-purple)",
-      "deliverables": ["Data Visualization Graphs", "Real-time Socket Updates", "Level-based Encryption", "Custom CRUD APIs"]
-    },
+      "deliverables": ["Multi-tenant Setup", "Stripe Integration", "User Role Protocols", "Subscription Management", "Serverless APIs"]
+    }
+  ],
+  "web-migration": [
     {
       "slug": "website-migration",
       "metaTitle": "Website Migration Services | Zero Downtime Transfer",
-      "metaDesc": "Safely migrate from legacy codebases or sluggish hosting to Next-Gen AWS or Vercel setups without losing SEO traffic.",
-      "keywords": "Website Migration Expert, Zero Downtime Server Move, SEO Migration KSA",
-      "title": "SEO-Safe Migration Protocol",
-      "heroDesc": "Migrating a website improperly can destroy years of SEO trust. Our executioners safely mirror databases and redirect link arrays with zero collateral damage.",
+      "metaDesc": "Safely migrate from legacy codebases or sluggish hosting to Next-Gen AWS or Vercel without losing SEO traffic.",
+      "keywords": "Website Migration Services Dubai, Server Migration KSA, SEO-Safe Transfer",
+      "title": "Website Migration",
+      "heroDesc": "Migrating improperly destroys SEO trust. We safely mirror databases and redirect link arrays with zero collateral damage.",
       "color": "var(--primary-blue)",
-      "deliverables": ["301 Redirect Mapping", "Database Mirroring", "DNS Server Transition", "Post-Launch SEO Audit"]
+      "deliverables": ["301 Redirect Mapping", "Database Mirroring", "DNS Transition", "Post-Launch SEO Audit"]
     },
     {
       "slug": "website-cloning",
-      "metaTitle": "Website Cloning & Duplication Strategies",
-      "metaDesc": "Rapid launch sequences for multiple locations or landing pages using highly scalable codebase cloning.",
-      "keywords": "Website Cloning Agency UAE, Programmatic Site Duplication",
-      "title": "Rapid Code Cloning",
-      "heroDesc": "Need multiple localized networks spun up instantly? We isolate your codebase and clone flawless instances across international registries for massive reach.",
+      "metaTitle": "Website Cloning Services | Rapid Duplication",
+      "metaDesc": "Rapidly clone websites for multiple locations or landing pages using scalable codebase duplication.",
+      "keywords": "Website Cloning Services Dubai, Site Duplication KSA, Programmatic Copy",
+      "title": "Website Cloning",
+      "heroDesc": "Need multiple sites spun up instantly? We isolate your codebase and clone flawless instances for massive reach.",
       "color": "var(--primary-purple)",
       "deliverables": ["Instance Duplication", "Dynamic Text Swapping", "Server Configuration", "Domain Routing"]
     },
     {
-      "slug": "secure-website-2fa",
-      "metaTitle": "Secure Login & 2FA Implementation | Enterprise Web",
-      "metaDesc": "Bulletproof user onboarding matrices. Adding 2FA, biometric logic, and OAuth to your current arrays.",
-      "keywords": "2FA Setup Agency, Secure Login OAuth, Website Security Services",
-      "title": "Fortified Authentication",
-      "heroDesc": "Data breaches collapse trust instantly. We hardwire advanced JWT architecture, OAuth 2.0 matrices, and strict Two-Factor protocols into your app.",
+      "slug": "website-redesign",
+      "metaTitle": "Website Redesign Services | Modern UI/UX Upgrade",
+      "metaDesc": "Transform outdated websites into modern, high-converting platforms with fresh UI/UX and improved performance.",
+      "keywords": "Website Redesign Dubai, UI/UX Redesign KSA, Site Modernization",
+      "title": "Website Redesign",
+      "heroDesc": "Modernize your digital presence. We redesign for better UX, faster performance, and higher conversions.",
       "color": "var(--primary-blue)",
-      "deliverables": ["OAuth Social Integrations", "JWT Secure Tokens", "SMS/Email 2FA Systems", "Brute-force Timeouts"]
+      "deliverables": ["Modern UI/UX", "Performance Optimization", "Mobile Redesign", "Conversion Improvements", "SEO Enhancement"]
+    }
+  ],
+  "web-security": [
+    {
+      "slug": "secure-website-development",
+      "metaTitle": "Secure Website Development Services | Enterprise Security",
+      "metaDesc": "Bulletproof website development with 2FA, OAuth, and enterprise-grade security protocols.",
+      "keywords": "Secure Website Development Dubai, HTTPS Security KSA, 2FA Implementation",
+      "title": "Secure Website Development",
+      "heroDesc": "Data breaches collapse trust instantly. We hardwire advanced JWT, OAuth 2.0, and Two-Factor protocols.",
+      "color": "var(--primary-purple)",
+      "deliverables": ["OAuth 2.0 Integration", "JWT Secure Tokens", "2FA Implementation", "Brute-force Protection"]
+    },
+    {
+      "slug": "website-performance-optimization",
+      "metaTitle": "Website Performance Optimization Services | Core Web Vitals",
+      "metaDesc": "Dramatically improve website speed and Core Web Vitals for better SEO and user experience.",
+      "keywords": "Website Performance Optimization Dubai, Speed Optimization KSA, Core Web Vitals",
+      "title": "Website Performance Optimization",
+      "heroDesc": "Slow websites lose customers. We optimize for sub-second loads and perfect Core Web Vitals scores.",
+      "color": "var(--primary-blue)",
+      "deliverables": ["Speed Optimization", "Core Web Vitals Fix", "Image Optimization", "Caching Strategy", "CDN Setup"]
+    }
+  ],
+  "web-advanced": [
+    {
+      "slug": "headless-cms-development",
+      "metaTitle": "Headless CMS Development Services | Decoupled Architecture",
+      "metaDesc": "Modern headless CMS solutions with flexible frontend and content API delivery.",
+      "keywords": "Headless CMS Development Dubai, Decoupled CMS KSA, Contentful Alternative",
+      "title": "Headless CMS Development",
+      "heroDesc": "Decoupled architecture for ultimate flexibility. Content API that powers websites, apps, and more.",
+      "color": "var(--primary-purple)",
+      "deliverables": ["CMS API Setup", "Frontend Flexibility", "Content Modeling", "Multi-channel Delivery"]
+    },
+    {
+      "slug": "progressive-web-app-development",
+      "metaTitle": "Progressive Web App (PWA) Development Services | Mobile-First",
+      "metaDesc": "PWAs that provide app-like experiences with offline support, push notifications, and home screen installation.",
+      "keywords": "PWA Development Dubai, Progressive Web App KSA, App-like Website",
+      "title": "Progressive Web App Development",
+      "heroDesc": "Add to home screen, work offline, send push notifications. Web apps that feel like native mobile applications.",
+      "color": "var(--primary-blue)",
+      "deliverables": ["Service Workers", "Offline Support", "Push Notifications", "Home Screen Install"]
+    },
+    {
+      "slug": "api-integration-services",
+      "metaTitle": "API Integration Services | Third-Party Connections",
+      "metaDesc": "Seamlessly integrate third-party APIs, payment gateways, CRM systems, and more into your website.",
+      "keywords": "API Integration Services Dubai, Third-party Integration KSA, Payment Gateway",
+      "title": "API Integration Services",
+      "heroDesc": "Connect your website to the tools you use. Payment gateways, CRMs, marketing automation, and more.",
+      "color": "var(--primary-purple)",
+      "deliverables": ["Payment Gateway", "CRM Integration", "Marketing Automation", "Custom API Builds"]
+    },
+    {
+      "slug": "frontend-development",
+      "metaTitle": "Frontend Development Services | Modern UI Engineering",
+      "metaDesc": "Pixel-perfect frontend development with React, Next.js, and modern UI frameworks for stunning websites.",
+      "keywords": "Frontend Development Services Dubai, UI Development KSA, React Frontend",
+      "title": "Frontend Development",
+      "heroDesc": "Beautiful, interactive frontends built with modern frameworks. Every pixel perfected, every animation smooth.",
+      "color": "var(--primary-blue)",
+      "deliverables": ["React/Next.js Frontend", "Pixel-Perfect UI", "Interactive Animations", "Responsive Layouts"]
+    },
+    {
+      "slug": "backend-development",
+      "metaTitle": "Backend Development Services | Robust Server-Side",
+      "metaDesc": "Enterprise-grade backend development with Node.js, PHP, Python, and custom API architecture.",
+      "keywords": "Backend Development Dubai, Server-side Development KSA, API Development",
+      "title": "Backend Development",
+      "heroDesc": "Powerful server-side architecture that handles your business logic securely and scales with demand.",
+      "color": "var(--primary-purple)",
+      "deliverables": ["Node.js/PHP Backend", "Custom API Design", "Database Architecture", "Security Hardening"]
     }
   ],
   "performance-marketing": [
@@ -198,7 +372,7 @@
       "slug": "google-ads",
       "metaTitle": "Google Ads Agency | Aggressive Search Intent UAE KSA",
       "metaDesc": "Capture high commercial intent directly at the bottom of the funnel. Massive ROI with predictive bid structures.",
-      "keywords": "Google Ads Agency Dubai, PPC KSA, Adwords Management India",
+      "keywords": "Google Ads Agency Dubai, PPC KSA,Adwords Management India",
       "title": "Google Search Matrix",
       "heroDesc": "We do not believe in paying for irrelevant clicks. Our PPC engineers slice search intent surgically, securing only buyers who are prepared to transact immediately.",
       "color": "var(--primary-blue)",

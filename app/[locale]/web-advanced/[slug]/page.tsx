@@ -4,8 +4,8 @@ import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 import ServiceLayout from '../../../components/ServiceLayout';
 
-const CATEGORY_KEY = 'seo-services';
-const PARENT_NAME = 'Industry SEO Programs';
+const CATEGORY_KEY = 'web-advanced';
+const PARENT_NAME = 'Advanced Engineering';
 
 export async function generateStaticParams() {
   const dbPath = path.join(process.cwd(), 'data', 'expandedServices.json');
@@ -18,14 +18,13 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const dbPath = path.join(process.cwd(), 'data', 'expandedServices.json');
-  if (!fs.existsSync(dbPath)) return { title: `${PARENT_NAME} | ZAVIROQ` };
-
+  if (!fs.existsSync(dbPath)) return { title: 'Service Not Found' };
+  
   const db = JSON.parse(fs.readFileSync(dbPath, 'utf8'));
   const configs = db[CATEGORY_KEY] || [];
   const service = configs.find((c: { slug: string }) => c.slug === slug);
-
-  if (!service) return { title: `${PARENT_NAME} | ZAVIROQ` };
-
+  
+  if (!service) return { title: 'Service Not Found' };
   return {
     title: service.metaTitle,
     description: service.metaDesc,

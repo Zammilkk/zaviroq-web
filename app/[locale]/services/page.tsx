@@ -11,8 +11,15 @@ export const metadata: Metadata = {
 };
 
 const categoriesMeta = [
-  { key: 'seo-services', label: 'SEO & Search Dominance', icon: '🔍', badge: 'Organic Ranking' },
-  { key: 'web-development', label: 'Engineering & Development', icon: '💻', badge: 'Architecture' },
+  { key: 'core-seo', label: 'Core SEO Services', icon: '⚙️', badge: 'Foundation' },
+  { key: 'seo-services', label: 'Industry SEO Programs', icon: '🔍', badge: 'Organic Ranking' },
+  { key: 'core-web', label: 'Web Development', icon: '💻', badge: 'Core Build' },
+  { key: 'web-platform', label: 'Platform Engineering', icon: '🛠️', badge: 'Framework Stack' },
+  { key: 'web-ecommerce', label: 'Ecommerce Solutions', icon: '🛒', badge: 'Store Engines' },
+  { key: 'web-systems', label: 'Enterprise Systems', icon: '⚡', badge: 'Business Logic' },
+  { key: 'web-migration', label: 'Migration & Redesign', icon: '🔄', badge: 'Transform' },
+  { key: 'web-security', label: 'Performance & Security', icon: '🛡️', badge: 'Protection' },
+  { key: 'web-advanced', label: 'Advanced Engineering', icon: '🚀', badge: 'Innovation' },
   { key: 'performance-marketing', label: 'Performance Marketing', icon: '📈', badge: 'Aggressive Growth' },
   { key: 'branding-design', label: 'Corporate Branding', icon: '🎨', badge: 'Creative Pitch' },
   { key: 'ai-automation', label: 'AI & Automations', icon: '🤖', badge: 'Next-Gen LLM' },
@@ -85,7 +92,7 @@ export default async function ServicesPage({
               <span className={styles.statKey}>Specialized Endpoints</span>
             </div>
             <div className={styles.statItem}>
-              <span className={styles.statVal}>6</span>
+              <span className={styles.statVal}>13</span>
               <span className={styles.statKey}>Core Pillars</span>
             </div>
             <div className={styles.statItem}>
@@ -130,16 +137,20 @@ export default async function ServicesPage({
 
                     {/* Feature Micro-Links */}
                     <ul className={styles.featureList} style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                      {endpoints.map((ep: ServiceEndpoint, j: number) => (
+                      {endpoints.map((ep: ServiceEndpoint, j: number) => {
+                        const linkPath = cat.key === 'core-seo' || cat.key === 'performance-marketing' || cat.key === 'branding-design' || cat.key === 'ai-automation' || cat.key === 'website-security'
+                          ? `/${locale}/${ep.slug}` 
+                          : `/${locale}/${cat.key}/${ep.slug}`;
+                        return (
                         <li key={j}>
                            <a 
-                             href={`/${locale}/${cat.key}/${ep.slug}`} 
+                             href={linkPath}
                              className={styles.featureLink}
                            >
                              <span className={styles.featureLinkArrow}>›</span> {ep.title}
                            </a>
                         </li>
-                      ))}
+                      )})}
                     </ul>
                   </div>
                 </RevealOnScroll>
