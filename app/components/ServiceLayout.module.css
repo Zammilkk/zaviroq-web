@@ -558,9 +558,23 @@
 @media (max-width: 768px) {
   .breadcrumb { padding: 130px 20px 0; }
   .hero { padding: 40px 20px 60px; }
+  .heroContent { gap: 20px; text-align: center; align-items: center; }
+  .heroCta { justify-content: center; }
+  
   .deliverablesSection, .processSection, .ctaSection { padding-left: 20px; padding-right: 20px; }
+  .deliverableGrid { grid-template-columns: 1fr; gap: 15px; }
+  
   .bottomCta { padding: 50px 24px; border-radius: 28px; }
+  .bottomCta h2 { font-size: 1.8rem; }
+  
   .processStrip { flex-direction: column; }
-  .processStep { border-right: none; border-bottom: 1px solid rgba(255, 255, 255, 0.04); }
+  .processStep { border-right: none; border-bottom: 1px solid rgba(255, 255, 255, 0.04); padding: 25px 20px; }
   .processStep:last-child { border-bottom: none; }
+}
+
+@media (max-width: 480px) {
+  .title { font-size: 2rem; }
+  .subtitle { font-size: 1rem; }
+  .heroBtn { width: 100%; justify-content: center; }
+  .badge { font-size: 0.65rem; letter-spacing: 2px; }
 }

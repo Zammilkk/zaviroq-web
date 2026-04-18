@@ -7,6 +7,7 @@ import styles from './Navbar.module.css';
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,7 +17,6 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Prevent scrolling when mobile menu is open
   useEffect(() => {
     if (menuOpen) {
       document.body.style.overflow = 'hidden';
@@ -24,6 +24,10 @@ export default function Navbar() {
       document.body.style.overflow = 'unset';
     }
   }, [menuOpen]);
+
+  const toggleDropdown = () => {
+    setDropdownOpen(!dropdownOpen);
+  };
 
   return (
     <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
@@ -35,8 +39,17 @@ export default function Navbar() {
         <div className={`${styles.navLinks} ${menuOpen ? styles.open : ''}`}>
           <Link href="/" onClick={() => setMenuOpen(false)}>Home</Link>
 
-          <div className={styles.hasDropdown}>
-            <Link href="/services" onClick={() => setMenuOpen(false)}>Services</Link>
+          <div className={`${styles.hasDropdown} ${dropdownOpen ? styles.expanded : ''}`}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <Link href="/services" onClick={() => setMenuOpen(false)}>Services</Link>
+              <button 
+                className={styles.dropdownToggle} 
+                onClick={toggleDropdown}
+                aria-label="Toggle services menu"
+              >
+                {dropdownOpen ? '−' : '+'}
+              </button>
+            </div>
             <div className={styles.dropdownMenu}>
               <Link href="/services/seo-mastery" className={styles.dropdownItem} onClick={() => setMenuOpen(false)}>
                 <span className={styles.dropdownIcon}>🔍</span> SEO Dominance
@@ -72,7 +85,7 @@ export default function Navbar() {
           <Link href="/contact" className={styles.ctaBtn} onClick={() => setMenuOpen(false)}>Get Quote</Link>
         </div>
 
-        <button className={styles.hamburger} onClick={() => setMenuOpen(!menuOpen)}>
+        <button className={styles.hamburger} onClick={() => setMenuOpen(!menuOpen)} aria-label="Menu">
           <span className={`${styles.bar} ${menuOpen ? styles.openBar1 : ''}`}></span>
           <span className={`${styles.bar} ${menuOpen ? styles.openBar2 : ''}`}></span>
           <span className={`${styles.bar} ${menuOpen ? styles.openBar3 : ''}`}></span>

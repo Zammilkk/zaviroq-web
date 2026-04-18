@@ -380,16 +380,34 @@
 
 /* Responsive adjustments */
 @media (max-width: 900px) {
-   .offerGrid { grid-template-columns: repeat(2, 1fr); }
+  .offerGrid { grid-template-columns: repeat(2, 1fr); }
+  .intelGrid { grid-template-columns: repeat(2, 1fr); }
 }
+
 @media (max-width: 768px) {
-  .roiGrid { flex-direction: column; }
-  .roiContainer { padding: 30px 20px; }
-  .seoBlocks { grid-template-columns: 1fr; }
-  .seoContainer { padding: 40px 20px; }
+  .roiGrid { flex-direction: column; gap: 30px; }
+  .roiContainer { padding: 40px 20px; border-radius: 24px; }
+  .roiHeader h3 { font-size: 1.8rem; }
   .projectedReturn { font-size: 3rem; }
-  .mapContainer { height: 350px; }
-  .offerGrid { grid-template-columns: 1fr; }
+  
+  .seoBlocks { grid-template-columns: 1fr; gap: 20px; }
+  .seoContainer { padding: 40px 20px; border-radius: 24px; }
+  .seoHeader h3 { font-size: 1.8rem; }
+  
+  .mapContainer { height: 350px; border-radius: 20px; }
+  
+  .offerGrid { grid-template-columns: 1fr; gap: 15px; }
   .offerContent h2 { font-size: 2.2rem; }
-  .offerContainer { padding: 40px 20px; }
+  .offerContainer { padding: 40px 20px; border-radius: 24px; }
+  .offerAction { padding: 25px 20px; max-width: 100%; }
+  
+  .intelGrid { grid-template-columns: 1fr; }
+  .faqQuestion { padding: 20px; font-size: 1.1rem; }
+  .faqAnswer { padding: 0 20px 20px; }
+}
+
+@media (max-width: 480px) {
+  .roiHeader h3, .seoHeader h3, .offerContent h2 { font-size: 1.6rem; }
+  .projectedReturn { font-size: 2.5rem; }
+  .offerBtn { padding: 15px 25px; font-size: 1rem; }
 }

@@ -148,16 +148,49 @@ select.input { appearance: none; cursor: pointer; }
 /* RESPONSIVE */
 @media (max-width: 1024px) {
   .title { font-size: 3.5rem; }
-  .contactWrapper { flex-direction: column; }
+  .contactWrapper { flex-direction: column; gap: 30px; }
 }
 
 @media (max-width: 768px) {
   .title { font-size: 2.5rem; }
-  .container { padding-top: 130px; }
-  .infoCard { padding: 40px 25px; }
-  .formCard { padding: 40px 25px; }
-  .stepperHeader { padding: 0; margin-bottom: 30px;}
-  .input { padding: 18px; font-size: 1rem; }
-  .btnRow { flex-direction: column-reverse; }
-  .outlineBtn { width: 100%; }
+  .container { padding: 130px 15px 60px; }
+  .subtitle { font-size: 1.05rem; }
+  .hero { margin-bottom: 40px; }
+  
+  .contactWrapper { gap: 25px; }
+  .infoPanel { order: 2; }
+  .formPanel { order: 1; }
+  .infoCard { padding: 30px 20px; border-radius: 20px; }
+  .formCard { padding: 30px 20px; border-radius: 20px; }
+  
+  .stepperHeader { margin-bottom: 25px; gap: 8px; }
+  .stepIndicator { width: 32px; height: 32px; font-size: 0.8rem; }
+  .stepLine { margin: 0 4px; }
+  
+  .input { padding: 16px 18px; font-size: 1rem; border-radius: 12px; }
+  .inputGroup { margin-bottom: 20px; }
+  .formStep h3 { font-size: 1.5rem; margin-bottom: 25px; }
+  .statusBox { padding: 12px; font-size: 0.95rem; }
+  .infoDesc { margin-bottom: 30px; font-size: 0.95rem; }
+  .contactItem { margin-bottom: 25px; gap: 15px; }
+  .cIcon { font-size: 1.4rem; padding: 12px; }
+  .contactItem p { font-size: 1.05rem; }
+  .contactItem h4 { font-size: 0.85rem; }
+  
+  .btnRow { flex-direction: column-reverse; gap: 15px; }
+  .outlineBtn { width: 100%; padding: 16px; font-size: 1rem; }
+  .submitBtn { padding: 18px !important; font-size: 1.1rem; }
+  
+  .socialGems { gap: 12px; }
+  .gem { width: 40px; height: 40px; font-size: 0.9rem; }
+}
+
+@media (max-width: 480px) {
+  .title { font-size: 2.1rem; }
+  .subtitle { font-size: 1.05rem; }
+  .badge { font-size: 0.85rem; padding: 6px 14px; }
+  .infoCard h2 { font-size: 1.6rem; }
+  .cIcon { font-size: 1.5rem; padding: 12px; }
+  .formStep h3 { font-size: 1.5rem; }
+  .stepIndicator { width: 35px; height: 35px; font-size: 0.9rem; }
 }

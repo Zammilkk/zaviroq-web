@@ -370,59 +370,45 @@
 
 /* RESPONSIVE */
 @media (max-width: 1024px) {
-  .featuredPost {
-    flex-direction: column;
-  }
-
-  .featuredImg {
-    min-height: 350px;
-  }
+  .title { font-size: 3.5rem; }
+  .featuredPost { flex-direction: column; }
+  .featuredImg { min-height: 350px; }
+  .featuredContent { padding: 40px; }
 }
 
 @media (max-width: 768px) {
-  .container {
-    padding-top: 130px;
-  }
+  .title { font-size: 2.5rem; }
+  .container { padding: 130px 15px 60px; }
+  .subtitle { font-size: 1.1rem; }
+  .featuredPost { flex-direction: column; margin-bottom: 60px; }
+  .featuredImg { min-height: 280px; }
+  .featuredContent { padding: 30px 20px; text-align: center; align-items: center; }
+  .featuredTitle { font-size: 1.8rem; }
+  .featuredDesc { font-size: 1rem; }
+  .meta { justify-content: center; }
+  
+  .grid { grid-template-columns: 1fr; gap: 30px; }
+  .postCard { border-radius: 16px; }
+  .postImg { height: 180px; }
+  .postContent { padding: 20px; }
+  .postTitle { font-size: 1.25rem; }
+  .postDesc { font-size: 0.95rem; }
+  
+  .authorRow { flex-direction: column; align-items: center; gap: 15px; text-align: center; }
+  .readMoreBtn { width: 100%; text-align: center; padding: 14px; }
+  
+  .newsletterSection { flex-direction: column; padding: 40px 20px; text-align: center; gap: 30px; border-radius: 24px; }
+  .nlVisual { transform: none; margin: 0 auto; width: 100px; height: 100px; }
+  .mailIcon { font-size: 3rem; }
+  .nlContent h2 { font-size: 1.8rem; }
+  .nlForm { flex-direction: column; gap: 15px; }
+  .nlBtn { padding: 16px !important; width: 100%; }
+  .nlInput { padding: 14px 20px; font-size: 1rem; }
+}
 
-  .title {
-    font-size: 2.8rem;
-  }
-
-  .featuredContent {
-    padding: 30px 20px;
-  }
-
-  .featuredTitle {
-    font-size: 1.8rem;
-  }
-
-  .authorRow {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
-  }
-
-  .readMoreBtn {
-    width: 100%;
-    text-align: center;
-  }
-
-  .newsletterSection {
-    flex-direction: column;
-    padding: 40px 20px;
-    text-align: center;
-  }
-
-  .nlVisual {
-    transform: none;
-    margin: 0 auto;
-  }
-
-  .nlForm {
-    flex-direction: column;
-  }
-
-  .nlBtn {
-    padding: 18px !important;
-  }
+@media (max-width: 480px) {
+  .title { font-size: 2.1rem; }
+  .subtitle { font-size: 1.05rem; }
+  .featuredTitle { font-size: 1.5rem; }
+  .postTitle { font-size: 1.2rem; }
 }

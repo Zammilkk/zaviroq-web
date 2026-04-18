@@ -617,7 +617,7 @@
 
 /* Tablet: 2 cols */
 @media (max-width: 1024px) {
-  .heroTitle { font-size: clamp(2rem, 5vw, 3rem); }
+  .heroTitle { font-size: clamp(2rem, 5vw, 2.8rem); }
   .breadcrumb { padding: 110px 28px 0; }
   .hero        { padding: 36px 28px 52px; }
   .dividerRow  { padding: 0 28px; }
@@ -635,30 +635,69 @@
 }
 
 /* Mobile: 1 col */
-@media (max-width: 640px) {
-  .breadcrumb { padding: 100px 20px 0; }
+@media (max-width: 768px) {
+  .breadcrumb { padding: 100px 20px 0; font-size: 0.75rem; }
   .hero        { padding: 28px 20px 44px; gap: 16px; }
   .dividerRow  { padding: 0 20px; margin-bottom: 32px; }
   .gridSection { padding: 0 20px; }
   .ctaWrap     { padding: 48px 20px 80px; }
 
-  .heroTitle   { font-size: 2.1rem; letter-spacing: -1px; }
+  .heroTitle   { font-size: 2rem; letter-spacing: -1px; }
   .heroSub     { font-size: 0.95rem; }
+  .heroTag    { font-size: 0.65rem; }
 
   .servicesGrid {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 15px;
   }
 
   .statsRow {
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
     width: 100%;
+    border-radius: 20px;
   }
 
-  .statItem { min-width: 100px; }
+  .statItem { 
+    width: 100%; 
+    border-right: none; 
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    padding: 16px 20px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .statItem:last-child { border-bottom: none; }
   .statItem:not(:last-child)::after { display: none; }
+  .statVal { font-size: 1.4rem; }
 
-  .cta { padding: 48px 24px; border-radius: 24px; }
+  .card { 
+    padding: 25px 20px; 
+    border-radius: 18px;
+  }
+  .cardNum { top: 20px; right: 20px; font-size: 0.65rem; }
+  .cardIcon { 
+    width: 50px; 
+    height: 50px; 
+    font-size: 1.3rem; 
+    margin-bottom: 16px;
+  }
+  .cardTagline { font-size: 0.6rem; margin-bottom: 6px; }
+  .cardTitle { font-size: 1.1rem; margin-bottom: 16px; }
+  .cardRule { margin-bottom: 14px; }
+  .featureList { gap: 8px; }
+  .featureList li, .featureLink { font-size: 0.82rem; }
+  .cardBottom { margin-top: 18px; padding-top: 14px; }
+  .cardArrow { width: 30px; height: 30px; }
+
+  .cta { padding: 40px 20px; border-radius: 24px; }
   .cta h2 { font-size: 1.6rem; }
+  .cta p { font-size: 0.95rem; margin-bottom: 28px; }
+  .ctaBtn { padding: 14px 30px !important; }
+}
+
+@media (max-width: 480px) {
+  .heroTitle { font-size: 1.8rem; }
+  .heroTag { font-size: 0.65rem; padding: 5px 12px; }
+  .cardTitle { font-size: 1.1rem; }
+  .statVal { font-size: 1.4rem; }
 }

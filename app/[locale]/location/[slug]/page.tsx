@@ -5,12 +5,28 @@ import { notFound } from 'next/navigation';
 import RevealOnScroll from '../../RevealOnScroll';
 import { Metadata } from 'next';
 
+interface LocationConfig {
+  slug: string;
+  metaTitle: string;
+  metaDesc: string;
+  keywords: string;
+  cityName: string;
+  heroTitle: string;
+  heroDesc: string;
+  color: string;
+  coordinates: {
+    lat: number;
+    lon: number;
+  };
+  tactics: string[];
+}
+
 export async function generateStaticParams() {
   const dbPath = path.join(process.cwd(), 'data', 'locationsConfigs.json');
   if(!fs.existsSync(dbPath)) return [];
-  const configs = JSON.parse(fs.readFileSync(dbPath, 'utf8'));
+  const configs: LocationConfig[] = JSON.parse(fs.readFileSync(dbPath, 'utf8'));
   
-  return configs.map((c: any) => ({
+  return configs.map((c) => ({
     slug: c.slug
   }));
 }
@@ -20,8 +36,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const dbPath = path.join(process.cwd(), 'data', 'locationsConfigs.json');
   if(!fs.existsSync(dbPath)) return { title: 'Region Not Found' };
   
-  const configs = JSON.parse(fs.readFileSync(dbPath, 'utf8'));
-  const loc = configs.find((c: any) => c.slug === slug);
+  const configs: LocationConfig[] = JSON.parse(fs.readFileSync(dbPath, 'utf8'));
+  const loc = configs.find((c) => c.slug === slug);
   
   if (!loc) return { title: 'Region Not Found' };
 
@@ -38,8 +54,8 @@ export default async function LocationDetailedPage({ params }: { params: Promise
   const dbPath = path.join(process.cwd(), 'data', 'locationsConfigs.json');
   if(!fs.existsSync(dbPath)) notFound();
   
-  const configs = JSON.parse(fs.readFileSync(dbPath, 'utf8'));
-  const loc = configs.find((c: any) => c.slug === slug);
+  const configs: LocationConfig[] = JSON.parse(fs.readFileSync(dbPath, 'utf8'));
+  const loc = configs.find((c) => c.slug === slug);
 
   if (!loc) notFound();
 
@@ -97,7 +113,7 @@ export default async function LocationDetailedPage({ params }: { params: Promise
            <div className={styles.glassBlock}>
              <h3 className={styles.blockTitle}>The Architectural Blueprint</h3>
              <p className={styles.blockText}>
-               General marketing doesn't work for localized monopolies. ZAVIROQ engineers highly specialized architectures mapping directly to the exact search queries and consumer psychology specific to <strong>{loc.cityName}</strong>.
+               General marketing doesn&apos;t work for localized monopolies. ZAVIROQ engineers highly specialized architectures mapping directly to the exact search queries and consumer psychology specific to <strong>{loc.cityName}</strong>.
              </p>
              <p className={styles.blockText}>
                Our native JSON-LD routing pipelines combined with Next.js SSR configurations allow your business logic to outpace older WordPress arrays instantly.

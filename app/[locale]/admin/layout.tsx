@@ -9,8 +9,8 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   
   // Dummy Auth persistence (client side for MVP)
   useEffect(() => {
-    if(sessionStorage.getItem('zaviroq_admin') === 'true') {
-      setIsAuthenticated(true);
+    if (sessionStorage.getItem('zaviroq_admin') === 'true') {
+      setTimeout(() => setIsAuthenticated(true), 0);
     }
   }, []);
 

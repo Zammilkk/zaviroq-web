@@ -238,20 +238,31 @@
 
 /* RESPONSIVE */
 @media (max-width: 1024px) {
-  .title { font-size: 3.8rem; }
-  .grid { grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }
+  .title { font-size: 3.5rem; }
+  .grid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
 }
 
 @media (max-width: 768px) {
-  .title { font-size: 2.8rem; }
-  .container { padding-top: 130px; }
-  .filterTabs { flex-direction: column; border-radius: 20px; width: 100%; align-items: stretch; padding: 15px;}
-  .filterBtn { width: 100%; border-radius: 12px; }
+  .title { font-size: 2.5rem; }
+  .container { padding: 130px 15px 60px; }
+  .filterTabs { gap: 10px; padding: 10px; border-radius: 20px; }
+  .filterBtn { padding: 10px 20px; font-size: 0.95rem; }
   
-  .grid { grid-template-columns: 1fr; gap: 30px; }
+  .grid { grid-template-columns: 1fr; gap: 25px; }
   .portfolioImg { height: 240px; }
   
-  /* Make overlay partially visible on mobile since no hover */
-  .imgOverlay { opacity: 1; background: linear-gradient(to top, rgba(10,10,15,1), transparent); align-items: flex-end; padding-bottom: 20px; backdrop-filter: none; }
-  .viewBtn { transform: translateY(0); background: rgba(59, 139, 212, 0.9); color: #fff; padding: 10px 24px; font-size: 0.9rem;}
+  .portfolioContent { padding: 25px 20px; }
+  .projectTitle { font-size: 1.3rem; }
+  .projectDesc { font-size: 0.95rem; }
+  
+  .bottomCta { margin-top: 60px; padding: 40px 20px; border-radius: 24px; }
+  .bottomCta h2 { font-size: 1.8rem; }
+}
+
+@media (max-width: 480px) {
+  .title { font-size: 2.1rem; }
+  .subtitle { font-size: 1.05rem; }
+  .filterTabs { display: none; } /* Or use a dropdown / scrollable list? For now hide for simplicity or make scrollable */
+  .portfolioImg { height: 200px; }
+  .bottomCta h2 { font-size: 1.6rem; }
 }

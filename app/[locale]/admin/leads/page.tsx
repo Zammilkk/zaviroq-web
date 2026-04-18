@@ -3,8 +3,19 @@
 import { useState, useEffect } from 'react';
 import styles from '../page.module.css';
 
+interface Lead {
+  date: string;
+  name: string;
+  email: string;
+  phone: string;
+  service: string;
+  country: string;
+  message: string;
+  status: string;
+}
+
 export default function LeadsDashboard() {
-  const [leads, setLeads] = useState<any[]>([]);
+  const [leads, setLeads] = useState<Lead[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {

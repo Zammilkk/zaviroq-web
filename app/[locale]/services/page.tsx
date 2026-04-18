@@ -19,6 +19,16 @@ const categoriesMeta = [
   { key: 'website-security', label: 'Security & Shields', icon: '🔐', badge: 'Enterprise Safe' }
 ];
 
+interface ServiceEndpoint {
+  slug: string;
+  title: string;
+  [key: string]: string | string[];
+}
+
+interface ServiceConfig {
+  [key: string]: ServiceEndpoint[];
+}
+
 export default async function ServicesPage({
   params,
 }: {
@@ -28,7 +38,7 @@ export default async function ServicesPage({
 
   // Load the expanded micro-services dynamically
   const dbPath = path.join(process.cwd(), 'data', 'expandedServices.json');
-  let expandedConfigs: any = {};
+  let expandedConfigs: ServiceConfig = {};
   if (fs.existsSync(dbPath)) {
     expandedConfigs = JSON.parse(fs.readFileSync(dbPath, 'utf8'));
   }
@@ -120,7 +130,7 @@ export default async function ServicesPage({
 
                     {/* Feature Micro-Links */}
                     <ul className={styles.featureList} style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                      {endpoints.map((ep: any, j: number) => (
+                      {endpoints.map((ep: ServiceEndpoint, j: number) => (
                         <li key={j}>
                            <a 
                              href={`/${locale}/${cat.key}/${ep.slug}`} 

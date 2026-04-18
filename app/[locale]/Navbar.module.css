@@ -208,13 +208,20 @@
   .navLinks {
     gap: 20px;
   }
+  .logo img {
+    width: 120px !important;
+  }
 }
 
 @media (max-width: 768px) {
+  .navbar {
+    padding: 15px 0;
+  }
+  
   .navContainer {
     margin: 0 15px;
     border-radius: 20px;
-    padding: 15px 25px;
+    padding: 12px 20px;
   }
   
   .hamburger {
@@ -223,26 +230,31 @@
   
   .navLinks {
     position: fixed;
-    top: 90px;
+    top: 80px;
     left: 15px;
     right: 15px;
-    background: rgba(15, 15, 20, 0.95);
-    backdrop-filter: blur(30px);
-    -webkit-backdrop-filter: blur(30px);
+    background: rgba(10, 10, 15, 0.98);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
     border: 1px solid rgba(127, 119, 221, 0.2);
-    border-radius: 20px;
+    border-radius: 24px;
     flex-direction: column;
-    padding: 40px;
-    gap: 30px;
+    padding: 30px 20px;
+    gap: 20px;
     opacity: 0;
     pointer-events: none;
-    transform: translateY(-20px);
+    transform: translateY(-10px);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.8);
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
   }
   
   .navLinks a {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
   }
   
   .navLinks.open {
@@ -255,16 +267,78 @@
   .openBar2 { opacity: 0; }
   .openBar3 { transform: translateY(-8px) rotate(-45deg); }
 
+  .hasDropdown {
+    flex-direction: column;
+    width: 100%;
+  }
+
   .dropdownMenu {
     position: static;
     opacity: 1;
     pointer-events: auto;
     transform: none;
     box-shadow: none;
-    background: transparent;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 10px;
+    margin-top: 10px;
+    gap: 5px;
+    width: 100%;
+    display: none; /* Hidden by default on mobile, maybe expand on click? For now keep it visible if parent is active or just show it */
+  }
+
+  .hasDropdown:hover .dropdownMenu,
+  .hasDropdown.expanded .dropdownMenu {
+    display: flex;
+  }
+  
+  .dropdownToggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.05);
     border: none;
-    padding: 0 0 0 15px;
-    margin-top: 5px;
-    gap: 15px;
+    border-radius: 6px;
+    color: var(--text-main);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .dropdownToggle:hover {
+    background: rgba(127, 119, 221, 0.15);
+  }
+  
+  .dropdownItem {
+    justify-content: center;
+    padding: 12px !important;
+  }
+
+  .ctaBtn {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo img {
+    width: 100px !important;
+  }
+  .navContainer {
+    padding: 10px 15px;
+  }
+  .navLinks {
+    left: 10px;
+    right: 10px;
+  }
+  .logo {
+    font-size: 1.3rem;
+  }
+  .aiLink {
+    font-size: 0.75rem !important;
+    padding: 5px 10px !important;
   }
 }
