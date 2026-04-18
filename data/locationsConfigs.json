@@ -1,0 +1,53 @@
+[
+  {
+    "slug": "seo-services-saudi-arabia",
+    "metaTitle": "Rank #1 for SEO Services in Saudi Arabia | ZAVIROQ",
+    "metaDesc": "Drive targeted GCC traffic to your local business and skyrocket conversions with specialized Saudi SEO Architecture.",
+    "keywords": "SEO Services Saudi Arabia, Riyadh SEO Agency, KSA Local SEO, Jeddah Digital Marketing",
+    "cityName": "Kingdom of Saudi Arabia (KSA)",
+    "heroTitle": "Saudi Arabia Search Engine Dominance",
+    "heroDesc": "We map our data-tracking to dominate massive commerce hubs across Riyadh, Jeddah, and Dammam. We outrank local competitors organically.",
+    "color": "#25D366",
+    "coordinates": { "lat": "24.7136", "lon": "46.6753" },
+    "tactics": [
+      "Arabic Semantic HTML Optimization",
+      "KSA Local Citations & Maps Hijacking",
+      "High Authority DR Backlinks (GCC)",
+      "Technical Hreflang Tag Structuring"
+    ]
+  },
+  {
+    "slug": "digital-marketing-india",
+    "metaTitle": "Elite Digital Marketing Services India | ZAVIROQ",
+    "metaDesc": "Scale your hyper-local or nationwide Indian operations using data-driven Meta Marketing and strict Google Ads scaling.",
+    "keywords": "Digital Marketing Agency India, Meta Ads Expert Bangalore, Google Ads Marketing India",
+    "cityName": "India",
+    "heroTitle": "Absolute Market Penetration in India",
+    "heroDesc": "Volume is irrelevant without Intent. Our performance algorithms filter through the billions to find exact premium buyers locally and nationally.",
+    "color": "var(--primary-purple)",
+    "coordinates": { "lat": "12.9716", "lon": "77.5946" },
+    "tactics": [
+      "Micro-Segmented Meta Ads Pipeline",
+      "Dynamic Keyword Tracking (Pan-India)",
+      "CPA & High ROAS Campaign Scaling",
+      "Lead Encryption and Routing"
+    ]
+  },
+  {
+    "slug": "web-design-dubai",
+    "metaTitle": "Premium Web Design Agency in Dubai, UAE | ZAVIROQ",
+    "metaDesc": "Hyper-fast Next.js engineering and stunning UI/UX architecture designed specifically for elite SaaS and Enterprise brands in Dubai.",
+    "keywords": "Web Design Agency Dubai, UI/UX Agency UAE, Next.js Development Dubai, Enterprise Web Design",
+    "cityName": "Dubai, UAE",
+    "heroTitle": "Elite Web Architecture for the UAE",
+    "heroDesc": "Dubai demands premium aesthetics. We bypass slow templates and manually engineer stunning Glassmorphism architectures using raw React rendering.",
+    "color": "var(--primary-blue)",
+    "coordinates": { "lat": "25.2048", "lon": "55.2708" },
+    "tactics": [
+      "Next.js Server Component Rendering",
+      "Corporate SaaS UI/UX Design Models",
+      "Advanced Turbopack Speed Scaling",
+      "Multi-locale Arabic/English Deployments"
+    ]
+  }
+]

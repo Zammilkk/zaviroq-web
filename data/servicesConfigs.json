@@ -1,0 +1,139 @@
+[
+  {
+    "slug": "performance-marketing",
+    "metaTitle": "Performance Marketing Services in GCC & India | ZAVIROQ",
+    "metaDesc": "Scale your brand with aggressive ROI-focused Google Ads and Meta campaigns mapped for Saudi Arabia, UAE, and India.",
+    "keywords": "Google Ads Agency, Meta Ads UAE, Performance Marketing Saudi Arabia, Facebook Ads Expert",
+    "title": "Aggressive Performance Marketing",
+    "heroDesc": "Stop paying for impressions. Start paying for pipeline. We architect custom ad frameworks designed specifically to capture high-intent localized search and aggressive social disruption.",
+    "color": "var(--primary-blue)",
+    "deliverables": [
+      "Dynamic Search Ads & Intent Capture",
+      "Pixel Integration & Advanced Server-side Tracking",
+      "Lookalike Audience Generation",
+      "A/B Split Testing Creativity Matrices"
+    ]
+  },
+  {
+    "slug": "seo-mastery",
+    "metaTitle": "#1 SEO Services in Saudi Arabia & Dubai | ZAVIROQ",
+    "metaDesc": "Advanced Algorithmic SEO implementations including Semantic HTML, core web vitals speed optimization, and intense backlink structuring.",
+    "keywords": "SEO Services Dubai, Local SEO India, Rank #1 Google KSA, Technical SEO Audit",
+    "title": "Search Engine Dominance",
+    "heroDesc": "We reverse engineer the Google Algorithm. Our SEO pipelines don't just guess keywords; they map exact buyer intent and hijack competitor traffic locally and internationally.",
+    "color": "var(--primary-purple)",
+    "deliverables": [
+      "Semantic HTML & Schema Markup Generation",
+      "LCP Core Web Vitals Optimization",
+      "High Authority DR Backlink Acquisition",
+      "Hyper-Local UAE/KSA Maps Dominance"
+    ]
+  },
+  {
+    "slug": "web-development",
+    "metaTitle": "Next.js Web Development Agency | ZAVIROQ",
+    "metaDesc": "High-performance Server-Side Rendered websites using React and Next.js built for maximum conversion rates and sub-second load speeds.",
+    "keywords": "Next.js Web Development, Custom React Agency UAE, High Speed Websites KSA, SaaS Development",
+    "title": "Next-Generation Architecture",
+    "heroDesc": "We don't use dragging-and-dropping templates. We engineer bespoke Next.js Server Components, guaranteeing ultra-fast load times that drastically reduce bounce rates.",
+    "color": "var(--primary-blue)",
+    "deliverables": [
+      "Next.js App Router Architecture",
+      "Turbopack Speed Configurations",
+      "Custom Client Side Interactivity",
+      "API & Database Integration"
+    ]
+  },
+  {
+    "slug": "website-maintenance",
+    "metaTitle": "Website Migration & Maintenance Support | ZAVIROQ",
+    "metaDesc": "Secure, fast, and seamless website cloning, SSL renewals, and legacy PHP framework migrations into modern React systems.",
+    "keywords": "Website Migration Service, SSL Setup, Bug Fixing Agency, Site Cloning",
+    "title": "Infrastructure Migration",
+    "heroDesc": "Stuck on an outdated platform? Our engineers safely detangle legacy codebases and migrate your ecosystems into secure, modern frameworks with ZERO downtime.",
+    "color": "#ff5555",
+    "deliverables": [
+      "Zero Downtime Data Migrations",
+      "SSL & Encryption Hardening",
+      "Legacy Code Refactoring",
+      "Monthly SLA Retainers"
+    ]
+  },
+  {
+    "slug": "ui-ux",
+    "metaTitle": "Premium UI/UX Design & Glassmorphism | ZAVIROQ",
+    "metaDesc": "SaaS-ready, premium dark-themed UI/UX Design mapped in Figma and implemented in raw CSS.",
+    "keywords": "UI/UX Design Agency UAE, Figma Design expert India, SaaS UI Design",
+    "title": "Elite Interface Engineering",
+    "heroDesc": "Design is trust. If your UI looks cheap, your product value plummets. We build hyper-premium interfaces leveraging spatial physics and deep aesthetic psychology.",
+    "color": "var(--primary-purple)",
+    "deliverables": [
+      "Advanced Figma Prototyping",
+      "B2B SaaS Interface Standards",
+      "CSS Animation & Scroll Reveals",
+      "User Bounce-Rate Optimization"
+    ]
+  },
+  {
+    "slug": "branding",
+    "metaTitle": "Corporate Branding & Graphic Design | ZAVIROQ",
+    "metaDesc": "Identity structuring for modern businesses. From minimal SVGs to heavy social media content frameworks.",
+    "keywords": "Branding Agency Saudi Arabia, Logo Design Dubai, Graphic Design Services",
+    "title": "Global Identity Forging",
+    "heroDesc": "We translate commercial visions into visual authority. Our branding pipelines ensure absolute consistency across every social and digital touchpoint globally.",
+    "color": "var(--primary-blue)",
+    "deliverables": [
+      "Corporate SVG Logomarks",
+      "Social Media Content Matrices",
+      "Animated Ad Assets",
+      "Typography & Color Theory Design"
+    ]
+  },
+  {
+    "slug": "tech-security",
+    "metaTitle": "Enterprise Tech & Security Solutions | ZAVIROQ",
+    "metaDesc": "Server protection, DDoS shielding, and custom tracking systems to protect your business loops.",
+    "keywords": "Web Security Services, DDoS Protection, Custom CRM Tracking",
+    "title": "Security & Encryption Systems",
+    "heroDesc": "Data is your most valuable asset. We build armored arrays to protect your lead inflows from bot dilution and safeguard your infrastructure against standard attacks.",
+    "color": "#ff5555",
+    "deliverables": [
+      "CRM Encryption Pipelines",
+      "Cloudflare Defensive Routing",
+      "Bot Mitigation Frameworks",
+      "Weekly Penetration Testing"
+    ]
+  },
+  {
+    "slug": "international-seo",
+    "metaTitle": "International SEO Services (UAE, KSA, India) | ZAVIROQ",
+    "metaDesc": "Multilingual Next.js setups (Arabic/English) targeting massive international search intent.",
+    "keywords": "International SEO Dubai, Multilingual SEO Arabic, Hreflang SEO, Global Ranking",
+    "title": "Border-agnostic Intent Capture",
+    "heroDesc": "Scaling outside your localized node requires heavy architectural tweaks. We implement exact Hreflang tracking and RTL translation pipelines to dominate foreign territories.",
+    "color": "var(--primary-purple)",
+    "deliverables": [
+      "Strict Hreflang Deployments",
+      "Arabic RTL Structural Re-builds",
+      "Geo-targeted Next-Intl Frameworks",
+      "Foreign Market Keyword Mining"
+    ]
+  },
+  {
+    "slug": "ai-integration",
+    "metaTitle": "AI Setup & Integration for Business | ZAVIROQ",
+    "metaDesc": "Transform your business with custom AI integrations — chatbots, OpenAI/Gemini APIs, automated lead qualification, and intelligent CRM workflows built for GCC & India.",
+    "keywords": "AI Integration Agency, ChatGPT Business Setup, Gemini API Integration, AI Chatbot Development, Business Automation AI, AI CRM UAE",
+    "title": "AI Setup & Integration",
+    "heroDesc": "AI is no longer optional — it is the infrastructure of tomorrow's market leaders. We architect, train, and deploy custom AI systems directly into your business workflows, slashing manual overhead while amplifying decision intelligence at every touchpoint.",
+    "color": "var(--primary-purple)",
+    "deliverables": [
+      "AI Chatbot & Virtual Assistant Setup",
+      "OpenAI / Gemini API Integration",
+      "Automated Lead Qualification (AI)",
+      "AI-Powered Content Generation",
+      "Smart CRM & Workflow Automation",
+      "Custom AI Dashboard & Analytics"
+    ]
+  }
+]

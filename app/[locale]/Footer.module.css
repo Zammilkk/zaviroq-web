@@ -1,0 +1,202 @@
+.footerContainer {
+  padding: 80px 20px 40px 20px;
+  position: relative;
+  overflow: hidden;
+  margin-top: 50px;
+}
+
+.footerContainer::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(59, 139, 212, 0.5), rgba(127, 119, 221, 0.8), rgba(59, 139, 212, 0.5), transparent);
+}
+
+.footerContainer::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 150px;
+  background: radial-gradient(ellipse at top, rgba(127, 119, 221, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.glassFooter {
+  max-width: 1250px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 2.5fr 1fr 1fr 1.2fr;
+  gap: 60px;
+  margin-bottom: 80px;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand .desc {
+  color: #A0A5B1;
+  margin-top: 25px;
+  line-height: 1.8;
+  max-width: 350px;
+  font-size: 1.05rem;
+}
+
+.linksBlock h4 {
+  font-size: 1.25rem;
+  margin-bottom: 30px;
+  color: #fff;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+}
+
+.linksBlock h4::after {
+  content: '';
+  position: absolute;
+  bottom: -8px; left: 0;
+  width: 30px; height: 2px;
+  background: var(--primary-blue);
+  border-radius: 2px;
+}
+
+.linksBlock a, .linksBlock p {
+  display: flex;
+  align-items: center;
+  color: #A0A5B1;
+  margin-bottom: 18px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.linksBlock a:hover {
+  color: #fff;
+  transform: translateX(5px);
+}
+
+.contactLine {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.contactLine a {
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.contactLine span {
+  font-size: 0.8rem;
+  color: rgba(59, 139, 212, 0.8);
+  margin-top: -2px;
+}
+
+.emailStack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 25px;
+  padding-top: 25px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.emailStack a {
+  color: var(--primary-blue);
+  margin-bottom: 0;
+}
+.emailStack a:hover {
+  color: #fff;
+}
+
+.bottomBar {
+  padding-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #A0A5B1;
+  font-size: 0.95rem;
+}
+
+.statusIndicator {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 0.85rem; background: rgba(37, 211, 102, 0.1);
+  padding: 6px 14px; border-radius: 100px; color: #25D366;
+  border: 1px solid rgba(37, 211, 102, 0.2);
+}
+
+.statusDot {
+  width: 8px; height: 8px; background: #25D366; border-radius: 50%;
+  box-shadow: 0 0 10px #25D366; animation: pulse 2s infinite;
+}
+
+@keyframes pulse { 0% { opacity: 0.5; } 50% { opacity: 1; } 100% { opacity: 0.5; } }
+
+.socials {
+  display: flex;
+  gap: 30px;
+}
+
+.socials a {
+  color: #fff;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  opacity: 0.7;
+}
+
+.socials a:hover {
+  opacity: 1;
+  color: var(--primary-blue);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footerContainer {
+    padding: 60px 20px 20px;
+  }
+  .glassFooter {
+    padding: 0;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  .bottomBar {
+    flex-direction: column;
+    gap: 25px;
+    align-items: flex-start;
+  }
+  .socials {
+    width: 100%;
+    justify-content: space-between;
+  }
+}

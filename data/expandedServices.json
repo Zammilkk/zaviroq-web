@@ -1,0 +1,404 @@
+{
+  "seo-services": [
+    {
+      "slug": "seo-for-real-estate",
+      "metaTitle": "SEO for Real Estate | Property Ranking Agency UAE & KSA",
+      "metaDesc": "Dominate local real estate searches. We map buyer intent to drive high-ticket property inquiries in Dubai, Riyadh, and India.",
+      "keywords": "SEO for Real Estate Dubai, KSA Property SEO, Real Estate Marketing India",
+      "title": "Real Estate SEO Dominance",
+      "heroDesc": "Stop losing high-ticket property sales to competitors. We build localized semantic hubs that rank your listings above the fold for extremely competitive local searches.",
+      "color": "var(--primary-purple)",
+      "deliverables": ["Local Maps Dominance", "Property Schema Markup", "Intent-driven Landing Pages", "High Authority PR Links"]
+    },
+    {
+      "slug": "seo-for-healthcare",
+      "metaTitle": "SEO for Healthcare | Medical Ranking Agency UAE & KSA",
+      "metaDesc": "Scale your clinic's patient inflow. HIPAA compliant, highly authoritative semantic architectures for doctors and hospitals.",
+      "keywords": "Healthcare SEO UAE, Medical Marketing Saudi, Clinic SEO Dubai",
+      "title": "Healthcare Authority Structuring",
+      "heroDesc": "We engineer YMYL (Your Money or Your Life) compliant search architectures that build massive domain trust and drive immediate patient bookings.",
+      "color": "var(--primary-blue)",
+      "deliverables": ["E-E-A-T Trust Structuring", "Medical Schema Generation", "Hyper-local Patient Funnels", "Authoritative Health Backlinks"]
+    },
+    {
+      "slug": "seo-for-saas",
+      "metaTitle": "SEO for SaaS Companies | Global Software Ranking",
+      "metaDesc": "Drive MRR with aggressive content silos. We capture high-intent long-tail keywords for enterprise and B2B SaaS architecture.",
+      "keywords": "SaaS SEO Agency, B2B Software SEO, MRR Growth Engine",
+      "title": "B2B SaaS Growth Engine",
+      "heroDesc": "Don't depend entirely on expensive paid ads. We construct massive content silos targeting long-tail enterprise software queries to drive compounding MRR.",
+      "color": "var(--primary-purple)",
+      "deliverables": ["Feature-specific Content Silos", "Competitor Keyword Hijacking", "Technical React/Next.js SEO", "DR 70+ SaaS Link Building"]
+    },
+    {
+      "slug": "seo-for-ecommerce",
+      "metaTitle": "Ecommerce SEO | Dominate Product Searches in GCC",
+      "metaDesc": "Scale online sales rapidly. Technical optimization for Shopify/Magento and aggressive category ranking structures.",
+      "keywords": "Ecommerce SEO Dubai, Category Ranking KSA, Shopify SEO India",
+      "title": "Ecommerce Scale Architecture",
+      "heroDesc": "We fix technical bloat and index thousands of SKUs flawlessly, ensuring your product categories dominate commercial search intent across the GCC.",
+      "color": "var(--primary-blue)",
+      "deliverables": ["Faceted Navigation Indexing", "Product Schema & Reviews", "Canonical Tag Management", "Category Content Optimization"]
+    },
+    {
+      "slug": "technical-seo",
+      "metaTitle": "Technical SEO Agency | Core Web Vitals & Indexing",
+      "metaDesc": "Flawless site architecture. We optimize crawl budgets, eliminate JavaScript bloat, and max out Core Web Vitals.",
+      "keywords": "Technical SEO Audit, Core Web Vitals Optimization, JavaScript SEO",
+      "title": "Algorithmic Technical SEO",
+      "heroDesc": "If Google can't crawl you, you don't exist. We strip away massive technical errors, fix JavaScript rendering bottlenecks, and optimize sever delivery.",
+      "color": "var(--primary-purple)",
+      "deliverables": ["Crawl Budget Optimization", "Server-side Rendering Fixes", "Core Web Vitals Maxing", "Log File Analysis"]
+    },
+    {
+      "slug": "on-page-seo",
+      "metaTitle": "On-Page SEO Optimization | Semantic HTML Structuring",
+      "metaDesc": "Entity-based optimization matching exact search algorithms. Tighter content clusters and optimized tag architecture.",
+      "keywords": "On-page SEO UAE, Semantic Content Optimization, TF-IDF SEO",
+      "title": "On-Page Entity Alignment",
+      "heroDesc": "We map your content directly to Google's NLP entities. Zero keyword stuffing—just pure algorithmic alignment that drives extreme topical authority.",
+      "color": "var(--primary-blue)",
+      "deliverables": ["NLP Entity Mapping", "LSI Keyword Injection", "Internal Link Siloing", "Advanced HTML Tags"]
+    },
+    {
+      "slug": "off-page-seo",
+      "metaTitle": "Off-Page SEO & Domain Authority | Platinum Link Building",
+      "metaDesc": "Acquire high-tier editorial backlinks. Build trust and massive domain authority globally.",
+      "keywords": "Backlink Agency UAE, Buy DR 70 Links, Guest Posting KSA",
+      "title": "Platinum PR & Link Arrays",
+      "heroDesc": "We build structural trust via aggressive off-page outreach. By securing high-DR editorial placements, we inject massive domain authority straight into your target pages.",
+      "color": "var(--primary-purple)",
+      "deliverables": ["Tier 1 Editorial Backlinks", "Digital PR Campaigns", "Toxic Link Disavow", "Brand Mention Tracking"]
+    },
+    {
+      "slug": "seo-audit",
+      "metaTitle": "Comprehensive SEO Audit & Strategy | ZAVIROQ",
+      "metaDesc": "Identify ranking blockers instantly. A 100-point deep dive into your technical, on-page, and backlink profile.",
+      "keywords": "SEO Audit Dubai, Site Health Check, Penalty Recovery Agency",
+      "title": "Deep Diagnostic SEO Audit",
+      "heroDesc": "Stop guessing why your traffic dropped. We execute forensic algorithmic audits to uncover silent penalties, cannibalization, and technical roadblocks.",
+      "color": "var(--primary-purple)",
+      "deliverables": ["Forensic Technical Audit", "Keyword Gap Analysis", "Penalty Recovery Roadmap", "Actionable Execution Plan"]
+    },
+    {
+      "slug": "keyword-research",
+      "metaTitle": "Advanced Keyword Mining & Gap Analysis",
+      "metaDesc": "Uncovering zero-volume gems and extremely high-intent commercial keywords competitors missed.",
+      "keywords": "Keyword Research Agency, Commercial Intent Keywords, SEO Gap Analysis",
+      "title": "Algorithmic Keyword Mining",
+      "heroDesc": "We don't target vanity metrics. We mine the absolute bottom-of-the-funnel commercial keywords that guarantee high conversion and rapid ROI.",
+      "color": "var(--primary-blue)",
+      "deliverables": ["Commercial Intent Mapping", "Competitor Hijack Planning", "Long-Tail Profit Keywords", "Content Output Blueprints"]
+    },
+    {
+      "slug": "ai-seo-optimization",
+      "metaTitle": "AI SEO Optimization | Next-Gen Search Architecture",
+      "metaDesc": "Preparing your brand for SGE (Search Generative Experience) and AI-driven search engines.",
+      "keywords": "AI SEO Optimization, SGE Ranking, Programmatic SEO",
+      "title": "Next-Gen SGE Optimization",
+      "heroDesc": "Google is evolving into an AI assistant. We structure your datasets and content to feed directly into Search Generative Experience LLMs for massive visibility.",
+      "color": "var(--primary-purple)",
+      "deliverables": ["Programmatic AI Page Generation", "SGE Content Formatting", "Entity Database structuring", "Automated Update Loops"]
+    }
+  ],
+  "web-development": [
+    {
+      "slug": "custom-website-development",
+      "metaTitle": "Custom Website Development | Bespoke Next.js Solutions",
+      "metaDesc": "Ultra-fast, fully custom codebases. No templates. Built purely for elite branding and zero-latency performance.",
+      "keywords": "Custom Web Development UAE, Bespoke Code Agency, React Development KSA",
+      "title": "Bespoke Code Architecture",
+      "heroDesc": "We discard sluggish drag-and-drop builders. We write pure, scalable React and Next.js layers to build unshakeable brand authority and maximum speed.",
+      "color": "var(--primary-blue)",
+      "deliverables": ["Custom Component Systems", "Database Architecture", "Figma to React Handoff", "Sub-second Page Loads"]
+    },
+    {
+      "slug": "wordpress-development",
+      "metaTitle": "Premium WordPress Development | Custom CMS",
+      "metaDesc": "Secure, custom-coded WordPress architectures optimized for speed and localized for the GCC and India.",
+      "keywords": "WordPress Agency Dubai, Custom WP Themes KSA, Headless WordPress",
+      "title": "Elite WordPress Frameworks",
+      "heroDesc": "We strip WordPress of external bloat. Taking extreme security measures, we build custom themes that actually pass core web vitals while remaining easy to use.",
+      "color": "var(--primary-purple)",
+      "deliverables": ["Custom Theme Development", "ACF Dynamic Structures", "Hardened WP Security", "Speed Caching Setup"]
+    },
+    {
+      "slug": "php-development",
+      "metaTitle": "Custom PHP Laravel Development | Backend Engineering",
+      "metaDesc": "Heavy backend logic scaling. We engineer robust, server-side Laravel architectures for complex business logic.",
+      "keywords": "PHP Development Dubai, Laravel Agency KSA, Custom Backend Setup",
+      "title": "Laravel Backend Systems",
+      "heroDesc": "When standard frameworks fail, we deploy raw PHP and Laravel systems built specifically to process massive data loads securely.",
+      "color": "var(--primary-blue)",
+      "deliverables": ["Laravel Ecosystem Setup", "Custom API Endpoints", "Database Scaling", "Legacy Code Refactoring"]
+    },
+    {
+      "slug": "react-nextjs-development",
+      "metaTitle": "React & Next.js Specialists | Enterprise Frontend",
+      "metaDesc": "Jamstack architecture. Server-side rendered applications designed for infinite scale and SEO perfection.",
+      "keywords": "Next.js Agency UAE, React Developers India, SSR Web Apps",
+      "title": "React & Next.js Dominance",
+      "heroDesc": "The absolute pinnacle of web speed. We build Server-Side Rendered ecosystems on the Next.js App Router for enterprise-grade performance.",
+      "color": "var(--primary-purple)",
+      "deliverables": ["Next.js App Router Architecture", "Server Component Optimization", "Edge Network Deployment", "Dynamic SEO Structuring"]
+    },
+    {
+      "slug": "saas-development",
+      "metaTitle": "SaaS Platform Development | Secure Scalable Apps",
+      "metaDesc": "From MVP to Enterprise SaaS. We architect secure, multi-tenant databases and ultra-smooth React interfaces.",
+      "keywords": "SaaS Development Agency, Web App Builder Dubai, MVP Development",
+      "title": "SaaS Infrastructure Build",
+      "heroDesc": "Stop risking your SaaS idea on cheap templates. We engineer hyper-secure multi-tenant logic, payment loops, and seamless Dashboards from day one.",
+      "color": "var(--primary-blue)",
+      "deliverables": ["Multi-tenant DB Setup", "Stripe Checkout Integration", "User Role Protocols", "Serverless API Design"]
+    },
+    {
+      "slug": "admin-dashboard-development",
+      "metaTitle": "Custom Admin & CRM Dashboards",
+      "metaDesc": "Visualize your data perfectly. Secure React admin panels tailored to your exact operational logic.",
+      "keywords": "Custom CRM Builder UAE, Admin Dashboard Design, Internal Tools KSA",
+      "title": "Internal Control Dashboards",
+      "heroDesc": "Command your business data. We construct closed, highly encrypted admin interfaces capable of managing users, revenue, and content seamlessly.",
+      "color": "var(--primary-purple)",
+      "deliverables": ["Data Visualization Graphs", "Real-time Socket Updates", "Level-based Encryption", "Custom CRUD APIs"]
+    },
+    {
+      "slug": "website-migration",
+      "metaTitle": "Website Migration Services | Zero Downtime Transfer",
+      "metaDesc": "Safely migrate from legacy codebases or sluggish hosting to Next-Gen AWS or Vercel setups without losing SEO traffic.",
+      "keywords": "Website Migration Expert, Zero Downtime Server Move, SEO Migration KSA",
+      "title": "SEO-Safe Migration Protocol",
+      "heroDesc": "Migrating a website improperly can destroy years of SEO trust. Our executioners safely mirror databases and redirect link arrays with zero collateral damage.",
+      "color": "var(--primary-blue)",
+      "deliverables": ["301 Redirect Mapping", "Database Mirroring", "DNS Server Transition", "Post-Launch SEO Audit"]
+    },
+    {
+      "slug": "website-cloning",
+      "metaTitle": "Website Cloning & Duplication Strategies",
+      "metaDesc": "Rapid launch sequences for multiple locations or landing pages using highly scalable codebase cloning.",
+      "keywords": "Website Cloning Agency UAE, Programmatic Site Duplication",
+      "title": "Rapid Code Cloning",
+      "heroDesc": "Need multiple localized networks spun up instantly? We isolate your codebase and clone flawless instances across international registries for massive reach.",
+      "color": "var(--primary-purple)",
+      "deliverables": ["Instance Duplication", "Dynamic Text Swapping", "Server Configuration", "Domain Routing"]
+    },
+    {
+      "slug": "secure-website-2fa",
+      "metaTitle": "Secure Login & 2FA Implementation | Enterprise Web",
+      "metaDesc": "Bulletproof user onboarding matrices. Adding 2FA, biometric logic, and OAuth to your current arrays.",
+      "keywords": "2FA Setup Agency, Secure Login OAuth, Website Security Services",
+      "title": "Fortified Authentication",
+      "heroDesc": "Data breaches collapse trust instantly. We hardwire advanced JWT architecture, OAuth 2.0 matrices, and strict Two-Factor protocols into your app.",
+      "color": "var(--primary-blue)",
+      "deliverables": ["OAuth Social Integrations", "JWT Secure Tokens", "SMS/Email 2FA Systems", "Brute-force Timeouts"]
+    }
+  ],
+  "performance-marketing": [
+    {
+      "slug": "google-ads",
+      "metaTitle": "Google Ads Agency | Aggressive Search Intent UAE KSA",
+      "metaDesc": "Capture high commercial intent directly at the bottom of the funnel. Massive ROI with predictive bid structures.",
+      "keywords": "Google Ads Agency Dubai, PPC KSA, Adwords Management India",
+      "title": "Google Search Matrix",
+      "heroDesc": "We do not believe in paying for irrelevant clicks. Our PPC engineers slice search intent surgically, securing only buyers who are prepared to transact immediately.",
+      "color": "var(--primary-blue)",
+      "deliverables": ["SKAG/STAG Campaign Layout", "Negative Keyword Shields", "Dynamic Retargeting Pools", "Predictive ROAS Bidding"]
+    },
+    {
+      "slug": "meta-ads",
+      "metaTitle": "Meta Ads Management | Facebook & Instagram Scaling",
+      "metaDesc": "Visual disruption frameworks. We scale Facebook and Instagram pipelines via heavy creative testing and data matching.",
+      "keywords": "Facebook Ads Manager UAE, Meta Ads Expert Saudi, Instagram Marketing",
+      "title": "Meta Ecosystem Disruption",
+      "heroDesc": "Stop burning cash on weak creatives. We deploy heavy A/B permutation matrices on Meta, finding the absolute cheapest cost-per-lead mathematically possible.",
+      "color": "var(--primary-purple)",
+      "deliverables": ["Creative Fatigue Tracking", "Lookalike Audience Scaling", "CAPI Server-side Tracking", "Lead Gen Form Optimization"]
+    },
+    {
+      "slug": "lead-generation",
+      "metaTitle": "B2B Lead Generation Services | High-Ticket Acquisition",
+      "metaDesc": "Outbound and Inbound lead funnels completely managed. We generate verified commercial prospects globally.",
+      "keywords": "B2B Lead Generation Dubai, B2B Marketing KSA, Cold Email Systems",
+      "title": "High-Ticket Lead Flow",
+      "heroDesc": "We manufacture demand. Combining programmatic outbound cold frameworks with hyper-targeted paid lead magnets to fill your sales calendars.",
+      "color": "var(--primary-blue)",
+      "deliverables": ["LinkedIn/Email Scraping", "Cold Outreach Protocols", "CRM Lead Sync", "Automated Follow-ups"]
+    },
+    {
+      "slug": "conversion-rate-optimization",
+      "metaTitle": "Conversion Rate Optimization (CRO) | Reduce Bounce Rates",
+      "metaDesc": "Turn existing traffic into massive revenue. Heatmaps, A/B testing, and UI psychology adjustments.",
+      "keywords": "CRO Agency UAE, Landing Page Optimization, Heatmap Tracking",
+      "title": "Aggressive Funnel CRO",
+      "heroDesc": "If your landing page leaks traffic, your ad spend is wasted. We analyze user heatmaps and inject psychological triggers that double conversion ratios instantly.",
+      "color": "var(--primary-purple)",
+      "deliverables": ["Heatmap & Scroll Tracking", "Friction Removal Fixes", "CTA A/B Split Testing", "Micro-UX Animations"]
+    },
+    {
+      "slug": "ppc-management",
+      "metaTitle": "Total PPC Management | Multi-Channel Performance",
+      "metaDesc": "Holistic management across Google, LinkedIn, TikTok, and Meta. Controlling the entire paid sphere.",
+      "keywords": "PPC Agency UAE, Cross-Channel Advertising KSA, Search Marketing",
+      "title": "Multi-Channel PPC Domination",
+      "heroDesc": "We unify your entire paid attack. Our engineers act as an extension of your own company, aggressively migrating budgets daily to the channels winning the most ROI.",
+      "color": "var(--primary-blue)",
+      "deliverables": ["Omnichannel Retargeting", "Daily Budget Pacing", "Cross-Platform Analytics", "Executive KPI Reporting"]
+    }
+  ],
+  "branding-design": [
+    {
+      "slug": "logo-design",
+      "metaTitle": "Premium Logo Design Agency | Identity Engineering",
+      "metaDesc": "Minimal, memorable, corporate vector identities crafted to build extreme market dominance.",
+      "keywords": "Logo Design Dubai, Corporate Identity KSA, Brand Logo India",
+      "title": "Vector Identity Forging",
+      "heroDesc": "A logo is an anchor for trust. We design sleek, scalable, luxury vector marks that instantly communicate authority in any corporate boardroom globally.",
+      "color": "var(--primary-purple)",
+      "deliverables": ["Multiple Concept Vectors", "B&W Print Formats", "Copyright Ownership", "Global Iconography Set"]
+    },
+    {
+      "slug": "company-profile-design",
+      "metaTitle": "Company Profile Design | B2B Authority Pitch Decks",
+      "metaDesc": "Visually stunning corporate profile PDFs and digital decks used for closing enterprise deals securely.",
+      "keywords": "Company Profile Design UAE, Pitch Deck KSA, Corporate Presentation",
+      "title": "Corporate Authority Profiles",
+      "heroDesc": "You cannot close enterprise deals with Word documents. We design high-end, heavily branded company profiles and pitch decks that command serious capital.",
+      "color": "var(--primary-blue)",
+      "deliverables": ["Copywriting Refinement", "Premium Dark/Light UI Decks", "Data Infographics", "Interactive PDF Exports"]
+    },
+    {
+      "slug": "business-card-design",
+      "metaTitle": "Luxury Business Card & Print Design",
+      "metaDesc": "Tangible brand weight. From NFC smart cards to minimal luxury paper prints.",
+      "keywords": "Business Card Design Dubai, NFC Cards UAE, Premium Print Design",
+      "title": "Tangible Brand Markers",
+      "heroDesc": "The physical handshake demands respect. We architect minimalist, luxury business card layouts ready for extreme high-end printing or modern NFC programming.",
+      "color": "var(--primary-purple)",
+      "deliverables": ["NFC Ready Layouts", "VCard QR Coding", "Bleed/Print Check", "Matte/Foil Concepts"]
+    },
+    {
+      "slug": "portfolio-design",
+      "metaTitle": "Agency & Creative Portfolio Layout Design",
+      "metaDesc": "Showcase your elite work dynamically. Tailored PDF or web portfolio designs for max impact.",
+      "keywords": "Portfolio Design UAE, Creative Deck Maker, Agency Work Showcase",
+      "title": "Elite Work Layouts",
+      "heroDesc": "Your portfolio must be as premium as the work inside it. We craft architectural case-study grids that force prospects to acknowledge your high value.",
+      "color": "var(--primary-blue)",
+      "deliverables": ["Grid Layout Mathematics", "Case Study Copy Structuring", "High-res Asset Formatting", "Digital Delivery Setup"]
+    },
+    {
+      "slug": "resume-design",
+      "metaTitle": "Executive Resume & CV Design",
+      "metaDesc": "For C-Level executives and founders. Modern ATS-friendly yet visually stunning resumes.",
+      "keywords": "Executive CV Design, Premium Resume UAE, Executive Branding",
+      "title": "Executive Identity Formatting",
+      "heroDesc": "Your career mapped perfectly. We strip away outdated MS Word formats and engineer sleek, highly persuasive C-level resumes that capture absolute attention.",
+      "color": "var(--primary-purple)",
+      "deliverables": ["ATS System Compliant", "Executive Copy Editing", "Infographic Timeline", "Cover Letter Pairing"]
+    },
+    {
+      "slug": "invoice-design",
+      "metaTitle": "Corporate Invoice & Operations Templates",
+      "metaDesc": "Complete branded operational kits. Maintain luxury perception straight through to billing.",
+      "keywords": "Invoice Design UAE, Corporate Stationary, Branded Billing",
+      "title": "Operational Brand Kits",
+      "heroDesc": "The branding doesn't stop after the sale. We design gorgeous branded invoices and operational documents so your agency looks like a high-end firm at every step.",
+      "color": "var(--primary-blue)",
+      "deliverables": ["Editable Auto-sum Formats", "Digital Stamp Areas", "Letterhead Arrays", "Payment Protocol Grids"]
+    }
+  ],
+  "ai-automation": [
+    {
+      "slug": "ai-chatbot",
+      "metaTitle": "Custom AI Chatbot Development | LLM Customer Support",
+      "metaDesc": "Automate level-1 support intelligently via fine-tuned AI Chatbots built with OpenAI arrays.",
+      "keywords": "AI Chatbot UAE, Customer Support Automation KSA, OpenAI Chatbots",
+      "title": "Intelligent Support Arrays",
+      "heroDesc": "We replace basic query bottlenecks. Integrating hyper-trained LLM pipelines to handle 80% of your global customer support with perfect accuracy 24/7.",
+      "color": "var(--primary-blue)",
+      "deliverables": ["OpenAI Dataset Fine-Tuning", "Widget Interface Design", "Human CRM Handoffs", "Multi-lingual Processing"]
+    },
+    {
+      "slug": "crm-automation",
+      "metaTitle": "Smart CRM & API Automation Structuring",
+      "metaDesc": "Hook your lead data from Meta to Zapier directly into your automated sales pipelines rapidly.",
+      "keywords": "CRM Automation Dubai, Zapier Expert UAE, Lead Automation System",
+      "title": "Lead Pipeline Engine",
+      "heroDesc": "We eliminate manual data entry entirely. By wiring custom Zapier and Make webhooks, we ensure every lead instantly enters workflows and receives automated intelligence.",
+      "color": "var(--primary-purple)",
+      "deliverables": ["Webhook Generation", "Lead Scoring Logic", "SMS/Email Triggers", "CRM Pipeline Syncing"]
+    },
+    {
+      "slug": "ai-content-generation",
+      "metaTitle": "Programmatic AI Content Generation | SGE Arrays",
+      "metaDesc": "Scale infinite SEO silos using programmatic AI engines that write perfectly formatted semantic text.",
+      "keywords": "AI Content Generation UAE, SGE Marketing Matrix, Programmatic Articles",
+      "title": "Infinite Content Scaling",
+      "heroDesc": "Writing articles manually is obsolete for mass scaling. We configure programmatic AI bots to auto-generate highly accurate, keyword-dense articles to flood local searches.",
+      "color": "var(--primary-blue)",
+      "deliverables": ["Prompt Engineering", "Automatic WordPress Push", "Plagiarism & AI Checking", "Image Generation Chains"]
+    },
+    {
+      "slug": "openai-integration",
+      "metaTitle": "Custom OpenAI API Integrations | SaaS AI Features",
+      "metaDesc": "Adding intelligent AI layers direct to your software infrastructure and bespoke apps.",
+      "keywords": "OpenAI API Integration, SaaS AI Builder Dubai, Gemini API Setup",
+      "title": "Core LLM Integration",
+      "heroDesc": "We hardwire raw AI power right into your existing app architecture. From predictive text analysis to completely autonomous data categorization on the server side.",
+      "color": "var(--primary-purple)",
+      "deliverables": ["API Key Rotation Setup", "Rate Limit Protections", "Context Window Optimization", "Streaming Output Logic"]
+    },
+    {
+      "slug": "ai-dashboard",
+      "metaTitle": "AI Executive Dashboard Development",
+      "metaDesc": "Aggregated intelligence. Combining multiple AI analyses into one hyper-clean dashboard command center.",
+      "keywords": "AI Analytics Dashboard, AI Reporting Software, Executive Data View",
+      "title": "Centralized Command Center",
+      "heroDesc": "Stop logging into ten different analytics tools. We build one encrypted React dashboard pulling multiple AI analyses into one beautiful data grid.",
+      "color": "var(--primary-blue)",
+      "deliverables": ["Real-time Data Sockets", "AI Trend Predictions", "Custom Graph Arrays", "Secure Role Access"]
+    }
+  ],
+  "website-security": [
+    {
+      "slug": "ddos-protection",
+      "metaTitle": "Advanced DDoS Protection & Mitigation Servers",
+      "metaDesc": "Military grade enterprise shields preventing malicious layer 7 attacks and securing uptime.",
+      "keywords": "DDoS Protection UAE, Site Security Setup KSA, Enterprise Shield Server",
+      "title": "Layer 7 Attack Shield",
+      "heroDesc": "If your competitors try to flood your traffic, they fail. We engineer immense proxy layers that absorb high-intensity malicious bot attacks and preserve 99.9% uptime.",
+      "color": "var(--primary-purple)",
+      "deliverables": ["Traffic Filtering Loops", "WAF Configuration", "Global Load Balancing", "Malicious IP Banning"]
+    },
+    {
+      "slug": "cloudflare-setup",
+      "metaTitle": "Enterprise Cloudflare Edge Routing Configuration",
+      "metaDesc": "Setting up aggressive caching, DNS logic, and WAF protocols across Cloudflare edge networks.",
+      "keywords": "Cloudflare Setup Dubai, CDN Optimization Agency, Speed Loading Network",
+      "title": "Edge Network Caching",
+      "heroDesc": "Deploying assets closest to the user globally. We install strictly configured Cloudflare architectures maximizing asset caching while hardening firewall protocols.",
+      "color": "var(--primary-blue)",
+      "deliverables": ["DNS Migration Control", "Page Rules Aggression", "Bot Fight Mode Activation", "Origin Server Masking"]
+    },
+    {
+      "slug": "penetration-testing",
+      "metaTitle": "Deep Penetration Testing & Vulnerability Fixes",
+      "metaDesc": "Ethical testing against your CRM and Website to locate XSS, SQLi, and code weaknesses.",
+      "keywords": "Penetration Testing UAE, Website Hack Removal KSA, Vulnerability Check",
+      "title": "Forensic Vulnerability Testing",
+      "heroDesc": "We hack you before they do. Our engineers deploy standardized OWASP Top 10 simulation attacks to find database leakage points and seal them permanently.",
+      "color": "var(--primary-purple)",
+      "deliverables": ["OWASP Matrix Testing", "SQL Injection Sealing", "XSS Form Sanitization", "Executive Health Report"]
+    },
+    {
+      "slug": "ssl-encryption",
+      "metaTitle": "SSL TLS Encryption Setup | A+ Security Grade",
+      "metaDesc": "End-to-End wildcard secure logic for massive sub-domain ecosystems. Encrypting every node.",
+      "keywords": "SSL Setup Dubai, Wildcard TLS Encryption, Website Secure Lock",
+      "title": "End-to-End Node Encryption",
+      "heroDesc": "Without SSL, your SEO rankings collapse and users bounce instantly. We install rolling TLS 1.3 wildcard certificates to keep your entire sub-domain architecture fully locked.",
+      "color": "var(--primary-blue)",
+      "deliverables": ["TLS 1.3 Handshake Protocols", "Wildcard Chain Setup", "Automatic Renewal Scripts", "HSTS Preload Activation"]
+    }
+  ]
+}

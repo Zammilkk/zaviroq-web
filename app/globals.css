@@ -1,0 +1,88 @@
+/* d:\zaviroq\app\globals.css */
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&display=swap');
+
+:root {
+  --bg-color: #0B0B0B;
+  --primary-purple: #7F77DD;
+  --primary-blue: #3B8BD4;
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --neon-glow: 0 0 20px rgba(127, 119, 221, 0.6);
+  --text-main: #F3F4F6;
+  --text-muted: #9CA3AF;
+  --font-sans: 'Sora', system-ui, sans-serif;
+}
+
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Utilities */
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 24px;
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  box-shadow: var(--neon-glow);
+  border-color: rgba(127, 119, 221, 0.3);
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, var(--primary-purple), var(--primary-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, var(--primary-purple), var(--primary-blue));
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+  box-shadow: var(--neon-glow);
+}
+
+.animated-gradient-bg {
+  background: linear-gradient(-45deg, #0A0A0F, #1C1A38, #0F2036, #0A0A0F);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}

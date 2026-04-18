@@ -1,0 +1,24 @@
+[
+  {
+    "id": "1775951800000",
+    "name": "Khalid Ventures",
+    "email": "khalid@ventures-dubai.test",
+    "phone": "+971 50 123 4567",
+    "service": "seo",
+    "country": "UAE",
+    "message": "Looking to rank our new real estate project for #1 placement on Google.",
+    "date": "2026-04-10T14:30:00.000Z",
+    "status": "new"
+  },
+  {
+    "id": "1775952800000",
+    "name": "Mangalore Supermart",
+    "email": "info@supermart.test",
+    "phone": "+91 98765 43210",
+    "service": "web",
+    "country": "India",
+    "message": "Need a high-speed e-commerce build to migrate away from Shopify.",
+    "date": "2026-04-11T09:15:00.000Z",
+    "status": "contacted"
+  }
+]
