@@ -1,9 +1,8 @@
 import styles from './page.module.css';
 import RevealOnScroll from '../RevealOnScroll';
 import { Metadata } from 'next';
-import fs from 'fs';
-import path from 'path';
 import Link from 'next/link';
+import expandedServices from '@/data/expandedServices.json';
 
 export const metadata: Metadata = {
   title: 'Content Marketing Services | ZAVIROQ',
@@ -32,14 +31,7 @@ export default async function ContentMarketingPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-
-  const dbPath = path.join(process.cwd(), 'data', 'expandedServices.json');
-  let contentServices: ServiceEndpoint[] = [];
-  
-  if (fs.existsSync(dbPath)) {
-    const db = JSON.parse(fs.readFileSync(dbPath, 'utf8'));
-    contentServices = db['content-marketing'] || [];
-  }
+  const contentServices = ((expandedServices as any)['content-marketing'] || []) as ServiceEndpoint[];
 
   return (
     <div className={styles.page}>

@@ -1,9 +1,8 @@
 import styles from './page.module.css';
 import RevealOnScroll from '../RevealOnScroll';
 import { Metadata } from 'next';
-import fs from 'fs';
-import path from 'path';
 import Link from 'next/link';
+import expandedServices from '@/data/expandedServices.json';
 
 export const metadata: Metadata = {
   title: 'All Services | ZAVIROQ — Digital Excellence',
@@ -58,14 +57,8 @@ export default async function ServicesPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-
-  const dbPath = path.join(process.cwd(), 'data', 'expandedServices.json');
-  let expandedConfigs: ServiceConfig = {};
-  if (fs.existsSync(dbPath)) {
-    expandedConfigs = JSON.parse(fs.readFileSync(dbPath, 'utf8'));
-  }
-
-  const totalServices = Object.values(expandedConfigs).reduce((acc, arr) => acc + arr.length, 0);
+  const expandedConfigs = expandedServices as unknown as ServiceConfig;
+  const totalServices = Object.values(expandedConfigs).reduce((acc, arr) => acc + (arr ? arr.length : 0), 0);
 
   return (
     <div className={styles.page}>

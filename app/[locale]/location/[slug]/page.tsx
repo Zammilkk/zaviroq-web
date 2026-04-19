@@ -1,9 +1,9 @@
 import styles from './page.module.css';
-import fs from 'fs';
-import path from 'path';
 import { notFound } from 'next/navigation';
 import RevealOnScroll from '../../RevealOnScroll';
 import { Metadata } from 'next';
+import locationsConfigs from '@/data/locationsConfigs.json';
+import { routing } from '@/i18n/routing';
 
 interface LocationConfig {
   slug: string;
@@ -15,28 +15,30 @@ interface LocationConfig {
   heroDesc: string;
   color: string;
   coordinates: {
-    lat: number;
-    lon: number;
+    lat: string;
+    lon: string;
   };
   tactics: string[];
 }
 
+type Props = {
+  params: Promise<{ locale: string; slug: string }>;
+};
+
 export async function generateStaticParams() {
-  const dbPath = path.join(process.cwd(), 'data', 'locationsConfigs.json');
-  if(!fs.existsSync(dbPath)) return [];
-  const configs: LocationConfig[] = JSON.parse(fs.readFileSync(dbPath, 'utf8'));
+  const configs = locationsConfigs as LocationConfig[];
   
-  return configs.map((c) => ({
-    slug: c.slug
-  }));
+  return routing.locales.flatMap((locale) => 
+    configs.map((c) => ({
+      locale,
+      slug: c.slug
+    }))
+  );
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const dbPath = path.join(process.cwd(), 'data', 'locationsConfigs.json');
-  if(!fs.existsSync(dbPath)) return { title: 'Region Not Found' };
-  
-  const configs: LocationConfig[] = JSON.parse(fs.readFileSync(dbPath, 'utf8'));
+  const configs = locationsConfigs as LocationConfig[];
   const loc = configs.find((c) => c.slug === slug);
   
   if (!loc) return { title: 'Region Not Found' };
@@ -48,13 +50,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   };
 }
 
-export default async function LocationDetailedPage({ params }: { params: Promise<{ locale: string, slug: string }> }) {
+export default async function LocationDetailedPage({ params }: Props) {
   const { locale, slug } = await params;
-  
-  const dbPath = path.join(process.cwd(), 'data', 'locationsConfigs.json');
-  if(!fs.existsSync(dbPath)) notFound();
-  
-  const configs: LocationConfig[] = JSON.parse(fs.readFileSync(dbPath, 'utf8'));
+  const configs = locationsConfigs as LocationConfig[];
   const loc = configs.find((c) => c.slug === slug);
 
   if (!loc) notFound();

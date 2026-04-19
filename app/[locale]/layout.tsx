@@ -8,14 +8,16 @@ import Footer from './Footer';
 import ParallaxBackground from '../components/ParallaxBackground';
 import '../globals.css';
 
-import fs from 'fs';
-import path from 'path';
+import seoData from '@/data/seo.json';
+
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({locale}));
+}
 
 export async function generateMetadata() {
   try {
-    const dbPath = path.join(process.cwd(), 'data', 'seo.json');
-    if (fs.existsSync(dbPath)) {
-      const seo = JSON.parse(fs.readFileSync(dbPath, 'utf8'));
+    const seo = seoData as any;
+    if (seo) {
       return {
         title: seo.title || 'ZAVIROQ | Scaling Brands Digitally',
         description: seo.description || 'Premium digital marketing and web development agency.',

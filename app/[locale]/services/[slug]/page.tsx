@@ -1,9 +1,9 @@
 import styles from './page.module.css';
-import fs from 'fs';
-import path from 'path';
 import { notFound } from 'next/navigation';
 import RevealOnScroll from '../../RevealOnScroll';
 import { Metadata } from 'next';
+import servicesConfigs from '@/data/servicesConfigs.json';
+import { routing } from '@/i18n/routing';
 
 // ── Icon map for each deliverable phase ──
 const phaseIcons = ['🎯', '⚡', '🔬', '📡', '🔒', '🚀'];
@@ -23,22 +23,27 @@ function resolveColor(colorStr: string): string {
   return colorStr || '#7F77DD';
 }
 
+type Props = {
+  params: Promise<{ locale: string; slug: string }>;
+};
+
 // ── Generate static params ──
 export async function generateStaticParams() {
-  const dbPath = path.join(process.cwd(), 'data', 'servicesConfigs.json');
-  if (!fs.existsSync(dbPath)) return [];
-  const configs = JSON.parse(fs.readFileSync(dbPath, 'utf8'));
-  return configs.map((c: { slug: string }) => ({ slug: c.slug }));
+  const configs = servicesConfigs as any[];
+  
+  return routing.locales.flatMap((locale) => 
+    configs.map((c) => ({
+      locale,
+      slug: c.slug
+    }))
+  );
 }
 
 // ── Dynamic metadata ──
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const dbPath = path.join(process.cwd(), 'data', 'servicesConfigs.json');
-  if (!fs.existsSync(dbPath)) return { title: 'Service | ZAVIROQ' };
-
-  const configs = JSON.parse(fs.readFileSync(dbPath, 'utf8'));
-  const service = configs.find((c: { slug: string }) => c.slug === slug);
+  const configs = servicesConfigs as any[];
+  const service = configs.find((c) => c.slug === slug);
 
   if (!service) return { title: 'Service | ZAVIROQ' };
 
@@ -49,14 +54,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   };
 }
 
-export default async function ServiceDetailsPage({ params }: { params: Promise<{ locale: string; slug: string }> }) {
+export default async function ServiceDetailsPage({ params }: Props) {
   const { locale, slug } = await params;
-
-  const dbPath = path.join(process.cwd(), 'data', 'servicesConfigs.json');
-  if (!fs.existsSync(dbPath)) notFound();
-
-  const configs = JSON.parse(fs.readFileSync(dbPath, 'utf8'));
-  const service = configs.find((c: { slug: string }) => c.slug === slug);
+  const configs = servicesConfigs as any[];
+  const service = configs.find((c) => c.slug === slug);
   if (!service) notFound();
 
   const accentColor = resolveColor(service.color);

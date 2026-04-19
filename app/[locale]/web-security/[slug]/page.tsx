@@ -1,29 +1,32 @@
-import fs from 'fs';
-import path from 'path';
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 import ServiceLayout from '../../../components/ServiceLayout';
+import expandedServices from '@/data/expandedServices.json';
+import { routing } from '@/i18n/routing';
 
 const CATEGORY_KEY = 'web-security';
 const PARENT_NAME = 'Performance & Security';
 
+type Props = {
+  params: Promise<{ locale: string; slug: string }>;
+};
+
 export async function generateStaticParams() {
-  const dbPath = path.join(process.cwd(), 'data', 'expandedServices.json');
-  if (!fs.existsSync(dbPath)) return [];
-  const db = JSON.parse(fs.readFileSync(dbPath, 'utf8'));
-  const configs = db[CATEGORY_KEY] || [];
-  return configs.map((c: { slug: string }) => ({ slug: c.slug }));
+  const configs = (expandedServices as any)[CATEGORY_KEY] || [];
+  
+  return routing.locales.flatMap((locale) => 
+    configs.map((c: { slug: string }) => ({
+      locale,
+      slug: c.slug
+    }))
+  );
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const dbPath = path.join(process.cwd(), 'data', 'expandedServices.json');
-  if (!fs.existsSync(dbPath)) return { title: 'Service Not Found' };
-  
-  const db = JSON.parse(fs.readFileSync(dbPath, 'utf8'));
-  const configs = db[CATEGORY_KEY] || [];
+  const configs = (expandedServices as any)[CATEGORY_KEY] || [];
   const service = configs.find((c: { slug: string }) => c.slug === slug);
-  
+
   if (!service) return { title: 'Service Not Found' };
   return {
     title: service.metaTitle,
@@ -32,15 +35,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   };
 }
 
-export default async function Page({ params }: { params: Promise<{ locale: string; slug: string }> }) {
+export default async function Page({ params }: Props) {
   const { locale, slug } = await params;
-
-  const dbPath = path.join(process.cwd(), 'data', 'expandedServices.json');
-  if (!fs.existsSync(dbPath)) notFound();
-
-  const db = JSON.parse(fs.readFileSync(dbPath, 'utf8'));
-  const configs = db[CATEGORY_KEY] || [];
+  const configs = (expandedServices as any)[CATEGORY_KEY] || [];
   const service = configs.find((c: { slug: string }) => c.slug === slug);
+  
   if (!service) notFound();
 
   return (

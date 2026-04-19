@@ -1,9 +1,8 @@
 import styles from './page.module.css';
 import RevealOnScroll from '../RevealOnScroll';
 import { Metadata } from 'next';
-import fs from 'fs';
-import path from 'path';
 import Link from 'next/link';
+import expandedServices from '@/data/expandedServices.json';
 
 export const metadata: Metadata = {
   title: 'Corporate Branding & Design Services | ZAVIROQ',
@@ -40,14 +39,7 @@ export default async function BrandingDesignPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-
-  const dbPath = path.join(process.cwd(), 'data', 'expandedServices.json');
-  let brandingServices: ServiceEndpoint[] = [];
-  
-  if (fs.existsSync(dbPath)) {
-    const db = JSON.parse(fs.readFileSync(dbPath, 'utf8'));
-    brandingServices = db['branding-design'] || [];
-  }
+  const brandingServices = ((expandedServices as any)['branding-design'] || []) as ServiceEndpoint[];
 
   return (
     <div className={styles.page}>
