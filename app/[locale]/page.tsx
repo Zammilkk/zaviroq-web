@@ -3,11 +3,9 @@ import RevealOnScroll from './RevealOnScroll';
 import Link from 'next/link';
 import Image from 'next/image';
 import SEOSetup from '../components/SEOSetup';
-import GlobalMap from '../components/GlobalMap';
 import ExecutiveFAQ from '../components/ExecutiveFAQ';
 import RecentIntel from '../components/RecentIntel';
 import StartupOffer from '../components/StartupOffer';
-import Background3D from '../components/Background3D';
 
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -26,7 +24,6 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   return (
     <div className={styles.container}>
       <h1 className="visually-hidden">Digital Marketing Agency in UAE, Saudi & India</h1>
-      <Background3D />
 
       {/* 🏠 HERO SECTION */}
       <section className={styles.heroSection}>
@@ -305,20 +302,6 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           </div>
 
         </div>
-      </section>
-
-      {/* 🗺️ INTERNATIONAL TARGETING (GLOBAL NETWORK) */}
-      <section className={styles.section}>
-        <RevealOnScroll>
-          <div className={styles.sectionHeader}>
-            <div className="badge-outline">International Targeting</div>
-            <h2>Global Matrix Architecture</h2>
-            <p>Seamlessly deploying high-speed marketing assets across key international hubs.</p>
-          </div>
-        </RevealOnScroll>
-        <RevealOnScroll delay={150}>
-          <GlobalMap />
-        </RevealOnScroll>
       </section>
 
       {/* ⚙️ PROCESS SECTION */}

@@ -5,6 +5,7 @@ import {routing} from '@/i18n/routing';
 import Script from 'next/script';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import ParallaxBackground from '../components/ParallaxBackground';
 import '../globals.css';
 
 import fs from 'fs';
@@ -56,6 +57,7 @@ export default async function LocaleLayout({
         <link rel="alternate" hrefLang="en-AE" href="https://zaviroq.com/ae" />
         <link rel="alternate" hrefLang="en-IN" href="https://zaviroq.com/in" />
       </head>
+      <ParallaxBackground />
       <body>
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX" strategy="afterInteractive" />
         <Script id="google-analytics" strategy="afterInteractive">

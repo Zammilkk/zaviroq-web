@@ -3,21 +3,24 @@ import styles from './HomeSections.module.css';
 export default function RecentIntel({ locale }: { locale: string }) {
   const articles = [
     {
+      id: "seo-dubai-medical",
       title: "Hijacking SEO in the Dubai Medical Sector",
       excerpt: "How we leveraged spatial keyword clusters to dominate localized search intent for premium healthcare providers.",
-      image: "/projects/project-1.png", // Re-using portfolio images as premium placeholders
+      image: "/blogs/zaviroq-blog.webp",
       tag: "Case Study"
     },
     {
+      id: "nextjs-wordpress-saas",
       title: "Next.js vs Classic WordPress for SaaS Platforms",
       excerpt: "Analyzing the architectural shift and why legacy PHP systems are failing high-traffic lead generation funnels.",
-      image: "/projects/project-2.png",
+      image: "/blogs/zaviroq-blog1.webp",
       tag: "Architecture"
     },
     {
+      id: "meta-ads-2026",
       title: "Aggressive Meta Ads Frameworks for 2026",
       excerpt: "Deploying algorithmic bid strategies to lower CPA consistently across UAE and Saudi real estate markets.",
-      image: "/projects/project-3.png",
+      image: "/blogs/zaviroq-blog2.webp",
       tag: "MarketingIntel"
     }
   ];
@@ -25,7 +28,7 @@ export default function RecentIntel({ locale }: { locale: string }) {
   return (
     <div className={styles.intelGrid}>
       {articles.map((article, i) => (
-        <a key={i} href={`/${locale}/blog`} style={{textDecoration: 'none'}}>
+        <a key={i} href={`/${locale}/blog/${article.id}`} style={{textDecoration: 'none'}}>
           <div className={styles.intelCard}>
             <div className={styles.intelImage}>
               <span className={styles.intelBadge}>{article.tag}</span>

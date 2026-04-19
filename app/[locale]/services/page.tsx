@@ -3,27 +3,43 @@ import RevealOnScroll from '../RevealOnScroll';
 import { Metadata } from 'next';
 import fs from 'fs';
 import path from 'path';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'All Services Directory | ZAVIROQ — Digital Dominance Engine',
-  description:
-    'Full directory of our 30+ specialized micro-services across Web Development, SEO, AI Automation, Marketing, and Security.',
+  title: 'All Services | ZAVIROQ — Digital Excellence',
+  description: 'Premium digital services across Web Development, SEO, Marketing, and Design. Expert solutions for GCC and India markets.',
+};
+
+const categoryColors: Record<string, string> = {
+  'core-seo': '#9d96ff',
+  'seo-services': '#60a8e8',
+  'core-web': '#3B8BD4',
+  'web-platform': '#7F77DD',
+  'web-ecommerce': '#b88bff',
+  'web-systems': '#60a8e8',
+  'web-migration': '#9d96ff',
+  'web-security': '#7F77DD',
+  'web-advanced': '#3B8BD4',
+  'performance-marketing': '#ff6b6b',
+  'branding-design': '#ffd93d',
+  'social-media-marketing': '#6bcb77',
+  'content-marketing': '#4d96ff',
 };
 
 const categoriesMeta = [
-  { key: 'core-seo', label: 'Core SEO Services', icon: '⚙️', badge: 'Foundation' },
-  { key: 'seo-services', label: 'Industry SEO Programs', icon: '🔍', badge: 'Organic Ranking' },
-  { key: 'core-web', label: 'Web Development', icon: '💻', badge: 'Core Build' },
-  { key: 'web-platform', label: 'Platform Engineering', icon: '🛠️', badge: 'Framework Stack' },
-  { key: 'web-ecommerce', label: 'Ecommerce Solutions', icon: '🛒', badge: 'Store Engines' },
-  { key: 'web-systems', label: 'Enterprise Systems', icon: '⚡', badge: 'Business Logic' },
-  { key: 'web-migration', label: 'Migration & Redesign', icon: '🔄', badge: 'Transform' },
-  { key: 'web-security', label: 'Performance & Security', icon: '🛡️', badge: 'Protection' },
-  { key: 'web-advanced', label: 'Advanced Engineering', icon: '🚀', badge: 'Innovation' },
-  { key: 'performance-marketing', label: 'Performance Marketing', icon: '📈', badge: 'Aggressive Growth' },
-  { key: 'branding-design', label: 'Corporate Branding', icon: '🎨', badge: 'Creative Pitch' },
-  { key: 'ai-automation', label: 'AI & Automations', icon: '🤖', badge: 'Next-Gen LLM' },
-  { key: 'website-security', label: 'Security & Shields', icon: '🔐', badge: 'Enterprise Safe' }
+  { key: 'core-seo', label: 'Core SEO Services', icon: '⚙️', badge: 'Foundation', desc: 'Technical, On-Page, Off-Page, Audit & More' },
+  { key: 'seo-services', label: 'Industry SEO Programs', icon: '🔍', badge: 'Organic Ranking', desc: 'Real Estate, Healthcare, SaaS, Ecommerce' },
+  { key: 'core-web', label: 'Web Development', icon: '💻', badge: 'Core Build', desc: 'Custom, Business & Landing Pages' },
+  { key: 'web-platform', label: 'Platform Engineering', icon: '🛠️', badge: 'Framework Stack', desc: 'WordPress, PHP, React & Next.js' },
+  { key: 'web-ecommerce', label: 'Ecommerce Solutions', icon: '🛒', badge: 'Store Engines', desc: 'Online Stores & Custom Solutions' },
+  { key: 'web-systems', label: 'Enterprise Systems', icon: '⚡', badge: 'Business Logic', desc: 'Dashboards, Web Apps & SaaS' },
+  { key: 'web-migration', label: 'Migration & Redesign', icon: '🔄', badge: 'Transform', desc: 'Migration, Cloning & Redesign' },
+  { key: 'web-security', label: 'Performance & Security', icon: '🛡️', badge: 'Protection', desc: 'Secure Dev & Performance' },
+  { key: 'web-advanced', label: 'Advanced Engineering', icon: '🚀', badge: 'Innovation', desc: 'PWA, Headless, APIs & More' },
+  { key: 'performance-marketing', label: 'Performance Marketing', icon: '📈', badge: 'Aggressive Growth', desc: 'Google, Meta, LinkedIn, TikTok & More' },
+  { key: 'branding-design', label: 'Corporate Branding', icon: '🎨', badge: 'Creative Pitch', desc: 'Logo, Identity, Profiles & Print' },
+  { key: 'social-media-marketing', label: 'Social Media Marketing', icon: '📱', badge: 'Engagement', desc: 'Management, Content & Strategy' },
+  { key: 'content-marketing', label: 'Content Marketing', icon: '✍️', badge: 'Storytelling', desc: 'Blog, SEO, Copywriting & Web Content' },
 ];
 
 interface ServiceEndpoint {
@@ -43,141 +59,143 @@ export default async function ServicesPage({
 }) {
   const { locale } = await params;
 
-  // Load the expanded micro-services dynamically
   const dbPath = path.join(process.cwd(), 'data', 'expandedServices.json');
   let expandedConfigs: ServiceConfig = {};
   if (fs.existsSync(dbPath)) {
     expandedConfigs = JSON.parse(fs.readFileSync(dbPath, 'utf8'));
   }
 
+  const totalServices = Object.values(expandedConfigs).reduce((acc, arr) => acc + arr.length, 0);
+
   return (
     <div className={styles.page}>
-      <h1 className="visually-hidden">ZAVIROQ Digital Services Directory — 30+ Micro-services</h1>
+      <div className={styles.bgGlow1} />
+      <div className={styles.bgGlow2} />
+      <div className={styles.bgGlow3} />
+      <div className={styles.gridPattern} />
 
-      {/* Atmospheric grid lines */}
-      <div className={styles.gridLines} aria-hidden="true" />
-
-      {/* ══ BREADCRUMB ══ */}
-      <nav className={styles.breadcrumb} aria-label="Breadcrumb">
-        <a href={`/${locale}`}>Home</a>
-        <span className={styles.breadSep}>›</span>
-        <span className={styles.breadCurrent}>Services Directory</span>
+      <nav className={styles.breadcrumb}>
+        <Link href={`/${locale}`}>Home</Link>
+        <span>/</span>
+        <span>Services</span>
       </nav>
 
-      {/* ══ COMPACT HERO ══ */}
       <section className={styles.hero}>
         <RevealOnScroll>
           <div className={styles.heroTag}>
-            <span className={styles.tagDot} />
-            Service Ecosystem Matrix
+            <span className={styles.tagPulse} />
+            Comprehensive Service Suite
           </div>
         </RevealOnScroll>
 
-        <RevealOnScroll delay={60}>
+        <RevealOnScroll delay={80}>
           <h1 className={styles.heroTitle}>
-            Full Stack <span className={styles.gradText}>Service Directory</span>
+            Digital Services That <span className={styles.heroHighlight}>Drive Results</span>
           </h1>
         </RevealOnScroll>
 
-        <RevealOnScroll delay={110}>
+        <RevealOnScroll delay={140}>
           <p className={styles.heroSub}>
-            Extensive routing across 30+ highly specialized micro-services. We orchestrate massive deployments seamlessly under 6 core pillars.
+            From SEO dominance to stunning web experiences, we deliver end-to-end digital solutions 
+            tailored for the GCC and India markets.
           </p>
         </RevealOnScroll>
 
-        <RevealOnScroll delay={160}>
-          <div className={styles.statsRow}>
-            <div className={styles.statItem}>
-              <span className={styles.statVal}>39</span>
-              <span className={styles.statKey}>Specialized Endpoints</span>
+        <RevealOnScroll delay={200}>
+          <div className={styles.heroStats}>
+            <div className={styles.heroStat}>
+              <span className={styles.heroStatNum}>{totalServices}+</span>
+              <span className={styles.heroStatLabel}>Services</span>
             </div>
-            <div className={styles.statItem}>
-              <span className={styles.statVal}>13</span>
-              <span className={styles.statKey}>Core Pillars</span>
+            <div className={styles.heroStatDivider} />
+            <div className={styles.heroStat}>
+              <span className={styles.heroStatNum}>13</span>
+              <span className={styles.heroStatLabel}>Categories</span>
             </div>
-            <div className={styles.statItem}>
-              <span className={styles.statVal}>GCC</span>
-              <span className={styles.statKey}>Market Focus</span>
+            <div className={styles.heroStatDivider} />
+            <div className={styles.heroStat}>
+              <span className={styles.heroStatNum}>GCC</span>
+              <span className={styles.heroStatLabel}>Markets</span>
             </div>
           </div>
         </RevealOnScroll>
       </section>
 
-      {/* ══ DIVIDER ══ */}
-      <div className={styles.dividerRow}>
-        <div className={styles.dividerLine} />
-        <span className={styles.dividerLabel}>All Micro-Service Endpoints</span>
-        <div className={styles.dividerLine} />
-      </div>
-
-      {/* ══ SERVICES GRID — Expanded ══ */}
-      <section className={styles.gridSection}>
-        <div className={styles.servicesGrid}>
+      <section className={styles.servicesSection}>
+        <div className={styles.servicesContainer}>
           {categoriesMeta.map((cat, i) => {
             const endpoints = expandedConfigs[cat.key] || [];
+            const accentColor = categoryColors[cat.key] || '#9d96ff';
+            const isEven = i % 2 === 0;
             
             return (
-              <div key={cat.key}>
-                <RevealOnScroll delay={(i % 3) * 70}>
-                  <div className={styles.card}>
-                    {/* Index number */}
-                    <span className={styles.cardNum}>{String(i + 1).padStart(2, '0')}</span>
-
-                    {/* Icon */}
-                    <div className={styles.cardIcon}>{cat.icon}</div>
-
-                    {/* Badge */}
-                    <span className={styles.cardBadge} style={{ marginBottom: '10px', display: 'inline-block' }}>{cat.badge}</span>
-
-                    {/* Title */}
-                    <h2 className={styles.cardTitle}>{cat.label}</h2>
-
-                    {/* Rule */}
-                    <div className={styles.cardRule} />
-
-                    {/* Feature Micro-Links */}
-                    <ul className={styles.featureList} style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                      {endpoints.map((ep: ServiceEndpoint, j: number) => {
-                        const linkPath = cat.key === 'core-seo' || cat.key === 'performance-marketing' || cat.key === 'branding-design' || cat.key === 'ai-automation' || cat.key === 'website-security'
-                          ? `/${locale}/${ep.slug}` 
-                          : `/${locale}/${cat.key}/${ep.slug}`;
-                        return (
-                        <li key={j}>
-                           <a 
-                             href={linkPath}
-                             className={styles.featureLink}
-                           >
-                             <span className={styles.featureLinkArrow}>›</span> {ep.title}
-                           </a>
-                        </li>
-                      )})}
-                    </ul>
+              <RevealOnScroll key={cat.key} delay={i * 50}>
+                <div 
+                  className={`${styles.serviceCard} ${isEven ? styles.cardEven : styles.cardOdd}`}
+                  style={{ '--accent': accentColor } as React.CSSProperties}
+                >
+                  <div className={styles.cardHeader}>
+                    <div className={styles.cardIconWrap}>
+                      <span className={styles.cardIcon}>{cat.icon}</span>
+                    </div>
+                    <div className={styles.cardMeta}>
+                      <span className={styles.cardBadge}>{cat.badge}</span>
+                      <h3 className={styles.cardTitle}>{cat.label}</h3>
+                      <p className={styles.cardDesc}>{cat.desc}</p>
+                    </div>
                   </div>
-                </RevealOnScroll>
-              </div>
+                  
+                  <div className={styles.cardServices}>
+                    {endpoints.map((ep: ServiceEndpoint, j: number) => {
+                      const linkPath = cat.key === 'core-seo'
+                        ? `/${locale}/${ep.slug}` 
+                        : `/${locale}/${cat.key}/${ep.slug}`;
+                      return (
+                        <Link 
+                          key={j} 
+                          href={linkPath} 
+                          className={styles.serviceLink}
+                        >
+                          <span className={styles.serviceLinkIcon}>→</span>
+                          <span className={styles.serviceLinkText}>{ep.title}</span>
+                        </Link>
+                      );
+                    })}
+                  </div>
+                  
+                  <div className={styles.cardFooter}>
+                    <span className={styles.serviceCount}>{endpoints.length} Services</span>
+                    <Link 
+                      href={cat.key === 'core-seo' ? `/${locale}/seo-services` : `/${locale}/${cat.key}`} 
+                      className={styles.viewAllLink}
+                    >
+                      View All →
+                    </Link>
+                  </div>
+                </div>
+              </RevealOnScroll>
             );
           })}
         </div>
       </section>
 
-      {/* ══ CTA ══ */}
-      <div className={styles.ctaWrap}>
+      <section className={styles.ctaSection}>
+        <div className={styles.ctaGlow} />
         <RevealOnScroll>
-          <div className={styles.cta}>
-            <p className={styles.ctaEye}>Deploy Architecture</p>
-            <h2>Ready to initialize your stack?</h2>
-            <p>
-              Let our engineers map the exact combination of micro-services your business needs across the GCC and India.
+          <div className={styles.ctaContent}>
+            <span className={styles.ctaTag}>Ready to Start?</span>
+            <h2 className={styles.ctaTitle}>Let&apos;s Build Something Amazing</h2>
+            <p className={styles.ctaText}>
+              Our team of experts is ready to help you achieve digital dominance. 
+              Get in touch for a free consultation.
             </p>
-            <a
-              href={`/${locale}/contact`}
-              className={`btn-primary ${styles.ctaBtn}`}
-            >
-              Contact Command Center ⚡
-            </a>
+            <Link href={`/${locale}/contact`} className={styles.ctaButton}>
+              Get Started
+              <span className={styles.ctaButtonIcon}>→</span>
+            </Link>
           </div>
         </RevealOnScroll>
-      </div>
+      </section>
     </div>
   );
 }

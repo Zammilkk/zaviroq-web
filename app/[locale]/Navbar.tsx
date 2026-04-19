@@ -50,27 +50,66 @@ export default function Navbar() {
                 {dropdownOpen ? '−' : '+'}
               </button>
             </div>
-            <div className={styles.dropdownMenu}>
-              <Link href="/services/seo-mastery" className={styles.dropdownItem} onClick={() => setMenuOpen(false)}>
-                <span className={styles.dropdownIcon}>🔍</span> SEO Dominance
-              </Link>
-              <Link href="/services/web-development" className={styles.dropdownItem} onClick={() => setMenuOpen(false)}>
-                <span className={styles.dropdownIcon}>💻</span> Web Architecture
-              </Link>
-              <Link href="/services/performance-marketing" className={styles.dropdownItem} onClick={() => setMenuOpen(false)}>
-                <span className={styles.dropdownIcon}>📈</span> Performance Ads
-              </Link>
-              <Link href="/services/ai-integration" className={styles.dropdownItem} onClick={() => setMenuOpen(false)}>
-                <span className={styles.dropdownIcon}>🤖</span> AI Automations
-              </Link>
-              <Link href="/services/branding" className={styles.dropdownItem} onClick={() => setMenuOpen(false)}>
-                <span className={styles.dropdownIcon}>🎨</span> Corporate Branding
-              </Link>
-              <Link href="/services/tech-security" className={styles.dropdownItem} onClick={() => setMenuOpen(false)}>
-                <span className={styles.dropdownIcon}>🔐</span> Cyber Security
-              </Link>
+            <div className={styles.megaMenu}>
+              <div className={styles.megaMenuGrid}>
+                <div className={styles.megaMenuColumn}>
+                  <h4>Core SEO</h4>
+                  <Link href="/seo-services/technical-seo" onClick={() => setMenuOpen(false)}>Technical SEO</Link>
+                  <Link href="/seo-services/on-page-seo" onClick={() => setMenuOpen(false)}>On-Page SEO</Link>
+                  <Link href="/seo-services/off-page-seo" onClick={() => setMenuOpen(false)}>Off-Page SEO</Link>
+                  <Link href="/seo-services/seo-audit" onClick={() => setMenuOpen(false)}>SEO Audit</Link>
+                  <Link href="/seo-services/keyword-research" onClick={() => setMenuOpen(false)}>Keyword Research</Link>
+                  <Link href="/seo-services/ai-seo-optimization" onClick={() => setMenuOpen(false)}>AI SEO</Link>
+                  <Link href="/seo-services/seo-strategy" onClick={() => setMenuOpen(false)}>SEO Strategy</Link>
+                </div>
+                <div className={styles.megaMenuColumn}>
+                  <h4>Industry SEO</h4>
+                  <Link href="/seo-services/seo-for-real-estate" onClick={() => setMenuOpen(false)}>Real Estate SEO</Link>
+                  <Link href="/seo-services/seo-for-healthcare" onClick={() => setMenuOpen(false)}>Healthcare SEO</Link>
+                  <Link href="/seo-services/seo-for-saas" onClick={() => setMenuOpen(false)}>SaaS SEO</Link>
+                  <Link href="/seo-services/seo-for-ecommerce" onClick={() => setMenuOpen(false)}>Ecommerce SEO</Link>
+                  <Link href="/seo-services/seo-for-doctors" onClick={() => setMenuOpen(false)}>Doctor SEO</Link>
+                  <Link href="/seo-services/seo-for-agencies" onClick={() => setMenuOpen(false)}>Agency SEO</Link>
+                </div>
+                <div className={styles.megaMenuColumn}>
+                  <h4>Web Development</h4>
+                  <Link href="/core-web/custom-website-development" onClick={() => setMenuOpen(false)}>Custom Website</Link>
+                  <Link href="/core-web/business-website-design" onClick={() => setMenuOpen(false)}>Business Website</Link>
+                  <Link href="/core-web/landing-page-design" onClick={() => setMenuOpen(false)}>Landing Page</Link>
+                  <Link href="/web-platform/wordpress-development" onClick={() => setMenuOpen(false)}>WordPress</Link>
+                  <Link href="/web-platform/php-development" onClick={() => setMenuOpen(false)}>PHP / Laravel</Link>
+                  <Link href="/web-platform/reactjs-development" onClick={() => setMenuOpen(false)}>React.js</Link>
+                  <Link href="/web-platform/nextjs-development" onClick={() => setMenuOpen(false)}>Next.js</Link>
+                </div>
+                <div className={styles.megaMenuColumn}>
+                  <h4>Ecommerce & Systems</h4>
+                  <Link href="/web-ecommerce/ecommerce-development" onClick={() => setMenuOpen(false)}>Ecommerce Dev</Link>
+                  <Link href="/web-ecommerce/custom-ecommerce-development" onClick={() => setMenuOpen(false)}>Custom Ecommerce</Link>
+                  <Link href="/web-systems/admin-dashboard-development" onClick={() => setMenuOpen(false)}>Admin Dashboard</Link>
+                  <Link href="/web-systems/web-application-development" onClick={() => setMenuOpen(false)}>Web Application</Link>
+                  <Link href="/web-systems/saas-development" onClick={() => setMenuOpen(false)}>SaaS Platform</Link>
+                </div>
+                <div className={styles.megaMenuColumn}>
+                  <h4>Performance Marketing</h4>
+                  <Link href="/performance-marketing/google-ads-agency" onClick={() => setMenuOpen(false)}>Google Ads</Link>
+                  <Link href="/performance-marketing/meta-ads-agency" onClick={() => setMenuOpen(false)}>Meta Ads</Link>
+                  <Link href="/performance-marketing/linkedin-ads-agency" onClick={() => setMenuOpen(false)}>LinkedIn Ads</Link>
+                  <Link href="/performance-marketing/tiktok-ads-agency" onClick={() => setMenuOpen(false)}>TikTok Ads</Link>
+                  <Link href="/performance-marketing/youtube-ads-agency" onClick={() => setMenuOpen(false)}>YouTube Ads</Link>
+                  <Link href="/performance-marketing/ppc-management-services" onClick={() => setMenuOpen(false)}>PPC Management</Link>
+                </div>
+                <div className={styles.megaMenuColumn}>
+                  <h4>Branding & Design</h4>
+                  <Link href="/branding-design/logo-design" onClick={() => setMenuOpen(false)}>Logo Design</Link>
+                  <Link href="/branding-design/brand-identity-design" onClick={() => setMenuOpen(false)}>Brand Identity</Link>
+                  <Link href="/branding-design/company-profile-design" onClick={() => setMenuOpen(false)}>Company Profile</Link>
+                  <Link href="/branding-design/social-media-design" onClick={() => setMenuOpen(false)}>Social Media Design</Link>
+                  <Link href="/branding-design/presentation-design" onClick={() => setMenuOpen(false)}>Presentation</Link>
+                  <Link href="/branding-design/packaging-design" onClick={() => setMenuOpen(false)}>Packaging</Link>
+                </div>
+              </div>
               <Link href="/services" className={`${styles.dropdownItem} ${styles.viewAllEndpoint}`} onClick={() => setMenuOpen(false)}>
-                <span className={styles.dropdownIcon}>⚡</span> View All 30+ Endpoints
+                <span className={styles.dropdownIcon}>⚡</span> View All 30+ Services
               </Link>
             </div>
           </div>

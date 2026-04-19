@@ -248,7 +248,7 @@
 }
 
 .altSection {
-  background: radial-gradient(ellipse at center, rgba(127, 119, 221, 0.04) 0%, transparent 60%);
+  background: rgba(255, 255, 255, 0.02);
 }
 
 .sectionHeader {

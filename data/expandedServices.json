@@ -369,7 +369,7 @@
   ],
   "performance-marketing": [
     {
-      "slug": "google-ads",
+      "slug": "google-ads-agency",
       "metaTitle": "Google Ads Agency | Aggressive Search Intent UAE KSA",
       "metaDesc": "Capture high commercial intent directly at the bottom of the funnel. Massive ROI with predictive bid structures.",
       "keywords": "Google Ads Agency Dubai, PPC KSA,Adwords Management India",
@@ -379,7 +379,7 @@
       "deliverables": ["SKAG/STAG Campaign Layout", "Negative Keyword Shields", "Dynamic Retargeting Pools", "Predictive ROAS Bidding"]
     },
     {
-      "slug": "meta-ads",
+      "slug": "meta-ads-agency",
       "metaTitle": "Meta Ads Management | Facebook & Instagram Scaling",
       "metaDesc": "Visual disruption frameworks. We scale Facebook and Instagram pipelines via heavy creative testing and data matching.",
       "keywords": "Facebook Ads Manager UAE, Meta Ads Expert Saudi, Instagram Marketing",
@@ -389,14 +389,74 @@
       "deliverables": ["Creative Fatigue Tracking", "Lookalike Audience Scaling", "CAPI Server-side Tracking", "Lead Gen Form Optimization"]
     },
     {
-      "slug": "lead-generation",
-      "metaTitle": "B2B Lead Generation Services | High-Ticket Acquisition",
-      "metaDesc": "Outbound and Inbound lead funnels completely managed. We generate verified commercial prospects globally.",
-      "keywords": "B2B Lead Generation Dubai, B2B Marketing KSA, Cold Email Systems",
-      "title": "High-Ticket Lead Flow",
-      "heroDesc": "We manufacture demand. Combining programmatic outbound cold frameworks with hyper-targeted paid lead magnets to fill your sales calendars.",
+      "slug": "linkedin-ads-agency",
+      "metaTitle": "LinkedIn Ads Agency | B2B Lead Generation UAE KSA",
+      "metaDesc": "Target decision-makers with precision. LinkedIn advertising for high-ticket B2B lead generation.",
+      "keywords": "LinkedIn Ads Agency Dubai, B2B LinkedIn Marketing KSA, LinkedIn Lead Gen",
+      "title": "LinkedIn B2B Domination",
+      "heroDesc": "Reach C-suite executives and decision-makers with hyper-targeted LinkedIn campaigns that drive enterprise leads.",
       "color": "var(--primary-blue)",
-      "deliverables": ["LinkedIn/Email Scraping", "Cold Outreach Protocols", "CRM Lead Sync", "Automated Follow-ups"]
+      "deliverables": ["InMail Campaigns", "Lead Gen Forms", "Audience Targeting", "Sponsored Content Scaling"]
+    },
+    {
+      "slug": "ppc-management-services",
+      "metaTitle": "Total PPC Management | Multi-Channel Performance",
+      "metaDesc": "Holistic management across Google, LinkedIn, TikTok, and Meta. Controlling the entire paid sphere.",
+      "keywords": "PPC Agency UAE, Cross-Channel Advertising KSA, Search Marketing",
+      "title": "Multi-Channel PPC Domination",
+      "heroDesc": "We unify your entire paid attack. Our engineers act as an extension of your own company, aggressively migrating budgets daily to the channels winning the most ROI.",
+      "color": "var(--primary-purple)",
+      "deliverables": ["Omnichannel Retargeting", "Daily Budget Pacing", "Cross-Platform Analytics", "Executive KPI Reporting"]
+    },
+    {
+      "slug": "tiktok-ads-agency",
+      "metaTitle": "TikTok Ads Agency | Viral Video Marketing UAE KSA",
+      "metaDesc": "Explode your brand with TikTok advertising. Reach millions of engaged users with viral video campaigns.",
+      "keywords": "TikTok Ads Agency Dubai, TikTok Marketing KSA, Viral Video Ads",
+      "title": "TikTok Viral Engine",
+      "heroDesc": "Tap into the fastest-growing platform. We create scroll-stopping TikTok ad campaigns that drive massive awareness and conversions.",
+      "color": "var(--primary-blue)",
+      "deliverables": ["Video Creative Production", "Spark Ads", "Audience Targeting", "Viral Campaign Scaling"]
+    },
+    {
+      "slug": "taboola-ads",
+      "metaTitle": "Taboola Ads | Native Content Discovery UAE KSA",
+      "metaDesc": "Reach audiences through premium publisher networks. Taboola native advertising for brand awareness.",
+      "keywords": "Taboola Ads Dubai, Native Advertising KSA, Content Discovery Platform",
+      "title": "Native Content Discovery",
+      "heroDesc": "Place your brand in front of millions of readers across premium publisher networks with Taboola's native content ads.",
+      "color": "var(--primary-purple)",
+      "deliverables": ["Native Ad Creatives", "Publisher Network Access", "Campaign Optimization", "Brand Safety Controls"]
+    },
+    {
+      "slug": "youtube-ads-agency",
+      "metaTitle": "YouTube Ads Agency | Video Advertising UAE KSA",
+      "metaDesc": "Dominate video search. YouTube advertising for mass reach and targeted video campaigns.",
+      "keywords": "YouTube Ads Agency Dubai, Video Advertising KSA, YouTube Marketing",
+      "title": "YouTube Video Dominance",
+      "heroDesc": "Capture attention on the world's second-largest search engine. We create high-converting YouTube ad campaigns.",
+      "color": "var(--primary-blue)",
+      "deliverables": ["Skippable/Non-Skippable Ads", "YouTube Shorts Ads", "Targeting by Interest", "Remarketing Audiences"]
+    },
+    {
+      "slug": "display-advertising",
+      "metaTitle": "Display Advertising Services | Visual Banner Ads UAE KSA",
+      "metaDesc": "Reach audiences across millions of websites with visual display advertising campaigns.",
+      "keywords": "Display Advertising Dubai, Banner Ads KSA, Visual Ad Campaigns",
+      "title": "Display Network Domination",
+      "heroDesc": "Put your brand everywhere your audience looks. Strategic display advertising across premium ad networks.",
+      "color": "var(--primary-purple)",
+      "deliverables": ["Banner Creative Design", "Retargeting Pixels", "Placement Targeting", "Campaign Analytics"]
+    },
+    {
+      "slug": "remarketing-retargeting",
+      "metaTitle": "Remarketing & Retargeting Services | Convert Lost Leads",
+      "metaDesc": "Re-engage visitors who left. Sophisticated retargeting campaigns to recover lost conversions.",
+      "keywords": "Remarketing Dubai, Retargeting KSA, Recover Lost Leads",
+      "title": "Retargeting Precision Engine",
+      "heroDesc": "Don't let visitors slip away. We deploy intelligent retargeting funnels that bring back high-intent users.",
+      "color": "var(--primary-blue)",
+      "deliverables": ["Dynamic Retargeting", "Cross-Platform Remarketing", "Audience Segmentation", "Conversion Tracking"]
     },
     {
       "slug": "conversion-rate-optimization",
@@ -407,16 +467,6 @@
       "heroDesc": "If your landing page leaks traffic, your ad spend is wasted. We analyze user heatmaps and inject psychological triggers that double conversion ratios instantly.",
       "color": "var(--primary-purple)",
       "deliverables": ["Heatmap & Scroll Tracking", "Friction Removal Fixes", "CTA A/B Split Testing", "Micro-UX Animations"]
-    },
-    {
-      "slug": "ppc-management",
-      "metaTitle": "Total PPC Management | Multi-Channel Performance",
-      "metaDesc": "Holistic management across Google, LinkedIn, TikTok, and Meta. Controlling the entire paid sphere.",
-      "keywords": "PPC Agency UAE, Cross-Channel Advertising KSA, Search Marketing",
-      "title": "Multi-Channel PPC Domination",
-      "heroDesc": "We unify your entire paid attack. Our engineers act as an extension of your own company, aggressively migrating budgets daily to the channels winning the most ROI.",
-      "color": "var(--primary-blue)",
-      "deliverables": ["Omnichannel Retargeting", "Daily Budget Pacing", "Cross-Platform Analytics", "Executive KPI Reporting"]
     }
   ],
   "branding-design": [
@@ -431,13 +481,23 @@
       "deliverables": ["Multiple Concept Vectors", "B&W Print Formats", "Copyright Ownership", "Global Iconography Set"]
     },
     {
+      "slug": "brand-identity-design",
+      "metaTitle": "Complete Brand Identity Design | Visual Identity System",
+      "metaDesc": "Comprehensive brand identity systems including logo, colors, typography, and brand guidelines.",
+      "keywords": "Brand Identity Design Dubai, Visual Identity KSA, Corporate Identity System",
+      "title": "Complete Identity Architecture",
+      "heroDesc": "Your brand is more than a logo. We build complete visual identity ecosystems that ensure consistency across every touchpoint.",
+      "color": "var(--primary-blue)",
+      "deliverables": ["Brand Style Guide", "Color Palette System", "Typography Suite", "Brand Asset Library"]
+    },
+    {
       "slug": "company-profile-design",
       "metaTitle": "Company Profile Design | B2B Authority Pitch Decks",
       "metaDesc": "Visually stunning corporate profile PDFs and digital decks used for closing enterprise deals securely.",
       "keywords": "Company Profile Design UAE, Pitch Deck KSA, Corporate Presentation",
       "title": "Corporate Authority Profiles",
       "heroDesc": "You cannot close enterprise deals with Word documents. We design high-end, heavily branded company profiles and pitch decks that command serious capital.",
-      "color": "var(--primary-blue)",
+      "color": "var(--primary-purple)",
       "deliverables": ["Copywriting Refinement", "Premium Dark/Light UI Decks", "Data Infographics", "Interactive PDF Exports"]
     },
     {
@@ -447,28 +507,28 @@
       "keywords": "Business Card Design Dubai, NFC Cards UAE, Premium Print Design",
       "title": "Tangible Brand Markers",
       "heroDesc": "The physical handshake demands respect. We architect minimalist, luxury business card layouts ready for extreme high-end printing or modern NFC programming.",
-      "color": "var(--primary-purple)",
+      "color": "var(--primary-blue)",
       "deliverables": ["NFC Ready Layouts", "VCard QR Coding", "Bleed/Print Check", "Matte/Foil Concepts"]
     },
     {
-      "slug": "portfolio-design",
-      "metaTitle": "Agency & Creative Portfolio Layout Design",
-      "metaDesc": "Showcase your elite work dynamically. Tailored PDF or web portfolio designs for max impact.",
-      "keywords": "Portfolio Design UAE, Creative Deck Maker, Agency Work Showcase",
-      "title": "Elite Work Layouts",
-      "heroDesc": "Your portfolio must be as premium as the work inside it. We craft architectural case-study grids that force prospects to acknowledge your high value.",
-      "color": "var(--primary-blue)",
-      "deliverables": ["Grid Layout Mathematics", "Case Study Copy Structuring", "High-res Asset Formatting", "Digital Delivery Setup"]
+      "slug": "brochure-design",
+      "metaTitle": "Professional Brochure Design Services | Print Collateral",
+      "metaDesc": "Eye-catching brochure designs for print and digital. From product catalogs to corporate brochures.",
+      "keywords": "Brochure Design Dubai, Catalog Design KSA, Print Collateral UAE",
+      "title": "Print Collateral Excellence",
+      "heroDesc": "Your brochure is often the first physical impression of your brand. We design stunning print materials that demand attention.",
+      "color": "var(--primary-purple)",
+      "deliverables": ["Multi-page Layouts", "Print-Ready Files", "Custom Illustrations", "High-Resolution Exports"]
     },
     {
-      "slug": "resume-design",
-      "metaTitle": "Executive Resume & CV Design",
-      "metaDesc": "For C-Level executives and founders. Modern ATS-friendly yet visually stunning resumes.",
-      "keywords": "Executive CV Design, Premium Resume UAE, Executive Branding",
-      "title": "Executive Identity Formatting",
-      "heroDesc": "Your career mapped perfectly. We strip away outdated MS Word formats and engineer sleek, highly persuasive C-level resumes that capture absolute attention.",
-      "color": "var(--primary-purple)",
-      "deliverables": ["ATS System Compliant", "Executive Copy Editing", "Infographic Timeline", "Cover Letter Pairing"]
+      "slug": "tariff-card-design",
+      "metaTitle": "Professional Tariff Card Design | Price List Design",
+      "metaDesc": "Clear, visually appealing tariff cards and price lists that communicate value effectively.",
+      "keywords": "Tariff Card Design Dubai, Price List Design KSA, Menu Design UAE",
+      "title": "Smart Pricing Displays",
+      "heroDesc": "Present your pricing with elegance. We create tariff cards that make your offerings crystal clear and irresistible.",
+      "color": "var(--primary-blue)",
+      "deliverables": ["Clean Table Layouts", "Visual Hierarchy", "Print & Digital Formats", "Easy Update Templates"]
     },
     {
       "slug": "invoice-design",
@@ -477,102 +537,152 @@
       "keywords": "Invoice Design UAE, Corporate Stationary, Branded Billing",
       "title": "Operational Brand Kits",
       "heroDesc": "The branding doesn't stop after the sale. We design gorgeous branded invoices and operational documents so your agency looks like a high-end firm at every step.",
-      "color": "var(--primary-blue)",
+      "color": "var(--primary-purple)",
       "deliverables": ["Editable Auto-sum Formats", "Digital Stamp Areas", "Letterhead Arrays", "Payment Protocol Grids"]
+    },
+    {
+      "slug": "social-media-design",
+      "metaTitle": "Social Media Design Services | Post & Cover Designs",
+      "metaDesc": "Scroll-stopping social media graphics. Instagram posts, LinkedIn banners, Facebook covers, and more.",
+      "keywords": "Social Media Design Dubai, Instagram Posts KSA, Social Graphics UAE",
+      "title": "Social Visual Dominance",
+      "heroDesc": "In the scroll-first world, your social visuals must stop thumbs instantly. We create thumb-stopping designs for every platform.",
+      "color": "var(--primary-blue)",
+      "deliverables": ["Instagram Posts/Stories", "LinkedIn Banners", "Facebook Covers", "Twitter Headers"]
+    },
+    {
+      "slug": "portfolio-design",
+      "metaTitle": "Agency & Creative Portfolio Layout Design",
+      "metaDesc": "Showcase your elite work dynamically. Tailored PDF or web portfolio designs for max impact.",
+      "keywords": "Portfolio Design UAE, Creative Deck Maker, Agency Work Showcase",
+      "title": "Elite Work Layouts",
+      "heroDesc": "Your portfolio must be as premium as the work inside it. We craft architectural case-study grids that force prospects to acknowledge your high value.",
+      "color": "var(--primary-purple)",
+      "deliverables": ["Grid Layout Mathematics", "Case Study Copy Structuring", "High-res Asset Formatting", "Digital Delivery Setup"]
+    },
+    {
+      "slug": "presentation-design",
+      "metaTitle": "PowerPoint & Presentation Design Services",
+      "metaDesc": "Professional pitch decks and presentations that captivate investors and close deals.",
+      "keywords": "Presentation Design Dubai, Pitch Deck KSA, PowerPoint Design UAE",
+      "title": "Presentation Mastery",
+      "heroDesc": "Average presentations lose deals. We design cinematic, data-driven presentations that keep audiences hooked from slide one.",
+      "color": "var(--primary-blue)",
+      "deliverables": ["Slide Master Templates", "Data Visualization", "Animated Transitions", "Investor-Ready Decks"]
+    },
+    {
+      "slug": "packaging-design",
+      "metaTitle": "Product Packaging Design Services | Box Design",
+      "metaDesc": "Unbox-worthy packaging designs that create memorable brand experiences and drive sales.",
+      "keywords": "Packaging Design Dubai, Box Design KSA, Product Packaging UAE",
+      "title": "Unbox Experience Design",
+      "heroDesc": "Packaging is your brand's first physical touchpoint. We design unboxing experiences that customers share and remember.",
+      "color": "var(--primary-purple)",
+      "deliverables": ["Box/Cartoon Design", "Label Design", "Print-Ready Files", "3D Mockups"]
+    },
+    {
+      "slug": "banner-poster-design",
+      "metaTitle": "Banner & Poster Design Services | Large Format Graphics",
+      "metaDesc": "High-impact banners and posters for events, advertising, and promotions. Large format ready.",
+      "keywords": "Banner Design Dubai, Poster Design KSA, Large Format UAE",
+      "title": "Large Format Impact",
+      "heroDesc": "Big ideas demand big visuals. We design striking banners and posters that grab attention from a distance.",
+      "color": "var(--primary-blue)",
+      "deliverables": ["Event Banners", "Promotional Posters", "Roll-up Stands", "Large Format Exports"]
     }
   ],
-  "ai-automation": [
+  "social-media-marketing": [
     {
-      "slug": "ai-chatbot",
-      "metaTitle": "Custom AI Chatbot Development | LLM Customer Support",
-      "metaDesc": "Automate level-1 support intelligently via fine-tuned AI Chatbots built with OpenAI arrays.",
-      "keywords": "AI Chatbot UAE, Customer Support Automation KSA, OpenAI Chatbots",
-      "title": "Intelligent Support Arrays",
-      "heroDesc": "We replace basic query bottlenecks. Integrating hyper-trained LLM pipelines to handle 80% of your global customer support with perfect accuracy 24/7.",
-      "color": "var(--primary-blue)",
-      "deliverables": ["OpenAI Dataset Fine-Tuning", "Widget Interface Design", "Human CRM Handoffs", "Multi-lingual Processing"]
-    },
-    {
-      "slug": "crm-automation",
-      "metaTitle": "Smart CRM & API Automation Structuring",
-      "metaDesc": "Hook your lead data from Meta to Zapier directly into your automated sales pipelines rapidly.",
-      "keywords": "CRM Automation Dubai, Zapier Expert UAE, Lead Automation System",
-      "title": "Lead Pipeline Engine",
-      "heroDesc": "We eliminate manual data entry entirely. By wiring custom Zapier and Make webhooks, we ensure every lead instantly enters workflows and receives automated intelligence.",
+      "slug": "social-media-management",
+      "metaTitle": "Social Media Management Services | Full Account Handling",
+      "metaDesc": "Complete social media management. We handle posting, engagement, community management, and growth across all platforms.",
+      "keywords": "Social Media Management Dubai, Account Management KSA, Social Media Handling UAE",
+      "title": "Complete Account Management",
+      "heroDesc": "Your social presence, fully managed. We post, engage, and grow your community while you focus on business.",
       "color": "var(--primary-purple)",
-      "deliverables": ["Webhook Generation", "Lead Scoring Logic", "SMS/Email Triggers", "CRM Pipeline Syncing"]
+      "deliverables": ["Daily Posting Schedule", "Community Engagement", "Comment Management", "Monthly Analytics"]
     },
     {
-      "slug": "ai-content-generation",
-      "metaTitle": "Programmatic AI Content Generation | SGE Arrays",
-      "metaDesc": "Scale infinite SEO silos using programmatic AI engines that write perfectly formatted semantic text.",
-      "keywords": "AI Content Generation UAE, SGE Marketing Matrix, Programmatic Articles",
-      "title": "Infinite Content Scaling",
-      "heroDesc": "Writing articles manually is obsolete for mass scaling. We configure programmatic AI bots to auto-generate highly accurate, keyword-dense articles to flood local searches.",
+      "slug": "content-creation",
+      "metaTitle": "Social Media Content Creation | Posts, Reels & Videos",
+      "metaDesc": "Scroll-stopping content created for your brand. Posts, reels, videos, and stories that drive engagement.",
+      "keywords": "Content Creation Dubai, Social Media Content KSA, Video Content UAE",
+      "title": "Viral Content Studio",
+      "heroDesc": "We create thumb-stopping content that gets shared, liked, and remembered. From graphics to videos.",
       "color": "var(--primary-blue)",
-      "deliverables": ["Prompt Engineering", "Automatic WordPress Push", "Plagiarism & AI Checking", "Image Generation Chains"]
+      "deliverables": ["Graphic Design Posts", "Reels & Short Videos", "Story Content", "Carousel Designs"]
     },
     {
-      "slug": "openai-integration",
-      "metaTitle": "Custom OpenAI API Integrations | SaaS AI Features",
-      "metaDesc": "Adding intelligent AI layers direct to your software infrastructure and bespoke apps.",
-      "keywords": "OpenAI API Integration, SaaS AI Builder Dubai, Gemini API Setup",
-      "title": "Core LLM Integration",
-      "heroDesc": "We hardwire raw AI power right into your existing app architecture. From predictive text analysis to completely autonomous data categorization on the server side.",
+      "slug": "instagram-marketing",
+      "metaTitle": "Instagram Marketing Services | Grow Your Followers",
+      "metaDesc": "Dominate Instagram with strategic marketing. Grow followers, increase engagement, and convert fans to customers.",
+      "keywords": "Instagram Marketing Dubai, Instagram Growth KSA, Instagram UAE",
+      "title": "Instagram Domination",
+      "heroDesc": "Turn your Instagram into a sales machine. We build strategies that grow your following and drive conversions.",
       "color": "var(--primary-purple)",
-      "deliverables": ["API Key Rotation Setup", "Rate Limit Protections", "Context Window Optimization", "Streaming Output Logic"]
+      "deliverables": ["Feed Optimization", "Reels Strategy", "Influencer Outreach", "Shopping Integration"]
     },
     {
-      "slug": "ai-dashboard",
-      "metaTitle": "AI Executive Dashboard Development",
-      "metaDesc": "Aggregated intelligence. Combining multiple AI analyses into one hyper-clean dashboard command center.",
-      "keywords": "AI Analytics Dashboard, AI Reporting Software, Executive Data View",
-      "title": "Centralized Command Center",
-      "heroDesc": "Stop logging into ten different analytics tools. We build one encrypted React dashboard pulling multiple AI analyses into one beautiful data grid.",
+      "slug": "linkedin-marketing",
+      "metaTitle": "LinkedIn Marketing Services | B2B Lead Generation",
+      "metaDesc": "LinkedIn marketing for B2B. Connect with decision-makers, build thought leadership, and generate qualified leads.",
+      "keywords": "LinkedIn Marketing Dubai, B2B LinkedIn KSA, LinkedIn Lead Gen UAE",
+      "title": "LinkedIn B2B Engine",
+      "heroDesc": "LinkedIn is the B2B playground. We help you connect with decision-makers and build brand authority.",
       "color": "var(--primary-blue)",
-      "deliverables": ["Real-time Data Sockets", "AI Trend Predictions", "Custom Graph Arrays", "Secure Role Access"]
+      "deliverables": ["Company Page Optimization", "Content Strategy", "Lead Gen Campaigns", "Personal Branding"]
+    },
+    {
+      "slug": "social-media-strategy",
+      "metaTitle": "Social Media Strategy Services | Data-Driven Plans",
+      "metaDesc": "Custom social media strategies aligned with your business goals. Data-driven plans that deliver results.",
+      "keywords": "Social Media Strategy Dubai, Social Plan KSA, Marketing Strategy UAE",
+      "title": "Strategic Social Blueprint",
+      "heroDesc": "Every viral campaign starts with a strategy. We build custom roadmaps that align social with your business goals.",
+      "color": "var(--primary-purple)",
+      "deliverables": ["Audience Research", "Competitor Analysis", "Content Calendar", "KPI Tracking"]
     }
   ],
-  "website-security": [
+  "content-marketing": [
     {
-      "slug": "ddos-protection",
-      "metaTitle": "Advanced DDoS Protection & Mitigation Servers",
-      "metaDesc": "Military grade enterprise shields preventing malicious layer 7 attacks and securing uptime.",
-      "keywords": "DDoS Protection UAE, Site Security Setup KSA, Enterprise Shield Server",
-      "title": "Layer 7 Attack Shield",
-      "heroDesc": "If your competitors try to flood your traffic, they fail. We engineer immense proxy layers that absorb high-intensity malicious bot attacks and preserve 99.9% uptime.",
-      "color": "var(--primary-purple)",
-      "deliverables": ["Traffic Filtering Loops", "WAF Configuration", "Global Load Balancing", "Malicious IP Banning"]
-    },
-    {
-      "slug": "cloudflare-setup",
-      "metaTitle": "Enterprise Cloudflare Edge Routing Configuration",
-      "metaDesc": "Setting up aggressive caching, DNS logic, and WAF protocols across Cloudflare edge networks.",
-      "keywords": "Cloudflare Setup Dubai, CDN Optimization Agency, Speed Loading Network",
-      "title": "Edge Network Caching",
-      "heroDesc": "Deploying assets closest to the user globally. We install strictly configured Cloudflare architectures maximizing asset caching while hardening firewall protocols.",
+      "slug": "blog-writing-services",
+      "metaTitle": "Blog Writing Services | Professional Blog Content",
+      "metaDesc": "Engaging, SEO-optimized blog content that establishes authority and drives organic traffic.",
+      "keywords": "Blog Writing Services Dubai, Blog Content KSA, Article Writing UAE",
+      "title": "Expert Blog Writing",
+      "heroDesc": "We write compelling blog posts that position you as an industry authority and drive consistent organic traffic.",
       "color": "var(--primary-blue)",
-      "deliverables": ["DNS Migration Control", "Page Rules Aggression", "Bot Fight Mode Activation", "Origin Server Masking"]
+      "deliverables": ["SEO-Optimized Articles", "Industry-Relevant Topics", "Engaging Storytelling", "Meta Optimization"]
     },
     {
-      "slug": "penetration-testing",
-      "metaTitle": "Deep Penetration Testing & Vulnerability Fixes",
-      "metaDesc": "Ethical testing against your CRM and Website to locate XSS, SQLi, and code weaknesses.",
-      "keywords": "Penetration Testing UAE, Website Hack Removal KSA, Vulnerability Check",
-      "title": "Forensic Vulnerability Testing",
-      "heroDesc": "We hack you before they do. Our engineers deploy standardized OWASP Top 10 simulation attacks to find database leakage points and seal them permanently.",
+      "slug": "seo-content-writing",
+      "metaTitle": "SEO Content Writing Services | Ranking Content",
+      "metaDesc": "Content written to rank. Strategic keyword integration for maximum search visibility.",
+      "keywords": "SEO Content Writing Dubai, SEO Writer KSA, Content for Rankings UAE",
+      "title": "SEO Content Mastery",
+      "heroDesc": "Every piece of content is strategically crafted to rank on page one. We combine SEO expertise with compelling writing.",
       "color": "var(--primary-purple)",
-      "deliverables": ["OWASP Matrix Testing", "SQL Injection Sealing", "XSS Form Sanitization", "Executive Health Report"]
+      "deliverables": ["Keyword Integration", "Semantic Optimization", "TF-IDF Analysis", "Structured Content"]
     },
     {
-      "slug": "ssl-encryption",
-      "metaTitle": "SSL TLS Encryption Setup | A+ Security Grade",
-      "metaDesc": "End-to-End wildcard secure logic for massive sub-domain ecosystems. Encrypting every node.",
-      "keywords": "SSL Setup Dubai, Wildcard TLS Encryption, Website Secure Lock",
-      "title": "End-to-End Node Encryption",
-      "heroDesc": "Without SSL, your SEO rankings collapse and users bounce instantly. We install rolling TLS 1.3 wildcard certificates to keep your entire sub-domain architecture fully locked.",
+      "slug": "copywriting-services",
+      "metaTitle": "Professional Copywriting Services | Persuasive Copy",
+      "metaDesc": "High-converting copy that sells. From ads to landing pages, we write words that convert.",
+      "keywords": "Copywriting Services Dubai, Sales Copy KSA, Persuasive Writing UAE",
+      "title": "Conversion Copywriting",
+      "heroDesc": "Words that sell. We craft persuasive copy that drives action and boosts your conversion rates.",
       "color": "var(--primary-blue)",
-      "deliverables": ["TLS 1.3 Handshake Protocols", "Wildcard Chain Setup", "Automatic Renewal Scripts", "HSTS Preload Activation"]
+      "deliverables": ["Sales Copy", "Ad Copy", "Landing Page Copy", "Email Campaigns"]
+    },
+    {
+      "slug": "website-content-writing",
+      "metaTitle": "Website Content Writing Services | Site Copy",
+      "metaDesc": "Professional website content. Homepage, about, services, and all pages optimized for conversions.",
+      "keywords": "Website Content Writing Dubai, Web Copy KSA, Site Content UAE",
+      "title": "Website Copy Solutions",
+      "heroDesc": "Your website deserves compelling copy. We write every page to inform, engage, and convert visitors.",
+      "color": "var(--primary-purple)",
+      "deliverables": ["Homepage Copy", "Service Pages", "About Page", "Contact Page"]
     }
   ]
 }
