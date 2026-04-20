@@ -45,8 +45,10 @@ export default function Typewriter({ className }: { className?: string }) {
         }, 40);
         return () => clearTimeout(timeout);
       } else {
-        setCurrentIndex((currentIndex + 1) % PHRASES.length);
-        setIsTyping(true);
+        setTimeout(() => {
+          setCurrentIndex((currentIndex + 1) % PHRASES.length);
+          setIsTyping(true);
+        }, 0);
       }
     }
   }, [displayText, isTyping, currentIndex]);

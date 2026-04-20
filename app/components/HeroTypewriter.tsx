@@ -37,8 +37,10 @@ export default function HeroTypewriter() {
         }, 50);
         return () => clearTimeout(timeout);
       } else {
-        setCurrentIndex((currentIndex + 1) % PHRASES.length);
-        setIsTyping(true);
+        setTimeout(() => {
+          setCurrentIndex((currentIndex + 1) % PHRASES.length);
+          setIsTyping(true);
+        }, 0);
       }
     }
   }, [displayText, isTyping, currentIndex]);

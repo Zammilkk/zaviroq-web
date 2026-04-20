@@ -9,6 +9,22 @@ export interface ServiceConfig {
   deliverables: string[];
 }
 
-export type ServicesData = Record<string, ServiceConfig[]>;
+export type ServiceCategoryKey = 
+  | 'branding-design'
+  | 'content-marketing'
+  | 'core-seo'
+  | 'core-web'
+  | 'performance-marketing'
+  | 'seo-services'
+  | 'social-media-marketing'
+  | 'web-advanced'
+  | 'web-ecommerce'
+  | 'web-migration'
+  | 'web-platform'
+  | 'web-security'
+  | 'web-systems'
+  | 'ai-automation';
+
+export type ServicesData = Record<ServiceCategoryKey, ServiceConfig[]>;
 
 export type ServicesConfig = ServiceConfig[];

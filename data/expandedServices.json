@@ -684,5 +684,47 @@
       "color": "var(--primary-purple)",
       "deliverables": ["Homepage Copy", "Service Pages", "About Page", "Contact Page"]
     }
+  ],
+  "ai-automation": [
+    {
+      "slug": "ai-agent-development",
+      "metaTitle": "AI Agent Development | Autonomous Business Agents",
+      "metaDesc": "Build custom AI agents that automate workflows, handle customer inquiries, and scale operations 24/7.",
+      "keywords": "AI Agent Development Dubai, Autonomous Agents UAE, AI Automation KSA",
+      "title": "AI Agent Development",
+      "heroDesc": "Deploy intelligent AI agents that work around the clock. From customer support to lead qualification, automate your business processes with custom-built autonomous agents.",
+      "color": "var(--primary-purple)",
+      "deliverables": ["Custom AI Agents", "Workflow Automation", "Integration APIs", "24/7 Autonomous Operation"]
+    },
+    {
+      "slug": "ai-integration",
+      "metaTitle": "AI Integration Services | Embed Intelligence",
+      "metaDesc": "Seamlessly integrate AI capabilities into your existing systems, platforms, and workflows.",
+      "keywords": "AI Integration Dubai, AI Embedding UAE, LLM Integration KSA",
+      "title": "AI Integration",
+      "heroDesc": "Bring AI to your existing infrastructure. We integrate large language models and AI capabilities into your websites, apps, and business tools.",
+      "color": "var(--primary-blue)",
+      "deliverables": ["LLM Integration", "API Connections", "Custom AI Pipelines", "System Automation"]
+    },
+    {
+      "slug": "ai-chatbot-development",
+      "metaTitle": "AI Chatbot Development | Smart Conversational AI",
+      "metaDesc": "Create intelligent chatbots that understand context, handle complex queries, and deliver personalized responses.",
+      "keywords": "AI Chatbot Dubai, Chatbot Development UAE, Conversational AI KSA",
+      "title": "AI Chatbot Development",
+      "heroDesc": "Go beyond basic rule-based bots. We build AI-powered chatbots with natural language understanding that engage customers meaningfully.",
+      "color": "var(--primary-purple)",
+      "deliverables": ["Natural Language understanding", "Contextual Responses", "Multi-language Support", "CRM Integration"]
+    },
+    {
+      "slug": "ai-automation-consulting",
+      "metaTitle": "AI Automation Consulting | Strategy & Implementation",
+      "metaDesc": "Strategic consulting to identify automation opportunities and implement AI solutions that drive ROI.",
+      "keywords": "AI Consulting Dubai, Automation Strategy UAE, AI Implementation KSA",
+      "title": "AI Automation Consulting",
+      "heroDesc": "Transform your business with AI. We assess your operations, identify high-impact automation opportunities, and create a roadmap for AI implementation.",
+      "color": "var(--primary-blue)",
+      "deliverables": ["AI Strategy", "Process Analysis", "ROI Assessment", "Implementation Roadmap"]
+    }
   ]
 }

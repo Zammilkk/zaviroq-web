@@ -10,7 +10,9 @@ export default function ParallaxBackground() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    setIsLoaded(true);
+    const timer = setTimeout(() => {
+      setIsLoaded(true);
+    }, 0);
     let targetScroll = 0;
     let rafId: number;
 
@@ -38,6 +40,7 @@ export default function ParallaxBackground() {
     animate();
 
     return () => {
+      clearTimeout(timer);
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("mousemove", handleMouseMove);
       cancelAnimationFrame(rafId);
