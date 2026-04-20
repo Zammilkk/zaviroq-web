@@ -1,16 +1,31 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
+import styles from "./ParallaxBackground.module.css";
 
 export default function ParallaxBackground() {
   const [scrollY, setScrollY] = useState(0);
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const [isLoaded, setIsLoaded] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    setIsLoaded(true);
     let targetScroll = 0;
     let rafId: number;
 
     const handleScroll = () => {
       targetScroll = window.scrollY;
+    };
+
+    const handleMouseMove = (e: MouseEvent) => {
+      if (containerRef.current) {
+        const rect = containerRef.current.getBoundingClientRect();
+        setMousePos({
+          x: (e.clientX - rect.width / 2) / (rect.width / 2),
+          y: (e.clientY - rect.height / 2) / (rect.height / 2),
+        });
+      }
     };
 
     const animate = () => {
@@ -19,99 +34,79 @@ export default function ParallaxBackground() {
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("mousemove", handleMouseMove, { passive: true });
     animate();
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("mousemove", handleMouseMove);
       cancelAnimationFrame(rafId);
     };
   }, []);
 
-  const bgStyle: React.CSSProperties = {
-    position: 'fixed',
-    top: 0,
-    left: 0,
-    width: '100vw',
-    height: '100vh',
-    zIndex: -1,
-    pointerEvents: 'none',
-  };
+  if (!isLoaded) return null;
 
   return (
-    <>
-      {/* Base */}
-      <div style={{ ...bgStyle, background: '#0B0B0B' }} />
+    <div ref={containerRef} className={styles.wrapper}>
+      <div className={styles.base} />
 
-      {/* Animated orbs layer */}
       <div 
-        style={{
-          ...bgStyle,
-          transform: `translate3d(0, ${scrollY * 0.35}px, 0)`,
-          willChange: 'transform',
-        }}
+        className={styles.layer1}
+        style={{ transform: `translate3d(0, ${scrollY * 0.1}px, 0)` }}
       >
-        <div style={{
-          position: 'absolute',
-          top: '10%',
-          left: '5%',
-          width: 500,
-          height: 500,
-          background: 'radial-gradient(circle, rgba(59, 139, 212, 0.2) 0%, transparent 70%)',
-          borderRadius: '50%',
-          filter: 'blur(60px)',
-          animation: 'float1 20s ease-in-out infinite',
-        }} />
-
-        <div style={{
-          position: 'absolute',
-          top: '50%',
-          right: '0%',
-          width: 450,
-          height: 450,
-          background: 'radial-gradient(circle, rgba(127, 119, 221, 0.18) 0%, transparent 70%)',
-          borderRadius: '50%',
-          filter: 'blur(60px)',
-          animation: 'float2 25s ease-in-out infinite reverse',
-        }} />
-
-        <div style={{
-          position: 'absolute',
-          bottom: '15%',
-          left: '30%',
-          width: 350,
-          height: 350,
-          background: 'radial-gradient(circle, rgba(59, 200, 218, 0.12) 0%, transparent 70%)',
-          borderRadius: '50%',
-          filter: 'blur(50px)',
-          animation: 'float3 18s ease-in-out infinite',
-        }} />
-        
-        {/* Subtle grid */}
-        <div style={{
-          position: 'absolute',
-          inset: 0,
-          backgroundImage: 'linear-gradient(rgba(127, 119, 221, 0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(127, 119, 221, 0.02) 1px, transparent 1px)',
-          backgroundSize: '60px 60px',
-        }} />
+        <div className={styles.nebula1} />
+        <div className={styles.nebula2} />
       </div>
 
-      {/* Vignette */}
-      <div style={{ ...bgStyle, background: 'radial-gradient(ellipse at center, transparent 20%, rgba(0,0,0,0.6) 80%)' }} />
+      <div 
+        className={styles.layer2}
+        style={{ transform: `translate3d(${mousePos.x * -15}px, ${scrollY * 0.25 + mousePos.y * -15}px, 0)` }}
+      >
+        <div className={styles.orb1} />
+        <div className={styles.orb2} />
+        <div className={styles.orb3} />
+      </div>
 
-      <style>{`
-        @keyframes float1 {
-          0%, 100% { transform: translateY(0) scale(1); }
-          50% { transform: translateY(-30px) scale(1.1); }
-        }
-        @keyframes float2 {
-          0%, 100% { transform: translateY(0) scale(1); }
-          50% { transform: translateY(25px) scale(1.05); }
-        }
-        @keyframes float3 {
-          0%, 100% { transform: translateY(0) scale(1); }
-          50% { transform: translateY(-20px) scale(1.08); }
-        }
-      `}</style>
-    </>
+      <div 
+        className={styles.layer3}
+        style={{ transform: `translate3d(${mousePos.x * -30}px, ${scrollY * 0.4 + mousePos.y * -25}px, 0)` }}
+      >
+        <div className={styles.hex1} />
+        <div className={styles.hex2} />
+        {[...Array(12)].map((_, i) => (
+          <div
+            key={i}
+            className={styles.particle}
+            style={{
+              top: `${10 + (i * 8) % 70}%`,
+              left: `${5 + (i * 11) % 85}%`,
+              animationDelay: `${i * 0.4}s`,
+            }}
+          />
+        ))}
+      </div>
+
+      <div 
+        className={styles.layer4}
+        style={{ transform: `translate3d(0, ${scrollY * 0.15}px, 0)` }}
+      >
+        <div className={styles.grid} />
+      </div>
+
+      <div 
+        className={styles.layer5}
+        style={{ transform: `translate3d(${mousePos.x * -50}px, ${scrollY * 0.5 + mousePos.y * -35}px, 0)` }}
+      >
+        <svg className={styles.lines} viewBox="0 0 100 100" preserveAspectRatio="none">
+          <line x1="10" y1="15" x2="25" y2="40" className={styles.line1} />
+          <line x1="25" y1="40" x2="20" y2="65" className={styles.line2} />
+          <line x1="80" y1="10" x2="92" y2="30" className={styles.line3} />
+          <line x1="92" y1="30" x2="82" y2="55" className={styles.line4} />
+        </svg>
+      </div>
+
+      <div className={styles.vignette} />
+      <div className={styles.noise} />
+    </div>
   );
 }

@@ -59,6 +59,10 @@
   margin: 0;
 }
 
+.heroHeadline .gradient-text {
+  font-size: 2.8rem;
+}
+
 .heroSubhead {
   font-size: 1.1rem;
   color: #A0A5B1;

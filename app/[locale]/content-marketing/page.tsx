@@ -3,20 +3,13 @@ import RevealOnScroll from '../RevealOnScroll';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import expandedServices from '@/data/expandedServices.json';
+import type { ServiceConfig } from '@/types/services';
 
 export const metadata: Metadata = {
   title: 'Content Marketing Services | ZAVIROQ',
   description:
     'Professional content marketing services. Blog writing, SEO content, copywriting, and website content that drives engagement and conversions.',
 };
-
-interface ServiceEndpoint {
-  slug: string;
-  title: string;
-  color: string;
-  heroDesc: string;
-  [key: string]: string | string[];
-}
 
 const contentLinks = [
   { slug: 'blog-writing-services', label: 'Blog Writing' },
@@ -31,7 +24,7 @@ export default async function ContentMarketingPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const contentServices = ((expandedServices as any)['content-marketing'] || []) as ServiceEndpoint[];
+  const contentServices = (expandedServices['content-marketing'] as ServiceConfig[]) || [];
 
   return (
     <div className={styles.page}>

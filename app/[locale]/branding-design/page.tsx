@@ -3,20 +3,13 @@ import RevealOnScroll from '../RevealOnScroll';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import expandedServices from '@/data/expandedServices.json';
+import type { ServiceConfig } from '@/types/services';
 
 export const metadata: Metadata = {
   title: 'Corporate Branding & Design Services | ZAVIROQ',
   description:
     'Premium branding design services including logo design, brand identity, company profiles, and creative collateral. Build lasting brand authority across GCC and India.',
 };
-
-interface ServiceEndpoint {
-  slug: string;
-  title: string;
-  color: string;
-  heroDesc: string;
-  [key: string]: string | string[];
-}
 
 const brandingLinks = [
   { slug: 'logo-design', label: 'Logo Design' },
@@ -39,7 +32,7 @@ export default async function BrandingDesignPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const brandingServices = ((expandedServices as any)['branding-design'] || []) as ServiceEndpoint[];
+  const brandingServices = (expandedServices['branding-design'] as ServiceConfig[]) || [];
 
   return (
     <div className={styles.page}>

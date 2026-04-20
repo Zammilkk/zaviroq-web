@@ -3,20 +3,13 @@ import RevealOnScroll from '../RevealOnScroll';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import expandedServices from '@/data/expandedServices.json';
+import type { ServiceConfig } from '@/types/services';
 
 export const metadata: Metadata = {
   title: 'Social Media Marketing Services | ZAVIROQ',
   description:
     'Expert social media marketing services. Management, content creation, Instagram & LinkedIn marketing, and strategic growth across GCC and India.',
 };
-
-interface ServiceEndpoint {
-  slug: string;
-  title: string;
-  color: string;
-  heroDesc: string;
-  [key: string]: string | string[];
-}
 
 const socialLinks = [
   { slug: 'social-media-management', label: 'Social Media Management' },
@@ -32,7 +25,7 @@ export default async function SocialMediaMarketingPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const smmServices = ((expandedServices as any)['social-media-marketing'] || []) as ServiceEndpoint[];
+  const smmServices = (expandedServices['social-media-marketing'] as ServiceConfig[]) || [];
 
   return (
     <div className={styles.page}>

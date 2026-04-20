@@ -3,6 +3,16 @@
    Premium SaaS Dark Theme · Glassmorphism · Futuristic
    ═══════════════════════════════════════════════════════ */
 
+:root {
+  --ai-primary: #7F77DD;
+  --ai-secondary: #3B8BD4;
+  --ai-accent: #06B6D4;
+  --ai-bg: #0B0B0F;
+  --ai-surface: rgba(255, 255, 255, 0.03);
+  --ai-border: rgba(255, 255, 255, 0.08);
+  --ai-glow: rgba(127, 119, 221, 0.3);
+}
+
 /* ── Root Page ── */
 .page {
   width: 100%;
@@ -40,7 +50,7 @@
 .hero {
   position: relative;
   overflow: hidden;
-  padding: 40px 0 100px;
+  padding: 100px 0 100px;
 }
 
 /* Glow orb behind hero */
@@ -126,13 +136,6 @@
   color: #fff;
 }
 
-.heroH1Grad {
-  background: linear-gradient(110deg, #a49eff 0%, #64b0f0 45%, #c07eff 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
 .heroSub {
   font-size: 1.05rem;
   color: #666;
@@ -153,20 +156,20 @@
   align-items: center;
   gap: 8px;
   padding: 14px 32px;
-  background: linear-gradient(90deg, #7F77DD, #3B8BD4);
+  background: linear-gradient(90deg, var(--ai-primary), var(--ai-secondary));
   color: #fff;
   border-radius: 100px;
   font-weight: 700;
   font-size: 0.95rem;
   text-decoration: none;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 8px 28px rgba(127, 119, 221, 0.28);
+  box-shadow: 0 8px 28px var(--ai-glow);
   white-space: nowrap;
 }
 
 .btnPrimary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 16px 40px rgba(127, 119, 221, 0.4);
+  box-shadow: 0 16px 40px var(--ai-glow);
 }
 
 .btnGhost {

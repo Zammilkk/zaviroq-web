@@ -3,6 +3,7 @@ import { Metadata } from 'next';
 import ServiceLayout from '../../../components/ServiceLayout';
 import expandedServices from '@/data/expandedServices.json';
 import { routing } from '@/i18n/routing';
+import type { ServiceConfig } from '@/types/services';
 
 const CATEGORY_KEY = 'seo-services';
 const PARENT_NAME = 'Industry SEO Programs';
@@ -12,10 +13,10 @@ type Props = {
 };
 
 export async function generateStaticParams() {
-  const configs = (expandedServices as any)[CATEGORY_KEY] || [];
+  const configs = (expandedServices[CATEGORY_KEY] as ServiceConfig[]) || [];
   
   return routing.locales.flatMap((locale) => 
-    configs.map((c: { slug: string }) => ({
+    configs.map((c) => ({
       locale,
       slug: c.slug
     }))
@@ -24,8 +25,8 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const configs = (expandedServices as any)[CATEGORY_KEY] || [];
-  const service = configs.find((c: { slug: string }) => c.slug === slug);
+  const configs = (expandedServices[CATEGORY_KEY] as ServiceConfig[]) || [];
+  const service = configs.find((c) => c.slug === slug);
 
   if (!service) return { title: `${PARENT_NAME} | ZAVIROQ` };
 
@@ -38,8 +39,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function Page({ params }: Props) {
   const { locale, slug } = await params;
-  const configs = (expandedServices as any)[CATEGORY_KEY] || [];
-  const service = configs.find((c: { slug: string }) => c.slug === slug);
+  const configs = (expandedServices[CATEGORY_KEY] as ServiceConfig[]) || [];
+  const service = configs.find((c) => c.slug === slug);
   
   if (!service) notFound();
 

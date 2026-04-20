@@ -667,7 +667,7 @@
 }
 
 @media (max-width: 1024px) {
-  .breadcrumb { padding: 110px 28px 0; }
+  .breadcrumb { padding: 24px 28px 0; }
   .hero { padding: 36px 28px 52px; }
   .dividerRow { padding: 32px 28px 0; }
   .deliverablesGrid { padding: 32px 28px 20px; }

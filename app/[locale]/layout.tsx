@@ -9,6 +9,7 @@ import ParallaxBackground from '../components/ParallaxBackground';
 import '../globals.css';
 
 import seoData from '@/data/seo.json';
+import type { SeoData } from '@/types/seo';
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({locale}));
@@ -16,7 +17,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata() {
   try {
-    const seo = seoData as any;
+    const seo = seoData as SeoData;
     if (seo) {
       return {
         title: seo.title || 'ZAVIROQ | Scaling Brands Digitally',
@@ -28,7 +29,7 @@ export async function generateMetadata() {
         }
       };
     }
-  } catch(e) {}
+  } catch {}
   
   return {
     title: 'ZAVIROQ | Scaling Brands Digitally',
@@ -135,7 +136,7 @@ export default async function LocaleLayout({
         />
         <NextIntlClientProvider messages={messages}>
           <Navbar />
-          <main style={{ paddingTop: '120px' }}>
+          <main style={{ paddingTop: '60px' }}>
             {children}
           </main>
           <Footer />

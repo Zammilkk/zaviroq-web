@@ -416,7 +416,7 @@
 
 @media (max-width: 1024px) {
   .heroTitle { font-size: clamp(1.8rem, 4vw, 2.4rem); }
-  .breadcrumb { padding: 110px 28px 0; }
+  .breadcrumb { padding: 24px 28px 0; }
   .hero { padding: 36px 28px 52px; }
   .dividerRow { padding: 32px 28px 0; }
   .linkGrid { padding: 32px 28px 20px; }
@@ -425,7 +425,7 @@
 }
 
 @media (max-width: 768px) {
-  .breadcrumb { padding: 100px 20px 0; font-size: 0.75rem; }
+  .breadcrumb { padding: 24px 20px 0; font-size: 0.75rem; }
   .hero { padding: 28px 20px 44px; gap: 16px; }
   .dividerRow { padding: 24px 20px 0; }
   .linkGrid { padding: 20px; grid-template-columns: repeat(2, 1fr); }

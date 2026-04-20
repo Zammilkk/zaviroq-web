@@ -3,20 +3,13 @@ import RevealOnScroll from '../RevealOnScroll';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import expandedServices from '@/data/expandedServices.json';
+import type { ServiceConfig } from '@/types/services';
 
 export const metadata: Metadata = {
   title: 'SEO Services That Build Search Authority & Drive Organic Growth | ZAVIROQ',
   description:
     'Comprehensive SEO services including Technical SEO, On-Page Optimization, Off-Page Link Building, Keyword Research, and AI SEO. Drive organic growth across GCC and India.',
 };
-
-interface ServiceEndpoint {
-  slug: string;
-  title: string;
-  color: string;
-  heroDesc: string;
-  [key: string]: string | string[];
-}
 
 const coreSeoLinks = [
   { slug: 'technical-seo', label: 'Technical SEO' },
@@ -33,7 +26,7 @@ export default async function SEOServicesPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const seoServices = ((expandedServices as any)['seo-services'] || []) as ServiceEndpoint[];
+  const seoServices = (expandedServices['seo-services'] as ServiceConfig[]) || [];
 
   return (
     <div className={styles.page}>

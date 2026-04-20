@@ -289,7 +289,7 @@
 
 @media (max-width: 1024px) {
   .heroTitle { font-size: clamp(2rem, 5vw, 2.8rem); }
-  .breadcrumb { padding: 110px 28px 0; }
+  .breadcrumb { padding: 24px 28px 0; }
   .hero { padding: 36px 28px 52px; }
   .dividerRow { padding: 0 28px; }
   .contentGrid { padding: 40px 28px; }
@@ -297,7 +297,7 @@
 }
 
 @media (max-width: 768px) {
-  .breadcrumb { padding: 100px 20px 0; font-size: 0.75rem; }
+  .breadcrumb { padding: 24px 20px 0; font-size: 0.75rem; }
   .hero { padding: 28px 20px 44px; gap: 16px; }
   .dividerRow { padding: 0 20px; margin-bottom: 32px; }
   .contentGrid { padding: 20px; grid-template-columns: 1fr; }

@@ -1,4 +1,5 @@
 import styles from './page.module.css';
+import HeroTypewriter from '../../components/HeroTypewriter';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -25,34 +26,34 @@ const features = [
   },
   {
     icon: '🔍',
-    title: 'SEO Optimization',
+    title: 'Advanced SEO Optimization',
     desc: 'Auto-injects primary & LSI keywords, proper heading hierarchy, metadata and structured schema per article.',
     tag: 'On-Page SEO',
   },
   {
     icon: '🔗',
-    title: 'Internal Linking Automation',
+    title: 'Smart Internal Linking',
     desc: 'Maps contextual internal links across your entire content cluster — automatically, at scale.',
     tag: 'Link Architecture',
   },
   {
     icon: '🛡️',
-    title: 'Plagiarism-Free Output',
-    desc: 'Every article is freshly generated per keyword — zero duplication, 100% original content fingerprint.',
-    tag: 'Originality',
+    title: '100% Original Content',
+    desc: 'Every article is freshly generated per keyword — zero duplication, guaranteed originality.',
+    tag: 'Authenticity',
   },
   {
-    icon: '🚀',
-    title: 'Instant Speed',
-    desc: 'From keyword input to published-ready article in under 3 minutes. Scale without hiring more writers.',
-    tag: 'Automation',
+    icon: '🌐',
+    title: 'Multilingual Support',
+    desc: 'Generate content in multiple languages including Arabic, English, Hindi with native-quality output.',
+    tag: 'Global Reach',
   },
 ];
 
 const results = [
   { icon: '📈', num: '10×', label: 'Faster SEO Ranking', sub: 'Compared to manual content workflows' },
   { icon: '📄', num: '100+', label: 'Articles Per Run', sub: 'Humanized & ready to publish' },
-  { icon: '💰', num: '80%', label: 'Cost Reduction', sub: 'vs. hiring freelance writers' },
+  { icon: '⚡', num: '3min', label: 'Per Article', sub: 'From keyword to published-ready' },
   { icon: '🌐', num: '3×', label: 'Traffic Growth', sub: 'Average within 90 days of scaling' },
 ];
 
@@ -134,8 +135,9 @@ export default async function AIContentEnginePage({
 
               <h1 className={styles.heroH1}>
                 Scale SEO Content{' '}
-                <span className={styles.heroH1Grad}>Like Never Before</span>{' '}
-                with AI Automation
+                <span style={{ display: 'block', marginTop: 8 }}>
+                  <HeroTypewriter />
+                </span>
               </h1>
 
               <p className={styles.heroSub}>
@@ -252,8 +254,8 @@ export default async function AIContentEnginePage({
               <div className={styles.problemItems}>
                 {[
                   { icon: '⏰', title: 'Takes Hours or Days', desc: 'One article from brief to publish can take 3–5 hours of human labor minimum.' },
-                  { icon: '💸', title: 'Expensive Writers', desc: 'Quality freelance writers charge $50–$200 per article — scaling to 100 articles costs $5,000–$20,000.' },
                   { icon: '📉', title: 'Hard to Scale SEO', desc: 'Without volume, topical authority is impossible. You need hundreds of articles to dominate a niche.' },
+                  { icon: '🧠', title: 'Inconsistent Quality', desc: 'Different writers = inconsistent tone, style, and SEO optimization across your content.' },
                 ].map((item, i) => (
                   <div key={i} className={styles.problemItem}>
                     <div className={styles.problemIcon}>{item.icon}</div>
@@ -269,7 +271,7 @@ export default async function AIContentEnginePage({
             <div className={styles.problemRight}>
               {[
                 { icon: '⏱️', title: 'Manual Writing Speed', sub: 'Industry avg per article', stat: '4hrs' },
-                { icon: '💰', title: 'Cost Per Article', sub: 'Quality freelance writers', stat: '$120' },
+                { icon: '📝', title: 'Time Per Article', sub: 'Traditional freelance process', stat: '4-5hrs' },
                 { icon: '📊', title: 'Articles Needed to Rank', sub: 'For competitive niches', stat: '200+' },
               ].map((card, i) => (
                 <div key={i} className={styles.problemCard}>

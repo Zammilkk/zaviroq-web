@@ -4,6 +4,7 @@ import RevealOnScroll from '../../RevealOnScroll';
 import { Metadata } from 'next';
 import servicesConfigs from '@/data/servicesConfigs.json';
 import { routing } from '@/i18n/routing';
+import type { ServiceConfig } from '@/types/services';
 
 // ── Icon map for each deliverable phase ──
 const phaseIcons = ['🎯', '⚡', '🔬', '📡', '🔒', '🚀'];
@@ -29,7 +30,7 @@ type Props = {
 
 // ── Generate static params ──
 export async function generateStaticParams() {
-  const configs = servicesConfigs as any[];
+  const configs = servicesConfigs as ServiceConfig[];
   
   return routing.locales.flatMap((locale) => 
     configs.map((c) => ({
@@ -42,7 +43,7 @@ export async function generateStaticParams() {
 // ── Dynamic metadata ──
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const configs = servicesConfigs as any[];
+  const configs = servicesConfigs as ServiceConfig[];
   const service = configs.find((c) => c.slug === slug);
 
   if (!service) return { title: 'Service | ZAVIROQ' };
@@ -56,7 +57,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function ServiceDetailsPage({ params }: Props) {
   const { locale, slug } = await params;
-  const configs = servicesConfigs as any[];
+  const configs = servicesConfigs as ServiceConfig[];
   const service = configs.find((c) => c.slug === slug);
   if (!service) notFound();
 

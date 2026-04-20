@@ -3,20 +3,13 @@ import RevealOnScroll from '../RevealOnScroll';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import expandedServices from '@/data/expandedServices.json';
+import type { ServiceConfig } from '@/types/services';
 
 export const metadata: Metadata = {
   title: 'Performance Marketing Services That Drive Measurable ROI | ZAVIROQ',
   description:
     'Aggressive paid advertising across Google, Meta, LinkedIn, TikTok, YouTube, and more. We capture high-intent traffic and convert it into revenue across GCC and India.',
 };
-
-interface ServiceEndpoint {
-  slug: string;
-  title: string;
-  color: string;
-  heroDesc: string;
-  [key: string]: string | string[];
-}
 
 const adChannelLinks = [
   { slug: 'google-ads-agency', label: 'Google Ads' },
@@ -33,7 +26,7 @@ export default async function PerformanceMarketingPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const pmServices = ((expandedServices as any)['performance-marketing'] || []) as ServiceEndpoint[];
+  const pmServices = (expandedServices['performance-marketing'] as ServiceConfig[]) || [];
 
   return (
     <div className={styles.page}>

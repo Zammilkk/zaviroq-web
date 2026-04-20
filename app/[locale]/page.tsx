@@ -6,6 +6,7 @@ import SEOSetup from '../components/SEOSetup';
 import ExecutiveFAQ from '../components/ExecutiveFAQ';
 import RecentIntel from '../components/RecentIntel';
 import StartupOffer from '../components/StartupOffer';
+import Typewriter from '../components/Typewriter';
 
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -39,7 +40,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
             <RevealOnScroll delay={100} yOffset={15}>
               <h2 className={styles.heroHeadline}>
-                Scale Your Business with <span className="gradient-text">Data-Driven Digital Growth</span>
+                Scale Your Business with <br/><Typewriter className="gradient-text" />
               </h2>
             </RevealOnScroll>
 
