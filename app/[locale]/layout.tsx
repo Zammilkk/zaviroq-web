@@ -60,8 +60,8 @@ export default async function LocaleLayout({
         <link rel="alternate" hrefLang="en-AE" href="https://zaviroq.com/ae" />
         <link rel="alternate" hrefLang="en-IN" href="https://zaviroq.com/in" />
       </head>
-      <ParallaxBackground />
       <body>
+        <ParallaxBackground />
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX" strategy="afterInteractive" />
         <Script id="google-analytics" strategy="afterInteractive">
           {`
