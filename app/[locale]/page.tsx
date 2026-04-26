@@ -7,6 +7,14 @@ import ExecutiveFAQ from '../components/ExecutiveFAQ';
 import RecentIntel from '../components/RecentIntel';
 import StartupOffer from '../components/StartupOffer';
 import Typewriter from '../components/Typewriter';
+import type { Metadata } from 'next';
+
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: 'Digital Marketing Agency | Web Development, SEO & Performance Marketing',
+    description: 'Full-service digital marketing agency offering web development, SEO, performance marketing, branding, and AI automation. Built for growth and conversions.',
+  };
+}
 
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -46,11 +54,11 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
             <RevealOnScroll delay={200} yOffset={15}>
               <p className={styles.heroSubhead}>
-                SEO, Performance Marketing & High-Performance Websites for UAE, Saudi Arabia & India.
+                We build high-performing websites, run data-driven campaigns, and create powerful brand identities — all designed to generate leads, increase conversions, and scale your business.
               </p>
               <div className={styles.heroBtns}>
                 <a href={`/${locale}/contact`} className={`btn-primary ${styles.heroBtnMain}`}>Get Free Strategy Call</a>
-                <a href={`/${locale}/portfolio`} className={styles.btnSecondary}>View Portfolio</a>
+                <a href={`/${locale}/contact`} className={styles.btnSecondary}>Start Your Project</a>
               </div>
             </RevealOnScroll>
           </div>
@@ -82,6 +90,19 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             </RevealOnScroll>
           </div>
         </div>
+      </section>
+
+      {/* 💎 TRUST / USP SECTION */}
+      <section className={styles.section}>
+        <RevealOnScroll>
+          <div className={styles.sectionHeader}>
+            <h2>Built for Results, Not Just Design</h2>
+            <p style={{ maxWidth: '800px', margin: '0 auto', fontSize: '1.1rem', lineHeight: '1.6' }}>
+              Every solution we create is fully customized — no reused designs, no shortcuts. 
+              We focus on performance, scalability, and long-term growth by building scalable digital solutions using modern technologies and data-driven strategies.
+            </p>
+          </div>
+        </RevealOnScroll>
       </section>
 
       {/* 📈 ADVANCED SEO SETUP (Organic Architecture) */}
@@ -139,73 +160,77 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         </div>
       </div>
 
-      {/* 📊 TRUST SIGNALS: RESULTS / STATS */}
+      {/* 📊 MEASURABLE RESULTS */}
       <section className={styles.section}>
         <RevealOnScroll>
+          <div className={styles.sectionHeader}>
+            <h2>Focused on Measurable Results</h2>
+          </div>
           <div className={styles.statsLayout}>
-            <div className={styles.statBox}><h3 className={styles.counter}>100+</h3><p>Projects</p></div>
-            <div className={styles.statBox}><h3 className={styles.counter}>3+</h3><p>Years Base</p></div>
-            <div className={styles.statBox}><h3 className={styles.counter}>Global</h3><p>Footprint</p></div>
-            <div className={styles.statBox}><h3 className={styles.counter}>98%</h3><p>Target ROI</p></div>
+            <div className={styles.statBox}>
+              <div className={styles.icon} style={{ fontSize: '2rem', marginBottom: '10px' }}>📈</div>
+              <h3>Increased</h3>
+              <p>Website Traffic</p>
+            </div>
+            <div className={styles.statBox}>
+              <div className={styles.icon} style={{ fontSize: '2rem', marginBottom: '10px' }}>⚡</div>
+              <h3>Higher</h3>
+              <p>Conversion Rates</p>
+            </div>
+            <div className={styles.statBox}>
+              <div className={styles.icon} style={{ fontSize: '2rem', marginBottom: '10px' }}>🎯</div>
+              <h3>Better</h3>
+              <p>Lead Quality</p>
+            </div>
+            <div className={styles.statBox}>
+              <div className={styles.icon} style={{ fontSize: '2rem', marginBottom: '10px' }}>🚀</div>
+              <h3>Scalable</h3>
+              <p>Growth Systems</p>
+            </div>
           </div>
         </RevealOnScroll>
       </section>
 
-      {/* 💼 CORE SERVICES GRID (9 SECTIONS) */}
+      {/* 💼 CORE SERVICES GRID */}
       <section className={`${styles.section} ${styles.altSection}`}>
         <RevealOnScroll>
           <div className={styles.sectionHeader}>
-            <div className="badge-outline">Core Services Grid</div>
+            <div className="badge-outline">Solutions</div>
             <h2>Our Core Services</h2>
-            <p>Deploying specialized arrays across marketing, web, and automation.</p>
+            <p>We provide end-to-end digital solutions to help businesses grow faster and smarter.</p>
           </div>
         </RevealOnScroll>
         <RevealOnScroll delay={100}>
           <div className={styles.servicesGridModern}>
-            <Link href={`/${locale}/services/seo-mastery`} className={styles.serviceCardInteractive}>
-              <div className={styles.icon}>🔍</div>
-              <h3>SEO Dominance</h3>
-              <p>Algorithmic SEO pipelines mapping exact buyer intent and hijacking traffic.</p>
+            <Link href={`/${locale}/web-design-development`} className={styles.serviceCardInteractive}>
+              <div className={styles.icon}>💻</div>
+              <h3>Web Design & Development</h3>
+              <p>Custom-built websites using modern technologies like WordPress, PHP, React, and Next.js — designed for speed, security, and conversions.</p>
             </Link>
-            <Link href={`/${locale}/services/performance-marketing`} className={styles.serviceCardInteractive}>
+            <Link href={`/${locale}/seo-services`} className={styles.serviceCardInteractive}>
+              <div className={styles.icon}>🔍</div>
+              <h3>SEO Services</h3>
+              <p>Technical, on-page, and off-page SEO strategies that improve visibility, rankings, and organic traffic.</p>
+            </Link>
+            <Link href={`/${locale}/performance-marketing`} className={styles.serviceCardInteractive}>
               <div className={styles.icon}>📈</div>
               <h3>Performance Marketing</h3>
-              <p>Aggressive Google Ads & Meta Ads optimizing for maximum ROI & pipeline.</p>
+              <p>Google Ads, Meta Ads, and multi-platform campaigns focused on ROI and lead generation.</p>
             </Link>
-            <Link href={`/${locale}/services/web-development`} className={styles.serviceCardInteractive}>
-              <div className={styles.icon}>💻</div>
-              <h3>Next-Gen Architecture</h3>
-              <p>High-speed React & Next.js deployments for maximum conversion rates.</p>
-            </Link>
-            <Link href={`/${locale}/services/ui-ux`} className={styles.serviceCardInteractive}>
+            <Link href={`/${locale}/branding-design`} className={styles.serviceCardInteractive}>
               <div className={styles.icon}>🎨</div>
-              <h3>Elite Interface Engineering</h3>
-              <p>Hyper-premium interfaces leveraging spatial physics and deep psychology.</p>
+              <h3>Branding & Graphic Design</h3>
+              <p>Logo, identity, and marketing materials that build strong brand presence.</p>
             </Link>
-            <Link href={`/${locale}/services/branding`} className={styles.serviceCardInteractive}>
-              <div className={styles.icon}>🛡️</div>
-              <h3>Global Identity Forging</h3>
-              <p>Translating commercial visions into visual authority across all platforms.</p>
-            </Link>
-            <Link href={`/${locale}/services/tech-security`} className={styles.serviceCardInteractive}>
-              <div className={styles.icon}>🔐</div>
-              <h3>Security & Encryption</h3>
-              <p>Armored arrays to protect lead inflows and safeguard infrastructure.</p>
-            </Link>
-            <Link href={`/${locale}/services`} className={styles.serviceCardInteractive} style={{ cursor: 'default' }}>
+            <Link href={`/${locale}/ai-automation`} className={styles.serviceCardInteractive}>
               <div className={styles.icon}>🤖</div>
-              <h3>AI Automations</h3>
-              <p>Automated SDR conversational agents and content pipelines using generative tech.</p>
+              <h3>AI Automation</h3>
+              <p>Smart systems for lead generation, chatbots, CRM automation, and business workflows.</p>
             </Link>
-            <Link href={`/${locale}/services`} className={styles.serviceCardInteractive} style={{ cursor: 'default' }}>
-              <div className={styles.icon}>⚡</div>
-              <h3>Conversion Optimization</h3>
-              <p>Kinetic A/B testing frameworks engineered to scientifically scale your funnel.</p>
-            </Link>
-            <Link href={`/${locale}/services`} className={styles.serviceCardInteractive} style={{ cursor: 'default' }}>
-              <div className={styles.icon}>🗄️</div>
-              <h3>Database Architecture</h3>
-              <p>Secure backend data lakes bridged to your frontend rendering.</p>
+            <Link href={`/${locale}/content-marketing`} className={styles.serviceCardInteractive}>
+              <div className={styles.icon}>📝</div>
+              <h3>Content Marketing</h3>
+              <p>Strategic content creation and distribution that drives engagement and authority.</p>
             </Link>
           </div>
         </RevealOnScroll>
@@ -308,15 +333,15 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       {/* ⚙️ PROCESS SECTION */}
       <section className={`${styles.section} ${styles.altSection}`}>
         <RevealOnScroll>
-          <div className={styles.sectionHeader}><h2>Our Execution Process</h2></div>
+          <div className={styles.sectionHeader}><h2>Our Approach to Growth</h2></div>
         </RevealOnScroll>
         <div className={styles.timelineUnique}>
           <RevealOnScroll delay={50} runOnce={false}>
             <div className={styles.tStep}>
               <div className={styles.tNum}>01</div>
               <div className={styles.tContent}>
-                <h3>Deep Architecture Strategy</h3>
-                <p>We analyze the strict logic inside your competition arrays and develop an aggressive roadmap built for rapid capture.</p>
+                <h3>Strategy & Research</h3>
+                <p>We analyze your business and competition to develop a data-driven strategy and an aggressive roadmap built for rapid capture.</p>
               </div>
             </div>
           </RevealOnScroll>
@@ -324,8 +349,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             <div className={styles.tStep}>
               <div className={styles.tNum}>02</div>
               <div className={styles.tContent}>
-                <h3>Next-Generation Development</h3>
-                <p>Engineering your web properties natively inside Next.js to ensure loading speeds shatter industry standards.</p>
+                <h3>Design & Development</h3>
+                <p>Engineering and designing your web properties to ensure premium aesthetics and loading speeds that shatter industry standards.</p>
               </div>
             </div>
           </RevealOnScroll>
@@ -333,8 +358,17 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             <div className={styles.tStep}>
               <div className={styles.tNum}>03</div>
               <div className={styles.tContent}>
-                <h3>Market Domination Marketing</h3>
-                <p>Firing targeted Google and Meta campaigns aligned heavily with semantic SEO frameworks.</p>
+                <h3>Campaign Execution</h3>
+                <p>Firing targeted campaigns and scalable digital solutions aligned heavily with performance marketing and SEO strategies.</p>
+              </div>
+            </div>
+          </RevealOnScroll>
+          <RevealOnScroll delay={200} runOnce={false}>
+            <div className={styles.tStep}>
+              <div className={styles.tNum}>04</div>
+              <div className={styles.tContent}>
+                <h3>Optimization & Scaling</h3>
+                <p>Kinetic A/B testing and continuous optimization frameworks engineered to scientifically scale your funnel and grow business online.</p>
               </div>
             </div>
           </RevealOnScroll>
@@ -376,6 +410,41 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             </div>
           </RevealOnScroll>
         </div>
+      </section>
+
+      {/* 🌍 CAPABILITY SECTION */}
+      <section className={`${styles.section} ${styles.altSection}`}>
+        <RevealOnScroll>
+          <div className={styles.sectionHeader}>
+            <h2>Built to Scale Across Markets</h2>
+            <p style={{ maxWidth: '800px', margin: '0 auto', fontSize: '1.1rem', lineHeight: '1.6' }}>
+              We design systems and strategies that work across different industries, audiences, and business models — ensuring consistent performance and growth.
+            </p>
+          </div>
+        </RevealOnScroll>
+      </section>
+
+      {/* 🔥 DIFFERENTIATION */}
+      <section className={styles.section}>
+        <RevealOnScroll>
+          <div className={styles.sectionHeader}>
+            <h2>What Makes Us Different</h2>
+          </div>
+          <div className={styles.grid3} style={{ marginTop: '2rem' }}>
+            <div className={styles.glassCard}>
+              <h3 style={{ color: 'var(--primary-blue)', marginBottom: '10px' }}>100% Custom-Built</h3>
+              <p>No template reuse. Every solution is uniquely tailored to your brand.</p>
+            </div>
+            <div className={styles.glassCard}>
+              <h3 style={{ color: 'var(--primary-blue)', marginBottom: '10px' }}>Data-Driven Strategies</h3>
+              <p>Decisions backed by analytics for maximum ROI and lead generation.</p>
+            </div>
+            <div className={styles.glassCard}>
+              <h3 style={{ color: 'var(--primary-blue)', marginBottom: '10px' }}>Scalable Systems</h3>
+              <p>Performance-focused execution designed to grow business online seamlessly.</p>
+            </div>
+          </div>
+        </RevealOnScroll>
       </section>
 
       {/* 📰 CORE INSIGHTS & INTEL */}
