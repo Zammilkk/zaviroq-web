@@ -2,7 +2,6 @@ import styles from './page.module.css';
 import RevealOnScroll from '../RevealOnScroll';
 import { Metadata } from 'next';
 import Link from 'next/link';
-import expandedServices from '@/data/expandedServices.json';
 
 export const metadata: Metadata = {
   title: 'All Services | ZAVIROQ — Digital Excellence',
@@ -10,46 +9,113 @@ export const metadata: Metadata = {
 };
 
 const categoryColors: Record<string, string> = {
-  'core-seo': '#9d96ff',
-  'seo-services': '#60a8e8',
-  'core-web': '#3B8BD4',
-  'web-platform': '#7F77DD',
-  'web-ecommerce': '#b88bff',
-  'web-systems': '#60a8e8',
-  'web-migration': '#9d96ff',
-  'web-security': '#7F77DD',
-  'web-advanced': '#3B8BD4',
-  'performance-marketing': '#ff6b6b',
+  'seo': '#9d96ff',
+  'web-development': '#3B8BD4',
   'branding-design': '#ffd93d',
-  'social-media-marketing': '#6bcb77',
-  'content-marketing': '#4d96ff',
+  'performance-marketing': '#ff6b6b',
+  'ecommerce-systems': '#b88bff',
 };
 
 const categoriesMeta = [
-  { key: 'core-seo', label: 'Core SEO Services', icon: '⚙️', badge: 'Foundation', desc: 'Technical, On-Page, Off-Page, Audit & More' },
-  { key: 'seo-services', label: 'Industry SEO Programs', icon: '🔍', badge: 'Organic Ranking', desc: 'Real Estate, Healthcare, SaaS, Ecommerce' },
-  { key: 'core-web', label: 'Web Development', icon: '💻', badge: 'Core Build', desc: 'Custom, Business & Landing Pages' },
-  { key: 'web-platform', label: 'Platform Engineering', icon: '🛠️', badge: 'Framework Stack', desc: 'WordPress, PHP, React & Next.js' },
-  { key: 'web-ecommerce', label: 'Ecommerce Solutions', icon: '🛒', badge: 'Store Engines', desc: 'Online Stores & Custom Solutions' },
-  { key: 'web-systems', label: 'Enterprise Systems', icon: '⚡', badge: 'Business Logic', desc: 'Dashboards, Web Apps & SaaS' },
-  { key: 'web-migration', label: 'Migration & Redesign', icon: '🔄', badge: 'Transform', desc: 'Migration, Cloning & Redesign' },
-  { key: 'web-security', label: 'Performance & Security', icon: '🛡️', badge: 'Protection', desc: 'Secure Dev & Performance' },
-  { key: 'web-advanced', label: 'Advanced Engineering', icon: '🚀', badge: 'Innovation', desc: 'PWA, Headless, APIs & More' },
-  { key: 'performance-marketing', label: 'Performance Marketing', icon: '📈', badge: 'Aggressive Growth', desc: 'Google, Meta, LinkedIn, TikTok & More' },
-  { key: 'branding-design', label: 'Corporate Branding', icon: '🎨', badge: 'Creative Pitch', desc: 'Logo, Identity, Profiles & Print' },
-  { key: 'social-media-marketing', label: 'Social Media Marketing', icon: '📱', badge: 'Engagement', desc: 'Management, Content & Strategy' },
-  { key: 'content-marketing', label: 'Content Marketing', icon: '✍️', badge: 'Storytelling', desc: 'Blog, SEO, Copywriting & Web Content' },
+  { 
+    key: 'seo', 
+    label: 'SEO', 
+    icon: '🔍', 
+    badge: 'Organic Ranking', 
+    desc: 'Technical, On-Page, Off-Page, Local & Global SEO',
+    services: [
+      { slug: 'technical-seo', title: 'Technical SEO' },
+      { slug: 'on-page-seo', title: 'On-Page SEO' },
+      { slug: 'off-page-seo', title: 'Off-Page SEO' },
+      { slug: 'seo-audit', title: 'SEO Audit' },
+      { slug: 'keyword-research', title: 'Keyword Research' },
+      { slug: 'ai-seo', title: 'AI SEO' },
+      { slug: 'seo-strategy', title: 'SEO Strategy' },
+      { slug: 'agency-seo', title: 'Agency SEO' },
+    ],
+    locations: [
+      { path: '/services/seo/dubai', title: 'SEO Dubai' },
+      { path: '/services/seo/riyadh', title: 'SEO Riyadh' },
+      { path: '/services/seo/mangalore', title: 'SEO Mangalore' },
+      { path: '/services/agency-seo/dubai', title: 'Agency SEO Dubai' },
+      { path: '/services/agency-seo/riyadh', title: 'Agency SEO Riyadh' },
+      { path: '/services/agency-seo/mangalore', title: 'Agency SEO Mangalore' },
+    ]
+  },
+  { 
+    key: 'web-development', 
+    label: 'Web Development', 
+    icon: '💻', 
+    badge: 'Core Build', 
+    desc: 'Custom, Business, Next.js & React Development',
+    services: [
+      { slug: 'custom-website', title: 'Custom Website' },
+      { slug: 'business-website', title: 'Business Website' },
+      { slug: 'landing-page', title: 'Landing Page' },
+      { slug: 'wordpress-development', title: 'WordPress Development' },
+      { slug: 'react-development', title: 'React Development' },
+      { slug: 'nextjs-development', title: 'Next.js Development' },
+    ],
+    locations: [
+      { path: '/services/web-development/dubai', title: 'Web Development Dubai' },
+      { path: '/services/web-development/riyadh', title: 'Web Development Riyadh' },
+      { path: '/services/web-development/mangalore', title: 'Web Development Mangalore' },
+    ]
+  },
+  { 
+    key: 'branding-design', 
+    label: 'Branding & Design', 
+    icon: '🎨', 
+    badge: 'Creative Pitch', 
+    desc: 'Logo, Identity, Profiles & Social Media Design',
+    services: [
+      { slug: 'logo-design', title: 'Logo Design' },
+      { slug: 'brand-identity', title: 'Brand Identity' },
+      { slug: 'company-profile', title: 'Company Profile' },
+      { slug: 'social-media-design', title: 'Social Media Design' },
+    ],
+    locations: [
+      { path: '/services/branding-design/logo-design/dubai', title: 'Logo Design Dubai' },
+      { path: '/services/branding-design/logo-design/riyadh', title: 'Logo Design Riyadh' },
+      { path: '/services/branding-design/logo-design/mangalore', title: 'Logo Design Mangalore' },
+    ]
+  },
+  { 
+    key: 'performance-marketing', 
+    label: 'Performance Marketing', 
+    icon: '📈', 
+    badge: 'Aggressive Growth', 
+    desc: 'Google, Meta, LinkedIn, TikTok & PPC',
+    services: [
+      { slug: 'google-ads', title: 'Google Ads' },
+      { slug: 'meta-ads', title: 'Meta Ads' },
+      { slug: 'linkedin-ads', title: 'LinkedIn Ads' },
+      { slug: 'tiktok-ads', title: 'TikTok Ads' },
+      { slug: 'youtube-ads', title: 'YouTube Ads' },
+      { slug: 'ppc-management', title: 'PPC Management' },
+    ],
+    locations: [
+      { path: '/services/performance-marketing/google-ads/dubai', title: 'Google Ads Dubai' },
+      { path: '/services/performance-marketing/google-ads/riyadh', title: 'Google Ads Riyadh' },
+      { path: '/services/performance-marketing/google-ads/mangalore', title: 'Google Ads Mangalore' },
+    ]
+  },
+  { 
+    key: 'ecommerce-systems', 
+    label: 'Ecommerce & Systems', 
+    icon: '🛒', 
+    badge: 'Store Engines', 
+    desc: 'Ecommerce, Custom Dashboards & SaaS Platforms',
+    services: [
+      { slug: 'ecommerce-development', title: 'Ecommerce Development' },
+      { slug: 'custom-ecommerce', title: 'Custom Ecommerce' },
+      { slug: 'admin-dashboard', title: 'Admin Dashboard' },
+      { slug: 'web-application', title: 'Web Application' },
+      { slug: 'saas-platform', title: 'SaaS Platform' },
+    ],
+    locations: []
+  }
 ];
-
-interface ServiceEndpoint {
-  slug: string;
-  title: string;
-  [key: string]: string | string[];
-}
-
-interface ServiceConfig {
-  [key: string]: ServiceEndpoint[];
-}
 
 export default async function ServicesPage({
   params,
@@ -57,8 +123,8 @@ export default async function ServicesPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const expandedConfigs = expandedServices as unknown as ServiceConfig;
-  const totalServices = Object.values(expandedConfigs).reduce((acc, arr) => acc + (arr ? arr.length : 0), 0);
+  
+  const totalServices = categoriesMeta.reduce((acc, cat) => acc + cat.services.length + cat.locations.length, 0);
 
   return (
     <div className={styles.page}>
@@ -102,7 +168,7 @@ export default async function ServicesPage({
             </div>
             <div className={styles.heroStatDivider} />
             <div className={styles.heroStat}>
-              <span className={styles.heroStatNum}>13</span>
+              <span className={styles.heroStatNum}>{categoriesMeta.length}</span>
               <span className={styles.heroStatLabel}>Categories</span>
             </div>
             <div className={styles.heroStatDivider} />
@@ -117,7 +183,6 @@ export default async function ServicesPage({
       <section className={styles.servicesSection}>
         <div className={styles.servicesContainer}>
           {categoriesMeta.map((cat, i) => {
-            const endpoints = expandedConfigs[cat.key] || [];
             const accentColor = categoryColors[cat.key] || '#9d96ff';
             const isEven = i % 2 === 0;
             
@@ -139,10 +204,9 @@ export default async function ServicesPage({
                   </div>
                   
                   <div className={styles.cardServices}>
-                    {endpoints.map((ep: ServiceEndpoint, j: number) => {
-                      const linkPath = cat.key === 'core-seo'
-                        ? `/${locale}/${ep.slug}` 
-                        : `/${locale}/${cat.key}/${ep.slug}`;
+                    <h4 style={{ color: '#aaa', fontSize: '0.85rem', marginBottom: '10px', textTransform: 'uppercase', letterSpacing: '1px' }}>Core Offerings</h4>
+                    {cat.services.map((ep, j) => {
+                      const linkPath = `/${locale}/services/${cat.key}/${ep.slug}`;
                       return (
                         <Link 
                           key={j} 
@@ -154,15 +218,31 @@ export default async function ServicesPage({
                         </Link>
                       );
                     })}
+                    
+                    {cat.locations.length > 0 && (
+                      <>
+                        <h4 style={{ color: '#aaa', fontSize: '0.85rem', margin: '20px 0 10px 0', textTransform: 'uppercase', letterSpacing: '1px' }}>Local Markets</h4>
+                        {cat.locations.map((loc, j) => (
+                          <Link 
+                            key={`loc-${j}`} 
+                            href={`/${locale}${loc.path}`} 
+                            className={styles.serviceLink}
+                          >
+                            <span className={styles.serviceLinkIcon}>📍</span>
+                            <span className={styles.serviceLinkText}>{loc.title}</span>
+                          </Link>
+                        ))}
+                      </>
+                    )}
                   </div>
                   
                   <div className={styles.cardFooter}>
-                    <span className={styles.serviceCount}>{endpoints.length} Services</span>
+                    <span className={styles.serviceCount}>{cat.services.length + cat.locations.length} Solutions</span>
                     <Link 
-                      href={cat.key === 'core-seo' ? `/${locale}/seo-services` : `/${locale}/${cat.key}`} 
+                      href={`/${locale}/services/${cat.key}`} 
                       className={styles.viewAllLink}
                     >
-                      View All →
+                      View Category →
                     </Link>
                   </div>
                 </div>
@@ -177,7 +257,7 @@ export default async function ServicesPage({
         <RevealOnScroll>
           <div className={styles.ctaContent}>
             <span className={styles.ctaTag}>Ready to Start?</span>
-            <h2 className={styles.ctaTitle}>Let&apos;s Build Something Amazing</h2>
+            <h2 className={styles.ctaTitle}>Let's Build Something Amazing</h2>
             <p className={styles.ctaText}>
               Our team of experts is ready to help you achieve digital dominance. 
               Get in touch for a free consultation.

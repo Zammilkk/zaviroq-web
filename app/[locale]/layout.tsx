@@ -6,6 +6,8 @@ import Script from 'next/script';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import ParallaxBackground from '../components/ParallaxBackground';
+import Preloader from '../components/Preloader';
+import CanonicalTag from '../components/CanonicalTag';
 import '../globals.css';
 
 import seoData from '@/data/seo.json';
@@ -20,6 +22,7 @@ export async function generateMetadata() {
     const seo = seoData as SeoData;
     if (seo) {
       return {
+        metadataBase: new URL('https://zaviroq.com'),
         title: seo.title || 'ZAVIROQ | Scaling Brands Digitally',
         description: seo.description || 'Premium digital marketing and web development agency.',
         keywords: seo.keywords || '',
@@ -32,6 +35,7 @@ export async function generateMetadata() {
   } catch {}
   
   return {
+    metadataBase: new URL('https://zaviroq.com'),
     title: 'ZAVIROQ | Scaling Brands Digitally',
     description: 'Premium digital marketing and web development agency in GCC & India.',
   };
@@ -59,8 +63,10 @@ export default async function LocaleLayout({
         <link rel="alternate" hrefLang="ar-SA" href="https://zaviroq.com/ar/sa" />
         <link rel="alternate" hrefLang="en-AE" href="https://zaviroq.com/ae" />
         <link rel="alternate" hrefLang="en-IN" href="https://zaviroq.com/in" />
+        <CanonicalTag />
       </head>
       <body>
+        <Preloader />
         <ParallaxBackground />
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX" strategy="afterInteractive" />
         <Script id="google-analytics" strategy="afterInteractive">
