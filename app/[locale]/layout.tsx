@@ -8,6 +8,7 @@ import Footer from './Footer';
 import ParallaxBackground from '../components/ParallaxBackground';
 import Preloader from '../components/Preloader';
 import CanonicalTag from '../components/CanonicalTag';
+import WhatsAppWidget from '../components/WhatsAppWidget';
 import '../globals.css';
 
 import seoData from '@/data/seo.json';
@@ -93,6 +94,20 @@ export default async function LocaleLayout({
           `}
         </Script>
 
+        <Script id="tawk-to" strategy="afterInteractive">
+          {`
+            var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+            (function(){
+            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+            s1.async=true;
+            s1.src='https://embed.tawk.to/6a09fb9f808e881c34388522/1jorftqc0';
+            s1.charset='UTF-8';
+            s1.setAttribute('crossorigin','*');
+            s0.parentNode.insertBefore(s1,s0);
+            })();
+          `}
+        </Script>
+
         <Script
           id="organization-schema"
           type="application/ld+json"
@@ -145,6 +160,7 @@ export default async function LocaleLayout({
           <main style={{ paddingTop: '60px' }}>
             {children}
           </main>
+          <WhatsAppWidget />
           <Footer />
         </NextIntlClientProvider>
       </body>

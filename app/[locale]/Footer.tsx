@@ -15,8 +15,10 @@ export default function Footer() {
                <span>WhatsApp Pipeline (Direct)</span>
             </div>
             <div className={styles.contactLine}>
-               <a href="tel:+917483830582">🇮🇳 +91 74 8383 0582</a>
-               <span>Call & WhatsApp Array</span>
+               <a href="https://wa.me/971529775206">🇦🇪 +971 52 977 5206 (WhatsApp)</a>
+            </div>
+            <div className={styles.contactLine}>
+               <a href="tel:+917483830582">🇮🇳 +91 74 8383 0582 (Call)</a>
             </div>
             <div className={styles.emailStack}>
               <a href="mailto:info@zaviroq.com">info@zaviroq.com</a>
@@ -26,22 +28,22 @@ export default function Footer() {
           
           <div className={styles.linksBlock}>
             <h4>Core SEO</h4>
-            <Link href="/seo-services/technical-seo">Technical SEO</Link>
-            <Link href="/seo-services/on-page-seo">On-Page SEO</Link>
-            <Link href="/seo-services/off-page-seo">Off-Page SEO</Link>
-            <Link href="/seo-services/seo-audit">SEO Audit</Link>
-            <Link href="/seo-services/keyword-research">Keyword Research</Link>
-            <Link href="/seo-services/seo-strategy">SEO Strategy</Link>
+            <Link href="/services/seo/technical-seo">Technical SEO</Link>
+            <Link href="/services/seo/on-page-seo">On-Page SEO</Link>
+            <Link href="/services/seo/off-page-seo">Off-Page SEO</Link>
+            <Link href="/services/seo/seo-audit">SEO Audit</Link>
+            <Link href="/services/seo/keyword-research">Keyword Research</Link>
+            <Link href="/services/seo/seo-strategy">SEO Strategy</Link>
           </div>
 
           <div className={styles.linksBlock}>
             <h4>Web Development</h4>
-            <Link href="/core-web/custom-website-development">Custom Website</Link>
-            <Link href="/core-web/business-website-design">Business Website</Link>
-            <Link href="/core-web/landing-page-design">Landing Page</Link>
-            <Link href="/web-platform/wordpress-development">WordPress</Link>
-            <Link href="/web-platform/reactjs-development">React.js</Link>
-            <Link href="/web-platform/nextjs-development">Next.js</Link>
+            <Link href="/services/web-development/custom-website">Custom Website</Link>
+            <Link href="/services/web-development/business-website">Business Website</Link>
+            <Link href="/services/web-development/landing-page">Landing Page</Link>
+            <Link href="/services/web-development/wordpress-development">WordPress</Link>
+            <Link href="/services/web-development/react-development">React.js</Link>
+            <Link href="/services/web-development/nextjs-development">Next.js</Link>
           </div>
 
           <div className={styles.linksBlock}>

@@ -7,6 +7,7 @@ import ExecutiveFAQ from '../components/ExecutiveFAQ';
 import RecentIntel from '../components/RecentIntel';
 import StartupOffer from '../components/StartupOffer';
 import Typewriter from '../components/Typewriter';
+import { Star, Globe, ShieldCheck, Layout, TrendingUp, Zap, Target, Rocket, Code, Search, BarChart, PenTool, Bot, FileText } from 'lucide-react';
 import type { Metadata } from 'next';
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -30,6 +31,15 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
     { name: "Microsoft Advertising", icon: "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg", color: "#00A4EF" }
   ];
 
+  const INDUSTRIES = [
+    { name: 'Real Estate', desc: 'UAE & Saudi Markets', src: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=800' },
+    { name: 'Healthcare', desc: 'Surgical & Aesthetic Leads', src: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=800' },
+    { name: 'E-Commerce', desc: 'High-Volume Retail', src: 'https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&q=80&w=800' },
+    { name: 'SaaS & Tech', desc: 'B2B Software Scaling', src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800' },
+    { name: 'Finance', desc: 'Fintech & Investment', src: 'https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=800' },
+    { name: 'Hospitality', desc: 'Luxury Travel & Hotels', src: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=800' }
+  ];
+
   return (
     <div className={styles.container}>
       <h1 className="visually-hidden">Digital Marketing Agency in UAE, Saudi & India</h1>
@@ -40,9 +50,9 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           <div className={styles.heroLeft}>
             <RevealOnScroll yOffset={15}>
               <div className={styles.trustBadges}>
-                <span>✨ 3+ Years Experience</span>
-                <span className={styles.hideMobile}>🌍 Global Clients</span>
-                <span>🔒 100% Secure Websites</span>
+                <span><Star size={16} style={{ display: 'inline', marginRight: '4px', verticalAlign: 'text-bottom' }} /> 3+ Years Experience</span>
+                <span className={styles.hideMobile}><Globe size={16} style={{ display: 'inline', marginRight: '4px', verticalAlign: 'text-bottom' }} /> Global Clients</span>
+                <span><ShieldCheck size={16} style={{ display: 'inline', marginRight: '4px', verticalAlign: 'text-bottom' }} /> 100% Secure Websites</span>
               </div>
             </RevealOnScroll>
 
@@ -84,7 +94,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                   </div>
                 </div>
                 <div className={styles.bFloatBadge}>
-                  <span>🌐</span> Next.js UI Built
+                  <span style={{ display: 'inline-flex', alignItems: 'center', marginRight: '4px' }}><Layout size={16} /></span> Next.js UI Built
                 </div>
               </div>
             </RevealOnScroll>
@@ -168,22 +178,22 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           </div>
           <div className={styles.statsLayout}>
             <div className={styles.statBox}>
-              <div className={styles.icon} style={{ fontSize: '2rem', marginBottom: '10px' }}>📈</div>
+              <div className={styles.icon} style={{ fontSize: '2rem', marginBottom: '10px' }}><TrendingUp size={36} color="var(--primary-blue)" /></div>
               <h3>Increased</h3>
               <p>Website Traffic</p>
             </div>
             <div className={styles.statBox}>
-              <div className={styles.icon} style={{ fontSize: '2rem', marginBottom: '10px' }}>⚡</div>
+              <div className={styles.icon} style={{ fontSize: '2rem', marginBottom: '10px' }}><Zap size={36} color="var(--primary-purple)" /></div>
               <h3>Higher</h3>
               <p>Conversion Rates</p>
             </div>
             <div className={styles.statBox}>
-              <div className={styles.icon} style={{ fontSize: '2rem', marginBottom: '10px' }}>🎯</div>
+              <div className={styles.icon} style={{ fontSize: '2rem', marginBottom: '10px' }}><Target size={36} color="var(--primary-blue)" /></div>
               <h3>Better</h3>
               <p>Lead Quality</p>
             </div>
             <div className={styles.statBox}>
-              <div className={styles.icon} style={{ fontSize: '2rem', marginBottom: '10px' }}>🚀</div>
+              <div className={styles.icon} style={{ fontSize: '2rem', marginBottom: '10px' }}><Rocket size={36} color="var(--primary-purple)" /></div>
               <h3>Scalable</h3>
               <p>Growth Systems</p>
             </div>
@@ -203,32 +213,32 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         <RevealOnScroll delay={100}>
           <div className={styles.servicesGridModern}>
             <Link href={`/${locale}/web-design-development`} className={styles.serviceCardInteractive}>
-              <div className={styles.icon}>💻</div>
+              <div className={styles.icon}><Code size={32} color="var(--primary-blue)" /></div>
               <h3>Web Design & Development</h3>
               <p>Custom-built websites using modern technologies like WordPress, PHP, React, and Next.js — designed for speed, security, and conversions.</p>
             </Link>
             <Link href={`/${locale}/seo-services`} className={styles.serviceCardInteractive}>
-              <div className={styles.icon}>🔍</div>
+              <div className={styles.icon}><Search size={32} color="var(--primary-purple)" /></div>
               <h3>SEO Services</h3>
               <p>Technical, on-page, and off-page SEO strategies that improve visibility, rankings, and organic traffic.</p>
             </Link>
             <Link href={`/${locale}/performance-marketing`} className={styles.serviceCardInteractive}>
-              <div className={styles.icon}>📈</div>
+              <div className={styles.icon}><BarChart size={32} color="var(--primary-blue)" /></div>
               <h3>Performance Marketing</h3>
               <p>Google Ads, Meta Ads, and multi-platform campaigns focused on ROI and lead generation.</p>
             </Link>
             <Link href={`/${locale}/branding-design`} className={styles.serviceCardInteractive}>
-              <div className={styles.icon}>🎨</div>
+              <div className={styles.icon}><PenTool size={32} color="var(--primary-purple)" /></div>
               <h3>Branding & Graphic Design</h3>
               <p>Logo, identity, and marketing materials that build strong brand presence.</p>
             </Link>
             <Link href={`/${locale}/ai-automation`} className={styles.serviceCardInteractive}>
-              <div className={styles.icon}>🤖</div>
+              <div className={styles.icon}><Bot size={32} color="var(--primary-blue)" /></div>
               <h3>AI Automation</h3>
               <p>Smart systems for lead generation, chatbots, CRM automation, and business workflows.</p>
             </Link>
             <Link href={`/${locale}/content-marketing`} className={styles.serviceCardInteractive}>
-              <div className={styles.icon}>📝</div>
+              <div className={styles.icon}><FileText size={32} color="var(--primary-purple)" /></div>
               <h3>Content Marketing</h3>
               <p>Strategic content creation and distribution that drives engagement and authority.</p>
             </Link>
@@ -309,24 +319,27 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           </div>
         </RevealOnScroll>
 
-        <div className={styles.industriesGrid}>
-          <div className={styles.industryCard}>
-            <Image src="/industries/real-estate.webp" alt="Real Estate" fill className={styles.industryImg} unoptimized />
-            <div className={styles.industryOverlay}>
-              <h3>Real Estate</h3>
-              <p>UAE &amp; Saudi Markets</p>
-            </div>
+        <div className={styles.industryMarqueeWrap}>
+          <div className={styles.industryMarquee}>
+            {INDUSTRIES.map((industry, index) => (
+              <div key={index} className={styles.industryCard}>
+                <Image src={industry.src} alt={industry.name} fill className={styles.industryBg} style={{ objectFit: 'cover' }} unoptimized />
+                <div className={styles.industryOverlay}>
+                  <h3>{industry.name}</h3>
+                  <p>{industry.desc}</p>
+                </div>
+              </div>
+            ))}
+            {INDUSTRIES.map((industry, index) => (
+              <div key={`dup-${index}`} className={styles.industryCard} aria-hidden="true">
+                <Image src={industry.src} alt={industry.name} fill className={styles.industryBg} style={{ objectFit: 'cover' }} unoptimized />
+                <div className={styles.industryOverlay}>
+                  <h3>{industry.name}</h3>
+                  <p>{industry.desc}</p>
+                </div>
+              </div>
+            ))}
           </div>
-
-          <div className={styles.industryCard}>
-            <Image src="/industries/healthcare.webp" alt="Healthcare" fill className={styles.industryImg} unoptimized />
-            <div className={styles.industryOverlay}>
-              <h3>Healthcare</h3>
-              <p>Surgical &amp; Aesthetic Leads</p>
-            </div>
-
-          </div>
-
         </div>
       </section>
 
@@ -375,7 +388,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         </div>
       </section>
 
-      {/* ⭐ TESTIMONIALS */}
+      {/* ⭐ TESTIMONIALS (Hidden as requested) */}
+      {/* 
       <section className={styles.section}>
         <RevealOnScroll><div className={styles.sectionHeader}><h2>Client Verification & Audio Feedback</h2></div></RevealOnScroll>
         <div className={styles.grid3}>
@@ -411,6 +425,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           </RevealOnScroll>
         </div>
       </section>
+      */}
 
       {/* 🌍 CAPABILITY SECTION */}
       <section className={`${styles.section} ${styles.altSection}`}>

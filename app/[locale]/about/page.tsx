@@ -99,10 +99,17 @@ export default async function AboutPage({params}: {params: Promise<{locale: stri
               </div>
               
               <div className={styles.contactItem}>
+                <div className={styles.cIcon}>💬</div>
+                <div>
+                   <h4>WhatsApp Channel</h4>
+                   <p className={styles.phoneLink}>+971 52 977 5206</p>
+                </div>
+              </div>
+              <div className={styles.contactItem}>
                 <div className={styles.cIcon}>📞</div>
                 <div>
-                   <h4>Direct Line</h4>
-                   <p className={styles.phoneLink}>+91 74 8383 05 82</p>
+                   <h4>Direct Call Line</h4>
+                   <p className={styles.phoneLink}>+91 74 8383 0582</p>
                 </div>
               </div>
 

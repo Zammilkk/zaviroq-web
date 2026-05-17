@@ -32,6 +32,7 @@ export async function POST(req: Request) {
       phone: body.phone || 'No Phone',
       service: body.service || 'Unknown',
       country: body.country || 'Unknown',
+      budget: body.budget || 'Unknown',
       message: body.message || '',
       date: new Date().toISOString(),
       status: 'new' // 'new', 'contacted', 'closed'

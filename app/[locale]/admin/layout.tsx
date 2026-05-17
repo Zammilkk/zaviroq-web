@@ -16,7 +16,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    if (password === 'admin123') { // Hardcoded dummy password for demo
+    if (password === 'Zaviroq2026!') { // Updated secure admin password
       sessionStorage.setItem('zaviroq_admin', 'true');
       setIsAuthenticated(true);
     } else {
@@ -37,7 +37,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
             <form onSubmit={handleLogin}>
                <input 
                  type="password" 
-                 placeholder="Enter Admin Passphrase (admin123)" 
+                 placeholder="Enter Admin Passphrase" 
                  className={styles.input} 
                  value={password}
                  onChange={e => setPassword(e.target.value)}

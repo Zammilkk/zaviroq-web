@@ -112,6 +112,49 @@
   backdrop-filter: blur(25px);
   -webkit-backdrop-filter: blur(25px);
   height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* PREMIUM PRELOADER */
+.submitOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 15, 20, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.loaderSpinner {
+  width: 60px;
+  height: 60px;
+  border: 3px solid rgba(127, 119, 221, 0.2);
+  border-top-color: var(--primary-blue);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 25px;
+  box-shadow: 0 0 20px rgba(59, 139, 212, 0.4);
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.loaderText {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, #fff, var(--primary-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .stepperHeader { display: flex; align-items: center; justify-content: space-between; margin-bottom: 40px; padding: 0 40px;}
@@ -125,11 +168,100 @@
 .formElement { display: flex; flex-direction: column; height: auto; }
 .formStep h3 { color: #fff; font-size: 1.8rem; margin-bottom: 30px; }
 
-.inputGroup { margin-bottom: 25px; width: 100%; }
+.inputGroup { margin-bottom: 25px; width: 100%; position: relative; }
 .input { width: 100%; padding: 20px 25px; background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.1); border-radius: 15px; color: #fff; font-size: 1.1rem; outline: none; font-family: inherit; transition: all 0.3s ease; box-sizing: border-box;}
 .input:focus { border-color: var(--primary-blue); background: rgba(0,0,0,0.6); box-shadow: 0 0 15px rgba(59, 139, 212, 0.1);}
-.input::placeholder { color: #666; }
-select.input { appearance: none; cursor: pointer; }
+.input::placeholder { color: transparent; }
+
+.floatLabel {
+  position: absolute;
+  left: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  font-size: 1.1rem;
+  background: transparent;
+}
+
+.input:focus ~ .floatLabel,
+.input:not(:placeholder-shown) ~ .floatLabel {
+  top: 0;
+  left: 20px;
+  font-size: 0.85rem;
+  color: var(--primary-blue);
+  background: rgba(20,20,25,1);
+  padding: 0 8px;
+  border-radius: 4px;
+}
+
+textarea.input ~ .floatLabel {
+  top: 30px;
+}
+
+textarea.input:focus ~ .floatLabel,
+textarea.input:not(:placeholder-shown) ~ .floatLabel {
+  top: 0;
+}
+
+/* INTERACTIVE SELECTION GRID */
+.selectionGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 15px;
+  width: 100%;
+}
+
+.selectionCard {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 20px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  height: 100%;
+}
+
+.selectionCard:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.2);
+  transform: translateY(-4px);
+}
+
+.selectionCardActive {
+  background: linear-gradient(135deg, rgba(59, 139, 212, 0.15), rgba(127, 119, 221, 0.15));
+  border-color: var(--primary-blue);
+  box-shadow: 0 10px 20px rgba(59, 139, 212, 0.2), inset 0 0 15px rgba(127, 119, 221, 0.1);
+  transform: translateY(-4px);
+}
+
+.selectionIcon {
+  margin-bottom: 12px;
+  color: #888;
+  transition: all 0.3s ease;
+}
+
+.selectionCardActive .selectionIcon {
+  color: #fff;
+}
+
+.selectionTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #888;
+  transition: all 0.3s ease;
+  margin: 0;
+}
+
+.selectionCardActive .selectionTitle {
+  color: #fff;
+}
 
 .submitBtn { padding: 20px !important; width: 100%; font-size: 1.15rem; border-radius: 15px; box-sizing: border-box; }
 .btnRow { display: flex; gap: 20px; align-items: center; width: 100%; box-sizing: border-box;}
