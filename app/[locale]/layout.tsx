@@ -70,14 +70,16 @@ export default async function LocaleLayout({
       <body>
         <Preloader />
         <ParallaxBackground />
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZY54FDJZWS"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-ZY54FDJZWS" strategy="afterInteractive" />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
 
-          gtag('config', 'G-ZY54FDJZWS');
-        </script>
+            gtag('config', 'G-ZY54FDJZWS');
+          `}
+        </Script>
         
         <Script id="meta-pixel" strategy="afterInteractive">
           {`
