@@ -1,37 +1,14 @@
-import expandedServices from '@/data/expandedServices.json';
-import ServiceLayout from '@/app/components/ServiceLayout';
-import { Metadata } from 'next';
+import OnPageSEOClient from '../../../on-page-seo/OnPageSEOClient';
+import type { Metadata } from 'next';
 
-export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
-  const service = expandedServices['core-seo'].find((s) => s.slug === 'on-page-seo');
-  
-  if (!service) return {};
-  
+export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: service.metaTitle,
-    description: service.metaDesc,
-    keywords: service.keywords,
+    title: 'On-Page SEO Services in Saudi Arabia | Zaviroq',
+    description: 'Improve your website rankings with Zaviroq\'s on-page SEO services in Saudi Arabia. We optimize content, keywords, meta tags, internal links, and user experience for higher Google visibility and organic traffic.',
+    keywords: 'on page seo services, on page seo optimization, on page seo company, on page seo agency, content optimization seo, website seo optimization, seo content strategy, keyword optimization, meta tag optimization, internal linking seo, heading structure optimization, image seo optimization, semantic seo services, seo content optimization',
   };
 }
 
-export default async function ServicesSeoOnPageSeoPage({ params }: { params: Promise<{ locale: string }> }) {
-  const { locale } = await params;
-  const service = expandedServices['core-seo'].find((s) => s.slug === 'on-page-seo');
-
-  if (!service) {
-    return (
-      <div style={{ padding: '120px 20px', minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-        <h1 style={{ fontSize: '3rem', marginBottom: '20px', textAlign: 'center' }}>Service Not Found</h1>
-      </div>
-    );
-  }
-
-  return (
-    <ServiceLayout 
-      locale={locale} 
-      service={service} 
-      parentPath="services/seo" 
-      parentName="SEO Services" 
-    />
-  );
+export default function ServicesSeoOnPageSeoPage() {
+  return <OnPageSEOClient />;
 }

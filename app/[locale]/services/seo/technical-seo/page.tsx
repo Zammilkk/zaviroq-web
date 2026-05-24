@@ -1,37 +1,14 @@
-import expandedServices from '@/data/expandedServices.json';
-import ServiceLayout from '@/app/components/ServiceLayout';
-import { Metadata } from 'next';
+import TechnicalSEOClient from '../../../technical-seo/TechnicalSEOClient';
+import type { Metadata } from 'next';
 
-export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
-  const service = expandedServices['core-seo'].find((s) => s.slug === 'technical-seo');
-  
-  if (!service) return {};
-  
+export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: service.metaTitle,
-    description: service.metaDesc,
-    keywords: service.keywords,
+    title: 'Technical SEO Optimization Services in Saudi Arabia | Zaviroq',
+    description: 'Improve your website\'s rankings, speed, crawlability, and indexing with Zaviroq\'s technical SEO optimization services in Saudi Arabia. We fix technical SEO issues that impact Google visibility and organic growth.',
+    keywords: 'technical seo services, technical seo agency, technical seo optimization, technical seo company, website technical audit, core web vitals optimization, technical seo expert, seo performance optimization, crawlability optimization, website speed optimization, indexing issues seo, schema markup services, mobile seo optimization',
   };
 }
 
-export default async function ServicesSeoTechnicalSeoPage({ params }: { params: Promise<{ locale: string }> }) {
-  const { locale } = await params;
-  const service = expandedServices['core-seo'].find((s) => s.slug === 'technical-seo');
-
-  if (!service) {
-    return (
-      <div style={{ padding: '120px 20px', minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-        <h1 style={{ fontSize: '3rem', marginBottom: '20px', textAlign: 'center' }}>Service Not Found</h1>
-      </div>
-    );
-  }
-
-  return (
-    <ServiceLayout 
-      locale={locale} 
-      service={service} 
-      parentPath="services/seo" 
-      parentName="SEO Services" 
-    />
-  );
+export default function ServicesSeoTechnicalSeoPage() {
+  return <TechnicalSEOClient />;
 }

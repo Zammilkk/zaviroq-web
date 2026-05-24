@@ -64,23 +64,23 @@
   "core-seo": [
     {
       "slug": "technical-seo",
-      "metaTitle": "Technical SEO Agency | Core Web Vitals & Indexing | ZAVIROQ",
-      "metaDesc": "Flawless site architecture. We optimize crawl budgets, eliminate JavaScript bloat, and max out Core Web Vitals.",
-      "keywords": "Technical SEO Audit, Core Web Vitals Optimization, JavaScript SEO",
-      "title": "Technical SEO Optimization",
-      "heroDesc": "If Google can't crawl you, you don't exist. We strip away massive technical errors, fix JavaScript rendering bottlenecks, and optimize server delivery.",
+      "metaTitle": "Technical SEO Optimization Services in Saudi Arabia | Zaviroq",
+      "metaDesc": "Improve your website's rankings, speed, crawlability, and indexing with Zaviroq's technical SEO optimization services in Saudi Arabia. We fix technical SEO issues that impact Google visibility and organic growth.",
+      "keywords": "technical seo services, technical seo agency, technical seo optimization, technical seo company, website technical audit, core web vitals optimization, technical seo expert, seo performance optimization, crawlability optimization, website speed optimization, indexing issues seo, schema markup services, mobile seo optimization",
+      "title": "Technical SEO Optimization Services",
+      "heroDesc": "Zaviroq provides advanced technical SEO optimization services to improve website performance, crawlability, indexing, Core Web Vitals, and search engine visibility for businesses in Saudi Arabia and beyond.",
       "color": "var(--primary-purple)",
-      "deliverables": ["Site Speed Optimization", "Core Web Vitals", "Crawlability & Indexing", "XML Sitemap & Robots.txt", "Schema Markup"]
+      "deliverables": ["Technical SEO Audit", "Website Speed Optimization", "Core Web Vitals Optimization", "Crawlability & Indexing", "Mobile SEO Optimization", "Structured Data & Schema Markup", "HTTPS & Website Security"]
     },
     {
       "slug": "on-page-seo",
-      "metaTitle": "On-Page SEO Optimization | Semantic HTML Structuring | ZAVIROQ",
-      "metaDesc": "Entity-based optimization matching exact search algorithms. Tighter content clusters and optimized tag architecture.",
-      "keywords": "On-page SEO UAE, Semantic Content Optimization, TF-IDF SEO",
-      "title": "On-Page SEO Strategy",
-      "heroDesc": "We map your content directly to Google's NLP entities. Zero keyword stuffing—just pure algorithmic alignment that drives extreme topical authority.",
+      "metaTitle": "On-Page SEO Services in Saudi Arabia | Zaviroq",
+      "metaDesc": "Improve your website rankings with Zaviroq's on-page SEO services in Saudi Arabia. We optimize content, keywords, meta tags, internal links, and user experience for higher Google visibility and organic traffic.",
+      "keywords": "on page seo services, on page seo optimization, on page seo company, on page seo agency, content optimization seo, website seo optimization, seo content strategy, keyword optimization, meta tag optimization, internal linking seo, heading structure optimization, image seo optimization, semantic seo services, seo content optimization",
+      "title": "On-Page SEO Optimization Services",
+      "heroDesc": "Zaviroq helps businesses improve Google rankings and organic traffic through advanced on-page SEO strategies including content optimization, keyword targeting, internal linking, semantic SEO, and user experience improvements.",
       "color": "var(--primary-blue)",
-      "deliverables": ["Title & Meta Optimization", "Heading Structure", "Content Optimization", "Internal Linking", "Keyword Placement"]
+      "deliverables": ["Keyword Research & Targeting", "SEO Content Optimization", "Meta Title & Description Optimization", "Heading Structure Optimization", "Internal Linking Optimization", "Image SEO Optimization", "Semantic SEO Optimization", "URL Structure Optimization"]
     },
     {
       "slug": "off-page-seo",

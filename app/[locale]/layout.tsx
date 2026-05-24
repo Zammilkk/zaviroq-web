@@ -65,19 +65,19 @@ export default async function LocaleLayout({
         <link rel="alternate" hrefLang="en-AE" href="https://zaviroq.com/ae" />
         <link rel="alternate" hrefLang="en-IN" href="https://zaviroq.com/in" />
         <CanonicalTag />
+        <meta name="google-site-verification" content="ohatbi3YT5W9pRVst1qhGn0jkJYHeLHIh0dwYq_ncxM" />
       </head>
       <body>
         <Preloader />
         <ParallaxBackground />
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX" strategy="afterInteractive" />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){window.dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-XXXXXXXXXX');
-          `}
-        </Script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZY54FDJZWS"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-ZY54FDJZWS');
+        </script>
         
         <Script id="meta-pixel" strategy="afterInteractive">
           {`
@@ -97,6 +97,13 @@ export default async function LocaleLayout({
         <Script id="tawk-to" strategy="afterInteractive">
           {`
             var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+            Tawk_API.customStyle = {
+              visibility: {
+                desktop: { xOffset: '30px', yOffset: '95px', position: 'br' },
+                mobile: { xOffset: '20px', yOffset: '80px', position: 'br' },
+                smallDisplay: { xOffset: '20px', yOffset: '80px', position: 'br' }
+              }
+            };
             (function(){
             var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
             s1.async=true;

@@ -1,40 +1,40 @@
 .waFloat {
   position: fixed;
   bottom: 30px;
-  left: 30px; /* Kept on the left so it doesn't conflict with Tawk.to which is usually on the right */
+  right: 30px;
   background-color: #25d366;
   color: #FFF;
   border-radius: 50px;
   text-align: center;
-  font-size: 30px;
+  font-size: 24px;
   box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
   z-index: 9999;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 15px;
+  padding: 12px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .waFloat:hover {
-  transform: scale(1.1) translateY(-5px);
-  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.5);
+  transform: scale(1.08) translateY(-3px);
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.5);
 }
 
 .waIcon {
-  width: 35px;
-  height: 35px;
+  width: 28px;
+  height: 28px;
   fill: currentColor;
 }
 
 @media (max-width: 768px) {
   .waFloat {
     bottom: 20px;
-    left: 20px;
-    padding: 12px;
+    right: 20px;
+    padding: 10px;
   }
   .waIcon {
-    width: 28px;
-    height: 28px;
+    width: 24px;
+    height: 24px;
   }
 }

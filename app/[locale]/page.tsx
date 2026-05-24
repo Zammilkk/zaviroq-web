@@ -7,13 +7,14 @@ import ExecutiveFAQ from '../components/ExecutiveFAQ';
 import RecentIntel from '../components/RecentIntel';
 import StartupOffer from '../components/StartupOffer';
 import Typewriter from '../components/Typewriter';
-import { Star, Globe, ShieldCheck, Layout, TrendingUp, Zap, Target, Rocket, Code, Search, BarChart, PenTool, Bot, FileText } from 'lucide-react';
+import { Star, Globe, ShieldCheck, Layout, TrendingUp, Zap, Target, Rocket, Code, Search, BarChart, PenTool, Bot, FileText, ChevronDown } from 'lucide-react';
+import Riyadh3DSkyline from '../components/Riyadh3DSkyline';
 import type { Metadata } from 'next';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Digital Marketing Agency | Web Development, SEO & Performance Marketing',
-    description: 'Full-service digital marketing agency offering web development, SEO, performance marketing, branding, and AI automation. Built for growth and conversions.',
+    title: 'Digital Marketing Agency in Riyadh, Saudi Arabia | Zaviroq',
+    description: 'Zaviroq is a leading digital marketing agency in Riyadh offering SEO, web development, Google Ads, branding, and AI-driven marketing solutions for businesses in Saudi Arabia.',
   };
 }
 
@@ -42,7 +43,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
   return (
     <div className={styles.container}>
-      <h1 className="visually-hidden">Digital Marketing Agency in UAE, Saudi & India</h1>
+      <h1 className="visually-hidden">AI-Driven Digital Marketing Agency in Riyadh</h1>
 
       {/* 🏠 HERO SECTION */}
       <section className={styles.heroSection}>
@@ -206,8 +207,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         <RevealOnScroll>
           <div className={styles.sectionHeader}>
             <div className="badge-outline">Solutions</div>
-            <h2>Our Core Services</h2>
-            <p>We provide end-to-end digital solutions to help businesses grow faster and smarter.</p>
+            <h2>Digital Marketing Services in Saudi Arabia</h2>
+            <p>Comprehensive digital marketing solutions tailored for the Saudi market — from SEO and web development to Google Ads and AI-driven strategies.</p>
           </div>
         </RevealOnScroll>
         <RevealOnScroll delay={100}>
@@ -242,6 +243,144 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
               <h3>Content Marketing</h3>
               <p>Strategic content creation and distribution that drives engagement and authority.</p>
             </Link>
+          </div>
+        </RevealOnScroll>
+      </section>
+
+      {/* ✅ WHY CHOOSE ZAVIROQ */}
+      <section className={`${styles.section} ${styles.altSection}`}>
+        <RevealOnScroll>
+          <div className={styles.sectionHeader}>
+            <div className="badge-outline">Why Choose Zaviroq</div>
+            <h2>Why Businesses Choose Zaviroq</h2>
+          </div>
+        </RevealOnScroll>
+        <RevealOnScroll delay={100}>
+          <div className={styles.whyChooseGrid}>
+            <div className={styles.whyChooseCard}>
+              <div className={styles.icon}><Target size={32} color="var(--primary-blue)" /></div>
+              <h3>ROI-Focused Strategy</h3>
+              <p>We focus on business growth and lead generation.</p>
+            </div>
+            <div className={styles.whyChooseCard}>
+              <div className={styles.icon}><Bot size={32} color="var(--primary-purple)" /></div>
+              <h3>AI-Driven Marketing</h3>
+              <p>Modern SEO and AI optimization strategies.</p>
+            </div>
+            <div className={styles.whyChooseCard}>
+              <div className={styles.icon}><Zap size={32} color="var(--primary-blue)" /></div>
+              <h3>Fast & Scalable Websites</h3>
+              <p>Performance-optimized development solutions.</p>
+            </div>
+            <div className={styles.whyChooseCard}>
+              <div className={styles.icon}><Globe size={32} color="var(--primary-purple)" /></div>
+              <h3>Saudi Market Understanding</h3>
+              <p>Localized digital strategies for Riyadh businesses.</p>
+            </div>
+            <div className={styles.whyChooseCard}>
+              <div className={styles.icon}><BarChart size={32} color="var(--primary-blue)" /></div>
+              <h3>Transparent Reporting</h3>
+              <p>Clear monthly reporting and analytics.</p>
+            </div>
+            <div className={styles.whyChooseCard}>
+              <div className={styles.icon}><ShieldCheck size={32} color="var(--primary-purple)" /></div>
+              <h3>Dedicated Support</h3>
+              <p>Long-term partnership and consultation.</p>
+            </div>
+          </div>
+        </RevealOnScroll>
+      </section>
+
+      {/* 🏢 ABOUT — Helping Saudi Businesses Grow Digitally */}
+      <section className={styles.section}>
+        <RevealOnScroll>
+          <div className={styles.aboutLayout}>
+            <div className={styles.aboutContent}>
+              <div className="badge-outline">About Zaviroq</div>
+              <h2>Helping Saudi Businesses Grow Digitally</h2>
+              <p>
+                Zaviroq is a results-driven digital marketing agency based in Riyadh, Saudi Arabia. We specialize in SEO, web development, Google Ads management, branding, and AI-driven automation. Our team combines technical expertise with deep local market knowledge to deliver scalable digital solutions that drive real business growth.
+              </p>
+              <p>
+                From startups to established enterprises, we partner with businesses across industries including real estate, healthcare, e-commerce, and SaaS — helping them build strong digital identities and dominate their markets.
+              </p>
+            </div>
+            <div className={styles.aboutStats}>
+              <div className={styles.aboutStatBox}>
+                <span className={styles.aboutStatNumber}>3+</span>
+                <span className={styles.aboutStatLabel}>Years Experience</span>
+              </div>
+              <div className={styles.aboutStatBox}>
+                <span className={styles.aboutStatNumber}>50+</span>
+                <span className={styles.aboutStatLabel}>Completed Projects</span>
+              </div>
+              <div className={styles.aboutStatBox}>
+                <span className={styles.aboutStatNumber}>10+</span>
+                <span className={styles.aboutStatLabel}>Industries Served</span>
+              </div>
+            </div>
+          </div>
+        </RevealOnScroll>
+      </section>
+
+      {/* 📝 SEO CONTENT BLOCK */}
+      <section className={`${styles.section} ${styles.altSection}`}>
+        <RevealOnScroll>
+          <div className={styles.seoPremium}>
+            <div className={styles.seoGlow}></div>
+            <div className={styles.seoPremiumInner}>
+              <div className={styles.seoLayout}>
+                <div className={styles.seoContent}>
+                  <div className={styles.seoBadge}>SEO-Optimized Content</div>
+                  <h2>Leading Digital Marketing Agency in <span className={styles.gradientHeading}>Riyadh</span></h2>
+                  <div className={styles.seoHighlight}>
+                    <div className={styles.seoHighlightIcon}>
+                      <Target size={24} />
+                    </div>
+                    <p>
+                      We deliver end-to-end digital marketing solutions tailored for Riyadh businesses — combining SEO, web development, Google Ads, and AI-driven strategies to maximize your online growth.
+                    </p>
+                  </div>
+                  <div className={styles.seoServiceGrid}>
+                    <div className={styles.seoServiceItem}>
+                      <div className={styles.seoServiceIcon}><Search size={18} /></div>
+                      <div>
+                        <h4>SEO Company Riyadh</h4>
+                        <p>Technical SEO, on-page optimization, and local search dominance for Saudi businesses.</p>
+                      </div>
+                    </div>
+                    <div className={styles.seoServiceItem}>
+                      <div className={styles.seoServiceIcon}><Code size={18} /></div>
+                      <div>
+                        <h4>Web Development Riyadh</h4>
+                        <p>Custom Next.js, React, and WordPress sites built for speed, security, and conversions.</p>
+                      </div>
+                    </div>
+                    <div className={styles.seoServiceItem}>
+                      <div className={styles.seoServiceIcon}><BarChart size={18} /></div>
+                      <div>
+                        <h4>Google Ads Saudi Arabia</h4>
+                        <p>ROI-optimized search, display, shopping, and video campaigns managed by experts.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className={styles.seoBody}>
+                    <p>
+                      In today&apos;s competitive digital landscape, businesses in Riyadh need more than just a website — they need a comprehensive digital strategy that drives visibility, engagement, and conversions. As a leading <strong>digital marketing agency in Riyadh</strong>, Zaviroq delivers data-driven solutions that help businesses dominate search results, attract qualified leads, and scale their operations across Saudi Arabia.
+                    </p>
+                    <p>
+                      Our expertise spans the full spectrum of digital marketing. As a trusted <strong>SEO company in Riyadh</strong>, we implement advanced technical SEO, on-page optimization, and strategic content marketing that boosts organic rankings and drives sustainable traffic. We understand the unique search behavior of Saudi consumers and tailor our strategies to capture high-intent local searches.
+                    </p>
+                  </div>
+                </div>
+                <div className={styles.seoVisual}>
+                  <Riyadh3DSkyline />
+                </div>
+              </div>
+            </div>
+            <div className={styles.seoScrollHint}>
+              <ChevronDown size={16} />
+            </div>
           </div>
         </RevealOnScroll>
       </section>
@@ -492,9 +631,13 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       <section className={styles.finalCta}>
         <RevealOnScroll>
           <div className={styles.finalCtaInner}>
-            <h2>Ready to Dominate Your Industry?</h2>
+            <h2>Ready to Grow Your Business in Saudi Arabia?</h2>
+            <p style={{ color: '#A0A5B1', fontSize: '1.1rem', maxWidth: '650px', margin: '0 auto', lineHeight: '1.6' }}>
+              Let Zaviroq help you build a strong digital presence with SEO, web development, branding, and paid advertising strategies.
+            </p>
             <div className={styles.heroBtns} style={{ justifyContent: 'center', margin: '30px auto 0' }}>
-              <a href={`/${locale}/contact`} className={`btn-primary ${styles.heroBtnMain}`}>Book Strategy Call</a>
+              <a href={`/${locale}/contact`} className={`btn-primary ${styles.heroBtnMain}`}>Book Free Consultation</a>
+              <a href={`/${locale}/contact`} className={styles.btnSecondary}>Contact Us</a>
             </div>
           </div>
         </RevealOnScroll>

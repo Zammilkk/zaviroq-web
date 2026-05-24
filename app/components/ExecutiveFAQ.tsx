@@ -8,20 +8,28 @@ export default function ExecutiveFAQ() {
 
   const faqs = [
     {
-      q: "How fast do you execute client deployments?",
-      a: "Our Next.js architecture and agile marketing deployments often allow us to launch full-funnel systems within 14 days, driving targeted leads substantially faster than traditional agencies."
+      q: "What does a digital marketing agency do?",
+      a: "A digital marketing agency helps businesses grow online through services like search engine optimization (SEO), website development, pay-per-click advertising, social media management, branding, and content marketing. At Zaviroq, we combine AI-driven strategies with local market expertise to deliver measurable results for businesses in Riyadh and across Saudi Arabia."
     },
     {
-      q: "Do you guarantee ROI on performance marketing?",
-      a: "While we cannot guarantee an exact numerical ROI due to market dynamics, our 98% target hit rate and historic metrics indicate a very high probability of scaling. We focus strictly on data-backed ROI optimizations rather than vanity metrics."
+      q: "Why is SEO important for businesses in Riyadh?",
+      a: "SEO is crucial for Riyadh businesses because it helps you appear in local search results when potential customers are looking for your products or services. With more Saudi consumers turning to Google to find businesses, ranking high for keywords like 'digital marketing agency Riyadh' or 'SEO company Riyadh' can significantly increase your website traffic, leads, and revenue."
     },
     {
-      q: "What makes Zaviroq different from standard digital agencies?",
-      a: "We engineer solutions. We don't just run ads or build basic WordPress sites. We build highly secure, custom matrix environments using React/Next.js combined with aggressive, algorithmic SEO and Meta ad pipelines to dominate your specific local market."
+      q: "How long does SEO take?",
+      a: "SEO is a long-term strategy. Most businesses start seeing improvements in 3–6 months, with significant results typically appearing within 6–12 months. However, the timeline depends on your industry, competition, website condition, and the aggressiveness of the SEO strategy. We focus on sustainable, white-hat SEO that builds lasting authority."
     },
     {
-      q: "Do you provide localized services in the UAE and Saudi Arabia?",
-      a: "Yes. Our deep understanding of Middle Eastern market psychology allows us to tailor Arabic and English campaigns precisely. We operate localized pipelines for Dubai, Riyadh, and extending into major Indian hubs."
+      q: "Do you provide Google Ads management?",
+      a: "Yes. We specialize in Google Ads management for Saudi businesses, including search campaigns, display advertising, shopping ads for ecommerce, and YouTube advertising. We optimize for cost-per-click, conversion rates, and overall ROI to ensure your ad spend delivers real business results."
+    },
+    {
+      q: "Do you develop ecommerce websites?",
+      a: "Absolutely. We develop high-performance ecommerce websites using modern technologies like Next.js, Shopify, and WordPress WooCommerce. Our ecommerce solutions are fast, secure, mobile-optimized, and built to convert visitors into customers — perfect for businesses in Riyadh and across Saudi Arabia."
+    },
+    {
+      q: "Why choose Zaviroq?",
+      a: "Zaviroq stands out because we combine AI-driven marketing, custom web development, and deep Saudi market expertise. We don't use templates or generic strategies — every solution is built from the ground up for your business. Our transparent reporting, ROI-focused approach, and dedicated support make us the preferred digital marketing agency in Riyadh."
     }
   ];
 
