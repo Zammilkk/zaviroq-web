@@ -28,6 +28,7 @@ export async function generateMetadata() {
         description: seo.description || 'Premium digital marketing and web development agency.',
         keywords: seo.keywords || '',
         authors: [{ name: seo.author || 'Digital Zaam' }],
+        icons: [{ rel: 'icon', url: '/zaviroq-fav.png' }],
         openGraph: {
           images: seo.ogImage ? [{ url: seo.ogImage }] : [],
         }
@@ -39,6 +40,7 @@ export async function generateMetadata() {
     metadataBase: new URL('https://zaviroq.com'),
     title: 'ZAVIROQ | Scaling Brands Digitally',
     description: 'Premium digital marketing and web development agency in GCC & India.',
+    icons: [{ rel: 'icon', url: '/zaviroq-fav.png' }],
   };
 }
 
@@ -93,27 +95,6 @@ export default async function LocaleLayout({
             'https://connect.facebook.net/en_US/fbevents.js');
             fbq('init', 'XXXXXXXXXXXXXXX');
             fbq('track', 'PageView');
-          `}
-        </Script>
-
-        <Script id="tawk-to" strategy="afterInteractive">
-          {`
-            var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-            Tawk_API.customStyle = {
-              visibility: {
-                desktop: { xOffset: '30px', yOffset: '95px', position: 'br' },
-                mobile: { xOffset: '20px', yOffset: '80px', position: 'br' },
-                smallDisplay: { xOffset: '20px', yOffset: '80px', position: 'br' }
-              }
-            };
-            (function(){
-            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-            s1.async=true;
-            s1.src='https://embed.tawk.to/6a09fb9f808e881c34388522/1jorftqc0';
-            s1.charset='UTF-8';
-            s1.setAttribute('crossorigin','*');
-            s0.parentNode.insertBefore(s1,s0);
-            })();
           `}
         </Script>
 

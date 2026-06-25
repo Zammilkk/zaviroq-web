@@ -1,40 +1,59 @@
 .waFloat {
   position: fixed;
-  bottom: 30px;
-  right: 30px;
+  bottom: 28px;
+  right: 28px;
   background-color: #25d366;
   color: #FFF;
-  border-radius: 50px;
+  border-radius: 999px;
   text-align: center;
-  font-size: 24px;
-  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+  font-size: 26px;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
   z-index: 9999;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 12px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 16px 18px;
+  gap: 10px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
 }
 
 .waFloat:hover {
-  transform: scale(1.08) translateY(-3px);
-  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.5);
+  transform: scale(1.05) translateY(-2px);
+  box-shadow: 0 10px 24px rgba(37, 211, 102, 0.45);
 }
 
 .waIcon {
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
   fill: currentColor;
+  flex-shrink: 0;
+}
+
+.waLabel {
+  opacity: 0;
+  transform: translateX(8px);
+  white-space: nowrap;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.waFloat:hover .waLabel {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 @media (max-width: 768px) {
   .waFloat {
     bottom: 20px;
     right: 20px;
-    padding: 10px;
+    padding: 14px 16px;
   }
   .waIcon {
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
+  }
+  .waLabel {
+    font-size: 0.9rem;
   }
 }
