@@ -2,40 +2,64 @@
   position: fixed;
   bottom: 28px;
   right: 28px;
-  background-color: #25d366;
+  background: linear-gradient(135deg, #25d366 0%, #1faf4f 100%);
   color: #FFF;
   border-radius: 999px;
   text-align: center;
   font-size: 26px;
-  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
   z-index: 9999;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 16px 18px;
-  gap: 10px;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+  padding: 18px 20px;
+  gap: 12px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
 }
 
 .waFloat:hover {
-  transform: scale(1.05) translateY(-2px);
-  box-shadow: 0 10px 24px rgba(37, 211, 102, 0.45);
+  transform: scale(1.08) translateY(-2px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.22);
+  background: linear-gradient(135deg, #28e073 0%, #1d9f42 100%);
+}
+
+.waFloat:active {
+  transform: scale(0.98) translateY(0);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.2);
 }
 
 .waIcon {
-  width: 32px;
-  height: 32px;
+  width: 34px;
+  height: 34px;
   fill: currentColor;
   flex-shrink: 0;
 }
 
 .waLabel {
   opacity: 0;
-  transform: translateX(8px);
+  transform: translateX(10px);
   white-space: nowrap;
-  transition: opacity 0.25s ease, transform 0.25s ease;
+  transition: opacity 0.2s ease, transform 0.2s ease;
   font-size: 0.95rem;
-  font-weight: 600;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.95);
+  color: #0f5b2e;
+  padding: 10px 14px;
+  border-radius: 24px;
+  border: 1px solid rgba(15, 91, 46, 0.12);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  position: relative;
+}
+
+.waLabel::after {
+  content: '';
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  border-width: 8px 10px 8px 0;
+  border-style: solid;
+  border-color: transparent rgba(255, 255, 255, 0.95) transparent transparent;
 }
 
 .waFloat:hover .waLabel {
@@ -47,13 +71,15 @@
   .waFloat {
     bottom: 20px;
     right: 20px;
-    padding: 14px 16px;
+    padding: 16px 18px;
+    gap: 10px;
   }
   .waIcon {
-    width: 28px;
-    height: 28px;
+    width: 30px;
+    height: 30px;
   }
   .waLabel {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    padding: 9px 12px;
   }
 }
