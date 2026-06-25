@@ -2,84 +2,88 @@
   position: fixed;
   bottom: 28px;
   right: 28px;
-  background: linear-gradient(135deg, #25d366 0%, #1faf4f 100%);
+  width: 64px;
+  height: 64px;
+  background: radial-gradient(circle at top left, #5ce77a 0%, #22b955 38%, #16923d 100%);
   color: #FFF;
-  border-radius: 999px;
+  border-radius: 50%;
   text-align: center;
-  font-size: 26px;
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
   z-index: 9999;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 18px 20px;
-  gap: 12px;
+  padding: 0;
   transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.14);
 }
 
 .waFloat:hover {
   transform: scale(1.08) translateY(-2px);
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.22);
-  background: linear-gradient(135deg, #28e073 0%, #1d9f42 100%);
+  box-shadow: 0 24px 55px rgba(0, 0, 0, 0.24);
+  background: radial-gradient(circle at top left, #7ceb92 0%, #24c15d 38%, #15933c 100%);
 }
 
 .waFloat:active {
-  transform: scale(0.98) translateY(0);
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.2);
+  transform: scale(0.96) translateY(1px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.16);
 }
 
 .waIcon {
   width: 34px;
   height: 34px;
   fill: currentColor;
-  flex-shrink: 0;
 }
 
 .waLabel {
+  pointer-events: none;
   opacity: 0;
-  transform: translateX(10px);
+  position: absolute;
+  right: calc(100% + 14px);
+  top: 50%;
+  transform: translate(10px, -50%);
   white-space: nowrap;
   transition: opacity 0.2s ease, transform 0.2s ease;
-  font-size: 0.95rem;
+  font-size: 0.88rem;
   font-weight: 700;
-  background: rgba(255, 255, 255, 0.95);
+  letter-spacing: 0.02em;
+  background: rgba(255, 255, 255, 0.98);
   color: #0f5b2e;
   padding: 10px 14px;
   border-radius: 24px;
-  border: 1px solid rgba(15, 91, 46, 0.12);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-  position: relative;
+  border: 1px solid rgba(15, 91, 46, 0.14);
+  box-shadow: 0 14px 24px rgba(0, 0, 0, 0.12);
 }
 
 .waLabel::after {
   content: '';
   position: absolute;
-  right: 100%;
+  right: -8px;
   top: 50%;
   transform: translateY(-50%);
-  border-width: 8px 10px 8px 0;
+  border-width: 8px 0 8px 10px;
   border-style: solid;
-  border-color: transparent rgba(255, 255, 255, 0.95) transparent transparent;
+  border-color: transparent transparent transparent rgba(255, 255, 255, 0.98);
 }
 
 .waFloat:hover .waLabel {
   opacity: 1;
-  transform: translateX(0);
+  transform: translate(0, -50%);
 }
 
 @media (max-width: 768px) {
   .waFloat {
+    width: 56px;
+    height: 56px;
     bottom: 20px;
     right: 20px;
-    padding: 16px 18px;
-    gap: 10px;
   }
   .waIcon {
     width: 30px;
     height: 30px;
   }
   .waLabel {
-    font-size: 0.85rem;
-    padding: 9px 12px;
+    display: none;
   }
 }
