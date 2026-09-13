@@ -11,18 +11,20 @@ html {
   -webkit-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   text-size-adjust: 100%;
-  background: #0A0A0F;
+  background: #0B0A14;
+  scroll-behavior: smooth;
+  scroll-snap-type: y proximity;
 }
 
 :root {
-  --bg-color: #0B0B0B;
-  --primary-purple: #7F77DD;
-  --primary-blue: #3B8BD4;
-  --glass-border: rgba(255, 255, 255, 0.08);
-  --glass-bg: rgba(255, 255, 255, 0.03);
-  --neon-glow: 0 0 20px rgba(127, 119, 221, 0.6);
-  --text-main: #F3F4F6;
-  --text-muted: #9CA3AF;
+  --bg-color: #0B0A14;
+  --primary-purple: #7B68EE;
+  --primary-blue: #4F86F7;
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-bg: rgba(20, 20, 30, 0.7);
+  --neon-glow: 0 4px 20px rgba(123, 104, 238, 0.4);
+  --text-main: #FFFFFF;
+  --text-muted: #A0AEC0;
   --font-sans: 'Sora', system-ui, sans-serif;
 }
 
@@ -90,7 +92,7 @@ a {
 }
 
 .animated-gradient-bg {
-  background: linear-gradient(-45deg, #0A0A0F, #1C1A38, #0F2036, #0A0A0F);
+  background: linear-gradient(-45deg, #0B0A14, #120F24, #181538, #0B0A14);
   background-size: 400% 400%;
   animation: gradientBG 15s ease infinite;
 }

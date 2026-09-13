@@ -195,6 +195,25 @@
   height: 100%;
 }
 
+.dropdownToggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  width: 24px;
+  height: 24px;
+  color: var(--text-main);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dropdownToggle:hover {
+  background: rgba(127, 119, 221, 0.15);
+  border-color: rgba(127, 119, 221, 0.4);
+}
+
 .megaMenu {
   position: absolute;
   top: 100%;

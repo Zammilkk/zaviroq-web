@@ -28,7 +28,7 @@ export async function generateMetadata() {
         description: seo.description || 'Premium digital marketing and web development agency.',
         keywords: seo.keywords || '',
         authors: [{ name: seo.author || 'Digital Zaam' }],
-        icons: [{ rel: 'icon', url: '/zaviroq-fav.png' }],
+        icons: [{ rel: 'icon', url: '/favicon.ico' }],
         openGraph: {
           images: seo.ogImage ? [{ url: seo.ogImage }] : [],
         }
@@ -40,7 +40,7 @@ export async function generateMetadata() {
     metadataBase: new URL('https://zaviroq.com'),
     title: 'ZAVIROQ | Scaling Brands Digitally',
     description: 'Premium digital marketing and web development agency in GCC & India.',
-    icons: [{ rel: 'icon', url: '/zaviroq-fav.png' }],
+    icons: [{ rel: 'icon', url: '/favicon.ico' }],
   };
 }
 

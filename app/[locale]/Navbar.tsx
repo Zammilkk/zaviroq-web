@@ -45,6 +45,7 @@ export default function Navbar() {
 
         <div className={`${styles.navLinks} ${menuOpen ? styles.open : ''}`}>
           <Link href="/" onClick={() => setMenuOpen(false)}>Home</Link>
+          <Link href="/about" onClick={() => setMenuOpen(false)}>About Us</Link>
 
           <div className={`${styles.hasDropdown} ${dropdownOpen ? styles.expanded : ''}`}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -54,7 +55,7 @@ export default function Navbar() {
                 onClick={toggleDropdown}
                 aria-label="Toggle services menu"
               >
-                {dropdownOpen ? '−' : '+'}
+                <ChevronDown size={14} style={{ transform: dropdownOpen ? 'rotate(180deg)' : 'rotate(0)', transition: 'transform 0.3s ease' }} />
               </button>
             </div>
             {/* Desktop Mega Menu */}
@@ -283,12 +284,11 @@ export default function Navbar() {
             </div>
           </div>
 
-          <Link href="/about" onClick={() => setMenuOpen(false)}>About Us</Link>
           <Link href="/portfolio" onClick={() => setMenuOpen(false)}>Portfolio</Link>
           <Link href="/blog" onClick={() => setMenuOpen(false)}>Blog</Link>
-          <Link href="/ai-content-engine" className={styles.aiLink} onClick={() => setMenuOpen(false)}>
+          <Link href="/zaviroq-softwares" className={styles.aiLink} onClick={() => setMenuOpen(false)}>
             <span className={styles.aiDot} />
-            AI Engine
+            Zaviroq Softwares
           </Link>
           <Link href="/contact" className={styles.ctaBtn} onClick={() => setMenuOpen(false)}>Get Quote</Link>
         </div>

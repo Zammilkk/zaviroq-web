@@ -35,9 +35,9 @@ export default function Riyadh3DSkyline() {
       const groundY = height * 0.72;
 
       const skyGrad = ctx.createLinearGradient(0, 0, 0, height);
-      skyGrad.addColorStop(0, '#07070f');
-      skyGrad.addColorStop(0.5, '#0b0a1a');
-      skyGrad.addColorStop(1, '#120e25');
+      skyGrad.addColorStop(0, '#eef2ff');
+      skyGrad.addColorStop(0.5, '#e0e7ff');
+      skyGrad.addColorStop(1, '#c7d2fe');
       ctx.fillStyle = skyGrad;
       ctx.fillRect(0, 0, width, height);
 
@@ -46,7 +46,7 @@ export default function Riyadh3DSkyline() {
         const sy = ((i * 97.3 + 13.7) % (groundY * 0.8));
         const s = 0.8 + (i % 3) * 0.4;
         const t = 0.3 + 0.5 * Math.sin(time * 1.5 + i * 2.1);
-        ctx.fillStyle = `rgba(255,255,255,${t * 0.5})`;
+        ctx.fillStyle = `rgba(50,50,150,${t * 0.4})`;
         ctx.beginPath();
         ctx.arc(sx, sy, s, 0, Math.PI * 2);
         ctx.fill();
@@ -62,9 +62,9 @@ export default function Riyadh3DSkyline() {
       ctx.lineTo(0, height);
       ctx.closePath();
       const duneGrad = ctx.createLinearGradient(0, groundY, 0, height);
-      duneGrad.addColorStop(0, '#1a1225');
-      duneGrad.addColorStop(0.5, '#120d1a');
-      duneGrad.addColorStop(1, '#0a0810');
+      duneGrad.addColorStop(0, '#f1f5f9');
+      duneGrad.addColorStop(0.5, '#e2e8f0');
+      duneGrad.addColorStop(1, '#cbd5e1');
       ctx.fillStyle = duneGrad;
       ctx.fill();
 

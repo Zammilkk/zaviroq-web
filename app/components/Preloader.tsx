@@ -38,9 +38,8 @@ export default function Preloader() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
-              className={styles.logoText}
             >
-              ZAVIROQ
+              <img src="/logo.svg" alt="ZAVIROQ" style={{ width: '200px', height: 'auto', objectFit: 'contain' }} />
             </motion.div>
             <motion.div
               className={styles.loadingBarContainer}
