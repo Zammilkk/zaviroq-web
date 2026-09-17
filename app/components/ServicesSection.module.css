@@ -235,9 +235,43 @@
     font-size: 2.5rem;
   }
   .carouselContainer {
-    height: 400px;
+    height: auto;
+    display: block;
+    margin-top: 30px;
   }
   .navBtn {
-    display: none; /* Hide buttons on mobile, maybe rely on touch or just showing less */
+    display: none;
+  }
+  .cardsWrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    padding: 20px 20px 40px;
+    transform: none !important;
+    perspective: none !important;
+    justify-content: flex-start;
+    -webkit-overflow-scrolling: touch;
+    width: calc(100% + 40px);
+    margin-left: -20px;
+    scrollbar-width: none;
+  }
+  .cardsWrapper::-webkit-scrollbar {
+    display: none;
+  }
+  .card {
+    position: static !important;
+    transform: none !important;
+    flex: 0 0 85%;
+    max-width: 300px;
+    height: 340px;
+    scroll-snap-align: center;
+    visibility: visible !important;
+    opacity: 1 !important;
+    filter: none !important;
+    background: rgba(25, 25, 35, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
 }

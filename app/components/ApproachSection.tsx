@@ -4,6 +4,7 @@ import React from 'react';
 import styles from './ApproachSection.module.css';
 import Image from 'next/image';
 import { ArrowRight, Play, PenTool, Monitor, Ban, Code } from 'lucide-react';
+import { Link } from '@/i18n/routing';
 
 export default function ApproachSection() {
   return (
@@ -30,15 +31,15 @@ export default function ApproachSection() {
             </p>
             
             <div className={styles.buttons}>
-              <a href="#" className={styles.btnPrimary}>
+              <Link href="/contact" className={styles.btnPrimary}>
                 Let's Build Together <ArrowRight size={18} />
-              </a>
-              <a href="#" className={styles.btnPlay}>
+              </Link>
+              <Link href="/services" className={styles.btnPlay}>
                 <div className={styles.playIconWrapper}>
                   <Play size={16} fill="white" strokeWidth={0} />
                 </div>
                 <span className={styles.playText}>See<br/>Our Work</span>
-              </a>
+              </Link>
             </div>
           </div>
           

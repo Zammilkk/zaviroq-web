@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import styles from './InteractiveHero.module.css';
 import { ArrowRight, ArrowUpRight, User, Smartphone, Play, Monitor, Search, PenTool, Megaphone, TrendingUp, Target, Home, Image, Type, Layers, LayoutGrid, Bell, Settings, Bookmark, Plus, Trophy, Wrench, CreditCard, RefreshCw, HelpCircle, Filter, Download, Maximize2 } from 'lucide-react';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 
 function AnimatedNumber({ end, suffix = "", duration = 2000 }: { end: number, suffix?: string, duration?: number }) {
   const [count, setCount] = useState(0);
@@ -68,10 +68,9 @@ export default function InteractiveHero() {
           <Link href="/contact" className={styles.btnPrimary} style={{textDecoration: 'none'}}>
             Start Your Project <ArrowRight size={18} />
           </Link>
-          <button className={styles.btnGhost}>
-            <div className={styles.playIconContainer}><Play size={16} fill="currentColor" /></div>
-            Watch Our Story
-          </button>
+          <Link href="/services" className={styles.btnPremiumGhost} style={{textDecoration: 'none'}}>
+            Our Services <ArrowUpRight size={16} />
+          </Link>
         </div>
         
         <div className={styles.services}>
