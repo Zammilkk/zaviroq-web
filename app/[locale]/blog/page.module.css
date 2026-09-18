@@ -1,7 +1,7 @@
 .container {
   width: 100%;
   min-height: 100vh;
-  padding: 120px 20px 100px;
+  padding: 120px 20px 60px;
   background: var(--bg-color);
   display: flex;
   flex-direction: column;
@@ -25,7 +25,7 @@
 .hero {
   text-align: center;
   max-width: 900px;
-  margin-bottom: 70px;
+  margin-bottom: 50px;
   position: relative;
   z-index: 2;
   display: flex;
@@ -38,26 +38,28 @@
   color: #fff;
   padding: 8px 18px;
   border-radius: 50px;
-  font-size: 0.95rem;
-  font-weight: 600;
+  font-size: 0.85rem;
+  font-weight: 500;
   margin-bottom: 25px;
   border: 1px solid rgba(127, 119, 221, 0.3);
   backdrop-filter: blur(10px);
 }
 
 .title {
-  font-size: 4.5rem;
-  font-weight: 800;
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  font-weight: 600;
   color: #fff;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   line-height: 1.1;
+  letter-spacing: -1px;
 }
 
 .subtitle {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   color: var(--text-muted);
   line-height: 1.6;
   max-width: 750px;
+  font-weight: 400;
   margin: 0 auto;
 }
 
@@ -292,25 +294,25 @@
 /* ✉️ NEWSLETTER */
 .newsletterSection {
   width: 100%;
-  max-width: 1000px;
-  background: linear-gradient(135deg, rgba(20, 20, 25, 0.9), rgba(30, 28, 60, 0.9));
-  border: 1px solid rgba(59, 139, 212, 0.3);
-  border-radius: 40px;
-  padding: 50px;
+  max-width: 900px;
+  background: linear-gradient(135deg, rgba(20, 20, 25, 0.5), rgba(30, 28, 60, 0.5));
+  border: 1px solid rgba(59, 139, 212, 0.2);
+  border-radius: 30px;
+  padding: 40px;
   display: flex;
   align-items: center;
-  gap: 50px;
+  gap: 30px;
   position: relative;
   z-index: 2;
-  box-shadow: inset 0 0 40px rgba(59, 139, 212, 0.1);
+  box-shadow: inset 0 0 40px rgba(59, 139, 212, 0.05);
 }
 
 .nlVisual {
-  width: 120px;
-  height: 120px;
-  background: rgba(59, 139, 212, 0.15);
-  border: 1px solid rgba(59, 139, 212, 0.4);
-  border-radius: 30px;
+  width: 90px;
+  height: 90px;
+  background: rgba(59, 139, 212, 0.1);
+  border: 1px solid rgba(59, 139, 212, 0.3);
+  border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -318,7 +320,7 @@
 }
 
 .mailIcon {
-  font-size: 4rem;
+  font-size: 3rem;
 }
 
 .nlContent {
@@ -327,45 +329,47 @@
 
 .nlContent h2 {
   color: #fff;
-  font-size: 2.2rem;
-  margin-bottom: 12px;
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
 }
 
 .nlContent p {
   color: #B0B5C1;
-  font-size: 1.1rem;
-  margin-bottom: 30px;
+  font-size: 1rem;
+  margin-bottom: 25px;
+  font-weight: 400;
 }
 
 .nlForm {
   display: flex;
-  gap: 15px;
+  gap: 12px;
   width: 100%;
 }
 
 .nlInput {
   flex: 1;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.3);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 18px 25px;
-  border-radius: 100px;
+  padding: 14px 20px;
+  border-radius: 12px;
   color: #fff;
-  font-size: 1.05rem;
+  font-size: 1rem;
   outline: none;
-  font-family: inherit;
   transition: all 0.3s ease;
 }
 
 .nlInput:focus {
   border-color: var(--primary-blue);
-  background: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 15px rgba(59, 139, 212, 0.2);
 }
 
 .nlBtn {
-  padding: 0 40px !important;
-  border-radius: 100px;
+  padding: 0 30px !important;
+  border-radius: 12px;
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
 /* RESPONSIVE */

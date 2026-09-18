@@ -46,7 +46,7 @@ export default function ApproachSection() {
           <div className={styles.rightCol}>
             <div className={styles.imageWrapper}>
               <Image 
-                src="/assets/images/zaviroq-founder.png" 
+                src="/assets/images/zammil-zaviroq.avif" 
                 alt="Digital Growth Partner" 
                 fill 
                 className={styles.laptopImage}

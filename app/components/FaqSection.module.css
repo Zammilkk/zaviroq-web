@@ -2,7 +2,7 @@
   width: 100%;
   background-color: #030305;
   color: #fff;
-  padding: 100px 20px;
+  padding: 100px 35px;
   display: flex;
   justify-content: center;
   font-family: var(--font-inter), sans-serif;
@@ -11,7 +11,7 @@
 
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1550px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 60px;
@@ -49,11 +49,11 @@
 }
 
 .headline {
-  font-size: 3.5rem;
-  font-weight: 800;
+  font-size: clamp(2.5rem, 3.5vw, 3.5rem);
+  font-weight: 700;
   line-height: 1.1;
   margin-bottom: 20px;
-  letter-spacing: -1.5px;
+  letter-spacing: -1px;
 }
 
 .gradientText {

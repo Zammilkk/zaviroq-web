@@ -13,7 +13,7 @@
 }
 
 .navContainer {
-  max-width: 1200px;
+  max-width: 1550px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -44,6 +44,18 @@
   display: flex;
   gap: 35px;
   align-items: center;
+}
+
+@media (min-width: 901px) {
+  .navContainer {
+    position: relative;
+  }
+  .navLinks {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 
 .navLinks a {
@@ -330,6 +342,21 @@
   box-shadow: 0 0 20px rgba(127, 119, 221, 0.6);
   transform: translateY(-2px);
   color: white !important;
+}
+
+.mobileCtaBtn {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  .desktopCtaBtn {
+    display: none !important;
+  }
+  .mobileCtaBtn {
+    display: flex !important;
+    justify-content: center;
+    width: 100%;
+  }
 }
 
 /* ── AI Engine nav link ── */

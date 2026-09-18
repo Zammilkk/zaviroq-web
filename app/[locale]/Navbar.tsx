@@ -285,13 +285,14 @@ export default function Navbar() {
           </div>
 
           <Link href="/portfolio" onClick={() => setMenuOpen(false)}>Portfolio</Link>
-          <Link href="/blog" onClick={() => setMenuOpen(false)}>Blog</Link>
           <Link href="/zaviroq-softwares" className={styles.aiLink} onClick={() => setMenuOpen(false)}>
             <span className={styles.aiDot} />
             Zaviroq Softwares
           </Link>
-          <Link href="/contact" className={styles.ctaBtn} onClick={() => setMenuOpen(false)}>Get Quote</Link>
+          <Link href="/contact" className={`${styles.ctaBtn} ${styles.mobileCtaBtn}`} onClick={() => setMenuOpen(false)}>Get Quote</Link>
         </div>
+
+        <Link href="/contact" className={`${styles.ctaBtn} ${styles.desktopCtaBtn}`} onClick={() => setMenuOpen(false)}>Get Quote</Link>
 
         <button className={styles.hamburger} onClick={() => setMenuOpen(!menuOpen)} aria-label="Menu">
           <span className={`${styles.bar} ${menuOpen ? styles.openBar1 : ''}`}></span>

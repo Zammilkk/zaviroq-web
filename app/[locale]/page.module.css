@@ -478,34 +478,39 @@
   display: flex;
   align-items: center;
   gap: 15px;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.02);
   padding: 12px 28px;
   border-radius: 100px;
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
   transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
   cursor: default;
 }
 
 .partnerItem:hover {
-  background: rgba(255, 255, 255, 1);
-  border-color: rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.15);
   transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), inset 0 0 20px rgba(255, 255, 255, 0.02);
 }
 
 .partnerIcon {
   height: 35px;
   width: auto;
   object-fit: contain;
+  background: #fff;
+  padding: 6px 12px;
+  border-radius: 12px;
   transition: all 0.4s ease;
+  filter: grayscale(1);
+  opacity: 0.9;
 }
 
 .partnerItem:hover .partnerIcon {
-  filter: grayscale(0) brightness(1);
-  /* Full brand color on hover */
+  filter: grayscale(0);
   opacity: 1;
-  transform: scale(1.1);
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
 }
 
 .partnerDivider {
@@ -532,13 +537,14 @@
 .partnerText {
   font-size: 1.05rem;
   font-weight: 600;
-  color: #000;
+  color: #A0A5B1;
   letter-spacing: 0.5px;
   white-space: nowrap;
+  transition: color 0.4s ease;
 }
 
 .partnerItem:hover .partnerText {
-  color: #111;
+  color: #fff;
 }
 
 @keyframes scrollPartner {

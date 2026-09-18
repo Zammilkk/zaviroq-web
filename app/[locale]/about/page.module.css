@@ -1,7 +1,7 @@
 .container {
   width: 100%;
   min-height: 100vh;
-  padding: 120px 20px 100px;
+  padding: 60px 0 0;
   background: var(--bg-color);
   display: flex;
   flex-direction: column;
@@ -15,19 +15,84 @@
   display: grid;
   grid-template-columns: 1fr 1.1fr;
   width: 100%;
-  max-width: 1400px;
+  max-width: 1550px;
   min-height: 80vh;
   margin-bottom: 80px;
   gap: 40px;
   position: relative;
   z-index: 2;
   align-items: center;
+  padding: 0 35px;
+}
+
+.globalPartner {
+  position: absolute;
+  top: 0;
+  right: -20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  z-index: 10;
+}
+
+.partnerDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #7b61ff;
+  margin-top: 4px;
+  box-shadow: 0 0 10px rgba(123, 97, 255, 0.6);
+}
+
+.partnerText {
+  color: #8892B0;
+  font-size: 0.65rem;
+  letter-spacing: 2px;
+  line-height: 1.6;
+}
+
+.scrollIndicator {
+  position: absolute;
+  bottom: -40px;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  z-index: 10;
+}
+
+.scrollLine {
+  width: 1px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.scrollText {
+  color: #8892B0;
+  font-size: 0.65rem;
+  letter-spacing: 2px;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.scrollArrow {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #8892B0;
 }
 
 .heroLeft {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 100%;
+  max-width: 750px;
 }
 
 .heroEyebrow {
@@ -48,12 +113,12 @@
 }
 
 .heroTitle {
-  font-size: clamp(3.5rem, 5vw, 5rem);
-  font-weight: 900;
-  line-height: 1.05;
+  font-size: clamp(2rem, 3vw, 3rem);
+  font-weight: 700;
+  line-height: 1.1;
   color: #fff;
   margin: 0 0 24px 0;
-  letter-spacing: -1px;
+  letter-spacing: -0.5px;
 }
 
 .heroGradient {
@@ -67,7 +132,7 @@
   font-size: 1.15rem;
   color: #A0A5B1;
   line-height: 1.6;
-  max-width: 500px;
+  width: 100%;
   margin-bottom: 40px;
   font-weight: 400;
 }
@@ -75,7 +140,7 @@
 .heroCtas {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 30px;
   margin-bottom: 60px;
 }
 
@@ -100,50 +165,69 @@
   box-shadow: 0 15px 35px rgba(99, 102, 241, 0.6);
 }
 
-.btnStory {
-  background: transparent;
-  border: none;
+.btnServicesUnique {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-radius: 100px;
+  padding: 8px 24px 8px 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
   display: flex;
   align-items: center;
-  gap: 16px;
-  cursor: pointer;
-  padding: 0;
-  color: #fff;
-  text-align: left;
+  gap: 14px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
 }
 
-.playIconWrapper {
-  width: 48px;
-  height: 48px;
+.btnServicesUnique::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border-radius: 100px;
+  padding: 1.5px;
+  background: linear-gradient(135deg, #3b82f6, #a855f7, transparent 60%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.btnServicesUnique:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(123, 97, 255, 0.2);
+}
+
+.btnServicesUnique:hover::before {
+  opacity: 1;
+}
+
+.servicesIconWrapper {
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #a855f7;
   transition: all 0.3s ease;
 }
 
-.btnStory:hover .playIconWrapper {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.4);
-}
-
-.storyMain {
-  display: block;
-  font-weight: 600;
-  font-size: 1rem;
-  margin-bottom: 2px;
-}
-
-.storySub {
-  display: block;
-  font-size: 0.8rem;
-  color: #8892B0;
+.btnServicesUnique:hover .servicesIconWrapper {
+  background: linear-gradient(135deg, #3b82f6, #a855f7);
+  color: #fff;
 }
 
 .heroStats {
   display: flex;
-  gap: 40px;
+  justify-content: space-between;
+  width: 100%;
   margin-bottom: 40px;
 }
 
@@ -167,6 +251,7 @@
 
 .heroTrust {
   margin-top: 20px;
+  width: 100%;
 }
 
 .trustLabel {
@@ -179,7 +264,7 @@
 .trustLogos {
   display: flex;
   align-items: center;
-  gap: 20px;
+  justify-content: space-between;
 }
 
 .trustLogo {
@@ -204,7 +289,7 @@
   height: 100%;
   display: flex;
   align-items: flex-end;
-  justify-content: center;
+  justify-content: flex-end; /* Push to the right edge */
   min-height: 600px;
 }
 
@@ -235,10 +320,10 @@
 .founderImg {
   position: relative;
   z-index: 3;
-  width: 90%;
-  max-width: 600px;
+  width: 95%; /* Increase width to fill space better */
+  max-width: 800px; /* Increase max-width */
   object-fit: contain;
-  margin-left: -50px;
+  margin-left: 0; /* Remove negative margin to let it flush right */
   filter: drop-shadow(0 20px 40px rgba(0,0,0,0.5));
 }
 
@@ -428,6 +513,9 @@
 }
 
 @media (max-width: 1024px) {
+  .globalPartner, .scrollIndicator {
+    display: none;
+  }
   .premiumHero {
     grid-template-columns: 1fr;
     text-align: center;
@@ -482,7 +570,7 @@
   grid-template-columns: 1fr 1fr;
   gap: 40px;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1600px;
   position: relative;
   z-index: 2;
   margin-bottom: 80px;
@@ -599,7 +687,7 @@
   border: 1px solid rgba(127, 119, 221, 0.25);
   border-radius: 40px;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1600px;
   overflow: hidden;
   box-shadow: 0 30px 60px rgba(0,0,0,0.5);
   position: relative;

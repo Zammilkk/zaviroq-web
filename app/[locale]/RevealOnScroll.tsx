@@ -41,8 +41,7 @@ export default function RevealOnScroll({
         minWidth: minWidth,
         flex: minWidth ? `0 0 ${minWidth}` : undefined,
         display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center'
+        flexDirection: 'column'
       }}
     >
       {children}

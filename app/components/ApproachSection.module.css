@@ -6,7 +6,7 @@
   background-position: center;
   background-repeat: no-repeat;
   color: #fff;
-  padding: 60px 20px 40px;
+  padding: 60px 35px 40px;
   display: flex;
   justify-content: center;
   position: relative;
@@ -15,7 +15,7 @@
 
 .container {
   width: 100%;
-  max-width: 1300px;
+  max-width: 1550px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -56,11 +56,11 @@
 }
 
 .headline {
-  font-size: 4.5rem;
-  font-weight: 800;
-  line-height: 1.05;
+  font-size: clamp(2.5rem, 3.5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.1;
   margin-bottom: 25px;
-  letter-spacing: -1.5px;
+  letter-spacing: -1px;
 }
 
 .gradientText {
