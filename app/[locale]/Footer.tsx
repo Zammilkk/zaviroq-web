@@ -15,7 +15,7 @@ export default function Footer({ locale = 'en' }: { locale?: string }) {
           {/* Left Brand Area */}
           <div className={styles.brandCol}>
             <div className={styles.logoWrap}>
-              <Image src="/logo.svg" alt="Zaviroq" width={240} height={60} className={styles.logoImg} />
+              <Image src="/logo.svg" alt="Zaviroq" width={320} height={80} className={styles.logoImg} />
             </div>
             
             <h2 className={styles.brandSlogan}>

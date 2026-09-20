@@ -40,7 +40,7 @@ export default function Navbar() {
     <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
       <div className={styles.navContainer}>
         <Link href="/" className={styles.logo}>
-          <Image src="/logo.svg" alt="ZAVIROQ Logo" width={150} height={50} style={{ objectFit: 'contain' }} priority />
+          <Image src="/logo.svg" alt="ZAVIROQ Logo" width={200} height={66} style={{ objectFit: 'contain' }} priority />
         </Link>
 
         <div className={`${styles.navLinks} ${menuOpen ? styles.open : ''}`}>

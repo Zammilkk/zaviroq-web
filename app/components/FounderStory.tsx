@@ -123,18 +123,18 @@ export default function FounderStory() {
 
             <div className={styles.statsRow}>
               <div className={styles.stat}>
-                <strong>50+</strong>
+                <strong>360+</strong>
                 <span>Projects Delivered</span>
               </div>
               <div className={styles.statDivider}></div>
               <div className={styles.stat}>
-                <strong>30+</strong>
+                <strong>50+</strong>
                 <span>Happy Clients</span>
               </div>
               <div className={styles.statDivider}></div>
               <div className={styles.stat}>
-                <strong>100%</strong>
-                <span>Client-Focused</span>
+                <strong>3x</strong>
+                <span>Average Growth</span>
               </div>
               
               <div className={styles.differentHandwritten}>
