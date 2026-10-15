@@ -1,0 +1,44 @@
+.backToTop {
+  position: fixed;
+  inset: auto 32px 100px auto; /* 100px from bottom to stay above WhatsApp */
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, #7b61ff, #3b82f6);
+  color: #fff;
+  border-radius: 50%;
+  border: none;
+  box-shadow: 0 10px 20px rgba(123, 97, 255, 0.3);
+  z-index: 9998;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px);
+}
+
+.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.backToTop:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 25px rgba(123, 97, 255, 0.4);
+}
+
+.backToTop:active {
+  transform: scale(0.95);
+}
+
+@media (max-width: 768px) {
+  .backToTop {
+    right: 24px;
+    bottom: 85px; /* Above mobile WhatsApp */
+    width: 40px;
+    height: 40px;
+  }
+}

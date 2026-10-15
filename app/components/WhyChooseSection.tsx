@@ -3,7 +3,7 @@
 import React, { useState, useRef } from 'react';
 import styles from './WhyChooseSection.module.css';
 import Image from 'next/image';
-import { Home, Users, Headphones, BarChart2, Plus, Volume2, VolumeX } from 'lucide-react';
+import { Home, Users, Headphones, BarChart2, Volume2, VolumeX } from 'lucide-react';
 
 const cards = [
   {
@@ -47,6 +47,9 @@ export default function WhyChooseSection() {
 
   return (
     <section className={styles.whyChooseSection}>
+      {/* Background Layer */}
+      <div className={styles.bgGlow}></div>
+
       <div className={styles.container}>
         
         {/* Top Split Area */}
@@ -86,7 +89,7 @@ export default function WhyChooseSection() {
             <div className={styles.imageWrapper}>
               <video 
                 ref={videoRef}
-                src="/assets/videos/zaviroq-video.mp4" 
+                src="/assets/images/zaviroq-videos.mp4" 
                 poster="/assets/images/why-img.avif"
                 className={styles.mockupImg}
                 loop
@@ -125,35 +128,7 @@ export default function WhyChooseSection() {
           })}
         </div>
 
-        {/* Bottom Banner */}
-        <div className={styles.bottomBanner}>
-          <div className={styles.bannerLeft}>
-            <div className={styles.avatars}>
-              {/* Using generic placeholders since we don't have the specific faces */}
-              <div className={styles.avatar} style={{ backgroundImage: 'url(https://i.pravatar.cc/100?img=11)' }}></div>
-              <div className={styles.avatar} style={{ backgroundImage: 'url(https://i.pravatar.cc/100?img=12)' }}></div>
-              <div className={styles.avatar} style={{ backgroundImage: 'url(https://i.pravatar.cc/100?img=13)' }}></div>
-              <button className={styles.addBtn}><Plus size={16} /></button>
-            </div>
-            <div className={styles.bannerTextGroup}>
-              <span className={styles.bannerSubtitle}>A Global Team</span>
-              <span className={styles.bannerSubtitle2}>Working for You</span>
-            </div>
-          </div>
 
-          <div className={styles.bannerCenter}>
-            <span className={styles.centerTextMain}>DIFFERENT LOCATIONS. ONE GOAL.</span>
-            <span className={styles.centerTextGradient}>YOUR SUCCESS.</span>
-          </div>
-
-          <div className={styles.bannerRight}>
-            <div className={styles.bannerLine}></div>
-            <div className={styles.bannerRightText}>
-              <span>REMOTE TEAM</span>
-              <span>REAL IMPACT</span>
-            </div>
-          </div>
-        </div>
 
       </div>
     </section>

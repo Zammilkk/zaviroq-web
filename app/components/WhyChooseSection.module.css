@@ -20,6 +20,17 @@
   z-index: 2;
 }
 
+.bgGlow {
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle at center, rgba(139, 92, 246, 0.15) 0%, transparent 60%);
+  z-index: 1;
+  pointer-events: none;
+}
+
 /* Top Area */
 .topArea {
   display: flex;
@@ -60,7 +71,7 @@
 }
 
 .headline {
-  font-size: clamp(2.5rem, 3.5vw, 3.5rem);
+  font-size: clamp(2rem, 3vw, 3rem);
   font-weight: 700;
   line-height: 1.1;
   margin-bottom: 25px;
@@ -81,25 +92,30 @@
 }
 
 .signature {
-  font-family: 'Caveat', cursive; /* Assuming a cursive font, fallback to cursive */
-  font-size: 2.5rem;
-  color: #A0A5B1;
-  transform: rotate(-5deg);
-  margin-top: 10px;
+  font-family: var(--font-sans), sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: transparent;
+  background: linear-gradient(90deg, #A0A5B1, #FFFFFF);
+  -webkit-background-clip: text;
+  background-clip: text;
+  margin-top: 30px;
   position: relative;
   display: inline-block;
   align-self: flex-start;
+  padding-left: 60px;
 }
-.signature::after {
+.signature::before {
   content: '';
   position: absolute;
-  bottom: -5px;
-  left: 10%;
-  width: 120%;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
   height: 2px;
-  background: #8B5CF6;
-  transform: rotate(2deg);
-  border-radius: 2px;
+  background: linear-gradient(90deg, #3B82F6, #8B5CF6);
 }
 
 .imageContent {
@@ -121,11 +137,11 @@
 .imageWrapper::after {
   content: '';
   position: absolute;
-  inset: 0;
-  box-shadow: 
-    inset 150px 0 120px -20px #030305, /* Fade left edge heavily */
-    inset 0 -120px 100px -20px #030305, /* Fade bottom edge */
-    inset 0 120px 100px -20px #030305;  /* Fade top edge */
+  inset: -2px;
+  background: 
+    linear-gradient(to right, #030305 0%, rgba(3, 3, 5, 0) 30%),
+    linear-gradient(to top, #030305 0%, rgba(3, 3, 5, 0) 15%),
+    linear-gradient(to bottom, #030305 0%, rgba(3, 3, 5, 0) 15%);
   z-index: 2;
   pointer-events: none;
 }
@@ -259,114 +275,96 @@
   font-weight: 600;
 }
 
-/* Bottom Banner */
-.bottomBanner {
-  background: rgba(15, 15, 25, 0.6);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  padding: 25px 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+
+
+/* LIGHT THEME OVERRIDES */
+:global([data-theme="light"]) .whyChooseSection {
+  background-color: #ffffff;
+  color: #0f172a;
 }
 
-.bannerLeft {
-  display: flex;
-  align-items: center;
-  gap: 20px;
+:global([data-theme="light"]) .headline {
+  color: #0f172a;
 }
 
-.avatars {
-  display: flex;
-  align-items: center;
+:global([data-theme="light"]) .eyebrowLine {
+  background-color: #cbd5e1;
 }
 
-.avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-size: cover;
-  background-position: center;
-  border: 2px solid #030305;
-  margin-right: -10px;
+:global([data-theme="light"]) .description {
+  color: #475569;
 }
 
-.addBtn {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: #8B5CF6;
-  border: 2px solid #030305;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  cursor: pointer;
-  z-index: 2;
-}
-
-.bannerTextGroup {
-  display: flex;
-  flex-direction: column;
-}
-
-.bannerSubtitle {
-  font-size: 0.85rem;
-  color: #fff;
-  font-weight: 600;
-}
-
-.bannerSubtitle2 {
-  font-size: 0.8rem;
-  color: #888C99;
-}
-
-.bannerCenter {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.centerTextMain {
-  font-size: 0.8rem;
-  letter-spacing: 3px;
-  color: #888C99;
-  text-transform: uppercase;
-  margin-bottom: 5px;
-}
-
-.centerTextGradient {
-  font-size: 0.9rem;
-  letter-spacing: 3px;
-  font-weight: 700;
-  text-transform: uppercase;
-  background: linear-gradient(90deg, #3B82F6, #8B5CF6);
+:global([data-theme="light"]) .signature {
+  background: linear-gradient(90deg, #64748b, #0f172a);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
 
-.bannerRight {
-  display: flex;
-  align-items: center;
-  gap: 20px;
+:global([data-theme="light"]) .imageWrapper {
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
-.bannerLine {
-  width: 2px;
-  height: 30px;
-  background-color: rgba(255, 255, 255, 0.1);
+:global([data-theme="light"]) .imageWrapper::after {
+  background: none;
 }
 
-.bannerRightText {
-  display: flex;
-  flex-direction: column;
-  font-size: 0.75rem;
-  color: #888C99;
-  letter-spacing: 1px;
+:global([data-theme="light"]) .mockupImg {
+  opacity: 1;
 }
+
+:global([data-theme="light"]) .bgGlow {
+  background: radial-gradient(circle at center, rgba(139, 92, 246, 0.15) 0%, transparent 65%);
+  top: 5%;
+  right: 5%;
+  width: 1000px;
+  height: 1000px;
+}
+
+:global([data-theme="light"]) .muteBtn {
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(0, 0, 0, 0.1);
+  color: #0f172a;
+}
+
+:global([data-theme="light"]) .muteBtn:hover {
+  background: rgba(139, 92, 246, 0.1);
+}
+
+:global([data-theme="light"]) .glassCard {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+}
+
+:global([data-theme="light"]) .glassCard:hover {
+  border-color: rgba(139, 92, 246, 0.3);
+  box-shadow: 0 15px 40px rgba(139, 92, 246, 0.1);
+}
+
+:global([data-theme="light"]) .cardTitle {
+  color: #0f172a;
+}
+
+:global([data-theme="light"]) .cardDesc {
+  color: #475569;
+}
+
+:global([data-theme="light"]) .cardFooter {
+  border-top-color: rgba(0, 0, 0, 0.05);
+}
+
+:global([data-theme="light"]) .footerText {
+  color: #64748b;
+}
+
+:global([data-theme="light"]) .footerNum {
+  color: #94a3b8;
+}
+
+
 
 @media (max-width: 1024px) {
   .topArea {
@@ -387,23 +385,11 @@
   .cardsGrid {
     grid-template-columns: repeat(2, 1fr);
   }
-  .bottomBanner {
-    flex-direction: column;
-    gap: 20px;
-    text-align: center;
-  }
-  .bannerRight {
-    flex-direction: column;
-  }
-  .bannerLine {
-    width: 30px;
-    height: 2px;
-  }
 }
 
 @media (max-width: 600px) {
   .headline {
-    font-size: 3rem;
+    font-size: 2rem;
   }
   .cardsGrid {
     grid-template-columns: 1fr;

@@ -84,13 +84,11 @@ export default function ServicesSection() {
     
     // Fade out edges
     const opacity = absOffset > 2 ? 0 : 1 - absOffset * 0.15;
-    const brightness = offset === 0 ? 1 : 0.4;
 
     return {
       transform: `translateX(calc(-50% + ${translateX}px)) scale(${scale}) perspective(1000px) rotateY(${rotateY}deg)`,
       zIndex,
       opacity,
-      filter: `brightness(${brightness})`,
       visibility: absOffset > 3 ? 'hidden' : 'visible'
     } as React.CSSProperties;
   };

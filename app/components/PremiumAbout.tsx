@@ -7,134 +7,7 @@ import { Link } from '@/i18n/routing';
 export default function PremiumAbout() {
   return (
     <div className={styles.wrapper}>
-      {/* =========================================
-          SECTION 1: OUR PRESENCE
-      ========================================= */}
-      <section className={styles.presenceSection}>
-        <div className={styles.container}>
-          <div className={styles.presenceGrid}>
-            
-            {/* LEFT CONTENT */}
-            <div className={styles.presenceLeft}>
-              <RevealOnScroll>
-                <div className={styles.eyebrow}>
-                  <span className={styles.line}></span> OUR PRESENCE
-                </div>
-                <h2 className={styles.title}>
-                  Global Reach<br/>
-                  with a <span className={styles.blueGradient}>Local Mindset</span>
-                </h2>
-                <p className={styles.description}>
-                  While we&apos;re based in India, we proudly work with clients across the UAE, Saudi Arabia (KSA) and beyond. We understand different markets, cultures and business needs — and create tailored digital solutions that work.
-                </p>
-                
-                <div className={styles.flagsGrid}>
-                  <div className={styles.flagItem}>
-                    <div className={styles.flagIcon}>🇦🇪</div>
-                    <div className={styles.flagText}>
-                      <strong>UAE</strong>
-                      <span>Growing Brands</span>
-                    </div>
-                  </div>
-                  <div className={styles.flagItem}>
-                    <div className={styles.flagIcon}>🇸🇦</div>
-                    <div className={styles.flagText}>
-                      <strong>KSA</strong>
-                      <span>Digital Solutions</span>
-                    </div>
-                  </div>
-                  <div className={styles.flagItem}>
-                    <div className={styles.flagIcon}>🇮🇳</div>
-                    <div className={styles.flagText}>
-                      <strong>INDIA</strong>
-                      <span>Local Expertise</span>
-                    </div>
-                  </div>
-                  <div className={styles.flagItem}>
-                    <div className={styles.flagIcon}>🌐</div>
-                    <div className={styles.flagText}>
-                      <strong>Global</strong>
-                      <span>Expanding Together</span>
-                    </div>
-                  </div>
-                </div>
 
-                <div className={styles.presenceAction}>
-                  <Link href="/contact" className={styles.btnDark}>
-                    Work With Us <ArrowRight size={16} />
-                  </Link>
-                  <div className={styles.handwrittenNote}>
-                    Different Markets<br/>
-                    Same Mission.<br/>
-                    Your Growth.
-                  </div>
-                </div>
-              </RevealOnScroll>
-            </div>
-
-            {/* RIGHT GLOBE */}
-            <div className={styles.presenceRight}>
-              <RevealOnScroll delay={200}>
-                <div className={styles.globeWrapper}>
-                  <div className={styles.globeGlow}></div>
-                  <img src="/assets/images/global-about.png" alt="Global Reach" className={styles.globeImg} />
-                  
-                  {/* Floating Pins */}
-                  <div className={`${styles.floatPin} ${styles.pinUae}`}>
-                    <div className={styles.pinThumb}>🇦🇪</div>
-                    <div className={styles.pinDetails}>
-                      <strong>UAE</strong>
-                      <span>Our Clients</span>
-                      <small>Growing Brands in a Global Hub</small>
-                    </div>
-                  </div>
-
-                  <div className={`${styles.floatPin} ${styles.pinKsa}`}>
-                    <div className={styles.pinThumb}>🇸🇦</div>
-                    <div className={styles.pinDetails}>
-                      <strong>KSA</strong>
-                      <span>Our Clients</span>
-                      <small>Digital Solutions for a Bigger Tomorrow</small>
-                    </div>
-                  </div>
-
-                  <div className={`${styles.floatPin} ${styles.pinIndia}`}>
-                    <div className={styles.pinThumb}>🇮🇳</div>
-                    <div className={styles.pinDetails}>
-                      <strong>INDIA</strong>
-                      <span>Our Base</span>
-                      <small>Local Expertise, Global Vision</small>
-                    </div>
-                  </div>
-                  
-                </div>
-              </RevealOnScroll>
-            </div>
-          </div>
-
-          <div className={styles.statsRow}>
-            <div className={styles.statItem}>
-              <h3>3+</h3>
-              <span>Markets</span>
-            </div>
-            <div className={styles.statLine}></div>
-            <div className={styles.statItem}>
-              <h3>50+</h3>
-              <span>Happy Clients</span>
-            </div>
-            <div className={styles.statLine}></div>
-            <div className={styles.statItem}>
-              <h3>100+</h3>
-              <span>Projects</span>
-            </div>
-            <div className={styles.statLine}></div>
-            <div className={styles.statItem}>
-              <h3 style={{ fontSize: '2.5rem' }}>∞</h3>
-              <span>Bigger Possibilities</span>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* =========================================
           SECTION 2: CORE VALUES (DARK)
@@ -243,10 +116,7 @@ export default function PremiumAbout() {
                   </Link>
                 </div>
                 
-                <div className={styles.handwrittenProcessLeft}>
-                  From Ideas<br/>
-                  to Impact
-                </div>
+
               </RevealOnScroll>
             </div>
 
@@ -287,9 +157,7 @@ export default function PremiumAbout() {
                     <p>Measure, optimize and scale.</p>
                   </div>
 
-                  <div className={styles.handwrittenProcessRight}>
-                    Strategy<br/>Execution<br/>Growth
-                  </div>
+
                 </div>
               </RevealOnScroll>
             </div>

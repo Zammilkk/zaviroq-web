@@ -1,6 +1,6 @@
 .section {
   width: 100%;
-  background: #05050A; /* Dark Theme */
+  background: var(--bg-color); /* Dark Theme */
   padding: 60px 20px;
   display: flex;
   justify-content: center;
@@ -35,7 +35,7 @@
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 2px;
-  color: #94A3B8;
+  color: var(--text-muted);
   margin-bottom: 24px;
 }
 
@@ -49,7 +49,7 @@
   font-size: clamp(2rem, 2.8vw, 2.8rem);
   font-weight: 600;
   line-height: 1.15;
-  color: #ffffff; /* Dark Theme */
+  color: var(--text-main); /* Dark Theme */
   margin: 0 0 10px 0;
   letter-spacing: -0.5px;
 }
@@ -63,7 +63,7 @@
 
 .subtitle {
   font-size: 1.5rem;
-  color: #cbd5e1; /* Dark Theme */
+  color: var(--text-muted); /* Dark Theme */
   font-weight: 500;
   margin-bottom: 30px;
   text-align: left;
@@ -71,7 +71,7 @@
 }
 
 .content {
-  color: #94A3B8; /* Dark Theme */
+  color: var(--text-muted); /* Dark Theme */
   font-size: 0.95rem;
   line-height: 1.7;
   display: flex;
@@ -90,19 +90,19 @@
 .signatureText {
   font-family: 'Brush Script MT', cursive, sans-serif;
   font-size: 3rem;
-  color: #94A3B8; /* Dark Theme */
+  color: var(--text-muted); /* Dark Theme */
   line-height: 1;
   transform: rotate(-5deg);
 }
 
 .signatureRole {
-  color: #94A3B8; /* Dark Theme */
+  color: var(--text-muted); /* Dark Theme */
   font-size: 0.8rem;
   line-height: 1.4;
 }
 
 .signatureRole strong {
-  color: #ffffff; /* Dark Theme */
+  color: var(--text-main); /* Dark Theme */
   font-size: 0.9rem;
 }
 
@@ -114,7 +114,7 @@
 
 .btnPrimary {
   background: linear-gradient(135deg, #6366f1, #a855f7);
-  color: #fff;
+  color: #ffffff;
   border-radius: 100px;
   padding: 14px 28px;
   font-size: 0.95rem;
@@ -145,16 +145,16 @@
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.2); /* Dark Theme */
+  border: 1px solid var(--glass-border); /* Dark Theme */
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #ffffff; /* Dark Theme */
+  color: var(--text-main); /* Dark Theme */
   transition: all 0.3s ease;
 }
 
 .btnPlay:hover .playIcon {
-  background: rgba(255, 255, 255, 0.05); /* Dark Theme */
+  background: var(--glass-border); /* Dark Theme */
 }
 
 .playText {
@@ -163,12 +163,12 @@
 }
 
 .playText strong {
-  color: #ffffff; /* Dark Theme */
+  color: var(--text-main); /* Dark Theme */
   font-size: 0.9rem;
 }
 
 .playText span {
-  color: #94A3B8; /* Dark Theme */
+  color: var(--text-muted); /* Dark Theme */
   font-size: 0.75rem;
 }
 
@@ -176,12 +176,12 @@
   position: absolute;
   bottom: 20px;
   left: -20px;
-  color: #94A3B8;
+  color: var(--text-muted);
   font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 2px;
   line-height: 1.8;
-  border-left: 1px solid rgba(255, 255, 255, 0.1); /* Dark Theme */
+  border-left: 1px solid var(--glass-border); /* Dark Theme */
   padding-left: 12px;
 }
 
@@ -217,7 +217,7 @@
   left: 40px;
   font-family: 'Brush Script MT', cursive, sans-serif;
   font-size: 2.2rem;
-  color: #fff;
+  color: var(--text-main);
   line-height: 1.1;
   transform: rotate(-10deg);
   text-shadow: 0 2px 10px rgba(0,0,0,0.5);
@@ -241,13 +241,13 @@
 }
 
 .glassBadgeLeft strong {
-  color: #fff;
+  color: var(--text-main);
   font-size: 1.8rem;
   font-weight: 800;
 }
 
 .glassBadgeLeft span {
-  color: #94A3B8;
+  color: var(--text-muted);
   font-size: 0.75rem;
   line-height: 1.2;
 }
@@ -264,7 +264,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  color: #fff;
+  color: var(--text-main);
   font-size: 0.85rem;
   font-weight: 500;
   z-index: 2;
@@ -309,14 +309,14 @@
   left: -30px;
   font-size: 5rem;
   font-family: serif;
-  color: rgba(255, 255, 255, 0.05); /* Dark Theme */
+  color: var(--glass-border); /* Dark Theme */
   line-height: 1;
 }
 
 .quoteHeader h4 {
   font-size: 1.8rem;
   font-weight: 700;
-  color: #ffffff; /* Dark Theme */
+  color: var(--text-main); /* Dark Theme */
   line-height: 1.2;
   position: relative;
   z-index: 1;
@@ -337,8 +337,8 @@
 }
 
 .infoCard {
-  background: rgba(255, 255, 255, 0.03); /* Dark Theme */
-  border: 1px solid rgba(255, 255, 255, 0.05); /* Dark Theme */
+  background: var(--glass-bg); /* Dark Theme */
+  border: 1px solid var(--glass-border); /* Dark Theme */
   border-radius: 16px;
   padding: 20px;
   display: flex;
@@ -360,14 +360,14 @@
 
 .infoCard h5 {
   font-size: 0.95rem;
-  color: #ffffff; /* Dark Theme */
+  color: var(--text-main); /* Dark Theme */
   margin: 0 0 4px 0;
   font-weight: 700;
 }
 
 .infoCard p {
   font-size: 0.75rem;
-  color: #94A3B8; /* Dark Theme */
+  color: var(--text-muted); /* Dark Theme */
   margin: 0;
   line-height: 1.5;
 }
@@ -383,13 +383,13 @@
   position: absolute;
   top: 0;
   right: 0;
-  color: #94A3B8;
+  color: var(--text-muted);
   font-size: 0.65rem;
   font-weight: 700;
   letter-spacing: 2px;
   line-height: 1.6;
   text-align: right;
-  border-top: 1px solid rgba(255, 255, 255, 0.1); /* Dark Theme */
+  border-top: 1px solid var(--glass-border); /* Dark Theme */
   padding-top: 12px;
 }
 
@@ -432,12 +432,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
+  color: #ffffff;
   align-self: flex-end;
 }
 
 .imageCard h3 {
-  color: #fff;
+  color: #ffffff;
   font-size: 1.8rem;
   font-weight: 800;
   line-height: 1.1;
@@ -450,7 +450,7 @@
   align-items: center;
   justify-content: space-between;
   padding-top: 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1); /* Dark Theme */
+  border-top: 1px solid var(--glass-border); /* Dark Theme */
   gap: 10px;
 }
 
@@ -464,13 +464,13 @@
 
 .stat strong {
   font-size: 1.5rem;
-  color: #ffffff; /* Dark Theme */
+  color: var(--text-main); /* Dark Theme */
   font-weight: 800;
 }
 
 .stat span {
   font-size: 0.7rem;
-  color: #94A3B8;
+  color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 1px;
 }
@@ -478,13 +478,13 @@
 .statDivider {
   width: 1px;
   height: 30px;
-  background: rgba(255, 255, 255, 0.1); /* Dark Theme */
+  background: var(--glass-border); /* Dark Theme */
 }
 
 .differentHandwritten {
   font-family: 'Brush Script MT', cursive, sans-serif;
   font-size: 1.8rem;
-  color: #94A3B8;
+  color: var(--text-muted);
   line-height: 1;
   transform: rotate(-10deg);
 }
@@ -513,3 +513,10 @@
     gap: 20px;
   }
 }
+
+
+/* LIGHT THEME OVERRIDES */
+:global([data-theme="light"]) .imageWrapper { box-shadow: 0 30px 60px rgba(0,0,0,0.1); background: var(--bg-color); }
+:global([data-theme="light"]) .glassBadgeLeft { background: rgba(255, 255, 255, 0.9); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+:global([data-theme="light"]) .glassBadgeRight { background: rgba(255, 255, 255, 0.9); box-shadow: 0 10px 30px rgba(0,0,0,0.05); color: var(--text-main); }
+:global([data-theme="light"]) .glassBadgeLeft strong { color: var(--text-main); }

@@ -55,9 +55,9 @@
 
 .headline {
   font-size: clamp(2rem, 3vw, 3rem);
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.1;
-  letter-spacing: -0.5px;
+  letter-spacing: -1px;
 }
 
 .gradientText {
@@ -135,6 +135,13 @@
   transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
   cursor: pointer;
   transform-origin: center center;
+  filter: brightness(0.4);
+}
+
+.activeCard {
+  background: linear-gradient(135deg, rgba(79, 70, 229, 0.8), rgba(147, 51, 234, 0.8));
+  box-shadow: 0 0 40px rgba(100, 50, 250, 0.3);
+  filter: brightness(1);
 }
 
 .cardInner {
@@ -146,11 +153,6 @@
   display: flex;
   flex-direction: column;
   position: relative;
-}
-
-.activeCard {
-  background: linear-gradient(135deg, rgba(79, 70, 229, 0.8), rgba(147, 51, 234, 0.8));
-  box-shadow: 0 0 40px rgba(100, 50, 250, 0.3);
 }
 
 .activeCard .cardInner {
@@ -210,6 +212,89 @@
   border-color: #fff;
 }
 
+/* LIGHT THEME OVERRIDES */
+:global([data-theme="light"]) .servicesSection {
+  background-color: #f8fafc;
+  background-image: radial-gradient(circle at center, rgba(80, 50, 180, 0.05) 0%, transparent 60%);
+  color: #0f172a;
+}
+
+:global([data-theme="light"]) .headline {
+  color: #0f172a;
+}
+
+:global([data-theme="light"]) .subtext {
+  color: #64748b;
+}
+
+:global([data-theme="light"]) .eyebrowLine {
+  background-color: #cbd5e1;
+}
+
+:global([data-theme="light"]) .navBtn {
+  border-color: rgba(0, 0, 0, 0.1);
+  color: #64748b;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+:global([data-theme="light"]) .navBtn:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+:global([data-theme="light"]) .card {
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(0, 0, 0, 0.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+  filter: none;
+}
+
+:global([data-theme="light"]) .cardInner {
+  background: #ffffff;
+}
+
+:global([data-theme="light"]) .activeCard {
+  background: linear-gradient(135deg, rgba(79, 70, 229, 0.8), rgba(147, 51, 234, 0.8));
+  box-shadow: 0 20px 50px rgba(100, 50, 250, 0.2);
+}
+
+:global([data-theme="light"]) .activeCard .cardInner {
+  background: #ffffff;
+}
+
+:global([data-theme="light"]) .card h3 {
+  color: #0f172a;
+}
+
+:global([data-theme="light"]) .card p {
+  color: #475569;
+}
+
+:global([data-theme="light"]) .iconBox {
+  background: rgba(139, 92, 246, 0.08);
+  border-color: rgba(139, 92, 246, 0.2);
+  color: #7c3aed;
+  box-shadow: none;
+}
+
+:global([data-theme="light"]) .cardBtn {
+  border-color: rgba(0, 0, 0, 0.1);
+  color: #64748b;
+}
+
+:global([data-theme="light"]) .activeCard .cardBtn {
+  border-color: rgba(139, 92, 246, 0.5);
+  color: #7c3aed;
+}
+
+:global([data-theme="light"]) .card:hover .cardBtn {
+  background: #7c3aed;
+  color: #fff;
+  border-color: #7c3aed;
+}
+
 @media (max-width: 1024px) {
   .header {
     flex-direction: column;
@@ -232,7 +317,7 @@
 
 @media (max-width: 768px) {
   .headline {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
   .carouselContainer {
     height: auto;
@@ -273,5 +358,9 @@
     filter: none !important;
     background: rgba(25, 25, 35, 0.9);
     border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  :global([data-theme="light"]) .card {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: rgba(0, 0, 0, 0.05);
   }
 }

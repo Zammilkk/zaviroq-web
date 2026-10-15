@@ -52,6 +52,14 @@
   object-fit: contain;
 }
 
+.darkLogo {
+  display: block;
+}
+
+.lightLogo {
+  display: none;
+}
+
 .brandSlogan {
   font-size: 2.2rem;
   font-weight: 800;
@@ -354,4 +362,108 @@
     gap: 20px;
     justify-content: center;
   }
+}
+
+/* LITE THEME OVERRIDES */
+.liteTheme {
+  background-color: #ffffff;
+  color: #111827;
+  border-top: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.liteTheme .footerGlow {
+  background: radial-gradient(ellipse at top, rgba(139, 92, 246, 0.1), transparent 70%);
+}
+
+.liteTheme .brandDesc,
+.liteTheme .ctaDesc {
+  color: #4B5563;
+}
+
+.liteTheme .contactRow {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.liteTheme .contactText strong {
+  color: #111827;
+}
+
+.liteTheme .contactText span {
+  color: #6B7280;
+}
+
+.liteTheme .linkTitle {
+  color: #111827;
+}
+
+.liteTheme .linkList a {
+  color: #4B5563;
+}
+
+.liteTheme .linkList a:hover {
+  color: #8B5CF6;
+}
+
+.liteTheme .linkList a svg {
+  color: #9CA3AF;
+}
+
+.liteTheme .darkLogo,
+:global([data-theme="light"]) .darkLogo {
+  display: none !important;
+}
+
+.liteTheme .lightLogo,
+:global([data-theme="light"]) .lightLogo {
+  display: block !important;
+}
+
+@media (prefers-color-scheme: light) {
+  :global(:root:not([data-theme="dark"])) .darkLogo {
+    display: none !important;
+  }
+  :global(:root:not([data-theme="dark"])) .lightLogo {
+    display: block !important;
+  }
+}
+
+.liteTheme .ctaEyebrow {
+  color: #6B7280;
+}
+
+.liteTheme .globeImg {
+  opacity: 0.15;
+  filter: invert(1) grayscale(1);
+  mix-blend-mode: multiply;
+}
+
+.liteTheme .globeText {
+  color: #D1D5DB;
+}
+
+.liteTheme .copyright {
+  color: #6B7280;
+}
+
+.liteTheme .socials a {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: #111827;
+}
+
+.liteTheme .socials a:hover {
+  background: rgba(139, 92, 246, 0.1);
+  border-color: rgba(139, 92, 246, 0.3);
+}
+
+.liteTheme .legalLinks a,
+.liteTheme .separator {
+  color: #6B7280;
+}
+
+.liteTheme .legalLinks a:hover {
+  color: #111827;
+}
+
+.liteTheme .footerLogoBadge {
+  color: #111827;
 }

@@ -15,7 +15,7 @@
    SECTION 1: OUR PRESENCE
 ======================================= */
 .presenceSection {
-  background: #05050A; /* Dark theme */
+  background: var(--bg-color); /* Dark theme */
   padding: 120px 0 80px; /* Reduced padding */
   position: relative;
   overflow: hidden;
@@ -41,7 +41,7 @@
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 2px;
-  color: #94A3B8;
+  color: var(--text-muted);
   margin-bottom: 20px;
   text-transform: uppercase;
 }
@@ -56,7 +56,7 @@
   font-size: clamp(2rem, 2.8vw, 2.8rem);
   font-weight: 600;
   line-height: 1.15;
-  color: #ffffff; /* Dark theme */
+  color: var(--text-main); /* Dark theme */
   margin: 0 0 24px 0;
   letter-spacing: -0.5px;
 }
@@ -69,7 +69,7 @@
 }
 
 .description {
-  color: #94A3B8; /* Dark theme */
+  color: var(--text-muted); /* Dark theme */
   font-size: 1.05rem;
   line-height: 1.6;
   max-width: 700px; /* Increased to fill more space */
@@ -93,13 +93,13 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.05); /* Dark theme */
+  background: var(--glass-border); /* Dark theme */
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.2rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #fff;
+  border: 1px solid var(--glass-border);
+  color: var(--text-main);
   font-family: "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif;
 }
 
@@ -110,13 +110,13 @@
 
 .flagText strong {
   font-size: 0.9rem;
-  color: #fff; /* Dark theme */
+  color: var(--text-main); /* Dark theme */
   font-weight: 700;
 }
 
 .flagText span {
   font-size: 0.7rem;
-  color: #94A3B8; /* Dark theme */
+  color: var(--text-muted); /* Dark theme */
 }
 
 .presenceAction {
@@ -127,7 +127,7 @@
 
 .btnDark {
   background: linear-gradient(135deg, #3b82f6, #6366f1); /* Gradient for dark theme */
-  color: #fff;
+  color: #ffffff;
   border-radius: 100px;
   padding: 14px 28px;
   font-size: 0.95rem;
@@ -146,7 +146,7 @@
 .handwrittenNote {
   font-family: 'Brush Script MT', cursive, sans-serif;
   font-size: 1.8rem;
-  color: #94A3B8;
+  color: var(--text-muted);
   line-height: 1.2;
   transform: rotate(-5deg);
 }
@@ -194,7 +194,7 @@
   position: absolute;
   background: rgba(15, 23, 42, 0.8); /* Dark glassmorphism */
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--glass-border);
   border-radius: 100px;
   padding: 8px 16px 8px 8px;
   display: flex;
@@ -212,8 +212,8 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1); /* Dark theme */
-  color: #fff;
+  background: var(--glass-border); /* Dark theme */
+  color: var(--text-main);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -228,13 +228,13 @@
 
 .pinDetails strong {
   font-size: 0.85rem;
-  color: #fff; /* Dark theme */
+  color: var(--text-main); /* Dark theme */
   line-height: 1.2;
 }
 
 .pinDetails span {
   font-size: 0.7rem;
-  color: #94A3B8; /* Dark theme */
+  color: var(--text-muted); /* Dark theme */
   font-weight: 500;
 }
 
@@ -262,7 +262,7 @@
   align-items: center;
   justify-content: space-between;
   padding-top: 40px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1); /* Dark theme */
+  border-top: 1px solid var(--glass-border); /* Dark theme */
 }
 
 .statItem {
@@ -276,14 +276,14 @@
 .statItem h3 {
   font-size: 2rem; /* Reduced size */
   font-weight: 700; /* Reduced weight */
-  color: #ffffff; /* Dark theme */
+  color: var(--text-main); /* Dark theme */
   margin: 0 0 5px 0;
   line-height: 1;
 }
 
 .statItem span {
   font-size: 0.8rem;
-  color: #94A3B8; /* Dark theme */
+  color: var(--text-muted); /* Dark theme */
   text-transform: uppercase;
   letter-spacing: 1px;
 }
@@ -291,7 +291,7 @@
 .statLine {
   width: 1px;
   height: 40px;
-  background: rgba(255, 255, 255, 0.1); /* Dark theme */
+  background: var(--glass-border); /* Dark theme */
 }
 
 
@@ -299,7 +299,7 @@
    SECTION 2: CORE VALUES
 ======================================= */
 .valuesSection {
-  background: #05050A; 
+  background: var(--bg-color); 
   padding: 80px 0; /* Reduced padding */
   position: relative;
   overflow: hidden;
@@ -330,7 +330,7 @@
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 2px;
-  color: #94A3B8;
+  color: var(--text-muted);
   margin-bottom: 20px;
   text-transform: uppercase;
 }
@@ -345,7 +345,7 @@
   font-size: clamp(2rem, 2.8vw, 2.8rem);
   font-weight: 600;
   line-height: 1.15;
-  color: #ffffff;
+  color: var(--text-main);
   margin: 0;
   letter-spacing: -0.5px;
 }
@@ -360,7 +360,7 @@
 .handwrittenWhite {
   font-family: 'Brush Script MT', cursive, sans-serif;
   font-size: 2rem;
-  color: #94A3B8;
+  color: var(--text-muted);
   line-height: 1.2;
   transform: rotate(-5deg);
   text-align: right;
@@ -376,9 +376,9 @@
 }
 
 .valueCard {
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--glass-bg);
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border);
   border-radius: 24px;
   padding: 40px 30px;
   display: flex;
@@ -400,8 +400,8 @@
 
 .valueCard:hover {
   transform: translateY(-10px);
-  background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(255, 255, 255, 0.1);
+  background: var(--glass-border);
+  border-color: var(--glass-border);
   box-shadow: 0 20px 40px rgba(0,0,0,0.5);
 }
 
@@ -425,12 +425,12 @@
 .valueCard h4 {
   font-size: 1.25rem;
   font-weight: 700;
-  color: #fff;
+  color: var(--text-main);
   margin: 0 0 12px 0;
 }
 
 .valueCard p {
-  color: #94A3B8;
+  color: var(--text-muted);
   font-size: 0.9rem;
   line-height: 1.6;
   margin: 0 0 30px 0;
@@ -453,7 +453,7 @@
 .cardLine {
   flex: 1;
   height: 1px;
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--glass-border);
 }
 
 .zGraphic {
@@ -470,7 +470,7 @@
   font-weight: 900;
   color: rgba(255, 255, 255, 0.02);
   line-height: 0.8;
-  background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0));
+  background: linear-gradient(180deg, var(--glass-border), rgba(255,255,255,0));
   -webkit-background-clip: text;
   background-clip: text;
 }
@@ -480,7 +480,7 @@
    SECTION 3: OUR APPROACH
 ======================================= */
 .processSection {
-  background: #05050A; /* Dark theme */
+  background: var(--bg-color); /* Dark theme */
   padding: 80px 0 100px; /* Reduced padding */
   position: relative;
   overflow: hidden;
@@ -500,7 +500,7 @@
 
 .btnGradient {
   background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-  color: #fff;
+  color: #ffffff;
   border-radius: 100px;
   padding: 14px 28px;
   font-size: 0.95rem;
@@ -521,7 +521,7 @@
 .handwrittenProcessLeft {
   font-family: 'Brush Script MT', cursive, sans-serif;
   font-size: 2rem;
-  color: #94A3B8;
+  color: var(--text-muted);
   line-height: 1.2;
   transform: rotate(-10deg);
   margin-left: 20px;
@@ -554,8 +554,8 @@
 
 .stepNode {
   position: absolute;
-  background: rgba(255, 255, 255, 0.03); /* Dark glassmorphism */
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--glass-bg); /* Dark glassmorphism */
+  border: 1px solid var(--glass-border);
   backdrop-filter: blur(20px);
   border-radius: 20px;
   padding: 24px;
@@ -567,7 +567,7 @@
 }
 .stepNode:hover {
   transform: translateY(-5px);
-  background: rgba(255, 255, 255, 0.06);
+  background: var(--glass-bg);
 }
 
 .stepNum {
@@ -575,7 +575,7 @@
   height: 36px;
   border-radius: 50%;
   background: #3b82f6;
-  color: #fff;
+  color: var(--text-main);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -608,7 +608,7 @@
   height: 36px;
   border-radius: 50%;
   background: #8b5cf6;
-  color: #fff;
+  color: var(--text-main);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -641,19 +641,19 @@
   justify-content: center;
   margin-top: 10px;
   margin-bottom: 16px;
-  color: #94A3B8; /* Dark theme */
+  color: var(--text-muted); /* Dark theme */
 }
 
 .stepNode h4 {
   font-size: 1.1rem;
   font-weight: 700; /* Reduced weight */
-  color: #ffffff; /* Dark theme */
+  color: var(--text-main); /* Dark theme */
   margin: 0 0 8px 0;
 }
 
 .stepNode p {
   font-size: 0.75rem;
-  color: #94A3B8; /* Dark theme */
+  color: var(--text-muted); /* Dark theme */
   line-height: 1.5;
   margin: 0;
 }
@@ -685,7 +685,7 @@
   right: -5%;
   font-family: 'Brush Script MT', cursive, sans-serif;
   font-size: 1.8rem;
-  color: #94A3B8;
+  color: var(--text-muted);
   line-height: 1.2;
   transform: rotate(-10deg);
   text-align: right;
@@ -735,3 +735,14 @@
     flex-direction: column;
   }
 }
+
+
+/* LIGHT THEME OVERRIDES */
+:global([data-theme="light"]) .floatPin { background: rgba(255, 255, 255, 0.9); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+:global([data-theme="light"]) .pinThumb { background: rgba(0, 0, 0, 0.05); color: var(--text-main); }
+:global([data-theme="light"]) .flagIcon { background: rgba(0, 0, 0, 0.05); color: var(--text-main); }
+:global([data-theme="light"]) .zText { color: rgba(0, 0, 0, 0.03); background: linear-gradient(180deg, rgba(0,0,0,0.05), rgba(0,0,0,0)); }
+:global([data-theme="light"]) .stepNum { color: #fff; } /* Keep numbers white on colored bg */
+:global([data-theme="light"]) .stepNumPurple { color: #fff; }
+:global([data-theme="light"]) .valueCard { background: var(--glass-bg); }
+:global([data-theme="light"]) .stepNode { background: var(--glass-bg); }

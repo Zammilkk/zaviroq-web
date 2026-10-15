@@ -3,8 +3,10 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Link } from '@/i18n/routing';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Search, Code, Layers, BarChart, PenTool, Globe, ChevronDown } from 'lucide-react';
+import { Search, Code, Layers, BarChart, PenTool, Globe, ChevronDown, Mail, Phone, ArrowRight } from 'lucide-react';
+import { Linkedin, Instagram, Youtube, Facebook } from '../components/SocialIcons';
 import styles from './Navbar.module.css';
+import ThemeToggle from '../components/ThemeToggle';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -37,19 +39,79 @@ export default function Navbar() {
   };
 
   return (
-    <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
-      <div className={styles.navContainer}>
-        <Link href="/" className={styles.logo}>
-          <Image src="/logo.svg" alt="ZAVIROQ Logo" width={200} height={66} style={{ objectFit: 'contain' }} priority />
-        </Link>
+    <header className={styles.header}>
+      {/* Top Bar */}
+      <div className={styles.topbar}>
+        <div className={styles.topbarLeft}>
+          <div className={styles.taglineWrapper}>
+            <span className={styles.pulseDot}></span>
+            <span className={styles.taglineText}>SCALING BRANDS DIGITALLY</span>
+          </div>
+          <div className={styles.topbarDivider}></div>
+          <a href="mailto:info@zaviroq.com" className={styles.topbarLink}>
+            <Mail size={14} className={styles.topbarIcon} /> info@zaviroq.com
+          </a>
+          <div className={styles.topbarDivider}></div>
+          <a href="tel:+917483830582" className={styles.topbarLink}>
+            <Phone size={14} className={styles.topbarIcon} /> +91 74 8383 0582
+          </a>
+        </div>
+        <div className={styles.topbarRight}>
+          <div className={styles.globalPresence}>
+            <Globe size={14} className={styles.topbarIcon} /> Global Presence:
+            <span className={styles.presenceLinks}>
+              <span className={styles.presenceItem}>India</span><span className={styles.topbarDivider}></span>
+              <span className={styles.presenceItem}>UAE</span><span className={styles.topbarDivider}></span>
+              <span className={styles.presenceItem}>Saudi Arabia</span><span className={styles.topbarDivider}></span>
+              <span className={styles.presenceItem}>Qatar</span><span className={styles.topbarDivider}></span>
+              <span className={styles.presenceItem}>Global</span>
+            </span>
+          </div>
+          <div className={styles.topbarDivider}></div>
+          <div className={styles.socialIcons}>
+            <a href="#" aria-label="LinkedIn"><Linkedin size={14} /></a>
+            <a href="#" aria-label="Instagram"><Instagram size={14} /></a>
+            <a href="#" aria-label="YouTube"><Youtube size={14} /></a>
+            <a href="#" aria-label="Facebook"><Facebook size={14} /></a>
+          </div>
+        </div>
+      </div>
+
+      <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
+        <div className={styles.navContainer}>
+          <Link href="/" className={styles.logo} aria-label="ZAVIROQ Home">
+            <Image
+              src="/logo.svg"
+              alt="ZAVIROQ Logo"
+              width={200}
+              height={66}
+              className={styles.darkLogo}
+              style={{ objectFit: 'contain' }}
+              priority
+            />
+            <Image
+              src="/zaviroq-logo-white.png"
+              alt="ZAVIROQ Logo"
+              width={200}
+              height={66}
+              className={styles.lightLogo}
+              style={{ objectFit: 'contain' }}
+              priority
+            />
+          </Link>
 
         <div className={`${styles.navLinks} ${menuOpen ? styles.open : ''}`}>
-          <Link href="/" onClick={() => setMenuOpen(false)}>Home</Link>
-          <Link href="/about" onClick={() => setMenuOpen(false)}>About Us</Link>
+          <div className={styles.navLinkWrapper}>
+            <Link href="/" className={`${styles.navLink} ${styles.active}`} onClick={() => setMenuOpen(false)}>
+              Home
+            </Link>
+            <div className={styles.activeGlow}></div>
+          </div>
+          <Link href="/about" className={styles.navLink} onClick={() => setMenuOpen(false)}>About</Link>
 
           <div className={`${styles.hasDropdown} ${dropdownOpen ? styles.expanded : ''}`}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <Link href="/services" onClick={() => setMenuOpen(false)}>Services</Link>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+              <Link href="/services" className={styles.navLink} onClick={() => setMenuOpen(false)}>Services</Link>
               <button 
                 className={styles.dropdownToggle} 
                 onClick={toggleDropdown}
@@ -284,22 +346,45 @@ export default function Navbar() {
             </div>
           </div>
 
-          <Link href="/portfolio" onClick={() => setMenuOpen(false)}>Portfolio</Link>
-          <Link href="/zaviroq-softwares" className={styles.aiLink} onClick={() => setMenuOpen(false)}>
-            <span className={styles.aiDot} />
-            Zaviroq Softwares
+
+          <div className={styles.hasDropdown}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+              <Link href="/industries" className={styles.navLink} onClick={() => setMenuOpen(false)}>Industries</Link>
+              <ChevronDown size={14} className={styles.navChevron} />
+            </div>
+          </div>
+          <div className={styles.hasDropdown}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+              <Link href="#" className={styles.navLink} onClick={() => setMenuOpen(false)}>Markets</Link>
+              <ChevronDown size={14} className={styles.navChevron} />
+            </div>
+          </div>
+          <Link href="/portfolio" className={styles.navLink} onClick={() => setMenuOpen(false)}>Portfolio</Link>
+          <Link href="/contact" className={styles.navLink} onClick={() => setMenuOpen(false)}>Contact</Link>
+          <Link href="/contact" className={`${styles.ctaBtn} ${styles.mobileCtaBtn}`} onClick={() => setMenuOpen(false)}>
+            Get Quote <ArrowRight size={16} className={styles.ctaIcon} />
           </Link>
-          <Link href="/contact" className={`${styles.ctaBtn} ${styles.mobileCtaBtn}`} onClick={() => setMenuOpen(false)}>Get Quote</Link>
         </div>
 
-        <Link href="/contact" className={`${styles.ctaBtn} ${styles.desktopCtaBtn}`} onClick={() => setMenuOpen(false)}>Get Quote</Link>
-
-        <button className={styles.hamburger} onClick={() => setMenuOpen(!menuOpen)} aria-label="Menu">
-          <span className={`${styles.bar} ${menuOpen ? styles.openBar1 : ''}`}></span>
-          <span className={`${styles.bar} ${menuOpen ? styles.openBar2 : ''}`}></span>
-          <span className={`${styles.bar} ${menuOpen ? styles.openBar3 : ''}`}></span>
-        </button>
+        <div className={styles.navbarRight}>
+          <ThemeToggle />
+          <div className={styles.navDivider}></div>
+          <div className={styles.langSelector}>
+            <Globe size={14} className={styles.topbarIcon} />
+            <span>EN</span>
+            <ChevronDown size={12} className={styles.navChevron} />
+          </div>
+          <Link href="/contact" className={`${styles.ctaBtn} ${styles.desktopCtaBtn}`} onClick={() => setMenuOpen(false)}>
+            Get Quote <div className={styles.ctaIconWrapper}><ArrowRight size={14} /></div>
+          </Link>
+          <button className={styles.hamburger} onClick={() => setMenuOpen(!menuOpen)} aria-label="Menu">
+            <span className={`${styles.bar} ${menuOpen ? styles.openBar1 : ''}`}></span>
+            <span className={`${styles.bar} ${menuOpen ? styles.openBar2 : ''}`}></span>
+            <span className={`${styles.bar} ${menuOpen ? styles.openBar3 : ''}`}></span>
+          </button>
+        </div>
       </div>
     </nav>
+  </header>
   );
 }

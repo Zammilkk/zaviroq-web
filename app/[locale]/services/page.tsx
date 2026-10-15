@@ -2,7 +2,7 @@ import styles from './page.module.css';
 import RevealOnScroll from '../RevealOnScroll';
 import { Metadata } from 'next';
 import Link from 'next/link';
-
+import ServicesGrid from '../../components/ServicesGrid';
 export const metadata: Metadata = {
   title: 'All Services | ZAVIROQ — Digital Excellence',
   description: 'Premium digital services across Web Development, SEO, Marketing, and Design. Expert solutions for GCC and India markets.',
@@ -23,6 +23,7 @@ const categoriesMeta = [
     icon: '🔍', 
     badge: 'Organic Ranking', 
     desc: 'Technical, On-Page, Off-Page, Local & Global SEO',
+    image: '/assets/images/seo-service.avif',
     services: [
       { slug: 'technical-seo', title: 'Technical SEO' },
       { slug: 'on-page-seo', title: 'On-Page SEO' },
@@ -140,135 +141,63 @@ export default async function ServicesPage({
       </nav>
 
       <section className={styles.hero}>
-        <RevealOnScroll>
-          <div className={styles.heroTag}>
-            <span className={styles.tagPulse} />
-            Comprehensive Service Suite
-          </div>
-        </RevealOnScroll>
-
-        <RevealOnScroll delay={80}>
-          <h1 className={styles.heroTitle}>
-            Digital Services That <span className={styles.heroHighlight}>Drive Results</span>
-          </h1>
-        </RevealOnScroll>
-
-        <RevealOnScroll delay={140}>
-          <p className={styles.heroSub}>
-            From SEO dominance to stunning web experiences, we deliver end-to-end digital solutions 
-            tailored for the GCC and India markets.
-          </p>
-        </RevealOnScroll>
-
-        <RevealOnScroll delay={200}>
-          <div className={styles.heroStats}>
-            <div className={styles.heroStat}>
-              <span className={styles.heroStatNum}>{totalServices}+</span>
-              <span className={styles.heroStatLabel}>Services</span>
-            </div>
-            <div className={styles.heroStatDivider} />
-            <div className={styles.heroStat}>
-              <span className={styles.heroStatNum}>{categoriesMeta.length}</span>
-              <span className={styles.heroStatLabel}>Categories</span>
-            </div>
-            <div className={styles.heroStatDivider} />
-            <div className={styles.heroStat}>
-              <span className={styles.heroStatNum}>GCC</span>
-              <span className={styles.heroStatLabel}>Markets</span>
-            </div>
-          </div>
-        </RevealOnScroll>
-      </section>
-
-      <section className={styles.servicesSection}>
-        <div className={styles.servicesContainer}>
-          {categoriesMeta.map((cat, i) => {
-            const accentColor = categoryColors[cat.key] || '#9d96ff';
-            const isEven = i % 2 === 0;
-            
-            return (
-              <RevealOnScroll key={cat.key} delay={i * 50}>
-                <div 
-                  className={`${styles.serviceCard} ${isEven ? styles.cardEven : styles.cardOdd}`}
-                  style={{ '--accent': accentColor } as React.CSSProperties}
-                >
-                  <div className={styles.cardHeader}>
-                    <div className={styles.cardIconWrap}>
-                      <span className={styles.cardIcon}>{cat.icon}</span>
-                    </div>
-                    <div className={styles.cardMeta}>
-                      <span className={styles.cardBadge}>{cat.badge}</span>
-                      <h3 className={styles.cardTitle}>{cat.label}</h3>
-                      <p className={styles.cardDesc}>{cat.desc}</p>
-                    </div>
-                  </div>
-                  
-                  <div className={styles.cardServices}>
-                    <h4 style={{ color: '#aaa', fontSize: '0.85rem', marginBottom: '10px', textTransform: 'uppercase', letterSpacing: '1px' }}>Core Offerings</h4>
-                    {cat.services.map((ep, j) => {
-                      const linkPath = `/${locale}/services/${cat.key}/${ep.slug}`;
-                      return (
-                        <Link 
-                          key={j} 
-                          href={linkPath} 
-                          className={styles.serviceLink}
-                        >
-                          <span className={styles.serviceLinkIcon}>→</span>
-                          <span className={styles.serviceLinkText}>{ep.title}</span>
-                        </Link>
-                      );
-                    })}
-                    
-                    {cat.locations.length > 0 && (
-                      <>
-                        <h4 style={{ color: '#aaa', fontSize: '0.85rem', margin: '20px 0 10px 0', textTransform: 'uppercase', letterSpacing: '1px' }}>Local Markets</h4>
-                        {cat.locations.map((loc, j) => (
-                          <Link 
-                            key={`loc-${j}`} 
-                            href={`/${locale}${loc.path}`} 
-                            className={styles.serviceLink}
-                          >
-                            <span className={styles.serviceLinkIcon}>📍</span>
-                            <span className={styles.serviceLinkText}>{loc.title}</span>
-                          </Link>
-                        ))}
-                      </>
-                    )}
-                  </div>
-                  
-                  <div className={styles.cardFooter}>
-                    <span className={styles.serviceCount}>{cat.services.length + cat.locations.length} Solutions</span>
-                    <Link 
-                      href={`/${locale}/services/${cat.key}`} 
-                      className={styles.viewAllLink}
-                    >
-                      View Category →
-                    </Link>
-                  </div>
+        <div className={styles.heroBgLayer}></div>
+        <div className={styles.heroContainer}>
+          <div className={styles.heroLeft}>
+            <RevealOnScroll>
+              <div className={styles.heroEyebrow}>
+                <span className={styles.eyebrowLine}></span> OUR SERVICES
+              </div>
+              
+              <h1 className={styles.heroTitle}>
+                Digital Solutions<br />
+                That Drive <span className={styles.heroHighlight}>Real Growth.</span>
+              </h1>
+              
+              <p className={styles.heroSub}>
+                From websites to marketing, we deliver end-to-end digital solutions to help businesses build a stronger online presence, attract the right audience, and achieve measurable growth.
+              </p>
+              
+              <Link href={`/${locale}/services#all`} className={styles.btnExplore}>
+                Explore Our Services →
+              </Link>
+              
+              <div className={styles.heroStatsRow}>
+                <div className={styles.statItem}>
+                  <div className={styles.statIconBox}>📦</div>
+                  <div className={styles.statNum}>360+</div>
+                  <div className={styles.statLabel}>Projects Delivered</div>
                 </div>
-              </RevealOnScroll>
-            );
-          })}
+                <div className={styles.statItem}>
+                  <div className={styles.statIconBox}>👥</div>
+                  <div className={styles.statNum}>50+</div>
+                  <div className={styles.statLabel}>Happy Clients</div>
+                </div>
+                <div className={styles.statItem}>
+                  <div className={styles.statIconBox}>📈</div>
+                  <div className={styles.statNum}>3x</div>
+                  <div className={styles.statLabel}>Average Growth</div>
+                </div>
+                <div className={styles.statItem}>
+                  <div className={styles.statIconBox}>🎯</div>
+                  <div className={styles.statNum}>100%</div>
+                  <div className={styles.statLabel}>Results Focused</div>
+                </div>
+              </div>
+            </RevealOnScroll>
+          </div>
+          <div className={styles.heroRight}>
+            {/* The user can place the mockup image here. For now we use the uploaded image as a placeholder. */}
+            <div className={styles.imageWrapper}>
+              <img src="/assets/images/services-bg.png" alt="Services Mockup" className={styles.heroImage} />
+            </div>
+          </div>
         </div>
       </section>
 
-      <section className={styles.ctaSection}>
-        <div className={styles.ctaGlow} />
-        <RevealOnScroll>
-          <div className={styles.ctaContent}>
-            <span className={styles.ctaTag}>Ready to Start?</span>
-            <h2 className={styles.ctaTitle}>Let's Build Something Amazing</h2>
-            <p className={styles.ctaText}>
-              Our team of experts is ready to help you achieve digital dominance. 
-              Get in touch for a free consultation.
-            </p>
-            <Link href={`/${locale}/contact`} className={styles.ctaButton}>
-              Get Started
-              <span className={styles.ctaButtonIcon}>→</span>
-            </Link>
-          </div>
-        </RevealOnScroll>
-      </section>
+      <ServicesGrid categories={categoriesMeta} locale={locale} />
+
+
     </div>
   );
 }

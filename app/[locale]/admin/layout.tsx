@@ -71,7 +71,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
            {/* Simple static linkage since we use standard anchors or React state navigation. 
                Using standard anchors for full React SSR refresh to guarantee latest SEO fetches internally. */}
            {navItems.map(item => (
-              <a key={item.name} href={`/en${item.path}`} className={styles.navItem}>
+              <a key={item.name} href={item.path} className={styles.navItem}>
                 <span className={styles.icon}>{item.icon}</span>
                 {item.name}
               </a>

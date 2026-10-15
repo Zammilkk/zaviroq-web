@@ -44,3 +44,32 @@
   border-radius: 4px;
   box-shadow: 0 0 10px rgba(127, 119, 221, 0.8);
 }
+
+.darkLogo {
+  display: block;
+}
+
+.lightLogo {
+  display: none;
+}
+
+:global([data-theme="light"]) .darkLogo {
+  display: none !important;
+}
+
+:global([data-theme="light"]) .lightLogo {
+  display: block !important;
+}
+
+@media (prefers-color-scheme: light) {
+  :global(:root:not([data-theme="dark"])) .darkLogo {
+    display: none !important;
+  }
+  :global(:root:not([data-theme="dark"])) .lightLogo {
+    display: block !important;
+  }
+}
+
+:global([data-theme="light"]) .loadingBarContainer {
+  background: rgba(0, 0, 0, 0.08);
+}

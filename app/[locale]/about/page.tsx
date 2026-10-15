@@ -12,21 +12,14 @@ export default async function AboutPage({params}: {params: Promise<{locale: stri
     <div className={styles.container}>
       {/* 🚀 PREMIUM HERO */}
       <div className={styles.premiumHero}>
-        {/* GLOBAL DIGITAL PARTNER */}
-        <div className={styles.globalPartner}>
-           <span className={styles.partnerDot}></span>
-           <div className={styles.partnerText}>
-             GLOBAL<br/>DIGITAL<br/>PARTNER
-           </div>
-        </div>
+        <div className={styles.heroBgLayer}></div>
+
 
 
 
         <div className={styles.heroLeft}>
           <RevealOnScroll>
-            <div className={styles.heroEyebrow}>
-              <span className={styles.eyebrowLine}></span> DIGITAL SOLUTIONS FOR A BRIGHTER TOMORROW
-            </div>
+
             <h1 className={styles.heroTitle}>
               People. Strategy. <span className={styles.heroGradient}>Real Growth.</span>
             </h1>
@@ -90,15 +83,7 @@ export default async function AboutPage({params}: {params: Promise<{locale: stri
           
           <img src="/assets/images/why-img.avif" alt="Digital Growth Partner" className={styles.founderImg} />
           
-          <div className={styles.founderSignature}>
-            <span className={styles.sigName}>Zammil</span>
-            <span className={styles.sigTitle}>Founder, ZAVIROQ</span>
-            <div className={styles.sigArrowWrapper}>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7b61ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{transform: 'rotate(45deg)'}}>
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-              </svg>
-            </div>
-          </div>
+
 
           <div className={styles.floatingWidget}>
             <div className={styles.widgetIcon}>

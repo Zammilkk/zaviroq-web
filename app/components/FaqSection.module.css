@@ -49,7 +49,7 @@
 }
 
 .headline {
-  font-size: clamp(2.5rem, 3.5vw, 3.5rem);
+  font-size: clamp(2rem, 3vw, 3rem);
   font-weight: 700;
   line-height: 1.1;
   margin-bottom: 20px;
@@ -116,36 +116,10 @@
 }
 
 .mockupImg {
-  object-fit: cover;
-  object-position: bottom left;
-  transform: scale(1.6) translateY(-15%) translateX(10%);
+  object-fit: contain;
+  object-position: center;
 }
 
-.bottomTextOverlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  z-index: 5;
-}
-
-.stackedText {
-  display: flex;
-  flex-direction: column;
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 3px;
-  color: #4B4B6A;
-}
-
-.clearAnswers {
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 2px;
-  color: #888C99;
-}
 
 /* RIGHT COLUMN */
 .rightCol {
@@ -322,6 +296,88 @@
   box-shadow: 0 10px 25px rgba(139, 92, 246, 0.4);
 }
 
+/* LIGHT THEME OVERRIDES */
+:global([data-theme="light"]) .faqSection {
+  background-color: #ffffff;
+  color: #0f172a;
+}
+
+:global([data-theme="light"]) .headline {
+  color: #0f172a;
+}
+
+:global([data-theme="light"]) .description {
+  color: #475569;
+}
+
+:global([data-theme="light"]) .eyebrowLine {
+  background-color: #cbd5e1;
+}
+
+:global([data-theme="light"]) .featureItem {
+  color: #0f172a;
+}
+
+
+:global([data-theme="light"]) .rightHeaderBadge {
+  background: #f1f5f9;
+  border-color: rgba(139, 92, 246, 0.2);
+  color: #0f172a;
+  box-shadow: none;
+}
+
+:global([data-theme="light"]) .faqItem {
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+:global([data-theme="light"]) .faqItem.active {
+  background: #ffffff;
+  border-color: rgba(139, 92, 246, 0.3);
+  box-shadow: 0 10px 30px rgba(139, 92, 246, 0.1);
+}
+
+:global([data-theme="light"]) .faqIconWrap {
+  background: rgba(139, 92, 246, 0.1);
+}
+
+:global([data-theme="light"]) .faqItem.active .faqIconWrap {
+  background: rgba(139, 92, 246, 0.15);
+}
+
+:global([data-theme="light"]) .faqQuestion {
+  color: #0f172a;
+}
+
+:global([data-theme="light"]) .faqToggle {
+  background: rgba(0, 0, 0, 0.05);
+  color: #64748b;
+}
+
+:global([data-theme="light"]) .faqItem.active .faqToggle {
+  background: #8b5cf6;
+  color: #ffffff;
+}
+
+:global([data-theme="light"]) .faqBody {
+  color: #475569;
+}
+
+:global([data-theme="light"]) .contactBanner {
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(139, 92, 246, 0.2);
+  box-shadow: 0 10px 30px rgba(139, 92, 246, 0.08);
+}
+
+:global([data-theme="light"]) .bannerText h4 {
+  color: #0f172a;
+}
+
+:global([data-theme="light"]) .bannerText p {
+  color: #475569;
+}
+
 @media (max-width: 1024px) {
   .container {
     grid-template-columns: 1fr;
@@ -335,7 +391,7 @@
 
 @media (max-width: 600px) {
   .headline {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
   .contactBanner {
     flex-direction: column;

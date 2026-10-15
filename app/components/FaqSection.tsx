@@ -8,7 +8,7 @@ import {
   Sparkles, FileText, Monitor, Database, Clock, 
   Headphones, Settings, Send, Mail, ChevronDown, ChevronUp, ArrowRight
 } from 'lucide-react';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 
 const faqs = [
   {
@@ -99,26 +99,12 @@ export default function FaqSection({ locale }: { locale: string }) {
           <div className={styles.imageContent}>
             <div className={styles.imageWrapper}>
                <Image 
-                 src="/assets/images/faq-mockup.jpg" 
+                 src="/assets/images/faq-mockup.png" 
                  alt="Zaviroq FAQ" 
                  fill 
                  className={styles.mockupImg} 
                  unoptimized 
                />
-            </div>
-            
-            {/* The small stacked text at the bottom left of the mockup */}
-            <div className={styles.bottomTextOverlay}>
-              <div className={styles.stackedText}>
-                <span>IDEAS</span>
-                <span>STRATEGY</span>
-                <span>EXECUTION</span>
-                <span>GROWTH</span>
-              </div>
-              <div className={styles.clearAnswers}>
-                CLEAR ANSWERS<br/>
-                BRIGHTER BUSINESS
-              </div>
             </div>
           </div>
         </div>
@@ -161,7 +147,7 @@ export default function FaqSection({ locale }: { locale: string }) {
                  <p>We&apos;re here to help!</p>
                </div>
              </div>
-             <Link href={`/${locale}/contact`} className={styles.bannerBtn}>
+             <Link href="/contact" className={styles.bannerBtn}>
                Let&apos;s Talk <ArrowRight size={16} />
              </Link>
           </div>

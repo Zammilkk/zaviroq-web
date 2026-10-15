@@ -25,24 +25,47 @@
   opacity: 0.4;
 }
 
-/* ── Dynamic glow background ── */
+/* ── Hero Background Layer ── */
 .glowBg {
   position: absolute;
-  top: -5%;
+  top: -200px;
   left: 50%;
   transform: translateX(-50%);
-  width: 1000px;
-  height: 700px;
+  width: 100vw;
+  height: calc(100% + 200px);
   z-index: 0;
   pointer-events: none;
-  filter: blur(80px);
+  background-image: url('/assets/images/contact-hero-bg.avif');
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
   opacity: 0.6;
-  animation: glowPulse 8s ease-in-out infinite;
 }
 
-@keyframes glowPulse {
-  0%, 100% { opacity: 0.5; transform: translateX(-50%) scale(1); }
-  50% { opacity: 0.7; transform: translateX(-50%) scale(1.05); }
+:global([data-theme="light"]) .glowBg {
+  background-image: url('/assets/images/services-hero-wave-bg.png');
+  background-position: center;
+  opacity: 1;
+}
+
+/* ── Background Watermark ── */
+.watermarkBg {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 15vw;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.02);
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 0;
+  user-select: none;
+  letter-spacing: -2px;
+}
+
+:global([data-theme="light"]) .watermarkBg {
+  color: rgba(0, 0, 0, 0.03);
 }
 
 /* ── Grid overlay ── */
@@ -192,80 +215,116 @@
   justify-content: center;
 }
 
-.visualCard {
-  width: 340px;
+.monitorWrapper {
+  position: relative;
+  width: 500px;
   max-width: 100%;
-  background: linear-gradient(135deg, rgba(20, 20, 30, 0.9), rgba(10, 10, 20, 0.95));
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 28px;
-  padding: 36px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1200px;
+}
+
+.monitorImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 30px 40px rgba(0,0,0,0.4));
+  z-index: 1;
+}
+
+.monitorScreen {
+  position: absolute;
+  top: 8.5%;
+  left: 7.5%;
+  width: 84%;
+  height: 67%;
+  transform: rotateY(16deg) rotateX(2deg) rotateZ(-1deg);
+  transform-origin: center;
+  background: rgba(12, 12, 18, 0.96);
+  backdrop-filter: blur(10px);
+  border-radius: 6px;
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5);
-  position: relative;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   overflow: hidden;
+  opacity: 0;
+  animation: screenFadeIn 1s ease-out forwards 0.8s;
+  z-index: 2;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.9);
 }
 
-.visualCard::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(127, 119, 221, 0.4), transparent);
+.monitorContent {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  transform: translateY(20px);
+  opacity: 0;
+  animation: contentSlideUp 0.8s cubic-bezier(0.23, 1, 0.32, 1) forwards 1.2s;
 }
 
-.visualIcon {
-  font-size: 3.5rem;
-  margin-bottom: 4px;
+.monitorIcon {
+  font-size: 3rem;
+  margin-bottom: 5px;
+  animation: iconFloat 3s ease-in-out infinite;
 }
 
-.visualLabel {
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  color: #444;
-  font-weight: 700;
-}
-
-.visualTitle {
-  font-size: 1.5rem;
+.monitorTitle {
+  font-size: 1.6rem;
   font-weight: 800;
   color: #fff;
-  line-height: 1.3;
+  line-height: 1.2;
 }
 
-.visualDivider {
-  width: 100%;
-  height: 1px;
-  background: rgba(255, 255, 255, 0.05);
+.monitorSubtitle {
+  font-size: 0.9rem;
+  color: #b4b0f0;
+  max-width: 80%;
+  line-height: 1.4;
 }
 
-.visualMeta {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.metaRow {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.metaKey {
-  font-size: 0.8rem;
-  color: #444;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.metaVal {
-  font-size: 0.85rem;
+.monitorCta {
+  margin-top: 10px;
+  padding: 10px 24px;
+  background: linear-gradient(90deg, var(--primary-purple), var(--primary-blue));
   color: #fff;
-  font-weight: 600;
+  border-radius: 100px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(127, 119, 221, 0.3);
+  transition: all 0.3s;
+  animation: ctaPulse 2s infinite 2s;
+}
+
+.monitorCta:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(127, 119, 221, 0.4);
+}
+
+@keyframes screenFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes contentSlideUp {
+  from { opacity: 0; transform: translateY(30px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes iconFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes ctaPulse {
+  0% { transform: scale(1); box-shadow: 0 4px 15px rgba(127, 119, 221, 0.3); }
+  50% { transform: scale(1.03); box-shadow: 0 4px 25px rgba(127, 119, 221, 0.6); }
+  100% { transform: scale(1); box-shadow: 0 4px 15px rgba(127, 119, 221, 0.3); }
 }
 
 /* Floating accent badges around visual card */

@@ -1,9 +1,35 @@
-export default async function ServicesWebDevelopmentIndexPage({params}: {params: Promise<{locale: string}>}) {
+import styles from './page.module.css';
+
+export default async function ServicesCategoryPage({params}: {params: Promise<{locale: string}>}) {
   const {locale} = await params;
   return (
-    <div style={{ padding: '120px 20px', minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-      <h1 style={{ fontSize: '3rem', marginBottom: '20px', textAlign: 'center' }}>/services/web-development/ Directory</h1>
-      <p style={{ color: '#888' }}>Please select a specific service or location.</p>
+    <div className={styles.pageWrapper}>
+      <section className={styles.heroTop}>
+        <div className={styles.heroTopBgLayer}></div>
+        <div className={styles.watermarkBg}>WEB DEV</div>
+        
+        <div className={styles.heroTopContainer}>
+          <div className={styles.heroTopLeft}>
+            <div className={styles.heroEyebrow}>
+              <span className={styles.eyebrowLine}></span> WEB DEVELOPMENT
+            </div>
+            
+            <h1 className={styles.heroTopTitle}>
+              Custom Web<br />
+              <span className={styles.heroHighlight}>Development.</span>
+            </h1>
+            
+            <p className={styles.heroTopSub}>
+              Custom, Business, Next.js & React Development
+            </p>
+          </div>
+          <div className={styles.heroTopRight}>
+            <div className={styles.heroTopImageWrapper}>
+              <img src="/assets/images/services-bg.png" alt="WEB DEV" className={styles.heroTopImage} />
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

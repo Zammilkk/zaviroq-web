@@ -86,11 +86,12 @@ export default async function ServiceDetailsPage({ params }: Props) {
       {/* SEO JSON-LD */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }} />
 
-      {/* ── Glow background ── */}
-      <div
-        className={styles.glowBg}
-        style={{ background: `radial-gradient(ellipse, ${accentColor}22 0%, transparent 65%)` }}
-      />
+      {/* ── Hero Background ── */}
+      <div className={styles.glowBg} />
+      
+      <div className={styles.watermarkBg}>
+        {service.title.toUpperCase()}
+      </div>
       <div className={styles.gridOverlay} aria-hidden="true" />
 
       {/* ── Breadcrumb ── */}
@@ -142,38 +143,31 @@ export default async function ServiceDetailsPage({ params }: Props) {
             <div className={styles.floatBadge}>✅ ROI Tracked</div>
             <div className={styles.floatBadge}>🔥 Zero Downtime</div>
 
-            <div className={styles.visualCard}>
-              <div className={styles.visualIcon}>
-                {service.slug === 'performance-marketing' ? '📈' :
-                  service.slug === 'seo-mastery' ? '🔍' :
-                    service.slug === 'web-development' ? '💻' :
-                      service.slug === 'ui-ux' ? '🎨' :
-                        service.slug === 'branding' ? '🎯' :
-                          service.slug === 'website-maintenance' ? '🔄' :
-                            service.slug === 'tech-security' ? '🔐' : '🌍'}
-              </div>
-
-              <div>
-                <div className={styles.visualLabel}>Service Module</div>
-                <div className={styles.visualTitle}>{service.title}</div>
-              </div>
-
-              <div className={styles.visualDivider} />
-
-              <div className={styles.visualMeta}>
-                <div className={styles.metaRow}>
-                  <span className={styles.metaKey}>Focus Markets</span>
-                  <span className={styles.metaVal}>GCC + India</span>
-                </div>
-                <div className={styles.metaRow}>
-                  <span className={styles.metaKey}>Delivery Model</span>
-                  <span className={styles.metaVal}>Retainer / Project</span>
-                </div>
-                <div className={styles.metaRow}>
-                  <span className={styles.metaKey}>Deliverables</span>
-                  <span className={styles.metaVal} style={{ color: accentColor }}>
-                    {service.deliverables.length} Modules
-                  </span>
+            <div className={styles.monitorWrapper}>
+              <img src="/monitor-zaviroq.png" alt="Monitor" className={styles.monitorImage} />
+              
+              <div className={styles.monitorScreen}>
+                <div className={styles.monitorContent}>
+                  <div className={styles.monitorIcon}>
+                    {service.slug === 'performance-marketing' ? '📈' :
+                      service.slug.includes('seo') ? '🔍' :
+                        service.slug.includes('web') ? '💻' :
+                          service.slug === 'ui-ux' ? '🎨' :
+                            service.slug === 'branding' ? '🎯' :
+                              service.slug === 'website-maintenance' ? '🔄' :
+                                service.slug === 'tech-security' ? '🔐' : '🌍'}
+                  </div>
+                  <h3 className={styles.monitorTitle}>{service.title}</h3>
+                  <p className={styles.monitorSubtitle}>
+                    {service.slug.includes('seo') 
+                      ? 'Dominate Search Rankings & Drive Organic Traffic.'
+                      : service.slug.includes('web') 
+                      ? 'Scalable, High-Performance Digital Experiences.'
+                      : 'Accelerate Your Digital Growth.'}
+                  </p>
+                  <div className={styles.monitorCta}>
+                    Explore {service.title} ↗
+                  </div>
                 </div>
               </div>
             </div>

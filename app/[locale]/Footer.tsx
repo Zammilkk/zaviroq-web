@@ -5,9 +5,9 @@ import {
   ArrowRight, MessageCircle, PhoneCall, Mail, MapPin
 } from 'lucide-react';
 
-export default function Footer({ locale = 'en' }: { locale?: string }) {
+export default function Footer({ locale = 'en', theme = 'lite' }: { locale?: string, theme?: 'dark' | 'lite' }) {
   return (
-    <footer className={styles.footerContainer}>
+    <footer className={`${styles.footerContainer} ${theme === 'lite' ? styles.liteTheme : ''}`}>
       <div className={styles.footerGlow}></div>
       <div className={styles.container}>
         
@@ -15,7 +15,20 @@ export default function Footer({ locale = 'en' }: { locale?: string }) {
           {/* Left Brand Area */}
           <div className={styles.brandCol}>
             <div className={styles.logoWrap}>
-              <Image src="/logo.svg" alt="Zaviroq" width={320} height={80} className={styles.logoImg} />
+              <Image
+                src="/logo.svg"
+                alt="Zaviroq"
+                width={320}
+                height={80}
+                className={`${styles.logoImg} ${styles.darkLogo}`}
+              />
+              <Image
+                src="/zaviroq-logo-white.png"
+                alt="Zaviroq"
+                width={320}
+                height={80}
+                className={`${styles.logoImg} ${styles.lightLogo}`}
+              />
             </div>
             
             <h2 className={styles.brandSlogan}>

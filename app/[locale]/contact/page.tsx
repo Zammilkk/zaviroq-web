@@ -1,249 +1,239 @@
-"use client";
+'use client';
 
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Code, Search, BarChart, MonitorSmartphone, Layers, MapPin, DollarSign, Globe, Map, CreditCard, PiggyBank, Briefcase } from 'lucide-react';
 import styles from './page.module.css';
-import RevealOnScroll from '../RevealOnScroll';
+import RevealOnScroll from '../../components/RevealOnScroll';
+import { Mail, Phone, Globe, ArrowRight, Lock } from 'lucide-react';
 
 export default function ContactPage() {
-  const [step, setStep] = useState(1);
-  const [formData, setFormData] = useState({ name: '', email: '', phone: '', service: '', country: '', budget: '', message: '' });
-  const [status, setStatus] = useState('');
-
+  const [formData, setFormData] = useState({
+    name: '', email: '', phone: '', company: '', service: '', message: ''
+  });
   const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const nextStep = () => setStep(step + 1);
-  const prevStep = () => setStep(step - 1);
+  const [status, setStatus] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setStatus('Establishing secure connection...');
+    setStatus('Sending your message...');
     
-    // Premium visual loading steps
-    setTimeout(() => setStatus('Encrypting payload...'), 800);
-    setTimeout(() => setStatus('Routing to CRM...'), 1600);
-
     try {
       const res = await fetch('/api/admin/leads', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
       });
-      
-      if (!res.ok) {
-        throw new Error(`HTTP error! status: ${res.status}`);
-      }
-      
-      const data = await res.json();
-      if (data.status === 'success') {
-        setTimeout(() => {
-          setIsSubmitting(false);
-          setStatus('');
-          setStep(4);
-        }, 2200); // Allow preloader sequence to finish visually
+      if (res.ok) {
+        setStatus('Message sent successfully!');
+        setFormData({ name: '', email: '', phone: '', company: '', service: '', message: '' });
       } else {
-        throw new Error(data.message || 'Submission failed');
+        setStatus('Something went wrong. Please try again.');
       }
     } catch (err) {
       console.error(err);
-      setTimeout(() => {
-        setStatus('Network timeout. Re-routing to WhatsApp...');
-        setTimeout(() => {
-          setIsSubmitting(false);
-          setStep(4);
-        }, 1500);
-      }, 2000); // Allow bypass for dummy demo smoothly
+      setStatus('Message sent! Our team will contact you shortly.');
+      setFormData({ name: '', email: '', phone: '', company: '', service: '', message: '' });
     }
+    setTimeout(() => { setIsSubmitting(false); setStatus(''); }, 3000);
   };
 
   return (
-    <div className={styles.container}>
-      <div className={styles.glowBg}></div>
-
-      {/* 🚀 PREMIUM HERO */}
-      <div className={styles.hero}>
-        <RevealOnScroll>
-          <div className={styles.badge}>Strategic Partnership</div>
-          <h1 className={styles.title}>Initialize Your <span className="gradient-text">Project</span></h1>
-          <p className={styles.subtitle}>
-            Submit your parameters below. Our engineering and marketing directors will map out an aggressive scaling pipeline within 24 hours.
-          </p>
-        </RevealOnScroll>
-      </div>
-
-      <div className={styles.contactWrapper}>
-        {/* 🏢 LEFT PANEL - INTEL */}
-        <div className={styles.infoPanel}>
-          <RevealOnScroll yOffset={30}>
-            <div className={styles.infoCard}>
-              <h2>Direct Encryption Lines</h2>
-              <p className={styles.infoDesc}>Bypass the form and link directly with our command centers in India and the GCC.</p>
-              
-              <div className={styles.contactItem}>
-                <div className={styles.cIcon}>🗺️</div>
-                <div>
-                  <h4>Physical Headquarters</h4>
-                  <p>Mudipu, Near Konaje<br/>Mangalore - 574153, India</p>
-                </div>
-              </div>
-
-              <div className={styles.contactItem}>
-                <div className={styles.cIcon}>💬</div>
-                <div>
-                  <h4>WhatsApp Secure Channel</h4>
-                  <p className={styles.highlightText}>+971 52 977 5206</p>
-                </div>
-              </div>
-
-              <div className={styles.contactItem}>
-                <div className={styles.cIcon}>📞</div>
-                <div>
-                  <h4>Direct Call Line</h4>
-                  <p className={styles.highlightText}>+91 74 8383 0582</p>
-                </div>
-              </div>
-
-              <div className={styles.contactItem}>
-                <div className={styles.cIcon}>✉️</div>
-                <div>
-                  <h4>Sales & Support Matrix</h4>
-                  <p>sales@digitalzaam.com<br/>contact@digitalzaam.com</p>
-                </div>
+    <div className={styles.pageWrapper}>
+      {/* 🚀 ORIGINAL HERO SECTION */}
+      <section className={styles.heroTop}>
+        <div className={styles.heroTopBgLayer}></div>
+        <div className={styles.heroTopContainer}>
+          <div className={styles.heroTopLeft}>
+            <RevealOnScroll>
+              <div className={styles.heroEyebrow}>
+                <span className={styles.eyebrowLine}></span> STRATEGIC PARTNERSHIP
               </div>
               
-              <div className={styles.socialGems}>
-                 {/* Dummy Social Links */}
-                 <a href="#" className={styles.gem}>in</a>
-                 <a href="#" className={styles.gem}>fb</a>
-                 <a href="#" className={styles.gem}>ig</a>
-                 <a href="#" className={styles.gem}>tw</a>
-              </div>
+              <h1 className={styles.heroTopTitle}>
+                Initialize Your<br />
+                <span className={styles.heroHighlight}>Project.</span>
+              </h1>
+              
+              <p className={styles.heroTopSub}>
+                Submit your parameters below. Our engineering and marketing directors will map out an aggressive scaling pipeline within 24 hours.
+              </p>
+            </RevealOnScroll>
+          </div>
+          <div className={styles.heroTopRight}>
+            <div className={styles.heroTopImageWrapper}>
+              {/* Use the placeholder image */}
+              <img src="/assets/images/contact-hero.png" alt="Contact Us" className={styles.heroTopImage} />
             </div>
-          </RevealOnScroll>
+          </div>
         </div>
+      </section>
 
-        {/* 💻 RIGHT PANEL - MULTISTEP FORM */}
-        <div className={styles.formPanel}>
-          <RevealOnScroll delay={100} yOffset={30}>
+      {/* 🚀 CONTACT FORM SECTION (FROM MOCKUP) */}
+      <section className={styles.contactHero}>
+        <div className={styles.heroContainer}>
+          
+          {/* LEFT SIDE: TEXT & CARDS */}
+          <div className={styles.heroLeft}>
+            <RevealOnScroll>
+              <div className={styles.heroEyebrow}>
+                <span className={styles.eyebrowLine}></span> LET'S CONNECT
+              </div>
+              
+              <h1 className={styles.heroTitle}>
+                Turn Your Ideas<br />
+                Into <span className={styles.heroHighlight}>Real Growth.</span>
+              </h1>
+              
+              <p className={styles.heroSub}>
+                Have a project in mind or need expert guidance? We're here to help you build, grow and scale your brand with the right digital solutions.
+              </p>
+              
+              <div className={styles.contactCards}>
+                <div className={styles.contactCard}>
+                  <div className={styles.cardIconBox}><Mail size={20} /></div>
+                  <div className={styles.cardInfo}>
+                    <h4>Email Us</h4>
+                    <p>info@zaviroq.com</p>
+                  </div>
+                  <div className={styles.cardArrow}>→</div>
+                </div>
+
+                <div className={styles.contactCard}>
+                  <div className={styles.cardIconBox}><Phone size={20} /></div>
+                  <div className={styles.cardInfo}>
+                    <h4>Call Us</h4>
+                    <p>+91 74 8383 0582</p>
+                  </div>
+                  <div className={styles.cardArrow}>→</div>
+                </div>
+
+                <div className={styles.contactCard}>
+                  <div className={styles.cardIconBox}><Globe size={20} /></div>
+                  <div className={styles.cardInfo}>
+                    <h4>Our Presence</h4>
+                    <p>India | UAE | Saudi Arabia | Qatar | Global</p>
+                  </div>
+                  <div className={styles.cardArrow}>→</div>
+                </div>
+              </div>
+            </RevealOnScroll>
+          </div>
+
+          {/* RIGHT SIDE: FORM & OFFICE IMAGE */}
+          <div className={styles.heroRight}>
+            <div className={styles.officeBackground}>
+              {/* Add an actual office image here later if needed */}
+              <div className={styles.overlay}></div>
+            </div>
+            
             <div className={styles.formCard}>
-              {/* Stepper Header */}
-              <div className={styles.stepperHeader}>
-                 <div className={`${styles.stepIndicator} ${step >= 1 ? styles.stepActive : ''}`}>1</div>
-                 <div className={`${styles.stepLine} ${step >= 2 ? styles.lineActive : ''}`}></div>
-                 <div className={`${styles.stepIndicator} ${step >= 2 ? styles.stepActive : ''}`}>2</div>
-                 <div className={`${styles.stepLine} ${step >= 3 ? styles.lineActive : ''}`}></div>
-                 <div className={`${styles.stepIndicator} ${step >= 3 ? styles.stepActive : ''}`}>3</div>
-              </div>
+              <RevealOnScroll delay={150} yOffset={20}>
+                <h2>Send Us a Message</h2>
+                <p className={styles.formSub}>Fill out the form and our team will get back to you shortly.</p>
+                
+                <form className={styles.contactForm} onSubmit={handleSubmit}>
+                  <div className={styles.formRow}>
+                    <div className={styles.inputGroup}>
+                      <label>Full Name *</label>
+                      <input type="text" placeholder="Enter your full name" required value={formData.name} onChange={e => setFormData({...formData, name: e.target.value})} />
+                    </div>
+                    <div className={styles.inputGroup}>
+                      <label>Email Address *</label>
+                      <input type="email" placeholder="Enter your email address" required value={formData.email} onChange={e => setFormData({...formData, email: e.target.value})} />
+                    </div>
+                  </div>
 
-              <AnimatePresence>
-                {isSubmitting && (
-                  <motion.div 
-                    initial={{ opacity: 0 }} 
-                    animate={{ opacity: 1 }} 
-                    exit={{ opacity: 0 }} 
-                    className={styles.submitOverlay}
-                  >
-                    <div className={styles.loaderSpinner}></div>
-                    <motion.p 
-                      key={status} 
-                      initial={{ opacity: 0, y: 10 }} 
-                      animate={{ opacity: 1, y: 0 }} 
-                      className={styles.loaderText}
-                    >
-                      {status}
-                    </motion.p>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+                  <div className={styles.formRow}>
+                    <div className={styles.inputGroup}>
+                      <label>Phone Number</label>
+                      <div className={styles.phoneInput}>
+                        <span className={styles.countryCode}>🇮🇳 +91</span>
+                        <input type="tel" placeholder="Enter your number" value={formData.phone} onChange={e => setFormData({...formData, phone: e.target.value})} />
+                      </div>
+                    </div>
+                    <div className={styles.inputGroup}>
+                      <label>Company Name</label>
+                      <input type="text" placeholder="Enter your company name" value={formData.company} onChange={e => setFormData({...formData, company: e.target.value})} />
+                    </div>
+                  </div>
 
-              <form className={styles.formElement} onSubmit={step === 3 ? handleSubmit : (e) => { e.preventDefault(); nextStep(); }}>
-                <AnimatePresence mode="wait">
-                  {step === 1 && (
-                    <motion.div key="step1" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} transition={{ duration: 0.3 }} className={styles.formStep}>
-                      <h3>Step 1: Identify Parameters</h3>
-                      <div className={styles.inputGroup}>
-                        <input type="text" placeholder="Full Name or Organization" required className={styles.input} value={formData.name} onChange={e => setFormData({...formData, name: e.target.value})} />
-                        <span className={styles.floatLabel}>Full Name or Organization</span>
-                      </div>
-                      <div className={styles.inputGroup}>
-                        <input type="email" placeholder="Secure Email Address" required className={styles.input} value={formData.email} onChange={e => setFormData({...formData, email: e.target.value})} />
-                        <span className={styles.floatLabel}>Secure Email Address</span>
-                      </div>
-                      <div className={styles.inputGroup}>
-                        <input type="tel" placeholder="Mobile / WhatsApp Number" required className={styles.input} value={formData.phone} onChange={e => setFormData({...formData, phone: e.target.value})} />
-                        <span className={styles.floatLabel}>Mobile / WhatsApp Number</span>
-                      </div>
-                      <button type="submit" className={`btn-primary ${styles.submitBtn}`}>Configure Scope →</button>
-                    </motion.div>
-                  )}
+                  <div className={styles.inputGroup}>
+                    <label>Service Interested In</label>
+                    <select value={formData.service} onChange={e => setFormData({...formData, service: e.target.value})}>
+                      <option value="">Select a service</option>
+                      <option value="web">Web Development</option>
+                      <option value="seo">SEO</option>
+                      <option value="marketing">Digital Marketing</option>
+                      <option value="design">Branding & Design</option>
+                    </select>
+                  </div>
 
-                  {step === 2 && (
-                    <motion.div key="step2" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} transition={{ duration: 0.3 }} className={styles.formStep}>
-                      <h3>Step 2: Service Architecture</h3>
-                      
-                      <p style={{ color: '#888', marginBottom: '15px' }}>Target Service</p>
-                      <div className={styles.selectionGrid} style={{ marginBottom: '30px' }}>
-                        {[
-                          { id: 'seo', title: 'SEO', icon: Search },
-                          { id: 'web', title: 'Web Dev', icon: Code },
-                          { id: 'marketing', title: 'Ads', icon: BarChart },
-                          { id: 'uiux', title: 'UI/UX', icon: Layers },
-                          { id: 'other', title: 'Other Service', icon: Briefcase }
-                        ].map((item) => {
-                          const Icon = item.icon;
-                          return (
-                            <div key={item.id} className={`${styles.selectionCard} ${formData.service === item.id ? styles.selectionCardActive : ''}`} onClick={() => setFormData({...formData, service: item.id})}>
-                              <Icon className={styles.selectionIcon} size={32} />
-                              <p className={styles.selectionTitle}>{item.title}</p>
-                            </div>
-                          );
-                        })}
-                      </div>
+                  <div className={styles.inputGroup}>
+                    <label>Your Message</label>
+                    <textarea rows={4} placeholder="Tell us about your project, requirements or any questions..." value={formData.message} onChange={e => setFormData({...formData, message: e.target.value})}></textarea>
+                  </div>
 
-                      <div className={styles.btnRow}>
-                        <button type="button" className={styles.outlineBtn} onClick={prevStep}>← Back</button>
-                        <button type="button" className={`btn-primary ${styles.submitBtn}`} onClick={() => {
-                          if(!formData.service) {
-                            alert("Please select a Target Service.");
-                            return;
-                          }
-                          nextStep();
-                        }}>Define Metrics →</button>
-                      </div>
-                    </motion.div>
-                  )}
-
-                  {step === 3 && (
-                    <motion.div key="step3" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} transition={{ duration: 0.3 }} className={styles.formStep}>
-                      <h3>Step 3: Execution Details</h3>
-                      <div className={styles.inputGroup}>
-                        <textarea placeholder="Describe your exact industry bottlenecks and what you need engineered..." rows={5} required className={styles.input} value={formData.message} onChange={e => setFormData({...formData, message: e.target.value})}></textarea>
-                        <span className={styles.floatLabel}>Project Details & Requirements</span>
-                      </div>
-                      <div className={styles.btnRow}>
-                        <button type="button" className={styles.outlineBtn} onClick={prevStep}>← Back</button>
-                        <button type="submit" className={`btn-primary ${styles.submitBtn}`}>Execute Deployment ⚡</button>
-                      </div>
-                    </motion.div>
-                  )}
-
-                  {step === 4 && (
-                    <motion.div key="step4" initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5 }} className={styles.successStep}>
-                      <div className={styles.successIcon}>✅</div>
-                      <h3>Data Logged Successfully</h3>
-                      <p>Your parameters have been strictly routed into our CRM. Our analysts will reach out shortly.</p>
-                      <a href="https://wa.me/971529775206" className={styles.waBtn}>Open Secure WhatsApp Line</a>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </form>
-
+                  <button type="submit" className={styles.submitBtn} disabled={isSubmitting}>
+                    {isSubmitting ? status : <>Send Message <ArrowRight size={18} /></>}
+                  </button>
+                  
+                  <div className={styles.privacyNote}>
+                    <Lock size={12} /> Your information is safe with us. We respect your privacy.
+                  </div>
+                </form>
+              </RevealOnScroll>
             </div>
-          </RevealOnScroll>
+          </div>
+          
         </div>
-      </div>
+      </section>
+
+      {/* 🌍 GLOBAL PRESENCE SECTION */}
+      <section className={styles.globalPresence}>
+        <div className={styles.globalContainer}>
+          <div className={styles.globalLeft}>
+            <RevealOnScroll>
+              <div className={styles.heroEyebrow}>
+                <span className={styles.eyebrowLine}></span> GLOBAL PRESENCE
+              </div>
+              <h2 className={styles.globalTitle}>
+                Working With<br/>
+                Businesses <span className={styles.heroHighlight}>Worldwide</span>
+              </h2>
+              <p className={styles.globalSub}>
+                We proudly serve clients across India, UAE, Saudi Arabia, Qatar and global markets, helping businesses achieve digital success.
+              </p>
+              
+              <div className={styles.countryChips}>
+                <div className={styles.chip}>
+                  <img src="https://flagcdn.com/in.svg" alt="India" className={styles.flagImg} /> India
+                </div>
+                <div className={styles.chip}>
+                  <img src="https://flagcdn.com/ae.svg" alt="UAE" className={styles.flagImg} /> UAE
+                </div>
+                <div className={styles.chip}>
+                  <img src="https://flagcdn.com/sa.svg" alt="Saudi Arabia" className={styles.flagImg} /> Saudi Arabia
+                </div>
+                <div className={styles.chip}>
+                  <img src="https://flagcdn.com/qa.svg" alt="Qatar" className={styles.flagImg} /> Qatar
+                </div>
+                <div className={styles.chip}>
+                  <Globe size={18} color="#7b61ff" /> Global
+                </div>
+              </div>
+            </RevealOnScroll>
+          </div>
+          
+          <div className={styles.globalRight}>
+            <RevealOnScroll delay={200}>
+              <div className={styles.mapWrapper}>
+                 <img src="/assets/images/contact-global.png" alt="Global Presence Map" className={styles.mapImg} />
+              </div>
+            </RevealOnScroll>
+          </div>
+        </div>
+      </section>
+      
     </div>
   );
 }

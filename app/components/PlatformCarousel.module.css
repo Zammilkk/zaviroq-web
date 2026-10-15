@@ -1,0 +1,232 @@
+.platformSection {
+  position: relative;
+  padding: 80px 20px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+/* Dark theme background lines simulation */
+.bgLine1, .bgLine2 {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bgLine1 {
+  width: 140%;
+  height: 600px;
+  border-top: 1px solid rgba(139, 92, 246, 0.4);
+  top: 30%;
+  left: -20%;
+  transform: rotate(-5deg);
+  box-shadow: 0 -10px 40px rgba(139, 92, 246, 0.1);
+}
+
+.bgLine2 {
+  width: 120%;
+  height: 500px;
+  border-top: 1px solid rgba(59, 130, 246, 0.3);
+  top: 60%;
+  right: -10%;
+  transform: rotate(8deg);
+  box-shadow: 0 -5px 30px rgba(59, 130, 246, 0.15);
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.eyebrowWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.line {
+  height: 1px;
+  width: 40px;
+  background: rgba(139, 92, 246, 0.5);
+}
+
+.eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #a855f7;
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: clamp(2rem, 3vw, 3rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  color: #fff;
+  margin: 0;
+}
+
+.title span {
+  color: #a855f7;
+}
+
+.carouselWrapper {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+}
+
+.navBtn {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
+}
+
+.navBtn:hover {
+  background: rgba(139, 92, 246, 0.2);
+  border-color: rgba(139, 92, 246, 0.5);
+  box-shadow: 0 0 15px rgba(139, 92, 246, 0.3);
+}
+
+.carouselTrack {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+  padding: 10px 0;
+}
+
+.carouselTrack::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+.card {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 24px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 0 15px rgba(139, 92, 246, 0.1);
+}
+
+.iconWrapper {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconWrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.cardName {
+  font-size: 14px;
+  font-weight: 600;
+  color: #e2e8f0;
+  white-space: nowrap;
+}
+
+/* Light Theme Overrides */
+:global([data-theme="light"]) .title {
+  color: #0f172a;
+}
+
+:global([data-theme="light"]) .title span {
+  color: #6366f1;
+}
+
+:global([data-theme="light"]) .bgLine1 {
+  border-top-color: rgba(99, 102, 241, 0.2);
+  box-shadow: 0 -10px 40px rgba(99, 102, 241, 0.05);
+}
+
+:global([data-theme="light"]) .bgLine2 {
+  border-top-color: rgba(168, 85, 247, 0.2);
+  box-shadow: 0 -5px 30px rgba(168, 85, 247, 0.05);
+}
+
+:global([data-theme="light"]) .navBtn {
+  background: #fff;
+  border-color: rgba(0, 0, 0, 0.05);
+  color: #6366f1;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+:global([data-theme="light"]) .navBtn:hover {
+  background: #f8fafc;
+  border-color: rgba(99, 102, 241, 0.3);
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.15);
+}
+
+:global([data-theme="light"]) .card {
+  background: #fff;
+  border-color: rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+:global([data-theme="light"]) .card:hover {
+  background: #fff;
+  border-color: rgba(99, 102, 241, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(99, 102, 241, 0.1);
+}
+
+:global([data-theme="light"]) .cardName {
+  color: #334155;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+  
+  .carouselWrapper {
+    padding: 0 10px;
+  }
+  
+  .navBtn {
+    width: 36px;
+    height: 36px;
+  }
+}

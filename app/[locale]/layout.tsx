@@ -9,6 +9,7 @@ import ParallaxBackground from '../components/ParallaxBackground';
 import Preloader from '../components/Preloader';
 import CanonicalTag from '../components/CanonicalTag';
 import WhatsAppWidget from '../components/WhatsAppWidget';
+import BackToTop from '../components/BackToTop';
 import '../globals.css';
 
 import seoData from '@/data/seo.json';
@@ -25,7 +26,7 @@ export async function generateMetadata() {
       return {
         metadataBase: new URL('https://zaviroq.com'),
         title: seo.title || 'ZAVIROQ | Scaling Brands Digitally',
-        description: seo.description || 'Premium digital marketing and web development agency.',
+        description: seo.description || 'Premium digital marketing and web development agency in Mangalore.',
         keywords: seo.keywords || '',
         authors: [{ name: seo.author || 'Digital Zaam' }],
         icons: [{ rel: 'icon', url: '/favicon.ico' }],
@@ -39,7 +40,7 @@ export async function generateMetadata() {
   return {
     metadataBase: new URL('https://zaviroq.com'),
     title: 'ZAVIROQ | Scaling Brands Digitally',
-    description: 'Premium digital marketing and web development agency in GCC & India.',
+    description: 'Premium digital marketing and web development agency in Mangalore & India.',
     icons: [{ rel: 'icon', url: '/favicon.ico' }],
   };
 }
@@ -121,25 +122,22 @@ export default async function LocaleLayout({
               {
                 "@context": "https://schema.org",
                 "@type": "LocalBusiness",
-                "name": "ZAVIROQ Saudi Arabia",
+                "name": "ZAVIROQ Mangalore",
                 "image": "https://zaviroq.com/logo.png",
-                "telephone": "+966XXXXXXXXX",
-                "address": { "@type": "PostalAddress", "addressLocality": "Riyadh", "addressCountry": "SA" }
+                "telephone": "+91 74 8383 0582",
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressLocality": "Mangalore",
+                  "addressRegion": "Karnataka",
+                  "addressCountry": "IN"
+                }
               },
               {
                 "@context": "https://schema.org",
                 "@type": "LocalBusiness",
-                "name": "ZAVIROQ UAE",
+                "name": "ZAVIROQ Global",
                 "image": "https://zaviroq.com/logo.png",
-                "telephone": "+971XXXXXXXXX",
-                "address": { "@type": "PostalAddress", "addressLocality": "Dubai", "addressCountry": "AE" }
-              },
-              {
-                "@context": "https://schema.org",
-                "@type": "LocalBusiness",
-                "name": "ZAVIROQ India",
-                "image": "https://zaviroq.com/logo.png",
-                "telephone": "+91XXXXXXXXX",
+                "telephone": "+91 74 8383 0582",
                 "address": { "@type": "PostalAddress", "addressCountry": "IN" }
               }
             ])
@@ -151,6 +149,7 @@ export default async function LocaleLayout({
             {children}
           </main>
           <WhatsAppWidget />
+          <BackToTop />
           <Footer />
         </NextIntlClientProvider>
       </body>

@@ -4,12 +4,12 @@ import Link from 'next/link';
 import Image from 'next/image';
 import ExecutiveFAQ from '../components/ExecutiveFAQ';
 import RecentIntel from '../components/RecentIntel';
-import StartupOffer from '../components/StartupOffer';
 import FaqSection from '../components/FaqSection';
 import Typewriter from '../components/Typewriter';
 import { Star, Globe, ShieldCheck, Layout, TrendingUp, Zap, Target, Rocket, Code, Search, BarChart, PenTool, Bot, FileText, ChevronDown } from 'lucide-react';
-import Riyadh3DSkyline from '../components/Riyadh3DSkyline';
 import InteractiveHero from '../components/InteractiveHero';
+import ClientCarousel from '../components/ClientCarousel';
+import PlatformCarousel from '../components/PlatformCarousel';
 import type { Metadata } from 'next';
 import Hero3DWrapper from '../components/Hero3DWrapper';
 import ApproachSection from '../components/ApproachSection';
@@ -18,8 +18,19 @@ import WhyChooseSection from '../components/WhyChooseSection';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Digital Marketing Agency in Riyadh, Saudi Arabia | Zaviroq',
-    description: 'Zaviroq is a leading digital marketing agency in Riyadh offering SEO, web development, Google Ads, branding, and AI-driven marketing solutions for businesses in Saudi Arabia.',
+    title: 'Digital Marketing Agency in Mangalore | Web Development & SEO | Zaviroq',
+    description: 'Zaviroq is a leading digital marketing agency in Mangalore offering SEO, web development, Google Ads, branding, and AI-driven marketing solutions for businesses in Mangalore, Karnataka.',
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
   };
 }
 
@@ -38,7 +49,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   ];
 
   const INDUSTRIES = [
-    { name: 'Real Estate', desc: 'UAE & Saudi Markets', src: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=800' },
+    { name: 'Real Estate', desc: 'Mangalore & Regional Markets', src: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=800' },
     { name: 'Healthcare', desc: 'Surgical & Aesthetic Leads', src: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=800' },
     { name: 'E-Commerce', desc: 'High-Volume Retail', src: 'https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&q=80&w=800' },
     { name: 'SaaS & Tech', desc: 'B2B Software Scaling', src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800' },
@@ -48,58 +59,14 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
   return (
     <div className={styles.container}>
-      <h1 className="visually-hidden">AI-Driven Digital Marketing Agency in Riyadh</h1>
+      <h1 className="visually-hidden">AI-Driven Digital Marketing Agency in Mangalore</h1>
 
       {/* 🏠 NEW INTERACTIVE HERO SECTION */}
       <InteractiveHero />
 
-      {/* 🚀 TRUST SIGNALS: TECHNOLOGY PARTNERS */}
-      <div className={styles.partnersSection}>
-        <div className={styles.partnerMarquee}>
-          {/* Loop from 1 to 9 */}
-          {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((num) => (
-            <div key={num} className={styles.partnerItem}>
-              <img
-                src={`/partners/${num}.webp`}
-                alt={`Partner ${num}`}
-                className={styles.partnerIcon}
-              />
-            </div>
-          ))}
-          {/* Duplicated for the infinite scroll animation */}
-          {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((num) => (
-            <div key={`dup-${num}`} className={styles.partnerItem} aria-hidden="true">
-              <img
-                src={`/partners/${num}.webp`}
-                alt={`Partner ${num}`}
-                className={styles.partnerIcon}
-              />
-            </div>
-          ))}
-        </div>
-      </div>
+      {/* 🚀 CLIENTS: 3D CAROUSEL */}
+      <ClientCarousel />
 
-      {/* 🚀 TRUST SIGNALS: TECHNOLOGY PARTNERS */}
-      <div className={styles.partnersSection}>
-        <div className={styles.partnerMarquee}>
-          {PARTNERS.map((partner, index) => (
-            <div key={index} className={styles.partnerItem}>
-              <img src={partner.icon} alt={`${partner.name} logo`} className={styles.partnerIcon} />
-              <div className={styles.partnerDivider}></div>
-              <span className={styles.partnerDot} style={{ background: partner.color, boxShadow: `0 0 12px ${partner.color}` }}></span>
-              <span className={styles.partnerText}>{partner.name}</span>
-            </div>
-          ))}
-          {PARTNERS.map((partner, index) => (
-            <div key={`dup-${index}`} className={styles.partnerItem} aria-hidden="true">
-              <img src={partner.icon} alt={`${partner.name} logo`} className={styles.partnerIcon} />
-              <div className={styles.partnerDivider}></div>
-              <span className={styles.partnerDot} style={{ background: partner.color, boxShadow: `0 0 12px ${partner.color}` }}></span>
-              <span className={styles.partnerText}>{partner.name}</span>
-            </div>
-          ))}
-        </div>
-      </div>
 
       {/* 💎 TRUST / USP SECTION (NEW APPROACH) */}
       <RevealOnScroll>
@@ -122,10 +89,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
 
 
-      {/* 🚀 STARTUP IGNITION OFFER */}
-      <RevealOnScroll>
-        <StartupOffer locale={locale} />
-      </RevealOnScroll>
+      {/* 🚀 PLATFORMS WE WORK ACROSS */}
+      <PlatformCarousel />
 
       {/* ❓ FAQ SECTION */}
       <RevealOnScroll>

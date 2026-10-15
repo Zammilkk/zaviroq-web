@@ -1,0 +1,221 @@
+.pageWrapper {
+  width: 100%;
+  min-height: 100vh;
+  background: var(--bg-color, #fdfdff);
+  overflow: hidden;
+}
+
+.heroTop {
+  position: relative;
+  z-index: 2;
+  padding: 120px 24px 0px;
+  max-width: 1550px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.heroTopBgLayer {
+  position: absolute;
+  top: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: calc(100% + 200px);
+  z-index: 0;
+  pointer-events: none;
+  background-image: url('/assets/images/contact-hero-bg.avif');
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  opacity: 0.4;
+}
+
+:global([data-theme="light"]) .heroTopBgLayer {
+  background-image: url('/assets/images/services-hero-wave-bg.png');
+  background-position: center;
+  opacity: 1;
+}
+
+.heroTopContainer {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 40vh;
+}
+
+.heroTopTitle {
+  font-size: clamp(2rem, 3vw, 3rem);
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--text-main, #111);
+  margin-bottom: 20px;
+  letter-spacing: -0.5px;
+}
+
+:global([data-theme="dark"]) .heroTopTitle { color: #fff; }
+
+.heroTopSub {
+  font-size: 1.2rem;
+  color: var(--text-muted, #555);
+  line-height: 1.7;
+  max-width: 600px;
+  margin-bottom: 30px;
+}
+
+:global([data-theme="dark"]) .heroTopSub { color: #bbb; }
+
+.heroHighlight {
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.heroEyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--text-muted, #777);
+  margin-bottom: 24px;
+  text-transform: uppercase;
+}
+
+.eyebrowLine {
+  width: 24px;
+  height: 2px;
+  background: #7b61ff;
+}
+
+/* Industries Section */
+.industriesSection {
+  position: relative;
+  z-index: 2;
+  padding: 40px 24px 100px;
+  max-width: 1550px;
+  margin: 0 auto;
+}
+
+.industriesGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 1200px) {
+  .industriesGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .industriesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .industriesGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.industryCard {
+  background: var(--bg-card, #fff);
+  border: 1px solid rgba(123, 97, 255, 0.1);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+  cursor: pointer;
+}
+
+:global([data-theme="dark"]) .industryCard {
+  background: rgba(20, 20, 25, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.industryCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(123, 97, 255, 0.15);
+  border-color: rgba(123, 97, 255, 0.3);
+}
+
+.cardImageWrapper {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.industryCard:hover .cardImage {
+  transform: scale(1.05);
+}
+
+.cardBottom {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--bg-card, #fff);
+}
+
+:global([data-theme="dark"]) .cardBottom {
+  background: transparent;
+}
+
+.iconBox {
+  width: 48px;
+  height: 48px;
+  background: rgba(123, 97, 255, 0.1);
+  color: #7b61ff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cardTitle {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-main, #111);
+  flex-grow: 1;
+}
+
+:global([data-theme="dark"]) .cardTitle {
+  color: #fff;
+}
+
+.arrowBox {
+  width: 32px;
+  height: 32px;
+  background: rgba(123, 97, 255, 0.1);
+  color: #7b61ff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s;
+}
+
+.industryCard:hover .arrowBox {
+  background: #7b61ff;
+  color: #fff;
+  transform: translateX(3px);
+}

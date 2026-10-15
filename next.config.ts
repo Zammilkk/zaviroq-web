@@ -5,7 +5,7 @@ const withNextIntl = createNextIntlPlugin();
 
 const nextConfig: NextConfig = {
   // Config options here
-  allowedDevOrigins: ['10.189.219.18', 'cold-moose-shine.loca.lt']
+  allowedDevOrigins: ['10.189.219.18', 'cold-moose-shine.loca.lt', '10.166.244.18']
 };
 
 export default withNextIntl(nextConfig);
