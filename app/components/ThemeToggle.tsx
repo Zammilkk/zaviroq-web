@@ -16,9 +16,22 @@ export default function ThemeToggle() {
   const [theme, setTheme] = useState<string>("light");
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem("theme") || "light";
-    setTheme(savedTheme);
-    document.documentElement.setAttribute("data-theme", savedTheme);
+    const syncTheme = () => {
+      const current =
+        document.documentElement.getAttribute("data-theme") ||
+        localStorage.getItem("theme") ||
+        "light";
+      setTheme(current);
+    };
+
+    syncTheme();
+    window.addEventListener("themechange", syncTheme);
+    window.addEventListener("storage", syncTheme);
+
+    return () => {
+      window.removeEventListener("themechange", syncTheme);
+      window.removeEventListener("storage", syncTheme);
+    };
   }, []);
 
   const toggleTheme = () => {
@@ -26,6 +39,7 @@ export default function ThemeToggle() {
     setTheme(newTheme);
     localStorage.setItem("theme", newTheme);
     document.documentElement.setAttribute("data-theme", newTheme);
+    window.dispatchEvent(new Event("themechange"));
   };
 
   if (!isClient) {
@@ -37,13 +51,21 @@ export default function ThemeToggle() {
       type="button"
       className={styles.themeToggleContainer}
       onClick={toggleTheme}
-      aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
-      title={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+      aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
+      title={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
     >
-      <div className={`${styles.themeIconCircle} ${theme === 'light' ? styles.themeIconActive : ''}`}>
+      <div
+        className={`${styles.themeIconCircle} ${
+          theme === "light" ? styles.themeIconActive : ""
+        }`}
+      >
         <Sun size={13} className={styles.themeIconSvg} />
       </div>
-      <div className={`${styles.themeIconCircle} ${theme === 'dark' ? styles.themeIconActive : ''}`}>
+      <div
+        className={`${styles.themeIconCircle} ${
+          theme === "dark" ? styles.themeIconActive : ""
+        }`}
+      >
         <Moon size={13} className={styles.themeIconSvg} />
       </div>
     </button>

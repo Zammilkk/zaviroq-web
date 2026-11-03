@@ -71,7 +71,7 @@ export default function Navbar() {
   // Close menu on screen resize to desktop or on Escape key
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth > 1024) {
+      if (window.innerWidth > 1100) {
         setMenuOpen(false);
       }
     };
@@ -160,16 +160,16 @@ export default function Navbar() {
               <Image
                 src="/logo.svg"
                 alt="ZAVIROQ Logo"
-                width={170}
-                height={55}
+                width={200}
+                height={65}
                 className={styles.darkLogo}
                 priority
               />
               <Image
                 src="/zaviroq-logo-white.png"
                 alt="ZAVIROQ Logo"
-                width={170}
-                height={55}
+                width={200}
+                height={65}
                 className={styles.lightLogo}
                 priority
               />
@@ -574,8 +574,17 @@ export default function Navbar() {
                 {isActive('/contact') && <div className={styles.activeGlow}></div>}
               </div>
 
-              {/* Mobile Drawer Bottom Section (Contact Info + CTA) */}
+              {/* Mobile Drawer Bottom Section (Appearance + Contact Info + CTA) */}
               <div className={`${styles.mobileDrawerFooter} ${styles.mobileOnly}`}>
+                {/* Theme Selector Row */}
+                <div className={styles.mobileThemeRow}>
+                  <div className={styles.mobileThemeLabel}>
+                    <span>Appearance</span>
+                    <small>Switch Light / Dark mode</small>
+                  </div>
+                  <ThemeToggle />
+                </div>
+
                 <div className={styles.mobileContactBox}>
                   <a href="mailto:info@zaviroq.com" className={styles.mobileContactLink}>
                     <Mail size={15} /> info@zaviroq.com
