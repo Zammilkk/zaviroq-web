@@ -3,6 +3,28 @@ import RevealOnScroll from '../../RevealOnScroll';
 import Link from 'next/link';
 import DigitalSolutionsCarousel from './DigitalSolutionsCarousel';
 import IndustriesCarousel from './IndustriesCarousel';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'SEO Services & Search Engine Optimization | Zaviroq',
+  description: 'Enterprise and local SEO services across Mangalore, India, UAE, and Saudi Arabia. Drive qualified organic search traffic with technical, on-page, and authority SEO.',
+  alternates: {
+    canonical: 'https://www.zaviroq.com/services/seo',
+  },
+  openGraph: {
+    title: 'SEO Services & Search Engine Optimization | Zaviroq',
+    description: 'Enterprise and local SEO services across Mangalore, India, UAE, and Saudi Arabia. Drive qualified organic search traffic with technical, on-page, and authority SEO.',
+    url: 'https://www.zaviroq.com/services/seo',
+    siteName: 'Zaviroq',
+    locale: 'en_IN',
+    type: 'website',
+    images: [{ url: 'https://www.zaviroq.com/og-image.png' }],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
 
 export default async function ServicesSeoIndexPage({params}: {params: Promise<{locale: string}>}) {
   const {locale} = await params;

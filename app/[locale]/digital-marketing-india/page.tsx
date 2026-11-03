@@ -1,3 +1,26 @@
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Digital Marketing Agency in India | Pan-India Services | Zaviroq',
+  description: 'Top digital marketing agency in India. We scale Indian startups and national enterprises with high-ROAS Google Ads, Meta campaigns, and technical SEO.',
+  alternates: {
+    canonical: 'https://www.zaviroq.com/digital-marketing-india',
+  },
+  openGraph: {
+    title: 'Digital Marketing Agency in India | Pan-India Services | Zaviroq',
+    description: 'Top digital marketing agency in India. We scale Indian startups and national enterprises with high-ROAS Google Ads, Meta campaigns, and technical SEO.',
+    url: 'https://www.zaviroq.com/digital-marketing-india',
+    siteName: 'Zaviroq',
+    locale: 'en_IN',
+    type: 'website',
+    images: [{ url: 'https://www.zaviroq.com/og-image.png' }],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
+
 export default function DigitalMarketingIndiaPage() {
   return (
     <div className="animated-gradient-bg" style={{ minHeight: '100vh', padding: '80px 20px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>

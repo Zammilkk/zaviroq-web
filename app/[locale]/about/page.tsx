@@ -4,6 +4,46 @@ import { ArrowRight, Play, ArrowDown, Layers, MapPin, Globe } from 'lucide-react
 import { Link } from '@/i18n/routing';
 import FounderStory from '../../components/FounderStory';
 import PremiumAbout from '../../components/PremiumAbout';
+import type { Metadata } from 'next';
+
+export async function generateMetadata(): Promise<Metadata> {
+  const title = 'About Zaviroq | Digital Marketing & Web Development Agency';
+  const description = 'Learn about Zaviroq, our mission, and our team of digital marketing, SEO, and web development specialists scaling brands across Mangalore, India, the UAE, and Saudi Arabia.';
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: 'https://www.zaviroq.com/about',
+    },
+    openGraph: {
+      title,
+      description,
+      url: 'https://www.zaviroq.com/about',
+      siteName: 'Zaviroq',
+      locale: 'en_IN',
+      type: 'website',
+      images: [
+        {
+          url: 'https://www.zaviroq.com/og-image.png',
+          width: 1200,
+          height: 630,
+          alt: 'About Zaviroq',
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: ['https://www.zaviroq.com/og-image.png'],
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
+  };
+}
 
 export default async function AboutPage({params}: {params: Promise<{locale: string}>}) {
   const {locale} = await params;

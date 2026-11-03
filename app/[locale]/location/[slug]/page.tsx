@@ -41,12 +41,35 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const configs = locationsConfigs as LocationConfig[];
   const loc = configs.find((c) => c.slug === slug);
   
-  if (!loc) return { title: 'Region Not Found' };
+  if (!loc) return { title: 'Region Not Found | Zaviroq' };
 
   return {
-    title: loc.metaTitle,
+    title: {
+      absolute: loc.metaTitle.includes('ZAVIROQ') || loc.metaTitle.includes('Zaviroq') ? loc.metaTitle : `${loc.metaTitle} | Zaviroq`,
+    },
     description: loc.metaDesc,
-    keywords: loc.keywords,
+    alternates: {
+      canonical: `https://www.zaviroq.com/location/${slug}`,
+    },
+    openGraph: {
+      title: loc.metaTitle,
+      description: loc.metaDesc,
+      url: `https://www.zaviroq.com/location/${slug}`,
+      siteName: 'Zaviroq',
+      locale: slug.includes('saudi') ? 'en_SA' : slug.includes('dubai') ? 'en_AE' : 'en_IN',
+      type: 'website',
+      images: [{ url: 'https://www.zaviroq.com/og-image.png' }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: loc.metaTitle,
+      description: loc.metaDesc,
+      images: ['https://www.zaviroq.com/og-image.png'],
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
   };
 }
 
@@ -61,11 +84,18 @@ export default async function LocationDetailedPage({ params }: Props) {
   const localSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": `ZAVIROQ ${loc.cityName}`,
-    "url": "https://zaviroq.com",
-    "logo": "https://zaviroq.com/logo.png",
-    "image": "https://zaviroq.com/logo.png",
+    "@id": `https://www.zaviroq.com/location/${slug}#localbusiness`,
+    "name": `Zaviroq ${loc.cityName}`,
+    "url": `https://www.zaviroq.com/location/${slug}`,
+    "logo": "https://www.zaviroq.com/logo.png",
+    "image": "https://www.zaviroq.com/og-image.png",
     "description": loc.metaDesc,
+    "telephone": "+917483830582",
+    "email": "info@zaviroq.com",
+    "priceRange": "$$",
+    "parentOrganization": {
+      "@id": "https://www.zaviroq.com/#organization"
+    },
     "geo": {
       "@type": "GeoCoordinates",
       "latitude": loc.coordinates.lat,

@@ -59,11 +59,11 @@ export default function Footer({ locale = 'en', theme = 'lite' }: { locale?: str
               <h4 className={styles.linkTitle}>Our Services</h4>
               <ul className={styles.linkList}>
                 <li><Link href="/services/web-development">Website Design <ArrowRight size={14} /></Link></li>
-                <li><Link href="/services/seo">SEO <ArrowRight size={14} /></Link></li>
-                <li><Link href="/services/graphic-design">Graphic Design <ArrowRight size={14} /></Link></li>
-                <li><Link href="/services/video-editing">AI Video Editing <ArrowRight size={14} /></Link></li>
-                <li><Link href="/services/google-ads">Google Ads <ArrowRight size={14} /></Link></li>
-                <li><Link href="/services/meta-ads">Meta Ads <ArrowRight size={14} /></Link></li>
+                <li><Link href="/services/seo">SEO Services <ArrowRight size={14} /></Link></li>
+                <li><Link href="/services/branding-design">Branding & Design <ArrowRight size={14} /></Link></li>
+                <li><Link href="/services/ecommerce-systems">E-Commerce Systems <ArrowRight size={14} /></Link></li>
+                <li><Link href="/services/performance-marketing/google-ads">Google Ads <ArrowRight size={14} /></Link></li>
+                <li><Link href="/services/performance-marketing/meta-ads">Meta Ads <ArrowRight size={14} /></Link></li>
               </ul>
             </div>
           </div>
@@ -156,7 +156,7 @@ export default function Footer({ locale = 'en', theme = 'lite' }: { locale?: str
             <span className={styles.separator}>|</span>
             <Link href="/terms">Terms of Service</Link>
             <span className={styles.separator}>|</span>
-            <Link href="/sitemap">Sitemap</Link>
+            <a href="/sitemap.xml" target="_blank" rel="noopener noreferrer">Sitemap</a>
           </div>
           
           <div className={styles.footerLogoBadge}>

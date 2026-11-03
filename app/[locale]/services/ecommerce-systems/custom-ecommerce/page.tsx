@@ -2,10 +2,36 @@ import ServiceLayout from '@/app/components/ServiceLayout';
 import { Metadata } from 'next';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const title = "Custom Headless E-Commerce Development | Zaviroq";
+  const description = "Bespoke headless e-commerce architectures built with Next.js, Node.js, and modern APIs. Unmatched page speed, custom cart logic, and global payment gateways.";
+
   return {
-    title: "Custom Ecommerce | Premium Agency | ZAVIROQ",
-    description: "Expert custom ecommerce services. Data-driven growth, premium architectures, and scalable solutions.",
-    keywords: "Custom Ecommerce, Digital Agency, Enterprise Solutions",
+    title: {
+      absolute: title,
+    },
+    description,
+    alternates: {
+      canonical: "https://www.zaviroq.com/services/ecommerce-systems/custom-ecommerce",
+    },
+    openGraph: {
+      title,
+      description,
+      url: "https://www.zaviroq.com/services/ecommerce-systems/custom-ecommerce",
+      siteName: "Zaviroq",
+      locale: "en_IN",
+      type: "website",
+      images: [{ url: "https://www.zaviroq.com/og-image.png" }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: ["https://www.zaviroq.com/og-image.png"],
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
   };
 }
 

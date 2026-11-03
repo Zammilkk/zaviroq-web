@@ -2,10 +2,36 @@ import ServiceLayout from '@/app/components/ServiceLayout';
 import { Metadata } from 'next';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const title = "Logo Design Company in Mangalore | Brand Identity | Zaviroq";
+  const description = "Professional logo design and corporate branding agency in Mangalore. Custom brand identities, logos, and vector assets crafted for growing businesses.";
+
   return {
-    title: "Logo Design in Mangalore | Premium Agency | ZAVIROQ",
-    description: "Expert logo design in mangalore services. Data-driven growth, premium architectures, and scalable solutions.",
-    keywords: "Logo Design, Mangalore, Enterprise Solutions",
+    title: {
+      absolute: title,
+    },
+    description,
+    alternates: {
+      canonical: "https://www.zaviroq.com/services/branding-design/logo-design/mangalore",
+    },
+    openGraph: {
+      title,
+      description,
+      url: "https://www.zaviroq.com/services/branding-design/logo-design/mangalore",
+      siteName: "Zaviroq",
+      locale: "en_IN",
+      type: "website",
+      images: [{ url: "https://www.zaviroq.com/og-image.png" }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: ["https://www.zaviroq.com/og-image.png"],
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
   };
 }
 

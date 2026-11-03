@@ -2,10 +2,36 @@ import ServiceLayout from '@/app/components/ServiceLayout';
 import { Metadata } from 'next';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const title = "Corporate Business Website Design & Development | Zaviroq";
+  const description = "Professional corporate business websites engineered to establish authority, attract qualified inbound leads, and convert prospects into high-value clients.";
+
   return {
-    title: "Business Website | Premium Agency | ZAVIROQ",
-    description: "Expert business website services. Data-driven growth, premium architectures, and scalable solutions.",
-    keywords: "Business Website, Digital Agency, Enterprise Solutions",
+    title: {
+      absolute: title,
+    },
+    description,
+    alternates: {
+      canonical: "https://www.zaviroq.com/services/web-development/business-website",
+    },
+    openGraph: {
+      title,
+      description,
+      url: "https://www.zaviroq.com/services/web-development/business-website",
+      siteName: "Zaviroq",
+      locale: "en_IN",
+      type: "website",
+      images: [{ url: "https://www.zaviroq.com/og-image.png" }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: ["https://www.zaviroq.com/og-image.png"],
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
   };
 }
 

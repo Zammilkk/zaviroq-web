@@ -1,4 +1,26 @@
 import styles from './page.module.css';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Performance Marketing & Paid Ads Agency | Zaviroq',
+  description: 'High-ROI Google Ads, Meta Ads, LinkedIn Ads, and PPC campaign management across Mangalore, India, the UAE, and Saudi Arabia.',
+  alternates: {
+    canonical: 'https://www.zaviroq.com/services/performance-marketing',
+  },
+  openGraph: {
+    title: 'Performance Marketing & Paid Ads Agency | Zaviroq',
+    description: 'High-ROI Google Ads, Meta Ads, LinkedIn Ads, and PPC campaign management across Mangalore, India, the UAE, and Saudi Arabia.',
+    url: 'https://www.zaviroq.com/services/performance-marketing',
+    siteName: 'Zaviroq',
+    locale: 'en_IN',
+    type: 'website',
+    images: [{ url: 'https://www.zaviroq.com/og-image.png' }],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
 
 export default async function ServicesCategoryPage({params}: {params: Promise<{locale: string}>}) {
   const {locale} = await params;

@@ -5,7 +5,8 @@ import { ArrowRight, ArrowUpRight, User, Smartphone, Play, Monitor, Search, PenT
 import { Link } from '@/i18n/routing';
 
 function AnimatedNumber({ end, suffix = "", duration = 2000 }: { end: number, suffix?: string, duration?: number }) {
-  const [count, setCount] = useState(0);
+  // Initialize with final value so server-rendered HTML contains the complete text
+  const [count, setCount] = useState(end);
 
   useEffect(() => {
     let startTime: number | null = null;
@@ -52,7 +53,7 @@ export default function InteractiveHero() {
     <div className={styles.hero}>
       <div className={styles.copy}>
         <div className={styles.eyebrow}>
-          <span className={styles.dot}></span> DIGITAL SOLUTIONS FOR AMBITIOUS BRANDS
+          <span className={styles.dot}></span> DIGITAL MARKETING AGENCY IN MANGALORE
         </div>
         
         <h1 className={styles.title}>
@@ -61,14 +62,14 @@ export default function InteractiveHero() {
         </h1>
         
         <p className={styles.lede}>
-          We design websites, build brands, and run data-driven marketing strategies that help businesses grow faster in the digital world.
+          As a premier digital marketing agency in Mangalore, we design custom websites, optimize organic Google rankings, and run high-ROI ad campaigns that scale local businesses across Karnataka and the GCC.
         </p>
         
         <div className={styles.ctas}>
-          <Link href="/contact" className={styles.btnPrimary} style={{textDecoration: 'none'}}>
+          <Link href="/contact" className={styles.btnPrimary} style={{textDecoration: 'none'}} title="Contact Zaviroq Digital Marketing Agency in Mangalore">
             Start Your Project <ArrowRight size={18} />
           </Link>
-          <Link href="/services" className={styles.btnPremiumGhost} style={{textDecoration: 'none'}}>
+          <Link href="/services" className={styles.btnPremiumGhost} style={{textDecoration: 'none'}} title="Explore Web Design, SEO & Ads Services">
             Our Services <ArrowUpRight size={16} />
           </Link>
         </div>
@@ -128,7 +129,7 @@ export default function InteractiveHero() {
               {/* Slide 1: Website Design */}
               <div className={`${styles.slide} ${currentSlide === 0 ? styles.activeSlide : ''}`}>
                 <div className={styles.slideTop}>
-                  <div className={styles.brandMini}><img src="/logo.svg" alt="ZAVIROQ" style={{ height: '38px', width: 'auto', objectFit: 'contain', backgroundColor: '#0B0A14', padding: '6px 14px', borderRadius: '8px' }} /></div>
+                  <div className={styles.brandMini}><img src="/logo.svg" alt="Zaviroq - Digital Marketing Agency in Mangalore" style={{ height: '38px', width: 'auto', objectFit: 'contain', backgroundColor: '#0B0A14', padding: '6px 14px', borderRadius: '8px' }} /></div>
                   <div className={styles.miniNav}>
                     <span style={{color: '#2563eb', fontWeight: 700, borderBottom: '2px solid #2563eb', paddingBottom: '2px'}}>Home</span>
                     <span>Services</span><span>Work</span><span>About</span><span>Contact</span>
@@ -141,8 +142,8 @@ export default function InteractiveHero() {
                   <div className={styles.webMiddle}>
                     <div className={styles.webLeft}>
                       <div className={styles.webEyebrow}>WE DESIGN</div>
-                      <h2 className={styles.webTitle}>Websites<br />That Grow<br /><span className={styles.webAccent}>Your Business.</span></h2>
-                      <p className={styles.webDesc}>Modern, Responsive, Conversion Focused.<br/>Built for real business results.</p>
+                      <div className={styles.webTitle}>Websites<br />That Grow<br /><span className={styles.webAccent}>Your Business.</span></div>
+                      <p className={styles.webDesc}>Modern, Responsive, Conversion Focused.<br/>Built for real business results in Mangalore.</p>
                       <Link href="/contact" className={styles.webBtn} style={{textDecoration: 'none'}}>Start Your Project <ArrowRight size={12} /></Link>
                     </div>
 
@@ -152,14 +153,14 @@ export default function InteractiveHero() {
                         {/* Desktop Monitor */}
                         <div className={styles.desktopMonitor}>
                           <div className={styles.desktopScreen}>
-                            <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&h=400&fit=crop" alt="Interior Design" />
+                            <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&h=400&fit=crop" alt="Responsive web design showcase for Mangalore brands" />
                             <div className={styles.desktopOverlay}>
                               <div className={styles.desktopNav}>
                                 <span>Furnix</span>
                                 <div>Home Products Projects</div>
                               </div>
                               <div className={styles.desktopHero}>
-                                <h1>Transform<br/>Ideas Into<br/>Impact</h1>
+                                <div style={{fontSize: '14px', fontWeight: 700, color: '#fff', lineHeight: 1.2}}>Transform<br/>Ideas Into<br/>Impact</div>
                                 <button>View Project</button>
                               </div>
                             </div>
@@ -189,10 +190,10 @@ export default function InteractiveHero() {
                               </div>
                             </div>
                             <div className={styles.mobileImageArea}>
-                              <img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=200&h=200&fit=crop" alt="Grey Chair" />
+                              <img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=200&h=200&fit=crop" alt="Mobile responsive web application development" />
                             </div>
                             <div className={styles.mobileContentArea}>
-                              <h2>Timeless<br/>Design<br/><span style={{fontWeight: 500, fontSize: '8px', color: '#64748b'}}>Modern Living</span></h2>
+                              <div style={{fontWeight: 700, fontSize: '9px', lineHeight: 1.2}}>Timeless<br/>Design<br/><span style={{fontWeight: 500, fontSize: '8px', color: '#64748b'}}>Modern Living</span></div>
                               <button>Shop Now &rarr;</button>
                             </div>
                           </div>
@@ -295,7 +296,7 @@ export default function InteractiveHero() {
               {/* Slide 2: SEO */}
               <div className={`${styles.slide} ${currentSlide === 1 ? styles.activeSlide : ''}`}>
                 <div className={styles.slideTop}>
-                  <div className={styles.brandMini}><img src="/logo.svg" alt="ZAVIROQ" style={{ height: '38px', width: 'auto', objectFit: 'contain', backgroundColor: '#0B0A14', padding: '6px 14px', borderRadius: '8px' }} /></div>
+                  <div className={styles.brandMini}><img src="/logo.svg" alt="Zaviroq - SEO Company in Mangalore" style={{ height: '38px', width: 'auto', objectFit: 'contain', backgroundColor: '#0B0A14', padding: '6px 14px', borderRadius: '8px' }} /></div>
                   <div className={styles.miniNav}><span>Home</span><span>Services</span><span>Work</span><span>About</span></div>
                   <div className={styles.miniCta}>Get a Quote <ArrowRight size={10} /></div>
                 </div>
@@ -321,7 +322,10 @@ export default function InteractiveHero() {
                         <div className={styles.gscNavItem}>Sitemaps</div>
                       </div>
                       <div className={styles.gscMain}>
-                        <h3 className={styles.gscTitle}>Performance</h3>
+                        <div className={styles.gscTitle}>
+                          Performance
+                          <span style={{ fontSize: '9px', background: 'rgba(26,115,232,0.1)', color: '#1a73e8', padding: '2px 6px', borderRadius: '4px', marginLeft: '8px', fontWeight: 'normal' }}>Illustrative Example</span>
+                        </div>
                         <div className={styles.gscFilters}>
                           <span className={styles.gscFilterActive}>✓ 3 months</span>
                           <span className={styles.gscFilter}>Search type: Web</span>
@@ -493,13 +497,13 @@ export default function InteractiveHero() {
                     {/* Top 3 Large Graphics */}
                     <div className={styles.gdGalleryTop}>
                       <div className={styles.gdImgCard}>
-                        <img src="/assets/images/graphic1.png" alt="Creative Graphic 1" />
+                        <img src="/assets/images/graphic1.png" alt="Brand identity design for growing companies in Mangalore" />
                       </div>
                       <div className={styles.gdImgCard}>
-                        <img src="/assets/images/graphic2.png" alt="Creative Graphic 2" />
+                        <img src="/assets/images/graphic2.png" alt="Performance marketing and social media creative design" />
                       </div>
                       <div className={styles.gdImgCard}>
-                        <img src="/assets/images/graphic3.png" alt="Creative Graphic 3" />
+                        <img src="/assets/images/graphic3.png" alt="AI-driven video editing and campaign visuals" />
                         <div className={styles.gdImgOverlayIcon}>
                            <Play size={16} fill="#111" color="#111"/>
                         </div>
@@ -509,16 +513,16 @@ export default function InteractiveHero() {
                     {/* Bottom Category/Sub-project Cards */}
                     <div className={styles.gdGalleryBottom}>
                        <div className={styles.gdBottomCard} style={{padding: 0, background: 'transparent', boxShadow: 'none'}}>
-                          <img src="/assets/images/card1.png" alt="Card 1" style={{width: '100%', height: '100%', objectFit: 'contain'}} />
+                          <img src="/assets/images/card1.png" alt="Digital branding strategy and packaging design" style={{width: '100%', height: '100%', objectFit: 'contain'}} />
                        </div>
                        <div className={styles.gdBottomCard} style={{padding: 0, background: 'transparent', boxShadow: 'none'}}>
-                          <img src="/assets/images/card2.png" alt="Card 2" style={{width: '100%', height: '100%', objectFit: 'contain'}} />
+                          <img src="/assets/images/card2.png" alt="Custom website development and UI/UX architecture" style={{width: '100%', height: '100%', objectFit: 'contain'}} />
                        </div>
                        <div className={styles.gdBottomCard} style={{padding: 0, background: 'transparent', boxShadow: 'none'}}>
-                          <img src="/assets/images/card3.png" alt="Card 3" style={{width: '100%', height: '100%', objectFit: 'contain'}} />
+                          <img src="/assets/images/card3.png" alt="Targeted Google Ads and PPC management in Mangalore" style={{width: '100%', height: '100%', objectFit: 'contain'}} />
                        </div>
                        <div className={styles.gdBottomCard} style={{padding: 0, background: 'transparent', boxShadow: 'none'}}>
-                          <img src="/assets/images/card4.png" alt="Card 4" style={{width: '100%', height: '100%', objectFit: 'contain'}} />
+                          <img src="/assets/images/card4.png" alt="Local SEO services and conversion optimization in Mangaluru" style={{width: '100%', height: '100%', objectFit: 'contain'}} />
                        </div>
                     </div>
                   </div>
@@ -581,7 +585,10 @@ export default function InteractiveHero() {
                   
                   <div className={styles.gadsContent}>
                     <div className={styles.gadsHeader}>
-                      <div className={styles.gadsTitle}>Overview</div>
+                      <div className={styles.gadsTitle}>
+                        Overview
+                        <span style={{ fontSize: '9px', background: 'rgba(0,0,0,0.06)', color: '#5f6368', padding: '2px 6px', borderRadius: '4px', marginLeft: '8px', fontWeight: 'normal' }}>Illustrative Example</span>
+                      </div>
                       <div className={styles.gadsDateControl}>
                         <span><Bookmark size={8} style={{marginRight: '2px'}}/> Last 30 days</span>
                         <div className={styles.gadsDateBox}>May 10 - Jun 8, 2025 ▼</div>

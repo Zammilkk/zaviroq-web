@@ -408,23 +408,32 @@
   color: #9CA3AF;
 }
 
+.darkLogo {
+  display: none;
+}
+
+.lightLogo {
+  display: block;
+}
+
+:global([data-theme="dark"]) .darkLogo {
+  display: block !important;
+}
+
+:global([data-theme="dark"]) .lightLogo {
+  display: none !important;
+}
+
 .liteTheme .darkLogo,
-:global([data-theme="light"]) .darkLogo {
+:global([data-theme="light"]) .darkLogo,
+:global(:root:not([data-theme="dark"])) .darkLogo {
   display: none !important;
 }
 
 .liteTheme .lightLogo,
-:global([data-theme="light"]) .lightLogo {
+:global([data-theme="light"]) .lightLogo,
+:global(:root:not([data-theme="dark"])) .lightLogo {
   display: block !important;
-}
-
-@media (prefers-color-scheme: light) {
-  :global(:root:not([data-theme="dark"])) .darkLogo {
-    display: none !important;
-  }
-  :global(:root:not([data-theme="dark"])) .lightLogo {
-    display: block !important;
-  }
 }
 
 .liteTheme .ctaEyebrow {

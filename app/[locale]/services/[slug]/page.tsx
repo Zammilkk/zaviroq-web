@@ -46,12 +46,35 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const configs = servicesConfigs as ServiceConfig[];
   const service = configs.find((c) => c.slug === slug);
 
-  if (!service) return { title: 'Service | ZAVIROQ' };
+  if (!service) return { title: 'Service | Zaviroq' };
 
   return {
-    title: service.metaTitle,
+    title: {
+      absolute: service.metaTitle.includes('ZAVIROQ') || service.metaTitle.includes('Zaviroq') ? service.metaTitle : `${service.metaTitle} | Zaviroq`,
+    },
     description: service.metaDesc,
-    keywords: service.keywords,
+    alternates: {
+      canonical: `https://www.zaviroq.com/services/${slug}`,
+    },
+    openGraph: {
+      title: service.metaTitle,
+      description: service.metaDesc,
+      url: `https://www.zaviroq.com/services/${slug}`,
+      siteName: 'Zaviroq',
+      locale: 'en_IN',
+      type: 'website',
+      images: [{ url: 'https://www.zaviroq.com/og-image.png' }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: service.metaTitle,
+      description: service.metaDesc,
+      images: ['https://www.zaviroq.com/og-image.png'],
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
   };
 }
 
@@ -63,22 +86,51 @@ export default async function ServiceDetailsPage({ params }: Props) {
 
   const accentColor = resolveColor(service.color);
 
-  // JSON-LD structured data
+  // JSON-LD structured data with Service and BreadcrumbList
   const schemaMarkup = {
-    '@context': 'https://schema.org/',
-    '@type': 'Service',
-    serviceType: service.title,
-    provider: {
-      '@type': 'LocalBusiness',
-      name: 'ZAVIROQ',
-      image: 'https://zaviroq.com/logo.png',
-    },
-    areaServed: [
-      { '@type': 'Country', name: 'Saudi Arabia' },
-      { '@type': 'Country', name: 'United Arab Emirates' },
-      { '@type': 'Country', name: 'India' },
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Service',
+        serviceType: service.title,
+        name: service.title,
+        provider: {
+          '@type': 'Organization',
+          '@id': 'https://www.zaviroq.com/#organization',
+          name: 'Zaviroq',
+          url: 'https://www.zaviroq.com',
+        },
+        areaServed: [
+          { '@type': 'AdministrativeArea', name: 'Mangalore' },
+          { '@type': 'Country', name: 'India' },
+          { '@type': 'Country', name: 'United Arab Emirates' },
+          { '@type': 'Country', name: 'Saudi Arabia' },
+        ],
+        description: service.metaDesc,
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: 'https://www.zaviroq.com/',
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Services',
+            item: 'https://www.zaviroq.com/services',
+          },
+          {
+            '@type': 'ListItem',
+            position: 3,
+            name: service.title,
+          },
+        ],
+      },
     ],
-    description: service.metaDesc,
   };
 
   return (

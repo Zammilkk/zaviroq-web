@@ -1,4 +1,26 @@
 import styles from './page.module.css';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Branding & Design Agency | Zaviroq Creative Studio',
+  description: 'Corporate brand identity, logo design, company profiles, and creative social media design for businesses across India, UAE, and Saudi Arabia.',
+  alternates: {
+    canonical: 'https://www.zaviroq.com/services/branding-design',
+  },
+  openGraph: {
+    title: 'Branding & Design Agency | Zaviroq Creative Studio',
+    description: 'Corporate brand identity, logo design, company profiles, and creative social media design for businesses across India, UAE, and Saudi Arabia.',
+    url: 'https://www.zaviroq.com/services/branding-design',
+    siteName: 'Zaviroq',
+    locale: 'en_IN',
+    type: 'website',
+    images: [{ url: 'https://www.zaviroq.com/og-image.png' }],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
 
 export default async function ServicesCategoryPage({params}: {params: Promise<{locale: string}>}) {
   const {locale} = await params;

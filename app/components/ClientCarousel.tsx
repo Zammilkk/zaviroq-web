@@ -77,7 +77,7 @@ export default function ClientCarousel() {
           <span className={styles.dot}></span> TRUSTED BY AMBITIOUS BRANDS
         </div>
         <h2 className={styles.title}>
-          Brands That <span>Grow With Us</span>
+          Ambitious Brands in <span>Mangalore & Beyond</span>
         </h2>
       </div>
 
@@ -99,7 +99,7 @@ export default function ClientCarousel() {
                 onClick={() => setActiveIndex(index)}
               >
                 <div className={styles.cardInner}>
-                  <img src={client.logo} alt={`Client ${client.id}`} />
+                  <img src={client.logo} alt={`Partner brand ${client.id} collaborating with Zaviroq`} />
                 </div>
                 {/* Reflection effect */}
                 <div className={styles.reflection}>
@@ -112,10 +112,10 @@ export default function ClientCarousel() {
 
         {/* Controls */}
         <div className={styles.controls}>
-          <button className={styles.navBtn} onClick={handlePrev}>
+          <button className={styles.navBtn} onClick={handlePrev} aria-label="Previous partner">
             <ChevronLeft size={20} />
           </button>
-          <button className={styles.navBtn} onClick={handleNext}>
+          <button className={styles.navBtn} onClick={handleNext} aria-label="Next partner">
             <ChevronRight size={20} />
           </button>
         </div>

@@ -21,11 +21,11 @@ export default function ApproachSection() {
             
             <h2 className={styles.headline}>
               Strategy First.<br />
-              Digital Built to <span className={styles.gradientText}>Perform.</span>
+              Digital Growth for <span className={styles.gradientText}>Mangalore Businesses.</span>
             </h2>
             
             <p className={styles.description}>
-              We combine strategy, design, technology and performance marketing to create digital experiences built around real business objectives.
+              As an experienced SEO company and website development company in Mangalore, we combine search strategy, modern UI/UX design, and ROI-focused ad campaigns tailored to local market dynamics.
             </p>
             
             <div className={styles.buttons}>
@@ -39,7 +39,7 @@ export default function ApproachSection() {
             <div className={styles.imageWrapper}>
               <Image 
                 src="/OUR-APPROACH.avif" 
-                alt="Digital Growth Partner" 
+                alt="Zaviroq strategic digital marketing and web development process in Mangalore" 
                 fill 
                 className={styles.laptopImage}
                 unoptimized
@@ -125,7 +125,7 @@ export default function ApproachSection() {
                 <BarChart2 size={22} className={styles.stepIcon} />
               </div>
               <p className={styles.stepText}>
-                We execute, optimize and scale through SEO, paid campaigns and continuous improvement.
+                We execute, optimize and scale your brand in Mangalore through local SEO, targeted Google Ads and continuous conversion improvement.
               </p>
             </div>
           </div>

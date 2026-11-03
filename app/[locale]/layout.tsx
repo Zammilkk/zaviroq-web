@@ -3,6 +3,7 @@ import {getMessages} from 'next-intl/server';
 import {notFound} from 'next/navigation';
 import {routing} from '@/i18n/routing';
 import Script from 'next/script';
+import { Sora } from 'next/font/google';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import ParallaxBackground from '../components/ParallaxBackground';
@@ -15,33 +16,88 @@ import '../globals.css';
 import seoData from '@/data/seo.json';
 import type { SeoData } from '@/types/seo';
 
+import type { Metadata } from 'next';
+
+const sora = Sora({
+  subsets: ['latin'],
+  weight: ['300', '400', '600', '700', '800'],
+  display: 'swap',
+  variable: '--font-sans',
+});
+
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({locale}));
 }
 
-export async function generateMetadata() {
-  try {
-    const seo = seoData as SeoData;
-    if (seo) {
-      return {
-        metadataBase: new URL('https://zaviroq.com'),
-        title: seo.title || 'ZAVIROQ | Scaling Brands Digitally',
-        description: seo.description || 'Premium digital marketing and web development agency in Mangalore.',
-        keywords: seo.keywords || '',
-        authors: [{ name: seo.author || 'Digital Zaam' }],
-        icons: [{ rel: 'icon', url: '/favicon.ico' }],
-        openGraph: {
-          images: seo.ogImage ? [{ url: seo.ogImage }] : [],
-        }
-      };
-    }
-  } catch {}
+export async function generateMetadata(): Promise<Metadata> {
+  const title = 'Digital Marketing Agency in Mangalore | Zaviroq';
+  const description = 'Zaviroq helps businesses grow with SEO, Google Ads, social media marketing, and web development in Mangalore, India, the UAE, and Saudi Arabia.';
   
   return {
-    metadataBase: new URL('https://zaviroq.com'),
-    title: 'ZAVIROQ | Scaling Brands Digitally',
-    description: 'Premium digital marketing and web development agency in Mangalore & India.',
-    icons: [{ rel: 'icon', url: '/favicon.ico' }],
+    metadataBase: new URL('https://www.zaviroq.com'),
+    title: {
+      default: title,
+      template: '%s | Zaviroq',
+    },
+    description,
+    authors: [{ name: 'Zaviroq', url: 'https://www.zaviroq.com' }],
+    creator: 'Zaviroq',
+    publisher: 'Zaviroq',
+    formatDetection: {
+      email: false,
+      address: false,
+      telephone: false,
+    },
+    openGraph: {
+      title: {
+        default: title,
+        template: '%s | Zaviroq',
+      },
+      description,
+      url: 'https://www.zaviroq.com',
+      siteName: 'Zaviroq',
+      locale: 'en_IN',
+      type: 'website',
+      images: [
+        {
+          url: 'https://www.zaviroq.com/og-image.png',
+          width: 1200,
+          height: 630,
+          alt: 'Zaviroq - Digital Marketing Agency in Mangalore',
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: {
+        default: title,
+        template: '%s | Zaviroq',
+      },
+      description,
+      images: ['https://www.zaviroq.com/og-image.png'],
+      creator: '@zaviroq',
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
+    icons: {
+      icon: [
+        { url: '/favicon.ico', sizes: 'any' },
+        { url: '/zaviroq-fav.png', sizes: '500x500', type: 'image/png' },
+      ],
+      shortcut: '/favicon.ico',
+      apple: [
+        { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+      ],
+    },
   };
 }
 
@@ -61,16 +117,31 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} dir={locale === 'ar' ? 'rtl' : 'ltr'}>
+    <html lang={locale === 'ar' ? 'ar' : 'en-IN'} dir={locale === 'ar' ? 'rtl' : 'ltr'} data-theme="light" suppressHydrationWarning>
       <head>
-        <link rel="alternate" hrefLang="en-SA" href="https://zaviroq.com/sa" />
-        <link rel="alternate" hrefLang="ar-SA" href="https://zaviroq.com/ar/sa" />
-        <link rel="alternate" hrefLang="en-AE" href="https://zaviroq.com/ae" />
-        <link rel="alternate" hrefLang="en-IN" href="https://zaviroq.com/in" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var saved = localStorage.getItem('theme');
+                  var theme = (saved === 'dark') ? 'dark' : 'light';
+                  document.documentElement.setAttribute('data-theme', theme);
+                } catch (e) {
+                  document.documentElement.setAttribute('data-theme', 'light');
+                }
+              })();
+            `
+          }}
+        />
         <CanonicalTag />
-        <meta name="google-site-verification" content="ohatbi3YT5W9pRVst1qhGn0jkJYHeLHIh0dwYq_ncxM" />
+        <meta name="google-site-verification" content="KKmhBEL6-TNQ1PaY46UKfkJAtglBKrl_bYsAvo0s9kA" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/zaviroq-fav.png" type="image/png" sizes="500x500" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+        <link rel="manifest" href="/site.webmanifest" />
       </head>
-      <body>
+      <body className={sora.className}>
         <Preloader />
         <ParallaxBackground />
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-ZY54FDJZWS" strategy="afterInteractive" />
@@ -83,66 +154,71 @@ export default async function LocaleLayout({
             gtag('config', 'G-ZY54FDJZWS');
           `}
         </Script>
-        
-        <Script id="meta-pixel" strategy="afterInteractive">
-          {`
-            !function(f,b,e,v,n,t,s)
-            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-            n.queue=[];t=b.createElement(e);t.async=!0;
-            t.src=v;s=b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t,s)}(window, document,'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', 'XXXXXXXXXXXXXXX');
-            fbq('track', 'PageView');
-          `}
-        </Script>
 
         <Script
-          id="organization-schema"
+          id="structured-data"
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "Organization",
-              "name": "ZAVIROQ",
-              "url": "https://zaviroq.com",
-              "logo": "https://zaviroq.com/logo.png",
-              "description": "ZAVIROQ is a premium digital marketing agency scaling brands digitally."
+              "@graph": [
+                {
+                  "@type": ["Organization", "ProfessionalService"],
+                  "@id": "https://www.zaviroq.com/#organization",
+                  "name": "Zaviroq",
+                  "alternateName": "Zaviroq Digital Marketing Agency",
+                  "url": "https://www.zaviroq.com",
+                  "logo": {
+                    "@type": "ImageObject",
+                    "@id": "https://www.zaviroq.com/#logo",
+                    "url": "https://www.zaviroq.com/logo.png",
+                    "caption": "Zaviroq"
+                  },
+                  "image": "https://www.zaviroq.com/og-image.png",
+                  "description": "Zaviroq is a premier digital marketing agency in Mangalore specializing in SEO, web development, Google Ads, and brand strategy across India, UAE, and Saudi Arabia.",
+                  "telephone": "+917483830582",
+                  "email": "info@zaviroq.com",
+                  "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Mangalore",
+                    "addressRegion": "Karnataka",
+                    "addressCountry": "IN"
+                  },
+                  "priceRange": "$$",
+                  "sameAs": [
+                    "https://www.linkedin.com/company/zaviroq",
+                    "https://www.instagram.com/zaviroq",
+                    "https://www.facebook.com/zaviroq"
+                  ],
+                  "areaServed": [
+                    { "@type": "AdministrativeArea", "name": "Mangalore" },
+                    { "@type": "Country", "name": "India" },
+                    { "@type": "Country", "name": "United Arab Emirates" },
+                    { "@type": "Country", "name": "Saudi Arabia" }
+                  ],
+                  "contactPoint": [
+                    {
+                      "@type": "ContactPoint",
+                      "telephone": "+917483830582",
+                      "contactType": "customer service",
+                      "areaServed": ["IN", "AE", "SA"],
+                      "availableLanguage": ["en", "ar", "kn", "hi"]
+                    }
+                  ]
+                },
+                {
+                  "@type": "WebSite",
+                  "@id": "https://www.zaviroq.com/#website",
+                  "url": "https://www.zaviroq.com",
+                  "name": "Zaviroq",
+                  "publisher": { "@id": "https://www.zaviroq.com/#organization" },
+                  "inLanguage": ["en-IN", "ar"]
+                }
+              ]
             })
           }}
         />
 
-        <Script
-          id="localbusiness-schema"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify([
-              {
-                "@context": "https://schema.org",
-                "@type": "LocalBusiness",
-                "name": "ZAVIROQ Mangalore",
-                "image": "https://zaviroq.com/logo.png",
-                "telephone": "+91 74 8383 0582",
-                "address": {
-                  "@type": "PostalAddress",
-                  "addressLocality": "Mangalore",
-                  "addressRegion": "Karnataka",
-                  "addressCountry": "IN"
-                }
-              },
-              {
-                "@context": "https://schema.org",
-                "@type": "LocalBusiness",
-                "name": "ZAVIROQ Global",
-                "image": "https://zaviroq.com/logo.png",
-                "telephone": "+91 74 8383 0582",
-                "address": { "@type": "PostalAddress", "addressCountry": "IN" }
-              }
-            ])
-          }}
-        />
         <NextIntlClientProvider messages={messages}>
           <Navbar />
           <main style={{ paddingTop: '60px' }}>

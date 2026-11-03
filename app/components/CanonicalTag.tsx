@@ -7,23 +7,27 @@ export default function CanonicalTag() {
   
   if (!pathname) return null;
 
-  const isHome = pathname === '/' || pathname === '/en' || pathname === '/ar' || pathname === '';
+  // Normalize path
+  const normalizedPath = pathname.replace(/^\/en(?=\/|$)/, '') || '/';
+  const isAdmin = normalizedPath.startsWith('/admin');
+  const isHome = normalizedPath === '/' || normalizedPath === '';
+
   const canonicalUrl = isHome
-    ? 'https://zaviroq.com/'
-    : `https://zaviroq.com${pathname.replace(/^\/en(?=\/|$)/, '').replace(/^\/ar(?=\/|$)/, '')}`;
+    ? 'https://www.zaviroq.com/'
+    : `https://www.zaviroq.com${normalizedPath}`;
 
   return (
     <>
       <link rel="canonical" href={canonicalUrl} />
-      {isHome ? (
-        <>
-          <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-          <meta name="googlebot" content="index, follow" />
-        </>
-      ) : (
+      {isAdmin ? (
         <>
           <meta name="robots" content="noindex, nofollow" />
           <meta name="googlebot" content="noindex, nofollow" />
+        </>
+      ) : (
+        <>
+          <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+          <meta name="googlebot" content="index, follow" />
         </>
       )}
     </>

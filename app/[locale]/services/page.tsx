@@ -4,8 +4,24 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import ServicesGrid from '../../components/ServicesGrid';
 export const metadata: Metadata = {
-  title: 'All Services | ZAVIROQ — Digital Excellence',
-  description: 'Premium digital services across Web Development, SEO, Marketing, and Design. Expert solutions for GCC and India markets.',
+  title: 'Digital Marketing & Web Development Services | Zaviroq',
+  description: 'Comprehensive digital agency services: SEO, web development, Google Ads, performance marketing, and branding in Mangalore, India, the UAE, and Saudi Arabia.',
+  alternates: {
+    canonical: 'https://www.zaviroq.com/services',
+  },
+  openGraph: {
+    title: 'Digital Marketing & Web Development Services | Zaviroq',
+    description: 'Comprehensive digital agency services: SEO, web development, Google Ads, performance marketing, and branding in Mangalore, India, the UAE, and Saudi Arabia.',
+    url: 'https://www.zaviroq.com/services',
+    siteName: 'Zaviroq',
+    locale: 'en_IN',
+    type: 'website',
+    images: [{ url: 'https://www.zaviroq.com/og-image.png' }],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 const categoryColors: Record<string, string> = {

@@ -7,10 +7,35 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   
   if (!service) return {};
   
+  const title = service.metaTitle.includes('ZAVIROQ') || service.metaTitle.includes('Zaviroq') ? service.metaTitle : `${service.metaTitle} | Zaviroq`;
+
   return {
-    title: service.metaTitle,
+    title: {
+      absolute: title,
+    },
     description: service.metaDesc,
-    keywords: service.keywords,
+    alternates: {
+      canonical: 'https://www.zaviroq.com/services/seo/keyword-research',
+    },
+    openGraph: {
+      title,
+      description: service.metaDesc,
+      url: 'https://www.zaviroq.com/services/seo/keyword-research',
+      siteName: 'Zaviroq',
+      locale: 'en_IN',
+      type: 'website',
+      images: [{ url: 'https://www.zaviroq.com/og-image.png' }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description: service.metaDesc,
+      images: ['https://www.zaviroq.com/og-image.png'],
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
   };
 }
 

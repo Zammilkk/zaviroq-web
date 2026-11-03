@@ -1,5 +1,27 @@
 import styles from './page.module.css';
 import { Building2, Plane, PlusSquare, Pill, HardHat, Factory, Hotel, Cpu, ArrowRight } from 'lucide-react';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Industry Digital Marketing & Web Solutions | Zaviroq',
+  description: 'Specialized digital marketing, SEO, and web development strategies for Real Estate, Healthcare, SaaS, E-Commerce, and enterprise verticals.',
+  alternates: {
+    canonical: 'https://www.zaviroq.com/industries',
+  },
+  openGraph: {
+    title: 'Industry Digital Marketing & Web Solutions | Zaviroq',
+    description: 'Specialized digital marketing, SEO, and web development strategies for Real Estate, Healthcare, SaaS, E-Commerce, and enterprise verticals.',
+    url: 'https://www.zaviroq.com/industries',
+    siteName: 'Zaviroq',
+    locale: 'en_IN',
+    type: 'website',
+    images: [{ url: 'https://www.zaviroq.com/og-image.png' }],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
 
 const industries = [
   { id: 1, title: 'Real Estate', icon: <Building2 size={24} />, image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=600&auto=format&fit=crop' },

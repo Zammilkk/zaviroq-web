@@ -1,4 +1,26 @@
 import styles from './page.module.css';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Website Design & Web Development Services | Zaviroq',
+  description: 'Custom Next.js, React, and WordPress website development services in Mangalore, India, the UAE, and Saudi Arabia. High performance, sub-second load times.',
+  alternates: {
+    canonical: 'https://www.zaviroq.com/services/web-development',
+  },
+  openGraph: {
+    title: 'Website Design & Web Development Services | Zaviroq',
+    description: 'Custom Next.js, React, and WordPress website development services in Mangalore, India, the UAE, and Saudi Arabia. High performance, sub-second load times.',
+    url: 'https://www.zaviroq.com/services/web-development',
+    siteName: 'Zaviroq',
+    locale: 'en_IN',
+    type: 'website',
+    images: [{ url: 'https://www.zaviroq.com/og-image.png' }],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
 
 export default async function ServicesCategoryPage({params}: {params: Promise<{locale: string}>}) {
   const {locale} = await params;

@@ -2,10 +2,36 @@ import ServiceLayout from '@/app/components/ServiceLayout';
 import { Metadata } from 'next';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const title = "Digital Marketing Agency in Mangalore | SEO & Web Development | Zaviroq";
+  const description = "Zaviroq is Mangalore's premier digital marketing agency. We engineer custom web design, high-impact SEO, and high-ROI Google Ads to help businesses scale.";
+
   return {
-    title: "Digital Marketing & Web Development in Mangalore | Premium Agency | ZAVIROQ",
-    description: "Expert digital marketing & web development in mangalore services. Data-driven growth, premium architectures, and scalable solutions.",
-    keywords: "Digital Marketing & Web Development, Mangalore, Enterprise Solutions",
+    title: {
+      absolute: title,
+    },
+    description,
+    alternates: {
+      canonical: "https://www.zaviroq.com/locations/mangalore",
+    },
+    openGraph: {
+      title,
+      description,
+      url: "https://www.zaviroq.com/locations/mangalore",
+      siteName: "Zaviroq",
+      locale: "en_IN",
+      type: "website",
+      images: [{ url: "https://www.zaviroq.com/og-image.png" }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: ["https://www.zaviroq.com/og-image.png"],
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
   };
 }
 
@@ -14,21 +40,28 @@ export default async function DynamicGeneratedPage({ params }: { params: Promise
   
   const serviceData = {
     slug: "locations-mangalore",
-    metaTitle: "Digital Marketing & Web Development in Mangalore | ZAVIROQ",
-    metaDesc: "Expert digital marketing & web development in mangalore services. Data-driven growth, premium architectures, and scalable solutions.",
-    keywords: "Digital Marketing & Web Development, Mangalore, Enterprise Solutions",
-    title: "Digital Marketing & Web Development in Mangalore",
-    heroDesc: "We provide industry-leading digital marketing & web development in mangalore tailored to scale your enterprise aggressively and dominate your target market.",
+    metaTitle: "Digital Marketing Agency in Mangalore | Zaviroq",
+    metaDesc: "Zaviroq is Mangalore's premier digital marketing agency. We engineer custom web design, high-impact SEO, and high-ROI Google Ads to help businesses scale.",
+    keywords: "Digital marketing agency Mangalore, Web design company Mangalore, SEO services Mangalore, Advertising agency Mangalore",
+    title: "Digital Marketing in Mangalore",
+    heroDesc: "Empowering Mangalore and Karnataka brands with enterprise-tier digital growth. We build fast, high-converting websites and deploy targeted search and social campaigns that generate measurable revenue.",
     color: "var(--primary-purple)",
-    deliverables: ["Strategy & Research", "Architecture & Design", "Execution & Deployment", "Optimization & Scaling"]
+    deliverables: [
+      "Full-Funnel Digital Growth Strategy",
+      "Custom Next.js & WordPress Web Design",
+      "High-Intent SEO & Google Maps Dominance",
+      "Google Ads & Meta Advertising Management",
+      "Corporate Brand Identity & Visual Assets",
+      "Comprehensive Conversion & Lead Tracking",
+    ],
   };
 
   return (
     <ServiceLayout 
       locale={locale} 
       service={serviceData} 
-      parentPath="services" 
-      parentName="Overview" 
+      parentPath="locations" 
+      parentName="Markets" 
     />
   );
 }

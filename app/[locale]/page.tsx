@@ -17,9 +17,45 @@ import ServicesSection from '../components/ServicesSection';
 import WhyChooseSection from '../components/WhyChooseSection';
 
 export async function generateMetadata(): Promise<Metadata> {
+  const title = 'Digital Marketing Agency in Mangalore | Zaviroq';
+  const description = 'Zaviroq helps businesses grow with SEO, Google Ads, social media marketing, and web development in Mangalore, India, the UAE, and Saudi Arabia.';
+
   return {
-    title: 'Digital Marketing Agency in Mangalore | Web Development & SEO | Zaviroq',
-    description: 'Zaviroq is a leading digital marketing agency in Mangalore offering SEO, web development, Google Ads, branding, and AI-driven marketing solutions for businesses in Mangalore, Karnataka.',
+    title: {
+      absolute: title,
+    },
+    description,
+    alternates: {
+      canonical: 'https://www.zaviroq.com/',
+      languages: {
+        'en-IN': 'https://www.zaviroq.com/',
+        'ar': 'https://www.zaviroq.com/ar',
+        'x-default': 'https://www.zaviroq.com/',
+      },
+    },
+    openGraph: {
+      title,
+      description,
+      url: 'https://www.zaviroq.com/',
+      siteName: 'Zaviroq',
+      locale: 'en_IN',
+      type: 'website',
+      images: [
+        {
+          url: 'https://www.zaviroq.com/og-image.png',
+          width: 1200,
+          height: 630,
+          alt: 'Zaviroq - Digital Marketing Agency in Mangalore',
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: ['https://www.zaviroq.com/og-image.png'],
+      creator: '@zaviroq',
+    },
     robots: {
       index: true,
       follow: true,
@@ -57,9 +93,47 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
     { name: 'Hospitality', desc: 'Luxury Travel & Hotels', src: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=800' }
   ];
 
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "@id": "https://www.zaviroq.com/#localbusiness-mangalore",
+    "name": "Zaviroq - Digital Marketing Agency in Mangalore",
+    "url": "https://www.zaviroq.com",
+    "logo": "https://www.zaviroq.com/logo.png",
+    "image": "https://www.zaviroq.com/og-image.png",
+    "description": "Zaviroq helps businesses grow with SEO, Google Ads, social media marketing, and web development in Mangalore, India, the UAE, and Saudi Arabia.",
+    "telephone": "+917483830582",
+    "email": "info@zaviroq.com",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Mangalore",
+      "addressRegion": "Karnataka",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 12.9141,
+      "longitude": 74.8560
+    },
+    "areaServed": [
+      { "@type": "AdministrativeArea", "name": "Mangalore" },
+      { "@type": "AdministrativeArea", "name": "Karnataka" },
+      { "@type": "Country", "name": "India" },
+      { "@type": "Country", "name": "United Arab Emirates" },
+      { "@type": "Country", "name": "Saudi Arabia" }
+    ],
+    "parentOrganization": {
+      "@id": "https://www.zaviroq.com/#organization"
+    }
+  };
+
   return (
     <div className={styles.container}>
-      <h1 className="visually-hidden">AI-Driven Digital Marketing Agency in Mangalore</h1>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
 
       {/* 🏠 NEW INTERACTIVE HERO SECTION */}
       <InteractiveHero />

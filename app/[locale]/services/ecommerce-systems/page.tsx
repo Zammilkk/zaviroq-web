@@ -1,4 +1,26 @@
 import styles from './page.module.css';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Ecommerce & Web Application Development | Zaviroq',
+  description: 'Scalable custom ecommerce solutions, admin dashboards, and SaaS platforms engineered for high transaction volume across India, UAE, and Saudi Arabia.',
+  alternates: {
+    canonical: 'https://www.zaviroq.com/services/ecommerce-systems',
+  },
+  openGraph: {
+    title: 'Ecommerce & Web Application Development | Zaviroq',
+    description: 'Scalable custom ecommerce solutions, admin dashboards, and SaaS platforms engineered for high transaction volume across India, UAE, and Saudi Arabia.',
+    url: 'https://www.zaviroq.com/services/ecommerce-systems',
+    siteName: 'Zaviroq',
+    locale: 'en_IN',
+    type: 'website',
+    images: [{ url: 'https://www.zaviroq.com/og-image.png' }],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
 
 export default async function ServicesCategoryPage({params}: {params: Promise<{locale: string}>}) {
   const {locale} = await params;

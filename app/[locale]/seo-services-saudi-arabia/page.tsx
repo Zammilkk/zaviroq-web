@@ -1,3 +1,26 @@
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'SEO Services in Saudi Arabia | KSA Search Engine Agency | Zaviroq',
+  description: 'Enterprise SEO services across Saudi Arabia, Riyadh, and Jeddah. Arabic semantic optimization, local citations, and high-impact organic traffic growth.',
+  alternates: {
+    canonical: 'https://www.zaviroq.com/seo-services-saudi-arabia',
+  },
+  openGraph: {
+    title: 'SEO Services in Saudi Arabia | KSA Search Engine Agency | Zaviroq',
+    description: 'Enterprise SEO services across Saudi Arabia, Riyadh, and Jeddah. Arabic semantic optimization, local citations, and high-impact organic traffic growth.',
+    url: 'https://www.zaviroq.com/seo-services-saudi-arabia',
+    siteName: 'Zaviroq',
+    locale: 'en_SA',
+    type: 'website',
+    images: [{ url: 'https://www.zaviroq.com/og-image.png' }],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
+
 export default function LocationLandingPage() {
   // A generic SEO landing page template
   return (

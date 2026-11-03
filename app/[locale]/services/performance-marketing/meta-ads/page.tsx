@@ -2,10 +2,36 @@ import ServiceLayout from '@/app/components/ServiceLayout';
 import { Metadata } from 'next';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const title = "Meta Ads & Facebook Advertising Agency | Zaviroq";
+  const description = "Target high-intent audiences on Instagram and Facebook. Advanced funnel architecture, creative testing, and high-ROAS Meta ad campaign management.";
+
   return {
-    title: "Meta Ads | Premium Agency | ZAVIROQ",
-    description: "Expert meta ads services. Data-driven growth, premium architectures, and scalable solutions.",
-    keywords: "Meta Ads, Digital Agency, Enterprise Solutions",
+    title: {
+      absolute: title,
+    },
+    description,
+    alternates: {
+      canonical: "https://www.zaviroq.com/services/performance-marketing/meta-ads",
+    },
+    openGraph: {
+      title,
+      description,
+      url: "https://www.zaviroq.com/services/performance-marketing/meta-ads",
+      siteName: "Zaviroq",
+      locale: "en_IN",
+      type: "website",
+      images: [{ url: "https://www.zaviroq.com/og-image.png" }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: ["https://www.zaviroq.com/og-image.png"],
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
   };
 }
 

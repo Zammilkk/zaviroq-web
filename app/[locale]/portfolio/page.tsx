@@ -1,6 +1,28 @@
 import styles from './page.module.css';
 import RevealOnScroll from '../RevealOnScroll';
 import PortfolioGrid from './PortfolioGrid';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Portfolio & Case Studies | Zaviroq Deployments',
+  description: 'Explore client outcomes, Next.js web applications, and SEO growth case studies delivered by Zaviroq across India and the GCC.',
+  alternates: {
+    canonical: 'https://www.zaviroq.com/portfolio',
+  },
+  openGraph: {
+    title: 'Portfolio & Case Studies | Zaviroq Deployments',
+    description: 'Explore client outcomes, Next.js web applications, and SEO growth case studies delivered by Zaviroq across India and the GCC.',
+    url: 'https://www.zaviroq.com/portfolio',
+    siteName: 'Zaviroq',
+    locale: 'en_IN',
+    type: 'website',
+    images: [{ url: 'https://www.zaviroq.com/og-image.png' }],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
 
 export default async function PortfolioPage({params}: {params: Promise<{locale: string}>}) {
   const {locale} = await params;

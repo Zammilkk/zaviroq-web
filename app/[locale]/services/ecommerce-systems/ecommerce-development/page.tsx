@@ -2,10 +2,36 @@ import ServiceLayout from '@/app/components/ServiceLayout';
 import { Metadata } from 'next';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const title = "E-Commerce Website Development Services | Zaviroq";
+  const description = "Custom e-commerce store development built on Next.js, Shopify, and WooCommerce. Sub-second checkouts, secure payments, and high conversion rates.";
+
   return {
-    title: "Ecommerce Development | Premium Agency | ZAVIROQ",
-    description: "Expert ecommerce development services. Data-driven growth, premium architectures, and scalable solutions.",
-    keywords: "Ecommerce Development, Digital Agency, Enterprise Solutions",
+    title: {
+      absolute: title,
+    },
+    description,
+    alternates: {
+      canonical: "https://www.zaviroq.com/services/ecommerce-systems/ecommerce-development",
+    },
+    openGraph: {
+      title,
+      description,
+      url: "https://www.zaviroq.com/services/ecommerce-systems/ecommerce-development",
+      siteName: "Zaviroq",
+      locale: "en_IN",
+      type: "website",
+      images: [{ url: "https://www.zaviroq.com/og-image.png" }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: ["https://www.zaviroq.com/og-image.png"],
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
   };
 }
 

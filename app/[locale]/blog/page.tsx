@@ -1,6 +1,28 @@
 import Image from 'next/image';
 import styles from './page.module.css';
 import RevealOnScroll from '../RevealOnScroll';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Blog & Digital Insights | The Zaviroq Journal',
+  description: 'Deep technical dives, SEO frameworks, performance marketing strategies, and architectural insights from the Zaviroq team.',
+  alternates: {
+    canonical: 'https://www.zaviroq.com/blog',
+  },
+  openGraph: {
+    title: 'Blog & Digital Insights | The Zaviroq Journal',
+    description: 'Deep technical dives, SEO frameworks, performance marketing strategies, and architectural insights from the Zaviroq team.',
+    url: 'https://www.zaviroq.com/blog',
+    siteName: 'Zaviroq',
+    locale: 'en_IN',
+    type: 'website',
+    images: [{ url: 'https://www.zaviroq.com/og-image.png' }],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
 
 export default async function BlogPage({params}: {params: Promise<{locale: string}>}) {
   const {locale} = await params;

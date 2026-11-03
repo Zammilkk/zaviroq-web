@@ -44,22 +44,57 @@ export default function ServiceLayout({
 }) {
   const accentColor = resolveColor(service.color);
 
-  // JSON-LD structured data
+  // JSON-LD structured data with Service and BreadcrumbList
   const schemaMarkup = {
-    '@context': 'https://schema.org/',
-    '@type': 'Service',
-    serviceType: service.title,
-    provider: {
-      '@type': 'LocalBusiness',
-      name: 'ZAVIROQ',
-      image: 'https://zaviroq.com/logo.png',
-    },
-    areaServed: [
-      { '@type': 'Country', name: 'Saudi Arabia' },
-      { '@type': 'Country', name: 'United Arab Emirates' },
-      { '@type': 'Country', name: 'India' },
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Service',
+        serviceType: service.title,
+        name: service.title,
+        provider: {
+          '@type': 'Organization',
+          '@id': 'https://www.zaviroq.com/#organization',
+          name: 'Zaviroq',
+          url: 'https://www.zaviroq.com',
+        },
+        areaServed: [
+          { '@type': 'AdministrativeArea', name: 'Mangalore' },
+          { '@type': 'Country', name: 'India' },
+          { '@type': 'Country', name: 'United Arab Emirates' },
+          { '@type': 'Country', name: 'Saudi Arabia' },
+        ],
+        description: service.metaDesc,
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: 'https://www.zaviroq.com/',
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Services',
+            item: 'https://www.zaviroq.com/services',
+          },
+          {
+            '@type': 'ListItem',
+            position: 3,
+            name: parentName,
+            item: `https://www.zaviroq.com/${parentPath}`,
+          },
+          {
+            '@type': 'ListItem',
+            position: 4,
+            name: service.title,
+          },
+        ],
+      },
     ],
-    description: service.metaDesc,
   };
 
   return (

@@ -83,19 +83,17 @@ export default function Navbar() {
             <Image
               src="/logo.svg"
               alt="ZAVIROQ Logo"
-              width={200}
-              height={66}
+              width={160}
+              height={50}
               className={styles.darkLogo}
-              style={{ objectFit: 'contain' }}
               priority
             />
             <Image
               src="/zaviroq-logo-white.png"
               alt="ZAVIROQ Logo"
-              width={200}
-              height={66}
+              width={160}
+              height={50}
               className={styles.lightLogo}
-              style={{ objectFit: 'contain' }}
               priority
             />
           </Link>
@@ -353,11 +351,8 @@ export default function Navbar() {
               <ChevronDown size={14} className={styles.navChevron} />
             </div>
           </div>
-          <div className={styles.hasDropdown}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
-              <Link href="#" className={styles.navLink} onClick={() => setMenuOpen(false)}>Markets</Link>
-              <ChevronDown size={14} className={styles.navChevron} />
-            </div>
+          <div className={styles.navLinkWrapper}>
+            <Link href="/locations" className={styles.navLink} onClick={() => setMenuOpen(false)}>Markets</Link>
           </div>
           <Link href="/portfolio" className={styles.navLink} onClick={() => setMenuOpen(false)}>Portfolio</Link>
           <Link href="/contact" className={styles.navLink} onClick={() => setMenuOpen(false)}>Contact</Link>

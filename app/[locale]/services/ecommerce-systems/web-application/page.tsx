@@ -2,10 +2,36 @@ import ServiceLayout from '@/app/components/ServiceLayout';
 import { Metadata } from 'next';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const title = "Custom Web Application Development | Full-Stack Systems | Zaviroq";
+  const description = "Enterprise web application development using React, Next.js, and Node.js. Robust business logic, secure authentication, and cloud scalability.";
+
   return {
-    title: "Web Application | Premium Agency | ZAVIROQ",
-    description: "Expert web application services. Data-driven growth, premium architectures, and scalable solutions.",
-    keywords: "Web Application, Digital Agency, Enterprise Solutions",
+    title: {
+      absolute: title,
+    },
+    description,
+    alternates: {
+      canonical: "https://www.zaviroq.com/services/ecommerce-systems/web-application",
+    },
+    openGraph: {
+      title,
+      description,
+      url: "https://www.zaviroq.com/services/ecommerce-systems/web-application",
+      siteName: "Zaviroq",
+      locale: "en_IN",
+      type: "website",
+      images: [{ url: "https://www.zaviroq.com/og-image.png" }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: ["https://www.zaviroq.com/og-image.png"],
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
   };
 }
 

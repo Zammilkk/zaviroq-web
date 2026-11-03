@@ -2,10 +2,36 @@ import ServiceLayout from '@/app/components/ServiceLayout';
 import { Metadata } from 'next';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const title = "SEO Agency in Dubai | Enterprise SEO Services UAE | Zaviroq";
+  const description = "Rank on Google with Zaviroq, the premier SEO agency in Dubai. Technical SEO, Arabic & English keyword optimization, and high-ROI GCC search growth.";
+
   return {
-    title: "Seo in Dubai | Premium Agency | ZAVIROQ",
-    description: "Expert seo in dubai services. Data-driven growth, premium architectures, and scalable solutions.",
-    keywords: "Seo, Dubai, Enterprise Solutions",
+    title: {
+      absolute: title,
+    },
+    description,
+    alternates: {
+      canonical: "https://www.zaviroq.com/services/seo/dubai",
+    },
+    openGraph: {
+      title,
+      description,
+      url: "https://www.zaviroq.com/services/seo/dubai",
+      siteName: "Zaviroq",
+      locale: "en_AE",
+      type: "website",
+      images: [{ url: "https://www.zaviroq.com/og-image.png" }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: ["https://www.zaviroq.com/og-image.png"],
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
   };
 }
 
