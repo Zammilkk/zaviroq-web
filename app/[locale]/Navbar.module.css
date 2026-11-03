@@ -567,7 +567,12 @@
 }
 
 .ctaBtn:hover .ctaIconWrapper {
-  transform: translateX(2px);
+  transform: translateX(4px) scale(1.1);
+  background: rgba(10, 10, 15, 0.9);
+}
+
+.ctaBtn:hover .ctaIconWrapper svg {
+  transform: scale(1.1);
 }
 
 .mobileCtaBtn {
@@ -1298,7 +1303,15 @@
   border-radius: 50%;
   background: transparent;
   color: #64748B;
-  transition: all 0.25s ease;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.themeToggleContainer:hover .themeIconCircle {
+  transform: scale(1.08);
+}
+
+.themeToggleContainer:hover .themeIconActive {
+  transform: scale(1.15) rotate(15deg);
 }
 
 :global([data-theme="dark"]) .themeIconCircle {
