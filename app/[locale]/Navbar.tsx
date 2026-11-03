@@ -160,16 +160,16 @@ export default function Navbar() {
               <Image
                 src="/logo.svg"
                 alt="ZAVIROQ Logo"
-                width={150}
-                height={42}
+                width={170}
+                height={55}
                 className={styles.darkLogo}
                 priority
               />
               <Image
                 src="/zaviroq-logo-white.png"
                 alt="ZAVIROQ Logo"
-                width={150}
-                height={42}
+                width={170}
+                height={55}
                 className={styles.lightLogo}
                 priority
               />
