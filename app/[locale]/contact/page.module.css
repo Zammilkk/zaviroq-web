@@ -32,9 +32,9 @@
 }
 
 :global([data-theme="light"]) .heroTopBgLayer {
-  background-image: url('/assets/images/services-hero-wave-bg.png');
-  background-position: center;
-  opacity: 1;
+  background-image: none !important;
+  display: none !important;
+  opacity: 0 !important;
 }
 
 .heroTopContainer {
@@ -463,8 +463,9 @@
 }
 
 :global([data-theme="light"]) .globalPresence::before {
-  background-image: url('/assets/images/services-hero-wave-bg.png');
-  opacity: 1;
+  background-image: none !important;
+  display: none !important;
+  opacity: 0 !important;
 }
 
 :global([data-theme="dark"]) .globalPresence {

@@ -43,9 +43,9 @@
 }
 
 :global([data-theme="light"]) .glowBg {
-  background-image: url('/assets/images/services-hero-wave-bg.png');
-  background-position: center;
-  opacity: 1;
+  background-image: none !important;
+  display: none !important;
+  opacity: 0 !important;
 }
 
 /* ── Background Watermark ── */

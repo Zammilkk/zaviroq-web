@@ -13,7 +13,7 @@
 .base {
   position: absolute;
   inset: 0;
-  background: url('/light-hero-bg.png') no-repeat center center;
+  background: linear-gradient(180deg, #0a0a0f 0%, #0d0b1a 50%, #0a0a0f 100%);
   background-size: cover;
   background-attachment: fixed;
 }
@@ -245,30 +245,22 @@
 
 :global([data-theme="light"]) .base,
 :global(:root:not([data-theme="dark"])) .base {
-  background: url('/light-hero-bg.png') no-repeat center center;
-  background-size: cover;
-  background-attachment: fixed;
+  background: var(--bg-color, #F8F9FA) !important;
 }
 
+:global([data-theme="light"]) .layer1,
+:global([data-theme="light"]) .layer2,
+:global([data-theme="light"]) .layer3,
+:global([data-theme="light"]) .layer4,
+:global([data-theme="light"]) .layer5,
 :global([data-theme="light"]) .vignette,
-:global(:root:not([data-theme="dark"])) .vignette {
-  background: radial-gradient(ellipse at center, transparent 0%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.5) 100%);
-}
-
-:global([data-theme="light"]) .particle,
-:global(:root:not([data-theme="dark"])) .particle {
-  background: rgba(99, 102, 241, 0.6);
-  box-shadow: 0 0 12px rgba(139, 92, 246, 0.3), 0 0 25px rgba(59, 130, 246, 0.2);
-}
-
-:global([data-theme="light"]) .hex1,
-:global([data-theme="light"]) .hex2,
-:global(:root:not([data-theme="dark"])) .hex1,
-:global(:root:not([data-theme="dark"])) .hex2 {
-  border-color: rgba(99, 102, 241, 0.2);
-}
-
-:global([data-theme="light"]) .hex1::before,
-:global(:root:not([data-theme="dark"])) .hex1::before {
-  border-color: rgba(99, 102, 241, 0.15);
+:global([data-theme="light"]) .noise,
+:global(:root:not([data-theme="dark"])) .layer1,
+:global(:root:not([data-theme="dark"])) .layer2,
+:global(:root:not([data-theme="dark"])) .layer3,
+:global(:root:not([data-theme="dark"])) .layer4,
+:global(:root:not([data-theme="dark"])) .layer5,
+:global(:root:not([data-theme="dark"])) .vignette,
+:global(:root:not([data-theme="dark"])) .noise {
+  display: none !important;
 }

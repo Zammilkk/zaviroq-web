@@ -2912,6 +2912,10 @@
 }
 
 /* ---- LIGHT THEME OVERRIDES ---- */
+:global([data-theme="light"]) .hero {
+  background: transparent !important;
+}
+
 :global([data-theme="light"]) .title {
   color: #111;
 }
