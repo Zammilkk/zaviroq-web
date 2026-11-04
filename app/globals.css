@@ -25,7 +25,12 @@ html {
   --neon-glow: 0 4px 20px rgba(107, 70, 193, 0.2);
   --text-main: #1A202C;
   --text-muted: #4A5568;
-  --font-sans: 'Sora', system-ui, sans-serif;
+  --font-sans: var(--font-sans), 'Sora', system-ui, sans-serif;
+  --font-heading: var(--font-sans), 'Sora', system-ui, sans-serif;
+  --font-poppins: var(--font-poppins), 'Poppins', system-ui, sans-serif;
+  --font-desc: var(--font-poppins), 'Poppins', system-ui, sans-serif;
+  --font-body: var(--font-poppins), 'Poppins', system-ui, sans-serif;
+  --font-inter: var(--font-poppins), 'Poppins', system-ui, sans-serif;
 }
 
 [data-theme="light"] {
@@ -62,11 +67,23 @@ html, body {
   padding: 0;
   overflow-x: hidden;
   width: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
+  font-family: var(--font-heading);
   font-weight: 700;
+}
+
+p,
+[class*="desc" i],
+[class*="subtitle" i],
+[class*="subhead" i],
+[class*="subtext" i],
+[class*="lede" i] {
+  font-family: var(--font-desc);
 }
 
 a {
@@ -148,10 +165,25 @@ a {
     -webkit-overflow-scrolling: touch;
   }
   
-  a,
-  button,
-  [role="button"] {
+  a:not([class*="theme"]):not([class*="hamburger"]):not([class*="social"]),
+  button:not([class*="theme"]):not([class*="hamburger"]):not([class*="Toggle"]),
+  [role="button"]:not([class*="theme"]):not([class*="hamburger"]):not([class*="Toggle"]) {
     min-height: 44px;
     min-width: 44px;
   }
+}
+
+html.menu-open,
+body.menu-open {
+  overflow: hidden !important;
+  touch-action: none !important;
+  -webkit-overflow-scrolling: auto !important;
+}
+
+body.menu-open [class*="waFloat"],
+body.menu-open [class*="backToTop"] {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  visibility: hidden !important;
+  transform: scale(0.8) !important;
 }

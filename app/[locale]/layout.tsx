@@ -3,7 +3,7 @@ import {getMessages} from 'next-intl/server';
 import {notFound} from 'next/navigation';
 import {routing} from '@/i18n/routing';
 import Script from 'next/script';
-import { Sora } from 'next/font/google';
+import { Sora, Poppins } from 'next/font/google';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import ParallaxBackground from '../components/ParallaxBackground';
@@ -23,6 +23,13 @@ const sora = Sora({
   weight: ['300', '400', '600', '700', '800'],
   display: 'swap',
   variable: '--font-sans',
+});
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  display: 'swap',
+  variable: '--font-poppins',
 });
 
 export function generateStaticParams() {
@@ -141,7 +148,7 @@ export default async function LocaleLayout({
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
         <link rel="manifest" href="/site.webmanifest" />
       </head>
-      <body className={sora.className}>
+      <body className={`${sora.variable} ${poppins.variable} ${sora.className}`}>
         <Preloader />
         <ParallaxBackground />
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-ZY54FDJZWS" strategy="afterInteractive" />

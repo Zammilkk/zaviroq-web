@@ -74,6 +74,7 @@
 }
 
 .description {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
   font-size: 1.1rem;
   color: #A0A5B1;
   line-height: 1.6;

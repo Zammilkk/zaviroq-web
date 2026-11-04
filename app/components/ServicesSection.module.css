@@ -207,6 +207,7 @@
 }
 
 .card p {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
   color: #888C99;
   font-size: 0.95rem;
   line-height: 1.6;
@@ -258,7 +259,11 @@
 }
 
 :global([data-theme="light"]) .subtext {
-  color: #64748b;
+  color: #475569;
+}
+
+:global([data-theme="light"]) .card p {
+  color: #475569;
 }
 
 :global([data-theme="light"]) .eyebrowLine {

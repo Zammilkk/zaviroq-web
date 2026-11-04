@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import Image from 'next/image';
 import { Link, usePathname } from '@/i18n/routing';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -32,6 +32,7 @@ export default function Navbar() {
   const [servicesMobileOpen, setServicesMobileOpen] = useState(false);
   const [industriesMobileOpen, setIndustriesMobileOpen] = useState(false);
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
+  const navLinksRef = useRef<HTMLDivElement>(null);
 
   // Helper to check active route
   const isActive = useCallback(
@@ -44,7 +45,23 @@ export default function Navbar() {
 
   const closeMenu = useCallback(() => {
     setMenuOpen(false);
+    setServicesMobileOpen(false);
+    setIndustriesMobileOpen(false);
+    setActiveCategory(null);
   }, []);
+
+  // Scroll drawer to top whenever it opens
+  useEffect(() => {
+    if (menuOpen && navLinksRef.current) {
+      navLinksRef.current.scrollTop = 0;
+      const id = requestAnimationFrame(() => {
+        if (navLinksRef.current) {
+          navLinksRef.current.scrollTop = 0;
+        }
+      });
+      return () => cancelAnimationFrame(id);
+    }
+  }, [menuOpen]);
 
   const toggleCategory = (cat: string) => {
     setActiveCategory((prev) => (prev === cat ? null : cat));
@@ -62,10 +79,25 @@ export default function Navbar() {
   // Lock body scroll on mobile menu open
   useEffect(() => {
     if (menuOpen) {
+      document.documentElement.classList.add('menu-open');
+      document.body.classList.add('menu-open');
+      document.documentElement.style.overflow = 'hidden';
       document.body.style.overflow = 'hidden';
+      document.body.style.touchAction = 'none';
     } else {
-      document.body.style.overflow = 'unset';
+      document.documentElement.classList.remove('menu-open');
+      document.body.classList.remove('menu-open');
+      document.documentElement.style.overflow = '';
+      document.body.style.overflow = '';
+      document.body.style.touchAction = '';
     }
+    return () => {
+      document.documentElement.classList.remove('menu-open');
+      document.body.classList.remove('menu-open');
+      document.documentElement.style.overflow = '';
+      document.body.style.overflow = '';
+      document.body.style.touchAction = '';
+    };
   }, [menuOpen]);
 
   // Close menu on screen resize to desktop or on Escape key
@@ -98,7 +130,7 @@ export default function Navbar() {
         aria-hidden="true"
       />
 
-      <header className={styles.header}>
+      <header className={`${styles.header} ${menuOpen ? styles.headerMenuOpen : ''}`}>
         {/* Top Bar (Desktop Only) */}
         <div className={styles.topbar}>
           <div className={styles.topbarLeft}>
@@ -176,7 +208,7 @@ export default function Navbar() {
             </Link>
 
             {/* Desktop Navigation Links */}
-            <div className={`${styles.navLinks} ${menuOpen ? styles.open : ''}`}>
+            <div ref={navLinksRef} className={`${styles.navLinks} ${menuOpen ? styles.open : ''}`}>
               {/* Home */}
               <div className={styles.navLinkWrapper}>
                 <Link
@@ -203,18 +235,35 @@ export default function Navbar() {
 
               {/* Services (Dropdown + Mega Menu) */}
               <div className={`${styles.hasDropdown} ${isActive('/services') ? styles.dropdownActive : ''}`}>
-                <div className={styles.navLinkTrigger}>
+                <div
+                  className={styles.navLinkTrigger}
+                  onClick={() => {
+                    if (typeof window !== 'undefined' && window.innerWidth <= 1100) {
+                      setServicesMobileOpen(!servicesMobileOpen);
+                    }
+                  }}
+                >
                   <Link
                     href="/services"
                     className={`${styles.navLink} ${isActive('/services') ? styles.active : ''}`}
-                    onClick={closeMenu}
+                    onClick={(e) => {
+                      if (window.innerWidth <= 1100) {
+                        e.preventDefault();
+                        setServicesMobileOpen(!servicesMobileOpen);
+                      } else {
+                        closeMenu();
+                      }
+                    }}
                   >
                     Services
                   </Link>
                   <button
                     type="button"
                     className={styles.dropdownToggle}
-                    onClick={() => setServicesMobileOpen(!servicesMobileOpen)}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setServicesMobileOpen(!servicesMobileOpen);
+                    }}
                     aria-label="Toggle services menu"
                     aria-expanded={servicesMobileOpen}
                   >
@@ -479,18 +528,35 @@ export default function Navbar() {
 
               {/* Industries (Dropdown) */}
               <div className={`${styles.hasDropdown} ${isActive('/industries') ? styles.dropdownActive : ''}`}>
-                <div className={styles.navLinkTrigger}>
+                <div
+                  className={styles.navLinkTrigger}
+                  onClick={() => {
+                    if (typeof window !== 'undefined' && window.innerWidth <= 1100) {
+                      setIndustriesMobileOpen(!industriesMobileOpen);
+                    }
+                  }}
+                >
                   <Link
                     href="/industries"
                     className={`${styles.navLink} ${isActive('/industries') ? styles.active : ''}`}
-                    onClick={closeMenu}
+                    onClick={(e) => {
+                      if (window.innerWidth <= 1100) {
+                        e.preventDefault();
+                        setIndustriesMobileOpen(!industriesMobileOpen);
+                      } else {
+                        closeMenu();
+                      }
+                    }}
                   >
                     Industries
                   </Link>
                   <button
                     type="button"
                     className={styles.dropdownToggle}
-                    onClick={() => setIndustriesMobileOpen(!industriesMobileOpen)}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setIndustriesMobileOpen(!industriesMobileOpen);
+                    }}
                     aria-label="Toggle industries menu"
                     aria-expanded={industriesMobileOpen}
                   >
@@ -638,7 +704,17 @@ export default function Navbar() {
               <button
                 type="button"
                 className={styles.hamburger}
-                onClick={() => setMenuOpen(!menuOpen)}
+                onClick={() => {
+                  setMenuOpen((prev) => {
+                    const next = !prev;
+                    if (!next) {
+                      setServicesMobileOpen(false);
+                      setIndustriesMobileOpen(false);
+                      setActiveCategory(null);
+                    }
+                    return next;
+                  });
+                }}
                 aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
                 aria-expanded={menuOpen}
               >

@@ -63,8 +63,10 @@
 }
 
 .lede {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
   font-size: 18px;
-  line-height: 1.6;
+  line-height: 1.65;
+  font-weight: 400;
   color: #A0A5B1;
   max-width: 50ch;
   margin: 0 0 40px;
@@ -477,6 +479,7 @@
 }
 
 .sub {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
   font-size: 13px;
   color: var(--ink-soft);
   margin-bottom: 20px;
@@ -593,8 +596,10 @@
   .hero {
     grid-template-columns: minmax(0, 1fr);
     text-align: center;
-    padding: 140px 20px 40px;
+    padding: 105px 20px 40px;
     width: 100%;
+    min-height: auto;
+    align-items: start;
   }
   
   .copy {
@@ -640,9 +645,12 @@
 
 @media (max-width: 768px) {
   .hero {
-    padding: 130px 15px 40px;
+    padding: 82px 16px 36px;
     overflow: hidden;
     width: 100%;
+    min-height: auto;
+    align-items: start;
+    gap: 0;
   }
   
   .rig {
@@ -709,8 +717,26 @@
 }
 
 @media (max-width: 480px) {
+  .hero {
+    padding: 72px 14px 28px;
+    min-height: auto;
+    align-items: start;
+  }
+
+  .eyebrow {
+    margin-bottom: 14px;
+    font-size: 10.5px;
+  }
+
   .title {
     font-size: 30px;
+    margin-bottom: 16px;
+  }
+
+  .lede {
+    font-size: 15px;
+    line-height: 1.55;
+    margin-bottom: 24px;
   }
 }
 
@@ -766,6 +792,7 @@
 }
 
 .seoDesc {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
   font-size: 12px;
   color: #64748b;
   line-height: 1.5;
@@ -1042,6 +1069,7 @@
 }
 
 .webDesc {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
   font-size: 12px;
   color: #475569;
   line-height: 1.5;
@@ -2974,7 +3002,7 @@
 }
 
 :global([data-theme="light"]) .lede {
-  color: #555;
+  color: #374151;
 }
 
 :global([data-theme="light"]) .eyebrow {

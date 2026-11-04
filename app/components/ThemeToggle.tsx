@@ -34,12 +34,15 @@ export default function ThemeToggle() {
     };
   }, []);
 
-  const toggleTheme = () => {
-    const newTheme = theme === "dark" ? "light" : "dark";
+  const setThemeMode = (newTheme: "light" | "dark") => {
     setTheme(newTheme);
     localStorage.setItem("theme", newTheme);
     document.documentElement.setAttribute("data-theme", newTheme);
     window.dispatchEvent(new Event("themechange"));
+  };
+
+  const toggleTheme = () => {
+    setThemeMode(theme === "dark" ? "light" : "dark");
   };
 
   if (!isClient) {
@@ -47,10 +50,17 @@ export default function ThemeToggle() {
   }
 
   return (
-    <button
-      type="button"
+    <div
+      role="button"
+      tabIndex={0}
       className={styles.themeToggleContainer}
       onClick={toggleTheme}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          toggleTheme();
+        }
+      }}
       aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
       title={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
     >
@@ -58,6 +68,11 @@ export default function ThemeToggle() {
         className={`${styles.themeIconCircle} ${
           theme === "light" ? styles.themeIconActive : ""
         }`}
+        onClick={(e) => {
+          e.stopPropagation();
+          setThemeMode("light");
+        }}
+        title="Light Mode"
       >
         <Sun size={13} className={styles.themeIconSvg} />
       </div>
@@ -65,9 +80,14 @@ export default function ThemeToggle() {
         className={`${styles.themeIconCircle} ${
           theme === "dark" ? styles.themeIconActive : ""
         }`}
+        onClick={(e) => {
+          e.stopPropagation();
+          setThemeMode("dark");
+        }}
+        title="Dark Mode"
       >
         <Moon size={13} className={styles.themeIconSvg} />
       </div>
-    </button>
+    </div>
   );
 }
