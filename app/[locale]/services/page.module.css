@@ -5,6 +5,7 @@
   background: var(--bg-color, #0a0a0f);
   position: relative;
   overflow-x: hidden;
+  margin-top: -60px; /* Counteracts main layout paddingTop: 60px so hero backgrounds seamlessly fill into the top header */
 }
 
 /* Background Effects */
@@ -69,7 +70,7 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 112px 35px 0;
+  padding: 172px 35px 0;
   max-width: 1550px;
   margin: 0 auto;
   font-size: 0.85rem;
@@ -99,10 +100,26 @@
   overflow: visible;
 }
 
+/* Header atmospheric glow filling behind topbar & navbar */
+.heroHeaderAtmosphere {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 360px;
+  background: radial-gradient(ellipse 95% 120% at 50% 0%, rgba(139, 92, 246, 0.2) 0%, rgba(59, 130, 246, 0.12) 40%, transparent 80%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+:global([data-theme="light"]) .heroHeaderAtmosphere {
+  background: radial-gradient(ellipse 95% 120% at 50% 0%, rgba(168, 85, 247, 0.22) 0%, rgba(99, 102, 241, 0.14) 35%, rgba(56, 189, 248, 0.08) 65%, transparent 85%);
+}
+
 /* Layer 1: Ambient mesh glows */
 .heroAmbientGlow1 {
   position: absolute;
-  top: 140px;
+  top: 0;
   right: -8%;
   width: 720px;
   height: 640px;
@@ -122,7 +139,7 @@
 
 .heroAmbientGlow2 {
   position: absolute;
-  top: 80px;
+  top: 0;
   left: -8%;
   width: 560px;
   height: 560px;
@@ -156,32 +173,36 @@
   background: radial-gradient(ellipse at center, rgba(99, 102, 241, 0.1) 0%, transparent 70%);
 }
 
-/* Layer 2: Abstract fluid wave / contour background layer - fills from top: 0 */
+/* Layer 2: Abstract fluid wave / contour background layer - fills from top: 0 in light theme; hidden in dark theme */
 .heroBgLayer {
   position: absolute;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
   width: 100vw;
-  height: 850px;
+  height: 940px;
   z-index: 0;
   pointer-events: none;
-  background-image: url('/assets/images/services-hero-bg.png');
-  background-size: cover;
-  background-position: top center;
-  background-repeat: no-repeat;
-  opacity: 0.45;
+  background-image: none;
+  display: none;
+  opacity: 0;
 }
 
 :global([data-theme="light"]) .heroBgLayer {
   background-image: url('/assets/images/services-hero-wave-bg.png') !important;
   background-size: 100% auto !important;
-  background-position: top center !important;
+  background-position: center -25px !important;
   background-repeat: no-repeat !important;
-  opacity: 0.9 !important;
+  opacity: 0.95 !important;
   display: block !important;
   mix-blend-mode: multiply !important;
   mask-image: linear-gradient(to bottom, black 85%, transparent 100%) !important;
+}
+
+:global([data-theme="dark"]) .heroBgLayer {
+  background-image: none !important;
+  display: none !important;
+  opacity: 0 !important;
 }
 
 /* Layer 3: Tech micro-dot precision grid */
@@ -190,7 +211,7 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 820px;
+  height: 900px;
   background-image: radial-gradient(rgba(139, 92, 246, 0.22) 1.2px, transparent 1.2px);
   background-size: 32px 32px;
   pointer-events: none;
@@ -774,7 +795,7 @@
 
 @media (max-width: 768px) {
   .breadcrumb {
-    padding: 90px 16px 0;
+    padding: 145px 16px 0;
     font-size: 0.8rem;
   }
 

@@ -153,6 +153,9 @@ export default async function ServicesPage({
       {/* Layer 2: Abstract fluid wave / contour background layer - fills from the very top of the page */}
       <div className={styles.heroBgLayer} aria-hidden="true" />
 
+      {/* Header atmospheric glow filling behind topbar & navbar */}
+      <div className={styles.heroHeaderAtmosphere} aria-hidden="true" />
+
       {/* Layer 1: Ambient mesh glows */}
       <div className={styles.heroAmbientGlow1} aria-hidden="true" />
       <div className={styles.heroAmbientGlow2} aria-hidden="true" />
