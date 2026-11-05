@@ -268,8 +268,7 @@ export default async function ServicesSeoIndexPage({params}: {params: Promise<{l
             
             {/* Main Headline */}
             <h1 className={styles.heroTopTitle}>
-              Dominate Google Search in<br />
-              <SeoLocationTypewriter /><br />
+              Dominate Google Search in <SeoLocationTypewriter /><br />
               <span className={styles.heroHighlight}>Scale Real Revenue.</span>
             </h1>
             
