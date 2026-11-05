@@ -21,8 +21,8 @@ export default function LeadsDashboard() {
   useEffect(() => {
     fetch('/api/admin/leads')
       .then(res => res.json())
-      .then(data => {
-        setLeads(data);
+      .then((data: any) => {
+        setLeads(Array.isArray(data) ? data : []);
         setLoading(false);
       });
   }, []);

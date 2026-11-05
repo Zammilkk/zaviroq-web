@@ -27,6 +27,9 @@ import ThemeToggle from '../components/ThemeToggle';
 
 export default function Navbar() {
   const pathname = usePathname();
+  if (pathname?.includes('/admin')) {
+    return null;
+  }
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [servicesMobileOpen, setServicesMobileOpen] = useState(false);

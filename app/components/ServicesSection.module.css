@@ -211,6 +211,8 @@
   color: #888C99;
   font-size: 0.95rem;
   line-height: 1.6;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .cardBtn {

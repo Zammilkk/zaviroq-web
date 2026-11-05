@@ -9,47 +9,23 @@ import {
   Headphones, Settings, Send, Mail, ChevronDown, ChevronUp, ArrowRight
 } from 'lucide-react';
 import { Link } from '@/i18n/routing';
+import { FaqContent, defaultHomepageData } from '@/lib/homepageDefaults';
 
-const faqs = [
-  {
-    icon: <FileText size={18} />,
-    question: "What services does Zaviroq offer?",
-    answer: "We offer website design, SEO, graphic design, and advertising solutions to help businesses build a strong digital presence and grow online."
-  },
-  {
-    icon: <Monitor size={18} />,
-    question: "How does your remote working model work?",
-    answer: "We operate entirely online, collaborating via advanced project management tools and video conferencing to deliver seamless global service."
-  },
-  {
-    icon: <Database size={18} />,
-    question: "Why are your services affordable?",
-    answer: "By maintaining a distributed remote team and minimizing corporate overhead, we pass on those cost savings directly to our clients without compromising quality."
-  },
-  {
-    icon: <Clock size={18} />,
-    question: "How long does it take to complete a website?",
-    answer: "Most custom corporate websites take 4 to 8 weeks depending on complexity, features, and the speed of feedback cycles."
-  },
-  {
-    icon: <Headphones size={18} />,
-    question: "Do you provide ongoing support?",
-    answer: "Yes, we offer comprehensive maintenance and retainer packages to ensure your digital assets remain secure and up-to-date."
-  },
-  {
-    icon: <Settings size={18} />,
-    question: "Can I request custom services?",
-    answer: "Absolutely. We specialize in custom-tailored solutions engineered specifically for your unique business architecture."
-  },
-  {
-    icon: <Send size={18} />,
-    question: "How can I get started?",
-    answer: "Simply reach out via our contact form or book a free consultation call. We'll audit your current setup and propose a strategic roadmap."
-  }
+const defaultFaqIcons = [
+  <FileText key="1" size={18} />,
+  <Monitor key="2" size={18} />,
+  <Database key="3" size={18} />,
+  <Clock key="4" size={18} />,
+  <Headphones key="5" size={18} />,
+  <Settings key="6" size={18} />,
+  <Send key="7" size={18} />
 ];
 
-export default function FaqSection({ locale }: { locale: string }) {
+export default function FaqSection({ locale, content }: { locale: string; content?: FaqContent }) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+
+  const data = content || defaultHomepageData.faqs;
+  const items = data.items && data.items.length > 0 ? data.items : defaultHomepageData.faqs.items;
 
   const toggleFaq = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -63,17 +39,16 @@ export default function FaqSection({ locale }: { locale: string }) {
         <div className={styles.leftCol}>
           <div className={styles.textContent}>
             <div className={styles.eyebrowWrap}>
-              <span className={styles.eyebrow}>FAQ</span>
+              <span className={styles.eyebrow}>{data.eyebrow}</span>
               <div className={styles.eyebrowLine}></div>
             </div>
             
             <h2 className={styles.headline}>
-              Got Questions?<br/>
-              We&apos;ve Got <span className={styles.gradientText}>Answers.</span>
+              {data.headline}
             </h2>
             
             <p className={styles.description}>
-              Everything you need to know about working with Zaviroq. Still have a question? We&apos;re just a message away.
+              {data.description}
             </p>
 
             <div className={styles.featuresRow}>
@@ -99,7 +74,7 @@ export default function FaqSection({ locale }: { locale: string }) {
           <div className={styles.imageContent}>
             <div className={styles.imageWrapper}>
                <Image 
-                 src="/assets/images/faq-mockup.png" 
+                 src={data.mockupImage || "/assets/images/faq-mockup.png"} 
                  alt="Zaviroq FAQ" 
                  fill 
                  className={styles.mockupImg} 
@@ -117,14 +92,14 @@ export default function FaqSection({ locale }: { locale: string }) {
           </div>
 
           <div className={styles.faqList}>
-            {faqs.map((faq, idx) => (
+            {items.map((faq, idx) => (
               <div 
                 key={idx} 
                 className={`${styles.faqItem} ${openIndex === idx ? styles.active : ''}`}
                 onClick={() => toggleFaq(idx)}
               >
                 <div className={styles.faqHeader}>
-                  <div className={styles.faqIconWrap}>{faq.icon}</div>
+                  <div className={styles.faqIconWrap}>{defaultFaqIcons[idx % defaultFaqIcons.length]}</div>
                   <h3 className={styles.faqQuestion}>{faq.question}</h3>
                   <div className={styles.faqToggle}>
                     {openIndex === idx ? <ChevronUp size={16} /> : <ChevronDown size={16} />}

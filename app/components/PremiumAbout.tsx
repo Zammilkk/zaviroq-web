@@ -37,8 +37,8 @@ export default function PremiumAbout() {
             </RevealOnScroll>
           </div>
 
-          <RevealOnScroll delay={200}>
-            <div className={styles.cardsGrid}>
+          <div className={styles.cardsGrid}>
+            <RevealOnScroll delay={100}>
               <div className={styles.valueCard}>
                 <div className={styles.cardIconBox}><Diamond size={24} /></div>
                 <h4>Quality</h4>
@@ -48,7 +48,9 @@ export default function PremiumAbout() {
                   <div className={styles.cardLine}></div>
                 </div>
               </div>
+            </RevealOnScroll>
 
+            <RevealOnScroll delay={200}>
               <div className={styles.valueCard}>
                 <div className={styles.cardIconBox}><Layers size={24} /></div>
                 <h4>Transparency</h4>
@@ -58,7 +60,9 @@ export default function PremiumAbout() {
                   <div className={styles.cardLine}></div>
                 </div>
               </div>
+            </RevealOnScroll>
 
+            <RevealOnScroll delay={300}>
               <div className={styles.valueCard}>
                 <div className={styles.cardIconBox}><Lightbulb size={24} /></div>
                 <h4>Innovation</h4>
@@ -68,7 +72,9 @@ export default function PremiumAbout() {
                   <div className={styles.cardLine}></div>
                 </div>
               </div>
+            </RevealOnScroll>
 
+            <RevealOnScroll delay={400}>
               <div className={styles.valueCard}>
                 <div className={styles.cardIconBox}><Users size={24} /></div>
                 <h4>Client Success</h4>
@@ -78,8 +84,8 @@ export default function PremiumAbout() {
                   <div className={styles.cardLine}></div>
                 </div>
               </div>
-            </div>
-          </RevealOnScroll>
+            </RevealOnScroll>
+          </div>
 
         </div>
         

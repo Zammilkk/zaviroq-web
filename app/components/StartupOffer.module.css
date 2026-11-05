@@ -80,6 +80,8 @@
   line-height: 1.6;
   margin-bottom: 40px;
   max-width: 480px;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 /* Pills Grid */

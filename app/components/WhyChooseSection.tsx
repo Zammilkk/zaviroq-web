@@ -4,41 +4,16 @@ import React, { useState, useRef } from 'react';
 import styles from './WhyChooseSection.module.css';
 import Image from 'next/image';
 import { Home, Users, Headphones, BarChart2, Volume2, VolumeX } from 'lucide-react';
+import { WhyChooseContent, defaultHomepageData } from '@/lib/homepageDefaults';
 
-const cards = [
-  {
-    icon: Home,
-    title: "Remote-First Advantage",
-    desc: "Our fully remote setup helps us stay efficient and cost-effective — so you get premium solutions at affordable prices.",
-    footerText: "MORE VALUE, LESS OVERHEAD",
-    num: "01"
-  },
-  {
-    icon: Users,
-    title: "Expert Team",
-    desc: "Work with a skilled team of designers, developers, and marketers who are experts in their fields and passionate about your success.",
-    footerText: "SPECIALISTS YOU CAN TRUST",
-    num: "02"
-  },
-  {
-    icon: Headphones,
-    title: "Always Here for You",
-    desc: "Time zone is not a barrier. Our team is available whenever you need support, updates, or guidance.",
-    footerText: "REAL SUPPORT. ANYTIME.",
-    num: "03"
-  },
-  {
-    icon: BarChart2,
-    title: "Focused on Your Growth",
-    desc: "We don't just deliver services — we become your growth partner, aligned with your long-term goals and success.",
-    footerText: "YOUR GROWTH OUR PRIORITY",
-    num: "04"
-  }
-];
+const defaultIcons = [Home, Users, Headphones, BarChart2];
 
-export default function WhyChooseSection() {
+export default function WhyChooseSection({ content }: { content?: WhyChooseContent }) {
   const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
+
+  const data = content || defaultHomepageData.why_choose;
+  const cards = data.cards && data.cards.length > 0 ? data.cards : defaultHomepageData.why_choose.cards;
 
   const toggleMute = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -57,16 +32,16 @@ export default function WhyChooseSection() {
           <div className={styles.textContent}>
             <div className={styles.eyebrowWrap}>
               <div className={styles.eyebrowLine}></div>
-              <span className={styles.eyebrow}>WHY</span>
+              <span className={styles.eyebrow}>{data.eyebrow}</span>
             </div>
             
             <h2 className={styles.headline}>
-              Why Choose <br/>
-              <span className={styles.gradientText}>ZAVIROQ?</span>
+              {data.headline} <br/>
+              <span className={styles.gradientText}>{data.accent}</span>
             </h2>
             
             <p className={styles.description}>
-              We combine strategy, creativity, and technology to help businesses grow — no matter where you are. With a fully remote team, we deliver high-quality solutions at a more affordable cost, without compromising on excellence.
+              {data.description}
             </p>
             
             <div className={styles.signature}>
@@ -89,8 +64,8 @@ export default function WhyChooseSection() {
             <div className={styles.imageWrapper}>
               <video 
                 ref={videoRef}
-                src="/assets/images/zaviroq-videos.mp4" 
-                poster="/assets/images/why-img.avif"
+                src={data.videoUrl || "/assets/images/zaviroq-videos.mp4"} 
+                poster={data.posterUrl || "/assets/images/why-img.avif"}
                 className={styles.mockupImg}
                 loop
                 playsInline
@@ -111,7 +86,7 @@ export default function WhyChooseSection() {
         {/* 4 Cards Row */}
         <div className={styles.cardsGrid}>
           {cards.map((card, idx) => {
-            const Icon = card.icon;
+            const Icon = defaultIcons[idx % defaultIcons.length];
             return (
               <div key={idx} className={styles.glassCard}>
                 <div className={styles.cardIconBox}>
@@ -121,15 +96,12 @@ export default function WhyChooseSection() {
                 <p className={styles.cardDesc}>{card.desc}</p>
                 <div className={styles.cardFooter}>
                   <span className={styles.footerText}>{card.footerText}</span>
-                  <span className={styles.footerNum}>{card.num}</span>
+                  <span className={styles.footerNum}>{card.num || `0${idx + 1}`}</span>
                 </div>
               </div>
             );
           })}
         </div>
-
-
-
       </div>
     </section>
   );

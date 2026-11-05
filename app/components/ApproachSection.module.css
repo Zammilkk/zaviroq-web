@@ -75,6 +75,8 @@
   line-height: 1.6;
   margin-bottom: 40px;
   max-width: 500px;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .buttons {
@@ -259,6 +261,8 @@
   font-size: 0.85rem;
   color: #A0A5B1;
   line-height: 1.6;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .connector {

@@ -144,6 +144,8 @@
   font-size: 1.1rem;
   color: var(--text-muted);
   line-height: 1.75;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .heroCta {

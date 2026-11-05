@@ -1,10 +1,13 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import { ArrowUp } from 'lucide-react';
 import styles from './BackToTop.module.css';
 
 export default function BackToTop() {
+  const pathname = usePathname();
+  if (pathname?.includes('/admin')) return null;
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {

@@ -1,7 +1,12 @@
+"use client";
+
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import styles from './WhatsAppWidget.module.css';
 
 export default function WhatsAppWidget() {
+  const pathname = usePathname();
+  if (pathname?.includes('/admin')) return null;
   return (
     <Link 
       href="https://wa.me/971529775206" 

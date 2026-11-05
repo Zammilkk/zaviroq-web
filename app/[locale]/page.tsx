@@ -15,18 +15,24 @@ import Hero3DWrapper from '../components/Hero3DWrapper';
 import ApproachSection from '../components/ApproachSection';
 import ServicesSection from '../components/ServicesSection';
 import WhyChooseSection from '../components/WhyChooseSection';
+import { getHomepageContent } from '@/lib/getHomepageContent';
+import { defaultHomepageData } from '@/lib/homepageDefaults';
 
 export async function generateMetadata(): Promise<Metadata> {
-  const title = 'Digital Marketing Agency in Mangalore | Zaviroq';
-  const description = 'Zaviroq helps businesses grow with SEO, Google Ads, social media marketing, and web development in Mangalore, India, the UAE, and Saudi Arabia.';
+  const content = await getHomepageContent();
+  const seo = content.seo || defaultHomepageData.seo;
+  const title = seo.title || 'Digital Marketing Agency in Mangalore | Zaviroq';
+  const description = seo.description || 'Zaviroq helps businesses grow with SEO, Google Ads, social media marketing, and web development in Mangalore, India, the UAE, and Saudi Arabia.';
+  const ogImage = seo.ogImage || '/og-image.png';
 
   return {
     title: {
       absolute: title,
     },
     description,
+    keywords: seo.keywords,
     alternates: {
-      canonical: 'https://www.zaviroq.com/',
+      canonical: seo.canonicalUrl || 'https://www.zaviroq.com/',
       languages: {
         'en-IN': 'https://www.zaviroq.com/',
         'ar': 'https://www.zaviroq.com/ar',
@@ -34,26 +40,26 @@ export async function generateMetadata(): Promise<Metadata> {
       },
     },
     openGraph: {
-      title,
-      description,
-      url: 'https://www.zaviroq.com/',
+      title: seo.ogTitle || title,
+      description: seo.ogDescription || description,
+      url: seo.canonicalUrl || 'https://www.zaviroq.com/',
       siteName: 'Zaviroq',
       locale: 'en_IN',
       type: 'website',
       images: [
         {
-          url: 'https://www.zaviroq.com/og-image.png',
+          url: ogImage,
           width: 1200,
           height: 630,
-          alt: 'Zaviroq - Digital Marketing Agency in Mangalore',
+          alt: title,
         },
       ],
     },
     twitter: {
       card: 'summary_large_image',
-      title,
-      description,
-      images: ['https://www.zaviroq.com/og-image.png'],
+      title: seo.ogTitle || title,
+      description: seo.ogDescription || description,
+      images: [ogImage],
       creator: '@zaviroq',
     },
     robots: {
@@ -72,6 +78,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
+  const homepageData = await getHomepageContent();
 
   const PARTNERS = [
     { name: "Google Ads", icon: "https://cdn.simpleicons.org/googleads/4285F4", color: "#4285F4" },
@@ -97,19 +104,19 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "@id": "https://www.zaviroq.com/#localbusiness-mangalore",
-    "name": "Zaviroq - Digital Marketing Agency in Mangalore",
-    "url": "https://www.zaviroq.com",
-    "logo": "https://www.zaviroq.com/logo.png",
-    "image": "https://www.zaviroq.com/og-image.png",
-    "description": "Zaviroq helps businesses grow with SEO, Google Ads, social media marketing, and web development in Mangalore, India, the UAE, and Saudi Arabia.",
-    "telephone": "+917483830582",
-    "email": "info@zaviroq.com",
+    "name": homepageData.seo?.businessName || "Zaviroq - Digital Marketing Agency in Mangalore",
+    "url": homepageData.seo?.canonicalUrl || "https://www.zaviroq.com",
+    "logo": homepageData.images?.logoDark || "https://www.zaviroq.com/logo.png",
+    "image": homepageData.seo?.ogImage || "https://www.zaviroq.com/og-image.png",
+    "description": homepageData.seo?.description || "Zaviroq helps businesses grow with SEO, Google Ads, social media marketing, and web development in Mangalore, India, the UAE, and Saudi Arabia.",
+    "telephone": homepageData.seo?.phone || "+917483830582",
+    "email": homepageData.seo?.email || "info@zaviroq.com",
     "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "Mangalore",
-      "addressRegion": "Karnataka",
-      "addressCountry": "IN"
+      "addressLocality": homepageData.seo?.addressLocality || "Mangalore",
+      "addressRegion": homepageData.seo?.addressRegion || "Karnataka",
+      "addressCountry": homepageData.seo?.addressCountry || "IN"
     },
     "geo": {
       "@type": "GeoCoordinates",
@@ -136,7 +143,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       />
 
       {/* 🏠 NEW INTERACTIVE HERO SECTION */}
-      <InteractiveHero />
+      <InteractiveHero content={homepageData.hero} />
 
       {/* 🚀 CLIENTS: 3D CAROUSEL */}
       <ClientCarousel />
@@ -144,17 +151,17 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
       {/* 💎 TRUST / USP SECTION (NEW APPROACH) */}
       <RevealOnScroll>
-        <ApproachSection />
+        <ApproachSection content={homepageData.approach} />
       </RevealOnScroll>
 
       {/* 🛠️ SERVICES SECTION */}
       <RevealOnScroll>
-        <ServicesSection />
+        <ServicesSection content={homepageData.services_section} />
       </RevealOnScroll>
 
       {/* 🚀 WHY CHOOSE SECTION */}
       <RevealOnScroll>
-        <WhyChooseSection />
+        <WhyChooseSection content={homepageData.why_choose} />
       </RevealOnScroll>
 
 
@@ -168,7 +175,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
       {/* ❓ FAQ SECTION */}
       <RevealOnScroll>
-        <FaqSection locale={locale} />
+        <FaqSection locale={locale} content={homepageData.faqs} />
       </RevealOnScroll>
 
       {/* 💻 CASE STUDIES / FEATURED WORK */}

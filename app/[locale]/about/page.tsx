@@ -1,8 +1,8 @@
 import styles from './page.module.css';
 import RevealOnScroll from '../RevealOnScroll';
-import { ArrowRight, Play, ArrowDown, Layers, MapPin, Globe } from 'lucide-react';
+import { ArrowRight, Layers } from 'lucide-react';
 import { Link } from '@/i18n/routing';
-import FounderStory from '../../components/FounderStory';
+import ThinkingSection from '../../components/ThinkingSection';
 import PremiumAbout from '../../components/PremiumAbout';
 import type { Metadata } from 'next';
 
@@ -97,28 +97,11 @@ export default async function AboutPage({params}: {params: Promise<{locale: stri
                 <div className={styles.statLabel}>Results Focused</div>
               </div>
             </div>
-
-            <div className={styles.heroTrust}>
-              <div className={styles.trustLabel}>TRUSTED BY BUSINESSES WORLDWIDE</div>
-              <div className={styles.trustLogos}>
-                <div className={styles.trustLogo}>
-                  <MapPin size={16} /> UAE
-                </div>
-                <div className={styles.trustLogo}>
-                  <MapPin size={16} /> KSA
-                </div>
-                <div className={styles.trustLogo}>
-                  <MapPin size={16} /> INDIA
-                </div>
-                <div className={styles.trustLogo}>
-                  <Globe size={16} /> Global
-                </div>
-              </div>
-            </div>
           </RevealOnScroll>
         </div>
         
         <div className={styles.heroRight}>
+          <RevealOnScroll delay={150}>
           <div className={styles.heroVisualGlow}></div>
           
           <img src="/assets/images/why-img.avif" alt="Digital Growth Partner" className={styles.founderImg} />
@@ -136,34 +119,12 @@ export default async function AboutPage({params}: {params: Promise<{locale: stri
               <ArrowRight size={12} />
             </div>
           </div>
-
-
-          <div className={styles.floatingBottomBar}>
-            <div className={styles.barLeft}>
-              <div className={styles.avatarGroup}>
-                <img src="https://i.pravatar.cc/100?img=11" alt="Team" />
-                <img src="https://i.pravatar.cc/100?img=12" alt="Team" />
-                <img src="https://i.pravatar.cc/100?img=33" alt="Team" />
-                <img src="https://i.pravatar.cc/100?img=44" alt="Team" />
-              </div>
-              <div className={styles.barText}>
-                <strong>A Global Team</strong>
-                <span>For Your Growth</span>
-              </div>
-            </div>
-            <div className={styles.barDivider}></div>
-            <div className={styles.barRight}>
-              <p>"Turning Ideas Into<br/><em>Impactful Digital Experiences.</em>"</p>
-              <div className={styles.barAction}>
-                <ArrowRight size={16} />
-              </div>
-            </div>
-          </div>
+          </RevealOnScroll>
         </div>
       </div>
       
-      {/* 🌟 NEW FOUNDER STORY SECTION */}
-      <FounderStory />
+      {/* 🌟 THE THINKING BEHIND ZAVIROQ SECTION */}
+      <ThinkingSection />
 
       {/* 🌟 PREMIUM ABOUT SECTIONS */}
       <PremiumAbout />

@@ -1,4 +1,6 @@
-import { Link } from '@/i18n/routing';
+"use client";
+
+import { Link, usePathname } from '@/i18n/routing';
 import Image from 'next/image';
 import styles from './Footer.module.css';
 import { 
@@ -6,30 +8,35 @@ import {
 } from 'lucide-react';
 
 export default function Footer({ locale = 'en', theme = 'lite' }: { locale?: string, theme?: 'dark' | 'lite' }) {
+  const pathname = usePathname();
+  if (pathname?.includes('/admin')) return null;
   return (
     <footer className={`${styles.footerContainer} ${theme === 'lite' ? styles.liteTheme : ''}`}>
       <div className={styles.footerGlow}></div>
       <div className={styles.container}>
         
+        {/* Top Area: 4-Column Balanced Grid */}
         <div className={styles.topArea}>
-          {/* Left Brand Area */}
+          {/* Column 1: Brand */}
           <div className={styles.brandCol}>
-            <div className={styles.logoWrap}>
+            <Link href="/" className={styles.logoWrap} aria-label="ZAVIROQ Home">
               <Image
                 src="/logo.svg"
-                alt="Zaviroq"
-                width={320}
-                height={80}
-                className={`${styles.logoImg} ${styles.darkLogo}`}
+                alt="ZAVIROQ Logo"
+                width={200}
+                height={65}
+                className={styles.darkLogo}
+                priority
               />
               <Image
                 src="/zaviroq-logo-white.png"
-                alt="Zaviroq"
-                width={320}
-                height={80}
-                className={`${styles.logoImg} ${styles.lightLogo}`}
+                alt="ZAVIROQ Logo"
+                width={200}
+                height={65}
+                className={styles.lightLogo}
+                priority
               />
-            </div>
+            </Link>
             
             <h2 className={styles.brandSlogan}>
               Ideas Today.<br/>
@@ -41,34 +48,33 @@ export default function Footer({ locale = 'en', theme = 'lite' }: { locale?: str
             </p>
           </div>
 
-          {/* Middle Links Area */}
-          <div className={styles.linksCol}>
-            <div className={styles.linkGroup}>
-              <h4 className={styles.linkTitle}>Quick Links</h4>
-              <ul className={styles.linkList}>
-                <li><Link href="/">Home <ArrowRight size={14} /></Link></li>
-                <li><Link href="/about">About <ArrowRight size={14} /></Link></li>
-                <li><Link href="/services">Services <ArrowRight size={14} /></Link></li>
-                <li><Link href="/portfolio">Portfolio <ArrowRight size={14} /></Link></li>
-                <li><Link href="/blog">Blog <ArrowRight size={14} /></Link></li>
-                <li><Link href="/contact">Contact Us <ArrowRight size={14} /></Link></li>
-              </ul>
-            </div>
-            
-            <div className={styles.linkGroup}>
-              <h4 className={styles.linkTitle}>Our Services</h4>
-              <ul className={styles.linkList}>
-                <li><Link href="/services/web-development">Website Design <ArrowRight size={14} /></Link></li>
-                <li><Link href="/services/seo">SEO Services <ArrowRight size={14} /></Link></li>
-                <li><Link href="/services/branding-design">Branding & Design <ArrowRight size={14} /></Link></li>
-                <li><Link href="/services/ecommerce-systems">E-Commerce Systems <ArrowRight size={14} /></Link></li>
-                <li><Link href="/services/performance-marketing/google-ads">Google Ads <ArrowRight size={14} /></Link></li>
-                <li><Link href="/services/performance-marketing/meta-ads">Meta Ads <ArrowRight size={14} /></Link></li>
-              </ul>
-            </div>
+          {/* Column 2: Quick Links */}
+          <div className={styles.linkGroup}>
+            <h4 className={styles.linkTitle}>Quick Links</h4>
+            <ul className={styles.linkList}>
+              <li><Link href="/"><span>Home</span> <ArrowRight size={14} /></Link></li>
+              <li><Link href="/about"><span>About</span> <ArrowRight size={14} /></Link></li>
+              <li><Link href="/services"><span>Services</span> <ArrowRight size={14} /></Link></li>
+              <li><Link href="/portfolio"><span>Portfolio</span> <ArrowRight size={14} /></Link></li>
+              <li><Link href="/blog"><span>Blog</span> <ArrowRight size={14} /></Link></li>
+              <li><Link href="/contact"><span>Contact Us</span> <ArrowRight size={14} /></Link></li>
+            </ul>
+          </div>
+          
+          {/* Column 3: Our Services */}
+          <div className={styles.linkGroup}>
+            <h4 className={styles.linkTitle}>Our Services</h4>
+            <ul className={styles.linkList}>
+              <li><Link href="/services/web-development"><span>Website Design</span> <ArrowRight size={14} /></Link></li>
+              <li><Link href="/services/seo"><span>SEO Services</span> <ArrowRight size={14} /></Link></li>
+              <li><Link href="/services/branding-design"><span>Branding &amp; Design</span> <ArrowRight size={14} /></Link></li>
+              <li><Link href="/services/ecommerce-systems"><span>E-Commerce Systems</span> <ArrowRight size={14} /></Link></li>
+              <li><Link href="/services/performance-marketing/google-ads"><span>Google Ads</span> <ArrowRight size={14} /></Link></li>
+              <li><Link href="/services/performance-marketing/meta-ads"><span>Meta Ads</span> <ArrowRight size={14} /></Link></li>
+            </ul>
           </div>
 
-          {/* Right CTA Area */}
+          {/* Column 4: CTA */}
           <div className={styles.ctaCol}>
             <div className={styles.ctaEyebrow}>LET&apos;S BUILD TOGETHER</div>
             <h3 className={styles.ctaHeadline}>
@@ -84,7 +90,7 @@ export default function Footer({ locale = 'en', theme = 'lite' }: { locale?: str
           </div>
         </div>
 
-        {/* Full Width Contact Row */}
+        {/* 4-Column Aligned Contact Row */}
         <div className={styles.contactRow}>
           <div className={styles.contactItem}>
             <div className={styles.contactIcon}><MessageCircle size={16} /></div>
@@ -130,7 +136,7 @@ export default function Footer({ locale = 'en', theme = 'lite' }: { locale?: str
            </div>
         </div>
 
-        {/* Bottom Bar */}
+        {/* 4-Column Aligned Bottom Bar */}
         <div className={styles.bottomBar}>
           <div className={styles.copyright}>
             &copy; 2026 ZAVIROQ. All rights reserved.
@@ -159,9 +165,22 @@ export default function Footer({ locale = 'en', theme = 'lite' }: { locale?: str
             <a href="/sitemap.xml" target="_blank" rel="noopener noreferrer">Sitemap</a>
           </div>
           
-          <div className={styles.footerLogoBadge}>
-            Z A V I R O Q <span className={styles.purpleDot}></span>
-          </div>
+          <Link href="/" className={styles.footerLogoBadge} aria-label="ZAVIROQ Home">
+            <Image
+              src="/logo.svg"
+              alt="ZAVIROQ Logo"
+              width={160}
+              height={52}
+              className={styles.darkLogo}
+            />
+            <Image
+              src="/zaviroq-logo-white.png"
+              alt="ZAVIROQ Logo"
+              width={160}
+              height={52}
+              className={styles.lightLogo}
+            />
+          </Link>
         </div>
 
       </div>

@@ -15,7 +15,7 @@ export async function GET() {
 
 export async function POST(req: Request) {
   try {
-    const body = await req.json();
+    const body: any = await req.json();
     // Enforce basic structure
     const updatedData = {
       title: body.title || '',

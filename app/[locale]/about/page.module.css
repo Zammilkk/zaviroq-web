@@ -16,13 +16,13 @@
   grid-template-columns: 1fr 1.1fr;
   width: 100%;
   max-width: 1550px;
-  min-height: 80vh;
-  margin-bottom: 80px;
-  gap: 40px;
+  min-height: auto;
+  padding: 40px 35px 60px;
+  margin-bottom: 60px;
+  gap: 50px;
   position: relative;
   z-index: 2;
   align-items: center;
-  padding: 0 35px;
 }
 
 .heroBgLayer {
@@ -239,19 +239,29 @@
   align-items: center;
   justify-content: center;
   color: #a855f7;
-  transition: all 0.3s ease;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.3s ease, box-shadow 0.35s ease, color 0.3s ease;
+}
+
+.servicesIconWrapper svg {
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .btnServicesUnique:hover .servicesIconWrapper {
   background: linear-gradient(135deg, #3b82f6, #a855f7);
   color: #fff;
+  transform: scale(1.15) rotate(10deg);
+  box-shadow: 0 8px 20px rgba(168, 85, 247, 0.45);
+}
+
+.btnServicesUnique:hover .servicesIconWrapper svg {
+  transform: scale(1.12);
 }
 
 .heroStats {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  margin-bottom: 40px;
+  margin-bottom: 0;
 }
 
 .statBox {
@@ -309,11 +319,10 @@
 .heroRight {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: auto;
   display: flex;
-  align-items: flex-end;
-  justify-content: flex-end; /* Push to the right edge */
-  min-height: 600px;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .globeBg {
@@ -343,11 +352,12 @@
 .founderImg {
   position: relative;
   z-index: 3;
-  width: 95%; /* Increase width to fill space better */
-  max-width: 800px; /* Increase max-width */
-  object-fit: contain;
-  margin-left: 0; /* Remove negative margin to let it flush right */
-  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.5));
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  border-radius: 20px;
+  object-fit: cover;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.35));
 }
 
 .founderSignature {
@@ -393,6 +403,14 @@
   gap: 16px;
   box-shadow: 0 20px 40px rgba(0,0,0,0.4);
   animation: float 6s ease-in-out infinite;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s ease, border-color 0.3s ease;
+  cursor: pointer;
+}
+
+.floatingWidget:hover {
+  transform: translateY(-8px) scale(1.04);
+  box-shadow: 0 25px 50px rgba(99, 102, 241, 0.35);
+  border-color: rgba(168, 85, 247, 0.4);
 }
 
 .widgetIcon {
@@ -403,6 +421,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s ease;
+}
+
+.widgetIcon svg {
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.floatingWidget:hover .widgetIcon {
+  transform: scale(1.18) rotate(8deg);
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.6);
+}
+
+.floatingWidget:hover .widgetIcon svg {
+  transform: scale(1.15);
 }
 
 .widgetText {
@@ -421,6 +453,12 @@
   align-items: center;
   justify-content: center;
   color: #fff;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.3s ease;
+}
+
+.floatingWidget:hover .widgetArrow {
+  transform: translateX(4px) scale(1.1);
+  background: rgba(255, 255, 255, 0.25);
 }
 
 .verticalText {

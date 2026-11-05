@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import styles from './InteractiveHero.module.css';
 import { ArrowRight, ArrowUpRight, User, Smartphone, Play, Monitor, Search, PenTool, Megaphone, TrendingUp, Target, Home, Image, Type, Layers, LayoutGrid, Bell, Settings, Bookmark, Plus, Trophy, Wrench, CreditCard, RefreshCw, HelpCircle, Filter, Download, Maximize2 } from 'lucide-react';
 import { Link } from '@/i18n/routing';
+import { HeroContent, defaultHomepageData } from '@/lib/homepageDefaults';
 
 function AnimatedNumber({ end, suffix = "", duration = 2000 }: { end: number, suffix?: string, duration?: number }) {
   // Initialize with final value so server-rendered HTML contains the complete text
@@ -33,8 +34,11 @@ function AnimatedNumber({ end, suffix = "", duration = 2000 }: { end: number, su
   return <>{count}{suffix}</>;
 }
 
-export default function InteractiveHero() {
+export default function InteractiveHero({ content }: { content?: HeroContent }) {
   const [currentSlide, setCurrentSlide] = useState(0);
+
+  const heroData = content || defaultHomepageData.hero;
+  const stats = heroData.stats || defaultHomepageData.hero.stats;
 
   const slidesCount = 4;
 
@@ -53,24 +57,24 @@ export default function InteractiveHero() {
     <div className={styles.hero}>
       <div className={styles.copy}>
         <div className={styles.eyebrow}>
-          <span className={styles.dot}></span> DIGITAL MARKETING AGENCY IN MANGALORE
+          <span className={styles.dot}></span> {heroData.eyebrow}
         </div>
         
         <h1 className={styles.title}>
-          Modern Marketing<br />
-          <span className={styles.accent}>Real Results.</span>
+          {heroData.title}<br />
+          <span className={styles.accent}>{heroData.accentTitle}</span>
         </h1>
         
         <p className={styles.lede}>
-          As a premier digital marketing agency in Mangalore, we design custom websites, optimize organic Google rankings, and run high-ROI ad campaigns that scale local businesses across Karnataka and the GCC.
+          {heroData.description}
         </p>
         
         <div className={styles.ctas}>
-          <Link href="/contact" className={styles.btnPrimary} style={{textDecoration: 'none'}} title="Contact Zaviroq Digital Marketing Agency in Mangalore">
-            Start Your Project <ArrowRight size={18} />
+          <Link href={heroData.primaryCtaLink || "/contact"} className={styles.btnPrimary} style={{textDecoration: 'none'}} title="Contact Zaviroq Digital Marketing Agency in Mangalore">
+            {heroData.primaryCtaText || "Start Your Project"} <ArrowRight size={18} />
           </Link>
-          <Link href="/services" className={styles.btnPremiumGhost} style={{textDecoration: 'none'}} title="Explore Web Design, SEO & Ads Services">
-            Our Services <ArrowUpRight size={16} />
+          <Link href={heroData.secondaryCtaLink || "/services"} className={styles.btnPremiumGhost} style={{textDecoration: 'none'}} title="Explore Web Design, SEO & Ads Services">
+            {heroData.secondaryCtaText || "Our Services"} <ArrowUpRight size={16} />
           </Link>
         </div>
         
@@ -98,25 +102,15 @@ export default function InteractiveHero() {
         </div>
         
         <div className={styles.statsRow}>
-          <div className={styles.statBox}>
-            <div className={styles.statVal}><AnimatedNumber end={360} suffix="+" /></div>
-            <div className={styles.statLabel}>Projects Delivered</div>
-          </div>
-          <div className={styles.statDivider}></div>
-          <div className={styles.statBox}>
-            <div className={styles.statVal}><AnimatedNumber end={50} suffix="+" /></div>
-            <div className={styles.statLabel}>Happy Clients</div>
-          </div>
-          <div className={styles.statDivider}></div>
-          <div className={styles.statBox}>
-            <div className={styles.statVal}><AnimatedNumber end={3} suffix="x" /></div>
-            <div className={styles.statLabel}>Average Growth</div>
-          </div>
-          <div className={styles.statDivider}></div>
-          <div className={styles.statBox}>
-            <div className={styles.statVal}><AnimatedNumber end={100} suffix="%" /></div>
-            <div className={styles.statLabel}>Results Focused</div>
-          </div>
+          {stats.map((stat, i) => (
+            <React.Fragment key={i}>
+              {i > 0 && <div className={styles.statDivider}></div>}
+              <div className={styles.statBox}>
+                <div className={styles.statVal}><AnimatedNumber end={stat.value} suffix={stat.suffix} /></div>
+                <div className={styles.statLabel}>{stat.label}</div>
+              </div>
+            </React.Fragment>
+          ))}
         </div>
       </div>
 
