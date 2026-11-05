@@ -60,10 +60,9 @@ export default function ServicesSection({ content }: { content?: ServicesContent
           <h2 className={styles.headline}>
             {data.headline}
           </h2>
-        </div>
-        
-        <div className={styles.subtext}>
-          {data.description}
+          <p className={styles.subtext}>
+            {data.description}
+          </p>
         </div>
       </div>
 

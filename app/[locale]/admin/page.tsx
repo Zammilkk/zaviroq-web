@@ -6,7 +6,8 @@ import {
   Send, RotateCcw, CheckCircle2, AlertCircle, 
   Sparkles, Compass, Layers, HelpCircle, Star, 
   Trash2, Plus, ExternalLink, Activity, Database, 
-  Clock, Search, Image as ImageIcon, Bell, Check, Eye, Zap, ArrowUpRight
+  Clock, Search, Image as ImageIcon, Bell, Check, Eye, Zap, ArrowUpRight,
+  Building2, Cpu
 } from 'lucide-react';
 import { defaultHomepageData, HomepageFullData } from '@/lib/homepageDefaults';
 
@@ -14,7 +15,7 @@ export default function AdminDashboard() {
   const [content, setContent] = useState<HomepageFullData>(defaultHomepageData);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
-  const [activeTab, setActiveTab] = useState<'hero' | 'approach' | 'services' | 'why' | 'faqs' | 'seo' | 'images'>('hero');
+  const [activeTab, setActiveTab] = useState<'hero' | 'clients' | 'approach' | 'services' | 'why' | 'platforms' | 'faqs' | 'seo' | 'images'>('hero');
   const [lastSaved, setLastSaved] = useState<string | null>(null);
   const [toast, setToast] = useState<{ message: string; type: 'success' | 'error' } | null>(null);
 
@@ -93,6 +94,49 @@ export default function AdminDashboard() {
     });
   };
 
+  // Updaters for Client Brands
+  const updateClients = (field: string, val: any) => {
+    setContent(prev => ({
+      ...prev,
+      clients_section: { ...prev.clients_section, [field]: val }
+    }));
+  };
+
+  const updateClientItem = (index: number, field: string, val: any) => {
+    setContent(prev => {
+      const newItems = [...(prev.clients_section?.items || [])];
+      newItems[index] = { ...newItems[index], [field]: val };
+      return {
+        ...prev,
+        clients_section: { ...prev.clients_section, items: newItems }
+      };
+    });
+  };
+
+  const addClientItem = () => {
+    setContent(prev => ({
+      ...prev,
+      clients_section: {
+        ...prev.clients_section,
+        items: [
+          ...(prev.clients_section?.items || []),
+          { id: Date.now(), logo: '/partners/1.webp', name: 'New Client Partner' }
+        ]
+      }
+    }));
+  };
+
+  const deleteClientItem = (index: number) => {
+    setContent(prev => {
+      const newItems = [...(prev.clients_section?.items || [])];
+      newItems.splice(index, 1);
+      return {
+        ...prev,
+        clients_section: { ...prev.clients_section, items: newItems }
+      };
+    });
+  };
+
   // Updaters for Approach
   const updateApproach = (field: string, val: any) => {
     setContent(prev => ({
@@ -127,6 +171,49 @@ export default function AdminDashboard() {
       return {
         ...prev,
         why_choose: { ...prev.why_choose, cards: newCards }
+      };
+    });
+  };
+
+  // Updaters for Platforms Ecosystem
+  const updatePlatforms = (field: string, val: any) => {
+    setContent(prev => ({
+      ...prev,
+      platforms_section: { ...prev.platforms_section, [field]: val }
+    }));
+  };
+
+  const updatePlatformItem = (index: number, field: string, val: any) => {
+    setContent(prev => {
+      const newItems = [...(prev.platforms_section?.items || [])];
+      newItems[index] = { ...newItems[index], [field]: val };
+      return {
+        ...prev,
+        platforms_section: { ...prev.platforms_section, items: newItems }
+      };
+    });
+  };
+
+  const addPlatformItem = () => {
+    setContent(prev => ({
+      ...prev,
+      platforms_section: {
+        ...prev.platforms_section,
+        items: [
+          ...(prev.platforms_section?.items || []),
+          { name: 'New Ad / Tech Platform', icon: 'https://cdn.simpleicons.org/googleads/4285F4' }
+        ]
+      }
+    }));
+  };
+
+  const deletePlatformItem = (index: number) => {
+    setContent(prev => {
+      const newItems = [...(prev.platforms_section?.items || [])];
+      newItems.splice(index, 1);
+      return {
+        ...prev,
+        platforms_section: { ...prev.platforms_section, items: newItems }
       };
     });
   };
@@ -318,8 +405,8 @@ export default function AdminDashboard() {
               <Layers size={17} />
             </div>
           </div>
-          <div className={styles.statCardValue}>7 Active</div>
-          <div className={styles.statCardFootnote}>Hero, Approach, Services, Why, FAQs, SEO, Images</div>
+          <div className={styles.statCardValue}>9 Active</div>
+          <div className={styles.statCardFootnote}>Hero, Clients, Approach, Services, Why, Platforms, FAQs, SEO, Media</div>
         </div>
 
         <div className={`${styles.overviewStatCard} ${styles.cardBlueWash}`}>
@@ -358,6 +445,15 @@ export default function AdminDashboard() {
         </button>
 
         <button 
+          className={`${styles.tabBtn} ${activeTab === 'clients' ? styles.activeTabBtn : ''}`}
+          onClick={() => setActiveTab('clients')}
+        >
+          <Building2 size={16} />
+          <span>Client Brands</span>
+          <span className={styles.tabCountBadge}>{content.clients_section?.items?.length || 0}</span>
+        </button>
+
+        <button 
           className={`${styles.tabBtn} ${activeTab === 'approach' ? styles.activeTabBtn : ''}`}
           onClick={() => setActiveTab('approach')}
         >
@@ -371,7 +467,7 @@ export default function AdminDashboard() {
         >
           <Layers size={16} />
           <span>Services Suite</span>
-          <span className={styles.tabCountBadge}>{content.services_section.items.length}</span>
+          <span className={styles.tabCountBadge}>{content.services_section?.items?.length || 0}</span>
         </button>
 
         <button 
@@ -383,12 +479,21 @@ export default function AdminDashboard() {
         </button>
 
         <button 
+          className={`${styles.tabBtn} ${activeTab === 'platforms' ? styles.activeTabBtn : ''}`}
+          onClick={() => setActiveTab('platforms')}
+        >
+          <Cpu size={16} />
+          <span>Platform Ecosystem</span>
+          <span className={styles.tabCountBadge}>{content.platforms_section?.items?.length || 0}</span>
+        </button>
+
+        <button 
           className={`${styles.tabBtn} ${activeTab === 'faqs' ? styles.activeTabBtn : ''}`}
           onClick={() => setActiveTab('faqs')}
         >
           <HelpCircle size={16} />
           <span>FAQs Engine</span>
-          <span className={styles.tabCountBadge}>{content.faqs.items.length}</span>
+          <span className={styles.tabCountBadge}>{content.faqs?.items?.length || 0}</span>
         </button>
 
         <button 
@@ -404,7 +509,7 @@ export default function AdminDashboard() {
           onClick={() => setActiveTab('images')}
         >
           <ImageIcon size={16} />
-          <span>Media &amp; Images</span>
+          <span>Media &amp; Assets</span>
         </button>
       </div>
 
@@ -580,7 +685,125 @@ export default function AdminDashboard() {
       )}
 
       {/* ====================================================================
-          TAB 2: OUR APPROACH
+          TAB 2: TRUSTED BY AMBITIOUS BRANDS (CLIENT LOGOS)
+          ==================================================================== */}
+      {activeTab === 'clients' && (
+        <div className={styles.editorCard}>
+          <div className={styles.editorHeader}>
+            <div className={styles.editorHeaderLeft}>
+              <h3 className={styles.editorHeaderTitle}>Trusted by Ambitious Brands</h3>
+              <p className={styles.editorHeaderDesc}>
+                Manage client brand logos, partner names, eyebrow taglines, and titles featured in the 3D curved partner carousel.
+              </p>
+            </div>
+            <button type="button" className={styles.addItemBtn} onClick={addClientItem}>
+              <Plus size={15} />
+              <span>Add New Brand Logo</span>
+            </button>
+          </div>
+
+          <div className={styles.formGrid}>
+            <div className={styles.inputGroup}>
+              <label className={styles.inputLabel}>Section Eyebrow Tagline</label>
+              <input 
+                type="text" 
+                className={styles.textInput} 
+                value={content.clients_section?.eyebrow || ''}
+                onChange={e => updateClients('eyebrow', e.target.value)}
+              />
+            </div>
+
+            <div className={styles.inputGroup}>
+              <label className={styles.inputLabel}>Main Title Headline</label>
+              <input 
+                type="text" 
+                className={styles.textInput} 
+                value={content.clients_section?.title || ''}
+                onChange={e => updateClients('title', e.target.value)}
+              />
+            </div>
+
+            <div className={styles.inputGroup}>
+              <label className={styles.inputLabel}>Accent Title (Glowing Highlight)</label>
+              <input 
+                type="text" 
+                className={styles.textInput} 
+                value={content.clients_section?.titleAccent || ''}
+                onChange={e => updateClients('titleAccent', e.target.value)}
+              />
+            </div>
+          </div>
+
+          {/* Client Logos Manager */}
+          <div className={styles.itemsManagerSection}>
+            <div className={styles.itemsManagerHeader}>
+              <h4 className={styles.itemsManagerTitle}>
+                Client Partner Logos ({content.clients_section?.items?.length || 0})
+              </h4>
+              <span style={{ fontSize: '0.85rem', color: '#64748b' }}>
+                Supports local WebP/PNG paths (e.g. /partners/1.webp) or remote HTTPS image URLs.
+              </span>
+            </div>
+
+            <div className={styles.itemsGrid}>
+              {(content.clients_section?.items || []).map((client, idx) => (
+                <div key={client.id || idx} className={styles.itemCard}>
+                  <div className={styles.itemCardHeader}>
+                    <span className={styles.itemBadge}>Brand #{idx + 1}</span>
+                    <button 
+                      type="button" 
+                      className={styles.deleteItemBtn} 
+                      onClick={() => deleteClientItem(idx)}
+                      title="Remove this brand logo"
+                    >
+                      <Trash2 size={14} />
+                    </button>
+                  </div>
+
+                  <div className={styles.inputGroup} style={{ marginBottom: '12px' }}>
+                    <label className={styles.inputLabel}>Brand / Client Name</label>
+                    <input 
+                      type="text" 
+                      className={styles.textInput} 
+                      value={client.name || `Partner ${idx + 1}`}
+                      placeholder="e.g. Acme Corp"
+                      onChange={e => updateClientItem(idx, 'name', e.target.value)}
+                    />
+                  </div>
+
+                  <div className={styles.inputGroup}>
+                    <label className={styles.inputLabel}>Logo Image URL / Path</label>
+                    <input 
+                      type="text" 
+                      className={styles.textInput} 
+                      value={client.logo || ''}
+                      placeholder="/partners/1.webp or https://..."
+                      onChange={e => updateClientItem(idx, 'logo', e.target.value)}
+                    />
+                    <div className={styles.imagePreviewBox} style={{ background: '#090d16', padding: '12px', minHeight: '64px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                      {client.logo ? (
+                        <img 
+                          src={client.logo} 
+                          alt={client.name || `Partner ${idx + 1}`} 
+                          style={{ maxHeight: '42px', maxWidth: '120px', objectFit: 'contain' }}
+                          onError={(e) => {
+                            (e.target as HTMLElement).style.opacity = '0.3';
+                          }}
+                        />
+                      ) : (
+                        <span style={{ fontSize: '0.8rem', color: '#94a3b8' }}>No image loaded</span>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ====================================================================
+          TAB 3: OUR APPROACH
           ==================================================================== */}
       {activeTab === 'approach' && (
         <div className={styles.editorCard}>
@@ -932,7 +1155,125 @@ export default function AdminDashboard() {
       )}
 
       {/* ====================================================================
-          TAB 5: FAQS ENGINE
+          TAB 6: PERFORMANCE ECOSYSTEM (PLATFORMS WE WORK ACROSS)
+          ==================================================================== */}
+      {activeTab === 'platforms' && (
+        <div className={styles.editorCard}>
+          <div className={styles.editorHeader}>
+            <div className={styles.editorHeaderLeft}>
+              <h3 className={styles.editorHeaderTitle}>Performance Ecosystem &amp; Platforms</h3>
+              <p className={styles.editorHeaderDesc}>
+                Manage ad networks, analytics engines, and advertising platforms displayed in the Performance Ecosystem carousel.
+              </p>
+            </div>
+            <button type="button" className={styles.addItemBtn} onClick={addPlatformItem}>
+              <Plus size={15} />
+              <span>Add Platform Card</span>
+            </button>
+          </div>
+
+          <div className={styles.formGrid}>
+            <div className={styles.inputGroup}>
+              <label className={styles.inputLabel}>Section Eyebrow Tagline</label>
+              <input 
+                type="text" 
+                className={styles.textInput} 
+                value={content.platforms_section?.eyebrow || ''}
+                onChange={e => updatePlatforms('eyebrow', e.target.value)}
+              />
+            </div>
+
+            <div className={styles.inputGroup}>
+              <label className={styles.inputLabel}>Main Title Headline</label>
+              <input 
+                type="text" 
+                className={styles.textInput} 
+                value={content.platforms_section?.title || ''}
+                onChange={e => updatePlatforms('title', e.target.value)}
+              />
+            </div>
+
+            <div className={styles.inputGroup}>
+              <label className={styles.inputLabel}>Accent Title (Glowing Highlight)</label>
+              <input 
+                type="text" 
+                className={styles.textInput} 
+                value={content.platforms_section?.titleAccent || ''}
+                onChange={e => updatePlatforms('titleAccent', e.target.value)}
+              />
+            </div>
+          </div>
+
+          {/* Platforms Grid */}
+          <div className={styles.itemsManagerSection}>
+            <div className={styles.itemsManagerHeader}>
+              <h4 className={styles.itemsManagerTitle}>
+                Supported Ad &amp; Tech Platforms ({content.platforms_section?.items?.length || 0})
+              </h4>
+              <span style={{ fontSize: '0.85rem', color: '#64748b' }}>
+                Use SimpleIcons (e.g. https://cdn.simpleicons.org/googleads/4285F4) or direct SVG/PNG URLs.
+              </span>
+            </div>
+
+            <div className={styles.itemsGrid}>
+              {(content.platforms_section?.items || []).map((platform, idx) => (
+                <div key={idx} className={styles.itemCard}>
+                  <div className={styles.itemCardHeader}>
+                    <span className={styles.itemBadge}>Platform #{idx + 1}</span>
+                    <button 
+                      type="button" 
+                      className={styles.deleteItemBtn} 
+                      onClick={() => deletePlatformItem(idx)}
+                      title="Remove platform"
+                    >
+                      <Trash2 size={14} />
+                    </button>
+                  </div>
+
+                  <div className={styles.inputGroup} style={{ marginBottom: '12px' }}>
+                    <label className={styles.inputLabel}>Platform Name</label>
+                    <input 
+                      type="text" 
+                      className={styles.textInput} 
+                      value={platform.name}
+                      placeholder="e.g. Google Ads"
+                      onChange={e => updatePlatformItem(idx, 'name', e.target.value)}
+                    />
+                  </div>
+
+                  <div className={styles.inputGroup}>
+                    <label className={styles.inputLabel}>Icon URL / SVG Link</label>
+                    <input 
+                      type="text" 
+                      className={styles.textInput} 
+                      value={platform.icon}
+                      placeholder="https://cdn.simpleicons.org/..."
+                      onChange={e => updatePlatformItem(idx, 'icon', e.target.value)}
+                    />
+                    <div className={styles.imagePreviewBox} style={{ background: '#090d16', padding: '12px', minHeight: '64px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                      {platform.icon ? (
+                        <img 
+                          src={platform.icon} 
+                          alt={platform.name} 
+                          style={{ width: '32px', height: '32px', objectFit: 'contain' }}
+                          onError={(e) => {
+                            (e.target as HTMLElement).style.opacity = '0.3';
+                          }}
+                        />
+                      ) : (
+                        <span style={{ fontSize: '0.8rem', color: '#94a3b8' }}>No icon loaded</span>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ====================================================================
+          TAB 7: FAQS ENGINE
           ==================================================================== */}
       {activeTab === 'faqs' && (
         <div className={styles.editorCard}>
@@ -1304,6 +1645,34 @@ export default function AdminDashboard() {
               <div className={styles.imagePreviewBox}>
                 <img src={content.images.ogImage || '/og-image.png'} alt="OG share preview" style={{ width: '120px', height: '63px', borderRadius: '8px', objectFit: 'cover' }} />
                 <span style={{ fontSize: '0.8rem', color: '#64748b' }}>1200x630px Social Preview Banner for WhatsApp, LinkedIn, and Facebook</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Quick Access to Carousel Brand Images */}
+          <div className={styles.itemsManagerSection}>
+            <div className={styles.itemsManagerHeader}>
+              <h4 className={styles.itemsManagerTitle}>Carousel &amp; Partner Brand Assets</h4>
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '16px' }}>
+              <div className={styles.itemCard} style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div>
+                  <h5 style={{ fontWeight: 700, fontSize: '0.95rem', color: '#0f172a', marginBottom: '6px' }}>Client Brand Logos ({content.clients_section?.items?.length || 0})</h5>
+                  <p style={{ fontSize: '0.85rem', color: '#64748b' }}>Manage the 3D curved carousel partner logos in the &quot;Trusted by Ambitious Brands&quot; section.</p>
+                </div>
+                <button type="button" className={styles.btnSecondaryGlass} style={{ marginTop: '14px', width: 'fit-content' }} onClick={() => setActiveTab('clients')}>
+                  <span>Configure Client Logos &rarr;</span>
+                </button>
+              </div>
+
+              <div className={styles.itemCard} style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div>
+                  <h5 style={{ fontWeight: 700, fontSize: '0.95rem', color: '#0f172a', marginBottom: '6px' }}>Platform Ecosystem Icons ({content.platforms_section?.items?.length || 0})</h5>
+                  <p style={{ fontSize: '0.85rem', color: '#64748b' }}>Manage ad platform icons and logos displayed in the &quot;Performance Ecosystem&quot; section.</p>
+                </div>
+                <button type="button" className={styles.btnSecondaryGlass} style={{ marginTop: '14px', width: 'fit-content' }} onClick={() => setActiveTab('platforms')}>
+                  <span>Configure Platform Icons &rarr;</span>
+                </button>
               </div>
             </div>
           </div>

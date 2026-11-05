@@ -19,9 +19,11 @@ export async function getHomepageContent(): Promise<HomepageFullData> {
 
     return {
       hero: { ...defaultHomepageData.hero, ...(contentMap['hero'] || {}) },
+      clients_section: { ...defaultHomepageData.clients_section, ...(contentMap['clients_section'] || {}) },
       approach: { ...defaultHomepageData.approach, ...(contentMap['approach'] || {}) },
       why_choose: { ...defaultHomepageData.why_choose, ...(contentMap['why_choose'] || {}) },
       services_section: { ...defaultHomepageData.services_section, ...(contentMap['services_section'] || {}) },
+      platforms_section: { ...defaultHomepageData.platforms_section, ...(contentMap['platforms_section'] || {}) },
       faqs: { ...defaultHomepageData.faqs, ...(contentMap['faqs'] || {}) },
       seo: { ...defaultHomepageData.seo, ...(contentMap['seo'] || {}) },
       images: { ...defaultHomepageData.images, ...(contentMap['images'] || {}) },

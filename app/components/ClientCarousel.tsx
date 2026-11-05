@@ -3,8 +3,9 @@
 import React, { useState, useEffect } from "react";
 import styles from "./ClientCarousel.module.css";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ClientsContent, defaultHomepageData } from "@/lib/homepageDefaults";
 
-export default function ClientCarousel() {
+export default function ClientCarousel({ content }: { content?: ClientsContent }) {
   const [activeIndex, setActiveIndex] = useState(4);
   const [isMounted, setIsMounted] = useState(false);
 
@@ -12,23 +13,22 @@ export default function ClientCarousel() {
     setIsMounted(true);
   }, []);
 
-  const clients = [
-    { id: 1, logo: "/partners/1.webp" },
-    { id: 2, logo: "/partners/2.webp" },
-    { id: 3, logo: "/partners/3.webp" },
-    { id: 4, logo: "/partners/4.webp" },
-    { id: 5, logo: "/partners/5.webp" },
-    { id: 6, logo: "/partners/6.webp" },
-    { id: 7, logo: "/partners/7.webp" },
-    { id: 8, logo: "/partners/8.webp" },
-    { id: 9, logo: "/partners/9.webp" },
-  ];
+  const data = content || defaultHomepageData.clients_section;
+  const clients = data.items && data.items.length > 0 ? data.items : defaultHomepageData.clients_section.items;
+
+  useEffect(() => {
+    if (activeIndex >= clients.length) {
+      setActiveIndex(Math.max(0, Math.floor(clients.length / 2)));
+    }
+  }, [clients.length, activeIndex]);
 
   const handleNext = () => {
+    if (clients.length === 0) return;
     setActiveIndex((prev) => (prev + 1) % clients.length);
   };
 
   const handlePrev = () => {
+    if (clients.length === 0) return;
     setActiveIndex((prev) => (prev - 1 + clients.length) % clients.length);
   };
 
@@ -74,10 +74,10 @@ export default function ClientCarousel() {
     <div className={styles.carouselSection}>
       <div className={styles.header}>
         <div className={styles.eyebrow}>
-          <span className={styles.dot}></span> TRUSTED BY AMBITIOUS BRANDS
+          <span className={styles.dot}></span> {data.eyebrow || "TRUSTED BY AMBITIOUS BRANDS"}
         </div>
         <h2 className={styles.title}>
-          Ambitious Brands in <span>Mangalore & Beyond</span>
+          {data.title || "Ambitious Brands in"} <span>{data.titleAccent || "Mangalore & Beyond"}</span>
         </h2>
       </div>
 
@@ -91,7 +91,7 @@ export default function ClientCarousel() {
           <div className={styles.track}>
             {clients.map((client, index) => (
               <div
-                key={client.id}
+                key={client.id || index}
                 className={`${styles.card} ${
                   index === activeIndex ? styles.activeCard : ""
                 }`}
@@ -99,7 +99,7 @@ export default function ClientCarousel() {
                 onClick={() => setActiveIndex(index)}
               >
                 <div className={styles.cardInner}>
-                  <img src={client.logo} alt={`Partner brand ${client.id} collaborating with Zaviroq`} />
+                  <img src={client.logo} alt={client.name ? `${client.name} collaborating with Zaviroq` : `Partner brand ${client.id || index + 1} collaborating with Zaviroq`} />
                 </div>
                 {/* Reflection effect */}
                 <div className={styles.reflection}>

@@ -146,7 +146,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       <InteractiveHero content={homepageData.hero} />
 
       {/* 🚀 CLIENTS: 3D CAROUSEL */}
-      <ClientCarousel />
+      <ClientCarousel content={homepageData.clients_section} />
 
 
       {/* 💎 TRUST / USP SECTION (NEW APPROACH) */}
@@ -171,7 +171,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
 
       {/* 🚀 PLATFORMS WE WORK ACROSS */}
-      <PlatformCarousel />
+      <PlatformCarousel content={homepageData.platforms_section} />
 
       {/* ❓ FAQ SECTION */}
       <RevealOnScroll>

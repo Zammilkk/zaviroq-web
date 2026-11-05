@@ -3,19 +3,13 @@
 import React, { useRef } from "react";
 import styles from "./PlatformCarousel.module.css";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { PlatformsContent, defaultHomepageData } from "@/lib/homepageDefaults";
 
-export default function PlatformCarousel() {
+export default function PlatformCarousel({ content }: { content?: PlatformsContent }) {
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  const platforms = [
-    { name: "Google Ads", icon: "https://cdn.simpleicons.org/googleads/4285F4" },
-    { name: "Meta Ads", icon: "https://cdn.simpleicons.org/meta/0668E1" },
-    { name: "LinkedIn Ads", icon: "https://cdn.simpleicons.org/linkedin/0A66C2" },
-    { name: "Microsoft Advertising", icon: "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" },
-    { name: "Google Analytics", icon: "https://cdn.simpleicons.org/googleanalytics/F9AB00" },
-    { name: "Search Console", icon: "https://cdn.simpleicons.org/googlesearchconsole/4285F4" },
-    { name: "Tag Manager", icon: "https://cdn.simpleicons.org/googletagmanager/246FDB" },
-  ];
+  const data = content || defaultHomepageData.platforms_section;
+  const platforms = data.items && data.items.length > 0 ? data.items : defaultHomepageData.platforms_section.items;
 
   const scrollLeft = () => {
     if (scrollRef.current) {
@@ -39,11 +33,11 @@ export default function PlatformCarousel() {
         <div className={styles.header}>
           <div className={styles.eyebrowWrapper}>
             <div className={styles.line}></div>
-            <span className={styles.eyebrow}>PERFORMANCE ECOSYSTEM</span>
+            <span className={styles.eyebrow}>{data.eyebrow || "PERFORMANCE ECOSYSTEM"}</span>
             <div className={styles.line}></div>
           </div>
           <h2 className={styles.title}>
-            Platforms <span>We Work Across</span>
+            {data.title || "Platforms"} <span>{data.titleAccent || "We Work Across"}</span>
           </h2>
         </div>
 

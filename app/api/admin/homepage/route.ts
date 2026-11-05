@@ -39,9 +39,11 @@ export async function GET() {
 
     const merged: HomepageFullData = {
       hero: { ...defaultHomepageData.hero, ...(contentMap['hero'] || {}) },
+      clients_section: { ...defaultHomepageData.clients_section, ...(contentMap['clients_section'] || {}) },
       approach: { ...defaultHomepageData.approach, ...(contentMap['approach'] || {}) },
       why_choose: { ...defaultHomepageData.why_choose, ...(contentMap['why_choose'] || {}) },
       services_section: { ...defaultHomepageData.services_section, ...(contentMap['services_section'] || {}) },
+      platforms_section: { ...defaultHomepageData.platforms_section, ...(contentMap['platforms_section'] || {}) },
       faqs: { ...defaultHomepageData.faqs, ...(contentMap['faqs'] || {}) },
       seo: { ...defaultHomepageData.seo, ...(contentMap['seo'] || {}) },
       images: { ...defaultHomepageData.images, ...(contentMap['images'] || {}) },
@@ -93,7 +95,7 @@ export async function POST(request: Request) {
       }
     } else {
       // Full bundle
-      const keys = ['hero', 'approach', 'why_choose', 'services_section', 'faqs', 'seo', 'images'] as const;
+      const keys = ['hero', 'clients_section', 'approach', 'why_choose', 'services_section', 'platforms_section', 'faqs', 'seo', 'images'] as const;
       for (const key of keys) {
         if (body[key]) {
           const { error } = await supabase

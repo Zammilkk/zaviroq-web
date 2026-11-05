@@ -16,6 +16,19 @@ export interface HeroContent {
   stats: HeroStat[];
 }
 
+export interface ClientItem {
+  id: number;
+  logo: string;
+  name?: string;
+}
+
+export interface ClientsContent {
+  eyebrow: string;
+  title: string;
+  titleAccent: string;
+  items: ClientItem[];
+}
+
 export interface ApproachStep {
   num: string;
   title: string;
@@ -63,6 +76,18 @@ export interface ServicesContent {
   items: ServiceItem[];
 }
 
+export interface PlatformItem {
+  name: string;
+  icon: string;
+}
+
+export interface PlatformsContent {
+  eyebrow: string;
+  title: string;
+  titleAccent: string;
+  items: PlatformItem[];
+}
+
 export interface FaqItem {
   question: string;
   answer: string;
@@ -104,9 +129,11 @@ export interface ImagesContent {
 
 export interface HomepageFullData {
   hero: HeroContent;
+  clients_section: ClientsContent;
   approach: ApproachContent;
-  why_choose: WhyChooseContent;
   services_section: ServicesContent;
+  why_choose: WhyChooseContent;
+  platforms_section: PlatformsContent;
   faqs: FaqContent;
   seo: SeoContent;
   images: ImagesContent;
@@ -127,6 +154,22 @@ export const defaultHomepageData: HomepageFullData = {
       { value: 50, suffix: "+", label: "Happy Clients" },
       { value: 3, suffix: "x", label: "Average Growth" },
       { value: 100, suffix: "%", label: "Results Focused" }
+    ]
+  },
+  clients_section: {
+    eyebrow: "TRUSTED BY AMBITIOUS BRANDS",
+    title: "Ambitious Brands in",
+    titleAccent: "Mangalore & Beyond",
+    items: [
+      { id: 1, logo: "/partners/1.webp", name: "Partner 1" },
+      { id: 2, logo: "/partners/2.webp", name: "Partner 2" },
+      { id: 3, logo: "/partners/3.webp", name: "Partner 3" },
+      { id: 4, logo: "/partners/4.webp", name: "Partner 4" },
+      { id: 5, logo: "/partners/5.webp", name: "Partner 5" },
+      { id: 6, logo: "/partners/6.webp", name: "Partner 6" },
+      { id: 7, logo: "/partners/7.webp", name: "Partner 7" },
+      { id: 8, logo: "/partners/8.webp", name: "Partner 8" },
+      { id: 9, logo: "/partners/9.webp", name: "Partner 9" }
     ]
   },
   approach: {
@@ -158,6 +201,20 @@ export const defaultHomepageData: HomepageFullData = {
         title: "GROW",
         desc: "We analyze data, measure KPIs, optimize conversions, and scale your brand in Mangalore."
       }
+    ]
+  },
+  services_section: {
+    eyebrow: "OUR SERVICES",
+    headline: "Everything You Need to Grow Digitally",
+    description: "High-performing digital marketing and technology solutions engineered for growth.",
+    items: [
+      { id: 1, title: "Website Design", desc: "High-performing, custom websites built for your brand." },
+      { id: 2, title: "SEO", desc: "Get found. Get traffic. Get results." },
+      { id: 3, title: "Graphic Design", desc: "Creative designs that make an impact." },
+      { id: 4, title: "Advertising", desc: "Targeted ads that drive real growth." },
+      { id: 5, title: "Web Development", desc: "Scalable solutions with modern technologies." },
+      { id: 6, title: "Social Media Management", desc: "Build your brand. Engage your audience." },
+      { id: 7, title: "Consultation", desc: "Get expert guidance for your digital growth." }
     ]
   },
   why_choose: {
@@ -194,18 +251,18 @@ export const defaultHomepageData: HomepageFullData = {
       }
     ]
   },
-  services_section: {
-    eyebrow: "OUR SERVICES",
-    headline: "What We Do",
-    description: "High-performing digital marketing and technology solutions engineered for growth.",
+  platforms_section: {
+    eyebrow: "PERFORMANCE ECOSYSTEM",
+    title: "Platforms",
+    titleAccent: "We Work Across",
     items: [
-      { id: 1, title: "Website Design", desc: "High-performing, custom websites built for your brand." },
-      { id: 2, title: "SEO", desc: "Get found. Get traffic. Get results." },
-      { id: 3, title: "Graphic Design", desc: "Creative designs that make an impact." },
-      { id: 4, title: "Advertising", desc: "Targeted ads that drive real growth." },
-      { id: 5, title: "Web Development", desc: "Scalable solutions with modern technologies." },
-      { id: 6, title: "Social Media Management", desc: "Build your brand. Engage your audience." },
-      { id: 7, title: "Consultation", desc: "Get expert guidance for your digital growth." }
+      { name: "Google Ads", icon: "https://cdn.simpleicons.org/googleads/4285F4" },
+      { name: "Meta Ads", icon: "https://cdn.simpleicons.org/meta/0668E1" },
+      { name: "LinkedIn Ads", icon: "https://cdn.simpleicons.org/linkedin/0A66C2" },
+      { name: "Microsoft Advertising", icon: "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" },
+      { name: "Google Analytics", icon: "https://cdn.simpleicons.org/googleanalytics/F9AB00" },
+      { name: "Search Console", icon: "https://cdn.simpleicons.org/googlesearchconsole/4285F4" },
+      { name: "Tag Manager", icon: "https://cdn.simpleicons.org/googletagmanager/246FDB" }
     ]
   },
   faqs: {
