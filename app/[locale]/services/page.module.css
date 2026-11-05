@@ -102,10 +102,10 @@
 /* Layer 1: Ambient mesh glows */
 .heroAmbientGlow1 {
   position: absolute;
-  top: 0%;
+  top: 140px;
   right: -8%;
-  width: 680px;
-  height: 600px;
+  width: 720px;
+  height: 640px;
   border-radius: 50%;
   background: radial-gradient(circle at center, rgba(139, 92, 246, 0.3) 0%, rgba(59, 130, 246, 0.18) 40%, rgba(6, 182, 212, 0.08) 65%, transparent 75%);
   filter: blur(55px);
@@ -122,10 +122,10 @@
 
 .heroAmbientGlow2 {
   position: absolute;
-  top: 12%;
+  top: 80px;
   left: -8%;
-  width: 520px;
-  height: 520px;
+  width: 560px;
+  height: 560px;
   border-radius: 50%;
   background: radial-gradient(circle at center, rgba(59, 130, 246, 0.2) 0%, rgba(139, 92, 246, 0.12) 45%, transparent 70%);
   filter: blur(55px);
@@ -156,19 +156,19 @@
   background: radial-gradient(ellipse at center, rgba(99, 102, 241, 0.1) 0%, transparent 70%);
 }
 
-/* Layer 2: Abstract fluid wave / contour background layer */
+/* Layer 2: Abstract fluid wave / contour background layer - fills from top: 0 */
 .heroBgLayer {
   position: absolute;
-  top: -180px;
+  top: 0;
   left: 50%;
   transform: translateX(-50%);
   width: 100vw;
-  height: calc(100% + 240px);
+  height: 1150px;
   z-index: 0;
   pointer-events: none;
   background-image: url('/assets/images/services-hero-bg.png');
   background-size: cover;
-  background-position: center top;
+  background-position: top center;
   background-repeat: no-repeat;
   opacity: 0.45;
 }
@@ -178,7 +178,7 @@
   background-size: 100% auto !important;
   background-position: top center !important;
   background-repeat: no-repeat !important;
-  opacity: 0.85 !important;
+  opacity: 0.9 !important;
   display: block !important;
   mix-blend-mode: multiply !important;
   mask-image: linear-gradient(to bottom, black 85%, transparent 100%) !important;
@@ -187,7 +187,10 @@
 /* Layer 3: Tech micro-dot precision grid */
 .heroGridOverlay {
   position: absolute;
-  inset: -40px 0 0 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1100px;
   background-image: radial-gradient(rgba(139, 92, 246, 0.22) 1.2px, transparent 1.2px);
   background-size: 32px 32px;
   pointer-events: none;

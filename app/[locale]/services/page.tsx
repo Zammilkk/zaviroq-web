@@ -150,6 +150,16 @@ export default async function ServicesPage({
       <div className={styles.bgGlow3} />
       <div className={styles.gridPattern} />
 
+      {/* Layer 2: Abstract fluid wave / contour background layer - fills from the very top of the page */}
+      <div className={styles.heroBgLayer} aria-hidden="true" />
+
+      {/* Layer 1: Ambient mesh glows */}
+      <div className={styles.heroAmbientGlow1} aria-hidden="true" />
+      <div className={styles.heroAmbientGlow2} aria-hidden="true" />
+
+      {/* Layer 3: Tech micro-dot precision grid */}
+      <div className={styles.heroGridOverlay} aria-hidden="true" />
+
       <nav className={styles.breadcrumb}>
         <Link href={`/${locale}`}>Home</Link>
         <span>/</span>
@@ -157,16 +167,7 @@ export default async function ServicesPage({
       </nav>
 
       <section className={styles.hero}>
-        {/* Layer 1: Ambient mesh glows */}
-        <div className={styles.heroAmbientGlow1} aria-hidden="true" />
-        <div className={styles.heroAmbientGlow2} aria-hidden="true" />
         <div className={styles.heroAmbientGlow3} aria-hidden="true" />
-
-        {/* Layer 2: Abstract fluid wave / contour background layer */}
-        <div className={styles.heroBgLayer} aria-hidden="true" />
-
-        {/* Layer 3: Tech micro-dot precision grid */}
-        <div className={styles.heroGridOverlay} aria-hidden="true" />
 
         {/* Layer 4: Geometric perspective aura rings behind 3D artwork */}
         <div className={styles.heroAuraRings} aria-hidden="true" />
