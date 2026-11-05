@@ -221,31 +221,17 @@ export default async function ServicesPage({
               <div className={styles.laptopBackdropAura} aria-hidden="true" />
               <div className={styles.laptopRadialSpot} aria-hidden="true" />
 
-              {/* 3D Mockup Container with smooth levitation and ground contact shadow */}
+              {/* 3D Mockup Container with smooth levitation */}
               <div className={styles.heroImageContainer}>
                 <img 
                   src="/assets/images/services-bg.png" 
                   alt="Zaviroq Digital Solutions & Marketing Ecosystem" 
                   className={styles.heroImage} 
                 />
-                <div className={styles.laptopGroundShadow} aria-hidden="true" />
-              </div>
-
-              {/* Floating ambient glass chips that integrate the 3D element with the UI */}
-              <div className={styles.floatingChip1} aria-hidden="true">
-                <span className={styles.chipPulse}></span>
-                <span className={styles.chipText}>Strategic Growth</span>
-              </div>
-              <div className={styles.floatingChip2} aria-hidden="true">
-                <span className={styles.chipIcon}>⚡</span>
-                <span className={styles.chipText}>High-ROI Delivery</span>
               </div>
             </div>
           </div>
         </div>
-
-        {/* Seamless bottom fade into services grid */}
-        <div className={styles.heroBottomFade} aria-hidden="true" />
       </section>
 
       <ServicesGrid categories={categoriesMeta} locale={locale} />
