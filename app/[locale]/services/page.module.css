@@ -69,7 +69,7 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 140px 35px 0;
+  padding: 112px 35px 0;
   max-width: 1550px;
   margin: 0 auto;
   font-size: 0.85rem;
@@ -93,7 +93,7 @@
 .hero {
   position: relative;
   z-index: 2;
-  padding: 50px 24px 20px;
+  padding: 24px 24px 10px;
   max-width: 1550px;
   margin: 0 auto;
   overflow: visible;
@@ -163,7 +163,7 @@
   left: 50%;
   transform: translateX(-50%);
   width: 100vw;
-  height: 1150px;
+  height: 850px;
   z-index: 0;
   pointer-events: none;
   background-image: url('/assets/images/services-hero-bg.png');
@@ -190,7 +190,7 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 1100px;
+  height: 820px;
   background-image: radial-gradient(rgba(139, 92, 246, 0.22) 1.2px, transparent 1.2px);
   background-size: 32px 32px;
   pointer-events: none;
@@ -209,8 +209,8 @@
   top: 50%;
   right: 0%;
   transform: translateY(-50%) perspective(1000px) rotateX(62deg);
-  width: 640px;
-  height: 640px;
+  width: 520px;
+  height: 520px;
   border-radius: 50%;
   border: 1px dashed rgba(139, 92, 246, 0.22);
   pointer-events: none;
@@ -256,7 +256,7 @@
   font-weight: 700;
   letter-spacing: 2px;
   color: var(--text-muted, #777);
-  margin-bottom: 24px;
+  margin-bottom: 14px;
   text-transform: uppercase;
 }
 
@@ -267,11 +267,11 @@
 }
 
 .heroTitle {
-  font-size: clamp(2rem, 3.5vw, 3.2rem);
+  font-size: clamp(1.85rem, 3.1vw, 2.75rem);
   font-weight: 700;
-  line-height: 1.1;
+  line-height: 1.15;
   color: var(--text-main, #111);
-  margin-bottom: 20px;
+  margin-bottom: 14px;
   letter-spacing: -1px;
 }
 
@@ -287,11 +287,11 @@
 }
 
 .heroSub {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: var(--text-muted, #555);
-  line-height: 1.7;
-  max-width: 600px;
-  margin-bottom: 30px;
+  line-height: 1.6;
+  max-width: 540px;
+  margin-bottom: 20px;
 }
 
 :global([data-theme="dark"]) .heroSub {
@@ -304,15 +304,15 @@
   gap: 8px;
   background: linear-gradient(90deg, #5b3aff, #a35cff);
   color: #fff;
-  padding: 14px 28px;
+  padding: 11px 24px;
   border-radius: 50px;
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   text-decoration: none;
   box-shadow: 0 10px 25px rgba(91, 58, 255, 0.4);
   transition: all 0.3s ease;
   width: fit-content;
-  margin-bottom: 50px;
+  margin-bottom: 24px;
 }
 
 .btnExplore:hover {
@@ -323,32 +323,21 @@
 .heroStatsRow {
   display: flex;
   align-items: center;
-  gap: 40px;
-  margin-top: 20px;
+  gap: 36px;
+  margin-top: 6px;
 }
 
 .statItem {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 8px;
-}
-
-.statIconBox {
-  width: 32px;
-  height: 32px;
-  background: rgba(139, 92, 246, 0.1);
-  color: #8b5cf6;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1rem;
+  gap: 2px;
 }
 
 .statNum {
-  font-size: 1.5rem;
+  font-size: 1.45rem;
   font-weight: 800;
+  line-height: 1.1;
   color: var(--text-main, #111);
 }
 
@@ -362,6 +351,7 @@
   color: var(--text-muted, #777);
   letter-spacing: 0.5px;
   font-weight: 600;
+  white-space: nowrap;
 }
 
 .heroRight {
@@ -374,10 +364,10 @@
 }
 
 .imageWrapper {
-  width: 125%;
-  max-width: 920px;
+  width: 108%;
+  max-width: 740px;
   position: relative;
-  right: -6%;
+  right: -2%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -789,11 +779,11 @@
   }
 
   .hero {
-    padding: 40px 16px 60px;
+    padding: 24px 16px 36px;
   }
 
   .heroStatsRow {
-    gap: 20px 24px;
+    gap: 16px 24px;
   }
 
   .statItem {

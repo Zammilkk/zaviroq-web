@@ -194,22 +194,18 @@ export default async function ServicesPage({
               
               <div className={styles.heroStatsRow}>
                 <div className={styles.statItem}>
-                  <div className={styles.statIconBox}>📦</div>
                   <div className={styles.statNum}>360+</div>
                   <div className={styles.statLabel}>Projects Delivered</div>
                 </div>
                 <div className={styles.statItem}>
-                  <div className={styles.statIconBox}>👥</div>
                   <div className={styles.statNum}>50+</div>
                   <div className={styles.statLabel}>Happy Clients</div>
                 </div>
                 <div className={styles.statItem}>
-                  <div className={styles.statIconBox}>📈</div>
                   <div className={styles.statNum}>3x</div>
                   <div className={styles.statLabel}>Average Growth</div>
                 </div>
                 <div className={styles.statItem}>
-                  <div className={styles.statIconBox}>🎯</div>
                   <div className={styles.statNum}>100%</div>
                   <div className={styles.statLabel}>Results Focused</div>
                 </div>
