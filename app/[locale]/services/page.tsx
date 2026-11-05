@@ -157,7 +157,20 @@ export default async function ServicesPage({
       </nav>
 
       <section className={styles.hero}>
-        <div className={styles.heroBgLayer}></div>
+        {/* Layer 1: Ambient mesh glows */}
+        <div className={styles.heroAmbientGlow1} aria-hidden="true" />
+        <div className={styles.heroAmbientGlow2} aria-hidden="true" />
+        <div className={styles.heroAmbientGlow3} aria-hidden="true" />
+
+        {/* Layer 2: Abstract fluid wave / contour background layer */}
+        <div className={styles.heroBgLayer} aria-hidden="true" />
+
+        {/* Layer 3: Tech micro-dot precision grid */}
+        <div className={styles.heroGridOverlay} aria-hidden="true" />
+
+        {/* Layer 4: Geometric perspective aura rings behind 3D artwork */}
+        <div className={styles.heroAuraRings} aria-hidden="true" />
+
         <div className={styles.heroContainer}>
           <div className={styles.heroLeft}>
             <RevealOnScroll>
@@ -203,12 +216,36 @@ export default async function ServicesPage({
             </RevealOnScroll>
           </div>
           <div className={styles.heroRight}>
-            {/* The user can place the mockup image here. For now we use the uploaded image as a placeholder. */}
             <div className={styles.imageWrapper}>
-              <img src="/assets/images/services-bg.png" alt="Services Mockup" className={styles.heroImage} />
+              {/* Backlight halo glow specifically behind the laptop */}
+              <div className={styles.laptopBackdropAura} aria-hidden="true" />
+              <div className={styles.laptopRadialSpot} aria-hidden="true" />
+
+              {/* 3D Mockup Container with smooth levitation and ground contact shadow */}
+              <div className={styles.heroImageContainer}>
+                <img 
+                  src="/assets/images/services-bg.png" 
+                  alt="Zaviroq Digital Solutions & Marketing Ecosystem" 
+                  className={styles.heroImage} 
+                />
+                <div className={styles.laptopGroundShadow} aria-hidden="true" />
+              </div>
+
+              {/* Floating ambient glass chips that integrate the 3D element with the UI */}
+              <div className={styles.floatingChip1} aria-hidden="true">
+                <span className={styles.chipPulse}></span>
+                <span className={styles.chipText}>Strategic Growth</span>
+              </div>
+              <div className={styles.floatingChip2} aria-hidden="true">
+                <span className={styles.chipIcon}>⚡</span>
+                <span className={styles.chipText}>High-ROI Delivery</span>
+              </div>
             </div>
           </div>
         </div>
+
+        {/* Seamless bottom fade into services grid */}
+        <div className={styles.heroBottomFade} aria-hidden="true" />
       </section>
 
       <ServicesGrid categories={categoriesMeta} locale={locale} />
