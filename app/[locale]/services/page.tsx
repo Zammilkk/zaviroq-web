@@ -99,7 +99,7 @@ export default async function ServicesPage({
 
         <div className={styles.heroContainer}>
           <div className={styles.heroLeft}>
-            <RevealOnScroll>
+            <RevealOnScroll align="flex-start">
               <div className={styles.heroEyebrow}>
                 <span className={styles.eyebrowLine}></span> OUR SERVICES
               </div>

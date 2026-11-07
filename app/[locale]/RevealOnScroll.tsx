@@ -2,9 +2,9 @@
 import { useEffect, useRef, useState } from 'react';
 
 export default function RevealOnScroll({ 
-  children, delay = 0, yOffset = 40, runOnce = true, minWidth, className 
+  children, delay = 0, yOffset = 40, runOnce = true, minWidth, className, align = 'stretch' 
 }: { 
-  children: React.ReactNode, delay?: number, yOffset?: number, runOnce?: boolean, minWidth?: string, className?: string 
+  children: React.ReactNode, delay?: number, yOffset?: number, runOnce?: boolean, minWidth?: string, className?: string, align?: 'stretch' | 'flex-start' | 'center' | 'flex-end' 
 }) {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -43,7 +43,7 @@ export default function RevealOnScroll({
         flex: minWidth ? `0 0 ${minWidth}` : undefined,
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'center'
+        alignItems: align
       }}
     >
       {children}

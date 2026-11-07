@@ -58,7 +58,7 @@ export default async function AboutPage({params}: {params: Promise<{locale: stri
 
 
         <div className={styles.heroLeft}>
-          <RevealOnScroll>
+          <RevealOnScroll align="flex-start">
 
             <h1 className={styles.heroTitle}>
               People. Strategy. <span className={styles.heroGradient}>Real Growth.</span>

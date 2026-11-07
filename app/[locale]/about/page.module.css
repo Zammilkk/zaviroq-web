@@ -114,6 +114,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: flex-start;
+  text-align: left;
   width: 100%;
   max-width: 750px;
 }
@@ -163,8 +165,13 @@
 .heroCtas {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   gap: 30px;
   margin-bottom: 60px;
+  width: 100%;
+  align-self: flex-start;
+  margin-left: 0;
+  padding-left: 0;
 }
 
 .btnWork {
