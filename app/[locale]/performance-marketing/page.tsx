@@ -35,7 +35,7 @@ export default async function PerformanceMarketingPage({
       <div className={styles.gridLines} aria-hidden="true" />
 
       <nav className={styles.breadcrumb} aria-label="Breadcrumb">
-        <Link href={`/${locale}`}>Home</Link>
+        <Link href="/">Home</Link>
         <span className={styles.breadSep}>›</span>
         <span className={styles.breadCurrent}>Performance Marketing</span>
       </nav>
@@ -98,7 +98,7 @@ export default async function PerformanceMarketingPage({
       <section className={styles.coreGrid}>
         {adChannelLinks.map((item, i) => (
           <RevealOnScroll key={item.slug} delay={i * 70}>
-            <Link href={`/${locale}/performance-marketing/${item.slug}`} className={styles.coreCard}>
+            <Link href={`/performance-marketing/${item.slug}`} className={styles.coreCard}>
               <span className={styles.coreNum}>{String(i + 1).padStart(2, '0')}</span>
               <h3 className={styles.coreTitle}>{item.label}</h3>
             </Link>
@@ -120,7 +120,7 @@ export default async function PerformanceMarketingPage({
       <section className={styles.industryGrid}>
         {pmServices.map((service, i) => (
           <RevealOnScroll key={service.slug} delay={i * 70}>
-            <Link href={`/${locale}/performance-marketing/${service.slug}`} className={styles.industryCard}>
+            <Link href={`/performance-marketing/${service.slug}`} className={styles.industryCard}>
               <span className={styles.indNum}>{String(i + 1).padStart(2, '0')}</span>
               <h3 className={styles.indTitle}>{service.title}</h3>
               <p className={styles.indDesc}>{service.heroDesc}</p>
@@ -137,7 +137,7 @@ export default async function PerformanceMarketingPage({
             <p>
               Our performance marketing experts are ready to build a custom paid growth system tailored to your business goals. Let&apos;s turn your ad spend into revenue.
             </p>
-            <Link href={`/${locale}/contact`} className={`btn-primary ${styles.ctaBtn}`}>
+            <Link href="/contact" className={`btn-primary ${styles.ctaBtn}`}>
               Start Campaign ⚡
             </Link>
           </div>

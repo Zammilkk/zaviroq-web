@@ -313,6 +313,8 @@
   line-height: 1.6;
   max-width: 540px;
   margin-bottom: 20px;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 :global([data-theme="dark"]) .heroSub {
@@ -702,8 +704,8 @@
 }
 
 .ctaTitle {
-  font-size: clamp(1.8rem, 4vw, 2.5rem);
-  font-weight: 800;
+  font-size: clamp(1.6rem, 3.2vw, 2.15rem);
+  font-weight: 700;
   color: #fff;
   margin-bottom: 16px;
 }

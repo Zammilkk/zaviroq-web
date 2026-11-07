@@ -74,8 +74,102 @@
   left: 0;
   bottom: -10px;
   width: 100%;
-  height: 18px;
+  height: 22px;
   pointer-events: none;
+  overflow: visible;
+  transform-origin: left center;
+  animation: underlineFloating 3.6s ease-in-out infinite;
+}
+
+/* Ambient glow underlayer */
+.underlineGlow {
+  filter: blur(6px);
+  opacity: 0.55;
+  transform-origin: center;
+  animation: glowPulsing 3.6s ease-in-out infinite;
+}
+
+:global([data-theme="dark"]) .underlineGlow {
+  filter: blur(8px);
+  opacity: 0.8;
+}
+
+/* Main brush shape with dynamic draw */
+.underlineBrush {
+  transform-origin: left center;
+  animation: brushDrawWipe 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Traveling light beam along the brush stroke */
+.underlineHighlight {
+  stroke-dasharray: 70 210;
+  stroke-dashoffset: 280;
+  animation: lightStreak 2.6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  opacity: 0.9;
+}
+
+/* Interactive hover enhancement */
+.titleHighlight:hover .titleUnderline {
+  animation: underlineHoverBounce 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes underlineFloating {
+  0%, 100% {
+    transform: translateY(0px) scaleY(1);
+  }
+  50% {
+    transform: translateY(-2.5px) scaleY(1.08) scaleX(1.01);
+  }
+}
+
+@keyframes glowPulsing {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(0.97);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.04);
+  }
+}
+
+@keyframes brushDrawWipe {
+  0% {
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    opacity: 0;
+    transform: scaleX(0.25);
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+@keyframes lightStreak {
+  0% {
+    stroke-dashoffset: 280;
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: -70;
+    opacity: 0;
+  }
+}
+
+@keyframes underlineHoverBounce {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.06) translateY(-4px); }
+  100% { transform: scale(1); }
 }
 
 .sectionSubtitle {
@@ -262,6 +356,8 @@
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 :global([data-theme="dark"]) .cardDesc {

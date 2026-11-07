@@ -145,7 +145,7 @@ export default async function AIContentEnginePage({
               </p>
 
               <div className={styles.heroCtas}>
-                <a href={`/${locale}/contact`} className={styles.btnPrimary}>
+                <a href="/contact" className={styles.btnPrimary}>
                   Book Demo ↗
                 </a>
                 <a href="#features" className={styles.btnGhost}>
@@ -559,7 +559,7 @@ export default async function AIContentEnginePage({
               </div>
             </div>
 
-            <a href={`/${locale}/contact`} className={styles.demoBtn}>
+            <a href="/contact" className={styles.demoBtn}>
               <div className={styles.playIcon}>▶</div>
               Watch Full Demo
             </a>
@@ -580,10 +580,10 @@ export default async function AIContentEnginePage({
               Join businesses generating hundreds of SEO articles per month — without adding a single writer to their team.
             </p>
             <div className={styles.finalCtaBtns}>
-              <a href={`/${locale}/contact`} className={styles.btnPrimary}>
+              <a href="/contact" className={styles.btnPrimary}>
                 Book Free Demo ↗
               </a>
-              <a href={`/${locale}/contact`} className={styles.btnGhost}>
+              <a href="/contact" className={styles.btnGhost}>
                 Get Started Today
               </a>
             </div>

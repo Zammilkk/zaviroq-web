@@ -129,7 +129,7 @@ export default function StartupOffer({ locale }: { locale: string }) {
           </div>
 
           <div className={styles.actionGroup}>
-            <Link href={`/${locale}/contact`} className={styles.claimBtn}>
+            <Link href="/contact" className={styles.claimBtn}>
               Claim Startup Package Now <ArrowRight size={18} />
             </Link>
             <div className={styles.slotsText}>

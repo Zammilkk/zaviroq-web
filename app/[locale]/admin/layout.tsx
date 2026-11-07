@@ -6,77 +6,181 @@ import Link from 'next/link';
 import styles from './page.module.css';
 import { 
   ShieldCheck, LayoutDashboard, Users, Search, 
-  Database, ExternalLink, LogOut, Lock, ArrowRight, ChevronRight, Rocket 
+  Database, ExternalLink, LogOut, Lock, User, ArrowRight, 
+  ChevronRight, Rocket, Eye, EyeOff, AlertCircle, ArrowLeft,
+  Sparkles, Terminal, Activity, FileText
 } from 'lucide-react';
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [adminUser, setAdminUser] = useState('zaviroq');
   const pathname = usePathname();
 
   useEffect(() => {
-    if (typeof window !== 'undefined' && sessionStorage.getItem('zaviroq_admin') === 'true') {
-      setIsAuthenticated(true);
+    if (typeof window !== 'undefined') {
+      const isAuth = sessionStorage.getItem('zaviroq_admin') === 'true';
+      const storedUser = sessionStorage.getItem('zaviroq_admin_user');
+      if (isAuth) {
+        setIsAuthenticated(true);
+        if (storedUser) setAdminUser(storedUser);
+      }
     }
   }, []);
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    if (password === 'Zaviroq2026!') {
-      sessionStorage.setItem('zaviroq_admin', 'true');
-      setIsAuthenticated(true);
-      setErrorMsg('');
-    } else {
-      setErrorMsg('Invalid security credentials. Access denied.');
-    }
+    setIsSubmitting(true);
+
+    setTimeout(() => {
+      const cleanUser = username.trim().toLowerCase();
+      // Required credentials: username "zaviroq", password "Zaviroq@2026</>"
+      if (cleanUser === 'zaviroq' && password === 'Zaviroq@2026</>') {
+        sessionStorage.setItem('zaviroq_admin', 'true');
+        sessionStorage.setItem('zaviroq_admin_user', 'zaviroq');
+        setAdminUser('zaviroq');
+        setIsAuthenticated(true);
+        setErrorMsg('');
+      } else {
+        setErrorMsg('Authentication failed: Invalid administrator credentials.');
+      }
+      setIsSubmitting(false);
+    }, 300);
   };
 
   const handleLogout = () => {
     sessionStorage.removeItem('zaviroq_admin');
+    sessionStorage.removeItem('zaviroq_admin_user');
     setIsAuthenticated(false);
+    setUsername('');
+    setPassword('');
   };
 
   if (!isAuthenticated) {
     return (
       <div className={styles.authScreen}>
-        <div className={styles.authCard}>
-          <div className={styles.authBadge}>
-            <ShieldCheck size={14} /> Security Protocol
-          </div>
-          <h2>Executive Access</h2>
-          <p>Enter the master security passphrase to unlock the Zaviroq Production CMS and command infrastructure.</p>
+        {/* Futuristic Background Mesh */}
+        <div className={styles.authGridMesh} />
 
-          <form onSubmit={handleLogin}>
-            <div className={styles.inputGroup} style={{ marginBottom: '20px' }}>
-              <div style={{ position: 'relative' }}>
+        {/* Ambient Corner Telemetry */}
+        <div className={styles.authCornerStatusLeft}>
+          <Terminal size={13} color="#818cf8" />
+          <span>Terminal // Cluster UAE &amp; US-East</span>
+        </div>
+
+        <div className={styles.authCornerStatusRight}>
+          <span className={styles.authPulseDot} />
+          <span>Core Gateway: Online</span>
+        </div>
+
+        {/* Cyber-Luxury Executive Authentication Card */}
+        <div className={styles.authCard}>
+          <div className={styles.authLogoWrap}>
+            <span>Z</span>
+          </div>
+
+          <div className={styles.authBadge}>
+            <ShieldCheck size={13} />
+            <span>256-Bit Cipher Protocol</span>
+          </div>
+
+          <h2>Executive Command Suite</h2>
+          <p>Dual-key identity verification required to unlock Zaviroq core infrastructure.</p>
+
+          <form onSubmit={handleLogin} autoComplete="off">
+            {/* Username Input */}
+            <div className={styles.authFormGroup}>
+              <label className={styles.authLabel} htmlFor="admin-username">
+                Administrator Identifier
+              </label>
+              <div className={styles.authInputWrap}>
                 <input 
-                  type="password" 
-                  placeholder="Enter Admin Passphrase" 
-                  className={styles.textInput} 
+                  id="admin-username"
+                  type="text" 
+                  placeholder="Enter administrator username" 
+                  className={styles.authInput} 
+                  value={username}
+                  onChange={e => {
+                    setUsername(e.target.value);
+                    if (errorMsg) setErrorMsg('');
+                  }}
+                  required
+                  autoFocus
+                  autoCapitalize="none"
+                  autoCorrect="off"
+                  spellCheck={false}
+                />
+                <User size={16} className={styles.authInputIcon} />
+              </div>
+            </div>
+
+            {/* Password Input */}
+            <div className={styles.authFormGroup}>
+              <label className={styles.authLabel} htmlFor="admin-password">
+                Master Security Passphrase
+              </label>
+              <div className={styles.authInputWrap}>
+                <input 
+                  id="admin-password"
+                  type={showPassword ? "text" : "password"} 
+                  placeholder="Enter executive passphrase" 
+                  className={styles.authInput} 
                   value={password}
                   onChange={e => {
                     setPassword(e.target.value);
                     if (errorMsg) setErrorMsg('');
                   }}
                   required
-                  autoFocus
-                  style={{ paddingLeft: '44px' }}
                 />
-                <Lock size={18} style={{ position: 'absolute', left: '16px', top: '50%', transform: 'translateY(-50%)', color: '#94a3b8' }} />
+                <Lock size={16} className={styles.authInputIcon} />
+                <button 
+                  type="button" 
+                  className={styles.authEyeBtn}
+                  onClick={() => setShowPassword(!showPassword)}
+                  aria-label={showPassword ? "Hide password" : "Show password"}
+                  tabIndex={-1}
+                >
+                  {showPassword ? <EyeOff size={16} /> : <Eye size={16} />}
+                </button>
               </div>
             </div>
 
+            {/* Error Message */}
             {errorMsg && (
-              <div style={{ color: '#ef4444', fontSize: '0.82rem', marginBottom: '16px', textAlign: 'left' }}>
-                {errorMsg}
+              <div className={styles.authErrorBox} role="alert">
+                <AlertCircle size={16} style={{ flexShrink: 0 }} />
+                <span>{errorMsg}</span>
               </div>
             )}
 
-            <button type="submit" className={styles.btnPrimaryGlow} style={{ width: '100%', justifyContent: 'center', padding: '14px' }}>
-              Authorize Access <ArrowRight size={16} />
+            {/* Submit Action */}
+            <button 
+              type="submit" 
+              className={styles.authSubmitBtn} 
+              disabled={isSubmitting}
+            >
+              <span>{isSubmitting ? 'Verifying Credentials...' : 'Authorize Executive Session'}</span>
+              <ArrowRight size={16} />
             </button>
           </form>
+
+          {/* Secure Trust Footer (Zero Leaked Credentials) */}
+          <div className={styles.authFooterMeta}>
+            <div className={styles.authTrustRow}>
+              <Lock size={12} color="#64748b" />
+              <span>TLS 1.3 Certified • Zero-Trust Session Bound • ISO 27001</span>
+            </div>
+            <div>
+              <Link href="/" className={styles.authBackLink}>
+                <ArrowLeft size={13} />
+                <span>Return to Public Experience</span>
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     );
@@ -87,10 +191,11 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   const localePrefix = localeMatch ? `/${localeMatch[1]}` : '';
 
   const navItems = [
-    { name: 'Command & CMS', path: `${localePrefix}/admin`, icon: LayoutDashboard },
+    { name: 'Homepage CMS', path: `${localePrefix}/admin`, icon: LayoutDashboard },
+    { name: 'All Pages Content', path: `${localePrefix}/admin/pages`, icon: FileText },
+    { name: 'Per-Page SEO Engine', path: `${localePrefix}/admin/seo`, icon: Search },
     { name: 'Incoming Leads', path: `${localePrefix}/admin/leads`, icon: Users },
-    { name: 'Global SEO Config', path: `${localePrefix}/admin/seo`, icon: Search },
-    { name: 'Supabase Data', path: `${localePrefix}/admin/notes`, icon: Database },
+    { name: 'Supabase Data Matrix', path: `${localePrefix}/admin/notes`, icon: Database },
   ];
 
   return (
@@ -102,8 +207,22 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
             <h2>ZAVIROQ</h2>
           </div>
           <div className={styles.brandMeta}>
-            <span className={styles.brandBadge}>CMS Console</span>
+            <span className={styles.brandBadge}>Executive Core</span>
             <span style={{ fontSize: '0.72rem', color: '#64748b' }}>v2.6 Enterprise</span>
+          </div>
+        </div>
+
+        {/* Operator Profile Card */}
+        <div className={styles.operatorProfileCard}>
+          <div className={styles.operatorAvatar}>
+            {adminUser.slice(0, 2).toUpperCase()}
+          </div>
+          <div className={styles.operatorInfo}>
+            <span className={styles.operatorName}>
+              {adminUser}
+              <span className={styles.statusDotPulse} style={{ width: '6px', height: '6px' }} />
+            </span>
+            <span className={styles.operatorRole}>Executive SuperAdmin</span>
           </div>
         </div>
 

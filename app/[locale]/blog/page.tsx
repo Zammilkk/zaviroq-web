@@ -54,7 +54,7 @@ return (
           {posts.length > 0 ? (
             posts.map((post, index) => (
               <RevealOnScroll key={post.id} delay={(index % 3) * 100}>
-                <a href={`/${locale}/blog/${post.id}`} className={styles.postCard}>
+                <a href={`/blog/${post.id}`} className={styles.postCard}>
                   <div className={styles.postImg}>
                     <Image 
                       src={post.image} 

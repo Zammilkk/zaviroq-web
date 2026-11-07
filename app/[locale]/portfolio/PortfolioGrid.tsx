@@ -105,7 +105,7 @@ export default function PortfolioGrid({ locale }: { locale: string }) {
                 />
                 
                 <div className={styles.imgOverlay}>
-                  <a href={`/${locale}/contact`} className={styles.viewBtn}>View Blueprint ↗</a>
+                  <a href="/contact" className={styles.viewBtn}>View Blueprint ↗</a>
                 </div>
               </div>
 

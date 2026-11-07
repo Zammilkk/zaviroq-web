@@ -27,9 +27,9 @@ export default async function SEOStrategyPage({
       <div style={{ position: 'fixed', inset: 0, pointerEvents: 'none', zIndex: 0, background: 'radial-gradient(ellipse at 50% 0%, rgba(59,139,212,0.08) 0%, transparent 60%)' }} />
 
       <nav style={{ position: 'relative', zIndex: 10, padding: '120px 48px 0', maxWidth: 1260, display: 'flex', gap: 8, fontSize: '0.82rem' }}>
-        <Link href={`/${locale}`} style={{ color: '#454555', textDecoration: 'none' }}>Home</Link>
+        <Link href="/" style={{ color: '#454555', textDecoration: 'none' }}>Home</Link>
         <span style={{ color: '#2e2e3a' }}>›</span>
-        <Link href={`/${locale}/seo-services`} style={{ color: '#454555', textDecoration: 'none' }}>SEO Services</Link>
+        <Link href="/seo-services" style={{ color: '#454555', textDecoration: 'none' }}>SEO Services</Link>
         <span style={{ color: '#2e2e3a' }}>›</span>
         <span style={{ color: '#888' }}>SEO Strategy</span>
       </nav>
@@ -84,7 +84,7 @@ export default async function SEOStrategyPage({
             <p style={{ fontSize: '1rem', color: '#5a5a72', lineHeight: 1.7, maxWidth: 480, margin: '0 auto 36px' }}>
               Get a custom strategy built for your business. Quarterly planning and strategic oversight for sustainable SEO growth.
             </p>
-            <Link href={`/${locale}/contact`} style={{ display: 'inline-flex', alignItems: 'center', gap: 10, padding: '15px 40px', background: 'linear-gradient(135deg, #3B8BD4 0%, #7F77DD 100%)', borderRadius: 100, fontSize: '0.95rem', fontWeight: 700, color: '#fff', textDecoration: 'none', transition: 'transform 0.3s ease, box-shadow 0.3s ease' }}>
+            <Link href="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 10, padding: '15px 40px', background: 'linear-gradient(135deg, #3B8BD4 0%, #7F77DD 100%)', borderRadius: 100, fontSize: '0.95rem', fontWeight: 700, color: '#fff', textDecoration: 'none', transition: 'transform 0.3s ease, box-shadow 0.3s ease' }}>
               Get SEO Strategy ⚡
             </Link>
           </div>

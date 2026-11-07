@@ -385,7 +385,7 @@
   border: 1px solid rgba(127, 119, 221, 0.25);
   border-radius: 20px;
   padding: 24px 28px;
-  width: min(880px, calc(100vw - 40px));
+  width: min(1080px, calc(100vw - 32px));
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
@@ -402,29 +402,53 @@
 
 .megaMenuGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px 28px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px 24px;
 }
 
 .megaMenuColumn {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 16px;
+}
+
+.megaMenuGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .megaMenuColumn h4 {
-  font-size: 0.72rem;
+  font-size: 0.74rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 1.2px;
+  letter-spacing: 1.1px;
   color: var(--primary-purple);
   margin: 0 0 6px 0;
   padding-bottom: 6px;
   border-bottom: 1px solid rgba(127, 119, 221, 0.2);
 }
 
+.megaMenuColumn h4 a {
+  color: var(--primary-purple) !important;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: color 0.2s ease;
+  opacity: 1 !important;
+  padding: 0 !important;
+  font-size: inherit !important;
+  font-weight: inherit !important;
+}
+
+.megaMenuColumn h4 a:hover {
+  color: #c084fc !important;
+  transform: none !important;
+}
+
 .megaMenuColumn a {
-  font-size: 0.85rem;
+  font-size: 0.84rem;
   color: var(--text-main);
   opacity: 0.78;
   padding: 3px 0;

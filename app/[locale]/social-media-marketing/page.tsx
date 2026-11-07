@@ -34,7 +34,7 @@ export default async function SocialMediaMarketingPage({
       <div className={styles.gridLines} aria-hidden="true" />
 
       <nav className={styles.breadcrumb} aria-label="Breadcrumb">
-        <Link href={`/${locale}`}>Home</Link>
+        <Link href="/">Home</Link>
         <span className={styles.breadSep}>›</span>
         <span className={styles.breadCurrent}>Social Media Marketing</span>
       </nav>
@@ -97,7 +97,7 @@ export default async function SocialMediaMarketingPage({
       <section className={styles.coreGrid}>
         {socialLinks.map((item, i) => (
           <RevealOnScroll key={item.slug} delay={i * 70}>
-            <Link href={`/${locale}/social-media-marketing/${item.slug}`} className={styles.coreCard}>
+            <Link href={`/social-media-marketing/${item.slug}`} className={styles.coreCard}>
               <span className={styles.coreNum}>{String(i + 1).padStart(2, '0')}</span>
               <h3 className={styles.coreTitle}>{item.label}</h3>
             </Link>
@@ -119,7 +119,7 @@ export default async function SocialMediaMarketingPage({
       <section className={styles.industryGrid}>
         {smmServices.map((service, i) => (
           <RevealOnScroll key={service.slug} delay={i * 70}>
-            <Link href={`/${locale}/social-media-marketing/${service.slug}`} className={styles.industryCard}>
+            <Link href={`/social-media-marketing/${service.slug}`} className={styles.industryCard}>
               <span className={styles.indNum}>{String(i + 1).padStart(2, '0')}</span>
               <h3 className={styles.indTitle}>{service.title}</h3>
               <p className={styles.indDesc}>{service.heroDesc}</p>
@@ -136,7 +136,7 @@ export default async function SocialMediaMarketingPage({
             <p>
               Our social media experts are ready to build your brand presence and drive real business results.
             </p>
-            <Link href={`/${locale}/contact`} className={`btn-primary ${styles.ctaBtn}`}>
+            <Link href="/contact" className={`btn-primary ${styles.ctaBtn}`}>
               Start Growing ⚡
             </Link>
           </div>

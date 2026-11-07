@@ -114,9 +114,11 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
     "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": homepageData.seo?.addressLocality || "Mangalore",
-      "addressRegion": homepageData.seo?.addressRegion || "Karnataka",
-      "addressCountry": homepageData.seo?.addressCountry || "IN"
+      "streetAddress": "Jannath Complex, Naringana, Konaje Proper",
+      "addressLocality": "Mangaluru",
+      "addressRegion": "Karnataka",
+      "postalCode": "574199",
+      "addressCountry": "IN"
     },
     "geo": {
       "@type": "GeoCoordinates",
@@ -205,7 +207,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                   </div>
                   <h3>E-Commerce React Portal</h3>
                   <p>A full-scale architecture migration from legacy systems into a headless Next.js environment, optimizing for sub-second checkouts.</p>
-                  <a href={`/${locale}/portfolio`} className="link-arrow">View Case Study ↗</a>
+                  <a href="/portfolio" className="link-arrow">View Case Study ↗</a>
                 </div>
               </div>
             </div>

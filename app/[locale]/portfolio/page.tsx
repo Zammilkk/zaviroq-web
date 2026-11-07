@@ -52,7 +52,7 @@ export default async function PortfolioPage({params}: {params: Promise<{locale: 
         <div className={styles.bottomCta}>
           <h2>Impressed by our metrics?</h2>
           <p>Let&apos;s map out your exact industry vectors and begin building your scalable acquisition machine.</p>
-          <a href={`/${locale}/contact`} className={`btn-primary ${styles.ctaBtn}`}>Start Your Project ⚡</a>
+          <a href="/contact" className={`btn-primary ${styles.ctaBtn}`}>Start Your Project ⚡</a>
         </div>
       </RevealOnScroll>
     </div>

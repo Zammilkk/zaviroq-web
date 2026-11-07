@@ -65,12 +65,12 @@ export default function Footer({ locale = 'en', theme = 'lite' }: { locale?: str
           <div className={styles.linkGroup}>
             <h4 className={styles.linkTitle}>Our Services</h4>
             <ul className={styles.linkList}>
-              <li><Link href="/services/web-development"><span>Website Design</span> <ArrowRight size={14} /></Link></li>
+              <li><Link href="/services/website-development"><span>Website Development</span> <ArrowRight size={14} /></Link></li>
               <li><Link href="/services/seo"><span>SEO Services</span> <ArrowRight size={14} /></Link></li>
-              <li><Link href="/services/branding-design"><span>Branding &amp; Design</span> <ArrowRight size={14} /></Link></li>
-              <li><Link href="/services/ecommerce-systems"><span>E-Commerce Systems</span> <ArrowRight size={14} /></Link></li>
-              <li><Link href="/services/performance-marketing/google-ads"><span>Google Ads</span> <ArrowRight size={14} /></Link></li>
-              <li><Link href="/services/performance-marketing/meta-ads"><span>Meta Ads</span> <ArrowRight size={14} /></Link></li>
+              <li><Link href="/services/paid-advertising"><span>Google &amp; Paid Ads</span> <ArrowRight size={14} /></Link></li>
+              <li><Link href="/services/social-media-marketing"><span>Social Media Marketing</span> <ArrowRight size={14} /></Link></li>
+              <li><Link href="/services/branding"><span>Branding &amp; Design</span> <ArrowRight size={14} /></Link></li>
+              <li><Link href="/services/ecommerce-development"><span>E-Commerce Development</span> <ArrowRight size={14} /></Link></li>
             </ul>
           </div>
 
@@ -116,8 +116,8 @@ export default function Footer({ locale = 'en', theme = 'lite' }: { locale?: str
           <div className={styles.contactItem}>
             <div className={styles.contactIcon}><MapPin size={16} /></div>
             <div className={styles.contactText}>
-              <strong>Global Operations</strong>
-              <span>GCC | India | Remote</span>
+              <strong>Jannath Complex, Naringana</strong>
+              <span>Mangaluru, Konaje Proper, Karnataka 574199</span>
             </div>
           </div>
         </div>

@@ -41,7 +41,7 @@ export default async function BrandingDesignPage({
       <div className={styles.gridLines} aria-hidden="true" />
 
       <nav className={styles.breadcrumb} aria-label="Breadcrumb">
-        <Link href={`/${locale}`}>Home</Link>
+        <Link href="/">Home</Link>
         <span className={styles.breadSep}>›</span>
         <span className={styles.breadCurrent}>Branding Design</span>
       </nav>
@@ -104,7 +104,7 @@ export default async function BrandingDesignPage({
       <section className={styles.coreGrid}>
         {brandingLinks.map((item, i) => (
           <RevealOnScroll key={item.slug} delay={i * 70}>
-            <Link href={`/${locale}/branding-design/${item.slug}`} className={styles.coreCard}>
+            <Link href={`/branding-design/${item.slug}`} className={styles.coreCard}>
               <span className={styles.coreNum}>{String(i + 1).padStart(2, '0')}</span>
               <h3 className={styles.coreTitle}>{item.label}</h3>
             </Link>
@@ -126,7 +126,7 @@ export default async function BrandingDesignPage({
       <section className={styles.industryGrid}>
         {brandingServices.map((service, i) => (
           <RevealOnScroll key={service.slug} delay={i * 70}>
-            <Link href={`/${locale}/branding-design/${service.slug}`} className={styles.industryCard}>
+            <Link href={`/branding-design/${service.slug}`} className={styles.industryCard}>
               <span className={styles.indNum}>{String(i + 1).padStart(2, '0')}</span>
               <h3 className={styles.indTitle}>{service.title}</h3>
               <p className={styles.indDesc}>{service.heroDesc}</p>
@@ -143,7 +143,7 @@ export default async function BrandingDesignPage({
             <p>
               Our branding experts are ready to craft a visual identity that sets you apart from the competition and drives business growth.
             </p>
-            <Link href={`/${locale}/contact`} className={`btn-primary ${styles.ctaBtn}`}>
+            <Link href="/contact" className={`btn-primary ${styles.ctaBtn}`}>
               Start Branding ⚡
             </Link>
           </div>

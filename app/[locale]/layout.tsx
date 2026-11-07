@@ -98,11 +98,10 @@ export async function generateMetadata(): Promise<Metadata> {
     icons: {
       icon: [
         { url: '/favicon.ico', sizes: 'any' },
-        { url: '/zaviroq-fav.png', sizes: '500x500', type: 'image/png' },
       ],
       shortcut: '/favicon.ico',
       apple: [
-        { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+        { url: '/favicon.ico' },
       ],
     },
   };
@@ -144,8 +143,8 @@ export default async function LocaleLayout({
         <CanonicalTag />
         <meta name="google-site-verification" content="KKmhBEL6-TNQ1PaY46UKfkJAtglBKrl_bYsAvo0s9kA" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" href="/zaviroq-fav.png" type="image/png" sizes="500x500" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/favicon.ico" />
         <link rel="manifest" href="/site.webmanifest" />
       </head>
       <body className={`${sora.variable} ${poppins.variable} ${sora.className}`}>
@@ -187,8 +186,10 @@ export default async function LocaleLayout({
                   "email": "info@zaviroq.com",
                   "address": {
                     "@type": "PostalAddress",
-                    "addressLocality": "Mangalore",
+                    "streetAddress": "Jannath Complex, Naringana, Konaje Proper",
+                    "addressLocality": "Mangaluru",
                     "addressRegion": "Karnataka",
+                    "postalCode": "574199",
                     "addressCountry": "IN"
                   },
                   "priceRange": "$$",

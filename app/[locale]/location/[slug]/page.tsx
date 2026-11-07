@@ -146,7 +146,7 @@ export default async function LocationDetailedPage({ params }: Props) {
              <p className={styles.blockText}>
                Our native JSON-LD routing pipelines combined with Next.js SSR configurations allow your business logic to outpace older WordPress arrays instantly.
              </p>
-             <a href={`/${locale}/contact`} className={`btn-primary ${styles.innerCta}`}>Secure Your Market Share ⚡</a>
+             <a href="/contact" className={`btn-primary ${styles.innerCta}`}>Secure Your Market Share ⚡</a>
            </div>
          </RevealOnScroll>
       </div>

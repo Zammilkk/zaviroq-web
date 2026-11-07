@@ -60,8 +60,8 @@ export default async function DynamicGeneratedPage({ params }: { params: Promise
     <ServiceLayout 
       locale={locale} 
       service={serviceData} 
-      parentPath="locations" 
-      parentName="Markets" 
+      parentPath="services" 
+      parentName="Services" 
     />
   );
 }

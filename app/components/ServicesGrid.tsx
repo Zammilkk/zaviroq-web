@@ -4,7 +4,8 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { 
   LayoutGrid, Laptop, Megaphone, Palette, Layers, 
-  Search, Code, PenTool, TrendingUp, ShoppingCart, ArrowRight 
+  Search, Code, PenTool, TrendingUp, ShoppingCart, ArrowRight,
+  Share2, Layout, Video, Mail, Cpu
 } from 'lucide-react';
 import styles from './ServicesGrid.module.css';
 
@@ -32,63 +33,123 @@ interface ServiceCardItem {
 
 const defaultServices: ServiceCardItem[] = [
   {
+    id: 'digital-marketing',
+    key: 'digital-marketing',
+    categoryKey: 'digital-marketing',
+    title: 'Digital Marketing',
+    desc: 'Turn searchers into qualified buyers with ROI-focused funnels.',
+    icon: Megaphone,
+    href: '/services/digital-marketing',
+    graphic: '/assets/images/service-performance-graphic.png',
+  },
+  {
     id: 'seo',
     key: 'seo',
     categoryKey: 'digital-marketing',
-    title: 'SEO',
-    desc: 'Boost visibility, rank higher, and get more customers.',
+    title: 'SEO Services',
+    desc: 'Dominate Google rankings, Local Maps 3-Pack, and organic traffic.',
     icon: Search,
     href: '/services/seo',
     graphic: '/assets/images/service-seo-graphic.png',
   },
   {
-    id: 'web-development',
-    key: 'web-development',
-    categoryKey: 'web-development',
-    title: 'Web Development',
-    desc: 'Custom, scalable, and high-performance websites.',
-    icon: Code,
-    href: '/services/web-development',
-    graphic: '/assets/images/service-web-dev-graphic.png',
-  },
-  {
-    id: 'branding-design',
-    key: 'branding-design',
-    categoryKey: 'creative-media',
-    title: 'Branding & Design',
-    desc: 'Build a strong and memorable brand identity.',
-    icon: PenTool,
-    href: '/services/branding-design',
-    graphic: '/assets/images/service-branding-graphic.png',
-  },
-  {
-    id: 'performance-marketing',
-    key: 'performance-marketing',
+    id: 'paid-advertising',
+    key: 'paid-advertising',
     categoryKey: 'digital-marketing',
-    title: 'Performance Marketing',
-    desc: 'Drive targeted traffic, leads, and real ROI.',
+    title: 'Google & Paid Ads',
+    desc: 'High-intent PPC, Meta Ads, and YouTube acquisition campaigns.',
     icon: TrendingUp,
-    href: '/services/performance-marketing',
+    href: '/services/paid-advertising',
     graphic: '/assets/images/service-performance-graphic.png',
   },
   {
-    id: 'ecommerce-systems',
-    key: 'ecommerce-systems',
-    categoryKey: 'business-solutions',
-    title: 'Ecommerce & Systems',
-    desc: 'Build, manage, and scale your online store effortlessly.',
+    id: 'social-media-marketing',
+    key: 'social-media-marketing',
+    categoryKey: 'digital-marketing',
+    title: 'Social Media Marketing',
+    desc: 'Engaging content, viral reels, and targeted social growth.',
+    icon: Share2,
+    href: '/services/social-media-marketing',
+    graphic: '/assets/images/graphic1.png',
+  },
+  {
+    id: 'website-design',
+    key: 'website-design',
+    categoryKey: 'web-development',
+    title: 'Website Design',
+    desc: 'Bespoke UI/UX, conversion landing pages, and corporate redesigns.',
+    icon: Layout,
+    href: '/services/website-design',
+    graphic: '/assets/images/service-web-dev-graphic.png',
+  },
+  {
+    id: 'website-development',
+    key: 'website-development',
+    categoryKey: 'web-development',
+    title: 'Website Development',
+    desc: 'Next.js, React, and custom fast websites built for scale.',
+    icon: Code,
+    href: '/services/website-development',
+    graphic: '/assets/images/service-web-dev-graphic.png',
+  },
+  {
+    id: 'ecommerce-development',
+    key: 'ecommerce-development',
+    categoryKey: 'web-development',
+    title: 'E-commerce Development',
+    desc: 'High-converting Shopify, WooCommerce, and custom stores.',
     icon: ShoppingCart,
-    href: '/services/ecommerce-systems',
+    href: '/services/ecommerce-development',
     graphic: '/assets/images/service-ecommerce-graphic.png',
   },
   {
-    id: 'business-solutions',
-    key: 'business-solutions',
+    id: 'branding',
+    key: 'branding',
+    categoryKey: 'creative-media',
+    title: 'Branding & Design',
+    desc: 'Build a memorable visual identity, logos, and corporate profiles.',
+    icon: PenTool,
+    href: '/services/branding',
+    graphic: '/assets/images/service-branding-graphic.png',
+  },
+  {
+    id: 'video-production',
+    key: 'video-production',
+    categoryKey: 'creative-media',
+    title: 'Video Production',
+    desc: 'High-impact promotional videos, social reels, and corporate edits.',
+    icon: Video,
+    href: '/services/video-production',
+    graphic: '/assets/images/graphic2.png',
+  },
+  {
+    id: 'email-marketing',
+    key: 'email-marketing',
+    categoryKey: 'digital-marketing',
+    title: 'Email Marketing',
+    desc: 'Automated drip flows, newsletter retention, and B2B cold outreach.',
+    icon: Mail,
+    href: '/services/email-marketing',
+    graphic: '/assets/images/graphic3.png',
+  },
+  {
+    id: 'ai-automation',
+    key: 'ai-automation',
     categoryKey: 'business-solutions',
-    title: 'Business Solutions',
-    desc: 'Smart digital systems to streamline and grow your business.',
+    title: 'AI Automation',
+    desc: 'Intelligent chatbots, blog automations, and operational workflows.',
+    icon: Cpu,
+    href: '/services/ai-automation',
+    graphic: '/assets/images/service-business-graphic.png',
+  },
+  {
+    id: 'business-software',
+    key: 'business-software',
+    categoryKey: 'business-solutions',
+    title: 'Business Software',
+    desc: 'Custom ERPs, hotel management systems, and executive dashboards.',
     icon: Layers,
-    href: '/services/ecommerce-systems',
+    href: '/services/business-software',
     graphic: '/assets/images/service-business-graphic.png',
   },
 ];
@@ -112,10 +173,6 @@ export default function ServicesGrid({
 
   const filteredServices = activeTab === 'all' 
     ? defaultServices 
-    : activeTab === 'web-development'
-    ? defaultServices.filter(s => s.categoryKey === 'web-development' || s.id === 'ecommerce-systems')
-    : activeTab === 'business-solutions'
-    ? defaultServices.filter(s => s.categoryKey === 'business-solutions')
     : defaultServices.filter(s => s.categoryKey === activeTab);
 
   return (
@@ -132,19 +189,42 @@ export default function ServicesGrid({
             Digital Solutions
             <svg 
               className={styles.titleUnderline} 
-              viewBox="0 0 280 22" 
+              viewBox="0 0 280 24" 
               fill="none" 
               xmlns="http://www.w3.org/2000/svg"
               aria-hidden="true"
             >
+              {/* Soft pulsing ambient neon underglow */}
               <path 
+                className={styles.underlineGlow}
                 d="M4 16C62 6 182 2 276 8C202 14 92 18 4 16Z" 
                 fill="url(#brushGrad)" 
               />
+              {/* Main organic hand-drawn brush stroke */}
+              <path 
+                className={styles.underlineBrush}
+                d="M4 16C62 6 182 2 276 8C202 14 92 18 4 16Z" 
+                fill="url(#brushGrad)" 
+              />
+              {/* Traveling neon light shimmer beam along the ridge */}
+              <path 
+                className={styles.underlineHighlight}
+                d="M6 14C65 5 180 3 274 8"
+                stroke="url(#shimmerGrad)"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+              />
               <defs>
-                <linearGradient id="brushGrad" x1="4" y1="10" x2="276" y2="10" gradientUnits="userSpaceOnUse">
-                  <stop stopColor="#7B61FF" />
-                  <stop offset="1" stopColor="#A855F7" />
+                <linearGradient id="brushGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#7B61FF" />
+                  <stop offset="50%" stopColor="#9333EA" />
+                  <stop offset="100%" stopColor="#C084FC" />
+                </linearGradient>
+                <linearGradient id="shimmerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0" />
+                  <stop offset="45%" stopColor="#FFFFFF" stopOpacity="0.95" />
+                  <stop offset="55%" stopColor="#E9D5FF" stopOpacity="0.95" />
+                  <stop offset="100%" stopColor="#A855F7" stopOpacity="0" />
                 </linearGradient>
               </defs>
             </svg>
@@ -181,7 +261,7 @@ export default function ServicesGrid({
       <div className={styles.servicesGrid}>
         {filteredServices.map((service) => {
           const ServiceIcon = service.icon;
-          const destination = `/${locale}${service.href}`;
+          const destination = service.href;
 
           return (
             <Link 

@@ -33,7 +33,7 @@ export default async function ContentMarketingPage({
       <div className={styles.gridLines} aria-hidden="true" />
 
       <nav className={styles.breadcrumb} aria-label="Breadcrumb">
-        <Link href={`/${locale}`}>Home</Link>
+        <Link href="/">Home</Link>
         <span className={styles.breadSep}>›</span>
         <span className={styles.breadCurrent}>Content Marketing</span>
       </nav>
@@ -96,7 +96,7 @@ export default async function ContentMarketingPage({
       <section className={styles.coreGrid}>
         {contentLinks.map((item, i) => (
           <RevealOnScroll key={item.slug} delay={i * 70}>
-            <Link href={`/${locale}/content-marketing/${item.slug}`} className={styles.coreCard}>
+            <Link href={`/content-marketing/${item.slug}`} className={styles.coreCard}>
               <span className={styles.coreNum}>{String(i + 1).padStart(2, '0')}</span>
               <h3 className={styles.coreTitle}>{item.label}</h3>
             </Link>
@@ -118,7 +118,7 @@ export default async function ContentMarketingPage({
       <section className={styles.industryGrid}>
         {contentServices.map((service, i) => (
           <RevealOnScroll key={service.slug} delay={i * 70}>
-            <Link href={`/${locale}/content-marketing/${service.slug}`} className={styles.industryCard}>
+            <Link href={`/content-marketing/${service.slug}`} className={styles.industryCard}>
               <span className={styles.indNum}>{String(i + 1).padStart(2, '0')}</span>
               <h3 className={styles.indTitle}>{service.title}</h3>
               <p className={styles.indDesc}>{service.heroDesc}</p>
@@ -135,7 +135,7 @@ export default async function ContentMarketingPage({
             <p>
               Our content experts are ready to create compelling content that establishes your brand as an authority and drives real results.
             </p>
-            <Link href={`/${locale}/contact`} className={`btn-primary ${styles.ctaBtn}`}>
+            <Link href="/contact" className={`btn-primary ${styles.ctaBtn}`}>
               Start Creating ⚡
             </Link>
           </div>

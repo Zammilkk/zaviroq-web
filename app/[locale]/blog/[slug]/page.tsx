@@ -66,7 +66,7 @@ export default async function BlogPostPage({ params }: Props) {
         <div className={styles.notFound}>
           <h1>Post Not Found</h1>
           <p>The requested article could not be found.</p>
-          <Link href={`/${locale}/blog`} className={styles.backLink}>← Back to Journal</Link>
+          <Link href="/blog" className={styles.backLink}>← Back to Journal</Link>
         </div>
       </div>
     );
@@ -75,7 +75,7 @@ export default async function BlogPostPage({ params }: Props) {
   return (
     <div className={styles.container}>
       <div className={styles.articleWrapper}>
-        <Link href={`/${locale}/blog`} className={styles.backLink}>← Back to Journal</Link>
+        <Link href="/blog" className={styles.backLink}>← Back to Journal</Link>
         
         <div className={styles.heroImage}>
           <Image 

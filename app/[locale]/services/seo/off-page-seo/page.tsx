@@ -1,37 +1,20 @@
-import expandedServices from '@/data/expandedServices.json';
-import ServiceLayout from '@/app/components/ServiceLayout';
-import { Metadata } from 'next';
+import SubServicePage, { generateMetadata as baseGenerateMetadata } from '../../[category]/[subservice]/page';
+import type { Metadata } from 'next';
 
-export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
-  const service = expandedServices['core-seo'].find((s) => s.slug === 'off-page-seo');
-  
-  if (!service) return {};
-  
-  return {
-    title: service.metaTitle,
-    description: service.metaDesc,
-    keywords: service.keywords,
-  };
+type Props = {
+  params: Promise<{ locale: string }>;
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  return baseGenerateMetadata({
+    params: Promise.resolve({ locale, category: 'seo', subservice: 'off-page-seo' }),
+  });
 }
 
-export default async function ServicesSeoOffPageSeoPage({ params }: { params: Promise<{ locale: string }> }) {
+export default async function OffPageSeoPage({ params }: Props) {
   const { locale } = await params;
-  const service = expandedServices['core-seo'].find((s) => s.slug === 'off-page-seo');
-
-  if (!service) {
-    return (
-      <div style={{ padding: '120px 20px', minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-        <h1 style={{ fontSize: '3rem', marginBottom: '20px', textAlign: 'center' }}>Service Not Found</h1>
-      </div>
-    );
-  }
-
-  return (
-    <ServiceLayout 
-      locale={locale} 
-      service={service} 
-      parentPath="services/seo" 
-      parentName="SEO Services" 
-    />
-  );
+  return SubServicePage({
+    params: Promise.resolve({ locale, category: 'seo', subservice: 'off-page-seo' }),
+  });
 }

@@ -5,11 +5,148 @@
   "canonicalUrl": "https://www.zaviroq.com/",
   "ogTitle": "Zaviroq - Digital Marketing Agency in Mangalore",
   "ogDescription": "High-performing digital marketing, website development, SEO, and paid media engineered for GCC and Indian brands.",
-  "ogImage": "/og-image.png",
+  "ogImage": "https://www.zaviroq.com/og-image.png",
   "businessName": "Zaviroq - Digital Marketing Agency in Mangalore",
   "phone": "+917483830582",
   "email": "info@zaviroq.com",
-  "addressLocality": "Mangalore",
+  "streetAddress": "Jannath Complex, Naringana, Konaje Proper",
+  "addressLocality": "Mangaluru",
   "addressRegion": "Karnataka",
-  "addressCountry": "IN"
+  "postalCode": "574199",
+  "addressCountry": "IN",
+  "fullAddress": "Jannath Complex, Naringana, Mangaluru, Konaje Proper, Karnataka 574199",
+  "pages": {
+    "/": {
+      "title": "Digital Marketing Agency in Mangalore | Zaviroq",
+      "description": "Zaviroq helps businesses grow with SEO, Google Ads, social media marketing, and web development in Mangalore, India, the UAE, and Saudi Arabia.",
+      "keywords": "digital marketing agency mangalore, seo company mangalore, web design mangalore, google ads mangalore",
+      "canonicalUrl": "https://www.zaviroq.com/",
+      "ogTitle": "Zaviroq - Digital Marketing Agency in Mangalore",
+      "ogDescription": "High-performing digital marketing, website development, SEO, and paid media engineered for GCC and Indian brands.",
+      "ogImage": "https://www.zaviroq.com/og-image.png",
+      "robots": "index, follow",
+      "schemaType": "Organization"
+    },
+    "/industries": {
+      "title": "Digital Growth Solutions for Diverse Industries | Zaviroq",
+      "description": "Industry-focused digital marketing, SEO, web development, and performance technology designed for real business outcomes across Real Estate, Healthcare, E-Commerce, Hospitality, and Corporate B2B.",
+      "keywords": "real estate digital marketing, healthcare seo, ecommerce marketing agency, hospitality digital agency, b2b lead generation",
+      "canonicalUrl": "https://www.zaviroq.com/industries",
+      "ogTitle": "Digital Growth Solutions for Diverse Industries | Zaviroq",
+      "ogDescription": "Industry-focused digital marketing, SEO, and web development strategies tailored for real business growth.",
+      "ogImage": "https://www.zaviroq.com/og-image.png",
+      "robots": "index, follow",
+      "schemaType": "Service"
+    },
+    "/services": {
+      "title": "Digital Marketing & Engineering Services | Zaviroq",
+      "description": "Full-funnel digital marketing, technical SEO, high-ROAS performance ads, and bespoke Next.js web engineering engineered for ambitious brands.",
+      "keywords": "digital marketing services, technical seo services, performance marketing agency, nextjs web development",
+      "canonicalUrl": "https://www.zaviroq.com/services",
+      "ogTitle": "Digital Marketing & Engineering Services | Zaviroq",
+      "ogDescription": "Full-funnel digital marketing, technical SEO, and web development.",
+      "ogImage": "https://www.zaviroq.com/og-image.png",
+      "robots": "index, follow",
+      "schemaType": "Service"
+    },
+    "/services/digital-marketing/content-marketing": {
+      "title": "Production-Grade Content Marketing & Thought Leadership | Zaviroq",
+      "description": "Turn organic search and thought leadership into qualified sales pipeline. End-to-end research, high-authority pillar articles, and multi-channel distribution.",
+      "keywords": "content marketing agency, b2b content strategy, organic content pipeline, thought leadership marketing, seo blog writing",
+      "canonicalUrl": "https://www.zaviroq.com/services/digital-marketing/content-marketing",
+      "ogTitle": "Production Content Marketing & Distribution | Zaviroq",
+      "ogDescription": "High-converting B2B content marketing and organic thought leadership systems.",
+      "ogImage": "https://www.zaviroq.com/og-image.png",
+      "robots": "index, follow",
+      "schemaType": "Service"
+    },
+    "/services/seo": {
+      "title": "Algorithmic SEO & Search Engine Dominance | Zaviroq",
+      "description": "Reverse-engineer Google search rankings with semantic HTML, technical site speed tuning, high-authority backlink outreach, and local map pack dominance.",
+      "keywords": "seo agency dubai, technical seo audit, google search ranking, local seo mangalore, semantic seo architecture",
+      "canonicalUrl": "https://www.zaviroq.com/services/seo",
+      "ogTitle": "Algorithmic SEO Mastery | Zaviroq",
+      "ogDescription": "Reverse-engineer Google algorithms and capture high-intent buyer queries.",
+      "ogImage": "https://www.zaviroq.com/og-image.png",
+      "robots": "index, follow",
+      "schemaType": "Service"
+    },
+    "/services/performance-marketing": {
+      "title": "Aggressive Performance Marketing & High-ROAS Google Ads | Zaviroq",
+      "description": "Stop paying for impressions. Start paying for pipeline. Custom Google Ads, Meta Ads, and server-side tracking designed for maximum return on ad spend.",
+      "keywords": "performance marketing agency, google ads agency uae, meta ads expert, b2b lead generation ads, roas campaign scaling",
+      "canonicalUrl": "https://www.zaviroq.com/services/performance-marketing",
+      "ogTitle": "High-ROAS Performance Marketing | Zaviroq",
+      "ogDescription": "Capture high-intent buyers with aggressive performance advertising.",
+      "ogImage": "https://www.zaviroq.com/og-image.png",
+      "robots": "index, follow",
+      "schemaType": "Service"
+    },
+    "/services/web-development": {
+      "title": "Next.js Web Development & Cloud Architecture | Zaviroq",
+      "description": "Bespoke Next.js App Router websites, sub-second hydration, 100 Google PageSpeed scores, and modern cyber-luxury user interfaces.",
+      "keywords": "nextjs web development, custom react agency dubai, headless cms development, enterprise web engineering",
+      "canonicalUrl": "https://www.zaviroq.com/services/web-development",
+      "ogTitle": "Next-Gen Next.js Web Development | Zaviroq",
+      "ogDescription": "Bespoke Server-Side Rendered websites with sub-second performance.",
+      "ogImage": "https://www.zaviroq.com/og-image.png",
+      "robots": "index, follow",
+      "schemaType": "Service"
+    },
+    "/portfolio": {
+      "title": "Client Portfolio & Audited Case Studies | Zaviroq",
+      "description": "Explore proven transformations, revenue spikes, and audited case studies for real estate, healthcare, SaaS, and e-commerce leaders.",
+      "keywords": "digital marketing case studies, seo results, web design portfolio, digital growth results",
+      "canonicalUrl": "https://www.zaviroq.com/portfolio",
+      "ogTitle": "Client Portfolio & Case Studies | Zaviroq",
+      "ogDescription": "Audited proof of pipeline growth, conversion spikes, and rank dominance.",
+      "ogImage": "https://www.zaviroq.com/og-image.png",
+      "robots": "index, follow",
+      "schemaType": "WebPage"
+    },
+    "/locations/dubai": {
+      "title": "Elite Digital Marketing & Web Design Agency in Dubai, UAE | Zaviroq",
+      "description": "Next-generation digital marketing, performance advertising, and bespoke web design engineered specifically for elite UAE and Dubai brands.",
+      "keywords": "digital marketing agency dubai, web design agency uae, seo services dubai, performance marketing gcc",
+      "canonicalUrl": "https://www.zaviroq.com/locations/dubai",
+      "ogTitle": "Digital Marketing & Web Design Agency in Dubai | Zaviroq",
+      "ogDescription": "Elite digital marketing and web design for UAE enterprises.",
+      "ogImage": "https://www.zaviroq.com/og-image.png",
+      "robots": "index, follow",
+      "schemaType": "LocalBusiness"
+    },
+    "/locations/riyadh": {
+      "title": "Search Engine Dominance & Digital Marketing Saudi Arabia | Zaviroq",
+      "description": "Drive targeted GCC traffic to your business in Riyadh, Jeddah, and Dammam with localized Arabic SEO and high-ROAS marketing pipelines.",
+      "keywords": "seo agency saudi arabia, digital marketing riyadh, google ads ksa, local seo jeddah",
+      "canonicalUrl": "https://www.zaviroq.com/locations/riyadh",
+      "ogTitle": "Digital Marketing & SEO Saudi Arabia | Zaviroq",
+      "ogDescription": "Scale your business across Riyadh and the Kingdom with targeted digital solutions.",
+      "ogImage": "https://www.zaviroq.com/og-image.png",
+      "robots": "index, follow",
+      "schemaType": "LocalBusiness"
+    },
+    "/locations/mangalore": {
+      "title": "Leading Digital Marketing Agency in Mangalore, India | Zaviroq",
+      "description": "Premier digital marketing, SEO services, web design, and Meta ads in Mangalore. Scale your business locally and across India.",
+      "keywords": "digital marketing agency mangalore, seo company mangalore, web design mangalore, social media marketing mangalore",
+      "canonicalUrl": "https://www.zaviroq.com/locations/mangalore",
+      "ogTitle": "Premier Digital Marketing Agency in Mangalore | Zaviroq",
+      "ogDescription": "Scale your brand with algorithmic SEO, web design, and Google Ads in Mangalore.",
+      "ogImage": "https://www.zaviroq.com/og-image.png",
+      "robots": "index, follow",
+      "schemaType": "LocalBusiness"
+    },
+    "/blog": {
+      "title": "Engineering & Growth Intelligence Blog | Zaviroq",
+      "description": "Actionable blueprints, algorithmic search updates, performance marketing case studies, and engineering strategies from the Zaviroq team.",
+      "keywords": "digital marketing blog, seo strategies 2026, web engineering insights, performance marketing guides",
+      "canonicalUrl": "https://www.zaviroq.com/blog",
+      "ogTitle": "Growth Intelligence & Engineering Blog | Zaviroq",
+      "ogDescription": "Actionable blueprints and insights on digital marketing and SEO.",
+      "ogImage": "https://www.zaviroq.com/og-image.png",
+      "robots": "index, follow",
+      "schemaType": "WebPage"
+    }
+  }
 }

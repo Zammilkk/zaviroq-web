@@ -30,7 +30,7 @@ const LOCATIONS = [
   "Mangalore",
   "Udupi & Manipal",
   "Coastal Karnataka",
-  "Pan-India",
+  "Bangalore & Pan-India",
   "Dubai & UAE",
   "Saudi Arabia & GCC"
 ];
@@ -47,17 +47,17 @@ export function SeoLocationTypewriter() {
       if (displayText.length < currentLoc.length) {
         const timer = setTimeout(() => {
           setDisplayText(currentLoc.slice(0, displayText.length + 1));
-        }, 90);
+        }, 85);
         return () => clearTimeout(timer);
       } else {
-        const pause = setTimeout(() => setIsTyping(false), 2200);
+        const pause = setTimeout(() => setIsTyping(false), 2400);
         return () => clearTimeout(pause);
       }
     } else {
       if (displayText.length > 0) {
         const timer = setTimeout(() => {
           setDisplayText(displayText.slice(0, -1));
-        }, 45);
+        }, 40);
         return () => clearTimeout(timer);
       } else {
         setCurrentIndex((prev) => (prev + 1) % LOCATIONS.length);
@@ -75,7 +75,7 @@ export function SeoLocationTypewriter() {
 }
 
 // ==========================================
-// 2. Interactive 6-Pillar Tab Showcase
+// 2. 6 Core SEO Pillars (Humanized & Grounded)
 // ==========================================
 interface Pillar {
   id: string;
@@ -92,112 +92,112 @@ interface Pillar {
 
 const PILLARS: Pillar[] = [
   {
-    id: "local-seo",
+    id: "local-seo-mangalore",
     title: "Local SEO & Google Maps 3-Pack",
-    badge: "Mangalore & Regional Leader",
+    badge: "Mangalore & Coastal Hubs",
     icon: MapPin,
-    metricValue: "3.8x",
-    metricLabel: "More Direct Inbound Phone Calls & Store Footfall",
-    tagline: "Be the first business customers discover when searching in Mangalore & Karnataka.",
-    description: "Dominating local search requires far more than claiming a Google Business Profile. We implement deep local geo-grid optimization, citation harmonization, localized landing pages for Mangalore hubs (Hampankatta, Kadri, Deralakatte, Surathkal, Kankanady), and an automated review acquisition flywheel that secures your permanent spot in Google's coveted Maps 3-Pack.",
+    metricValue: "Top 3",
+    metricLabel: "Google Maps Pack Visibility Across Mangalore Pin Codes",
+    tagline: "Capture customers searching for your services across Mangalore, Udupi, and Coastal Karnataka.",
+    description: "When someone in Mangalore searches for a doctor, real estate developer, lawyer, or showroom, Google displays the Maps 3-Pack before any standard website links. We optimize your Google Business Profile, audit your Name, Address, and Phone (NAP) citations across 60+ local directories, eliminate duplicate listings, and build localized landing pages targeting key commercial areas like Hampankatta, Kadri, Kottara Chowki, Kankanady, Bejai, Deralakatte, and Surathkal. The result is consistent inbound phone calls, store directions, and direct customer walk-ins.",
     deliverables: [
-      "Google Business Profile (GBP) deep audit, verification & multi-attribute optimization",
-      "Local NAP (Name, Address, Phone) consistency across 60+ premier directories",
-      "Localized geo-target landing pages tailored to Mangalore, Udupi & Coastal hubs",
-      "Reputation flywheel: Automated customer review gathering & 5-star sentiment strategy",
-      "Hyper-local geo-grid ranking tracking across individual postal pin codes"
+      "Complete Google Business Profile (GBP) audit, primary & secondary category selection, and geo-grid rank verification",
+      "NAP consistency cleanup across Indiamart, Justdial, Sulekha, Yellow Pages, and 50+ local citations to fix split ranking signals",
+      "Hyper-local landing page architecture targeting Mangalore, Udupi, Manipal, Surathkal, and Deralakatte",
+      "Automated client review collection system with direct review shortlinks and Google guideline compliance",
+      "Local geo-grid ranking reports showing your exact Google Maps rank across individual postal areas (575001 to 575030)"
     ],
-    bestFor: "Clinics, Hospitals, Real Estate, Retail Showrooms, Legal & Local Service Providers"
+    bestFor: "Hospitals, Clinics, Real Estate Builders, Retail Showrooms, Legal & Regional Service Providers"
   },
   {
-    id: "technical-seo",
+    id: "technical-seo-speed",
     title: "Technical SEO & Core Web Vitals",
-    badge: "Sub-Second Performance",
+    badge: "Sub-Second Infrastructure",
     icon: Cpu,
     metricValue: "100/100",
-    metricLabel: "Target Google PageSpeed & Core Web Vitals Pass Rate",
-    tagline: "Engineering search architectures that search engine crawlers crawl, render, and reward.",
-    description: "Google refuses to rank slow, clunky websites. Our technical engineers eliminate render-blocking scripts, optimize First Contentful Paint (FCP) and Cumulative Layout Shift (CLS), construct comprehensive Schema.org JSON-LD microdata, and fix crawl budget bottlenecks so your pages get indexed and updated instantly.",
+    metricLabel: "Target Google PageSpeed & Core Web Vitals Score",
+    tagline: "Eliminate code bloat, fix crawl errors, and ensure Googlebot renders your pages in milliseconds.",
+    description: "Search engines cannot rank what they cannot efficiently crawl and understand. Traditional WordPress websites in Mangalore frequently suffer from slow hosting, render-blocking plugins, broken redirect chains, and failing Core Web Vitals. Our engineering team audits your site with Screaming Frog and Google Search Console to fix 404 errors, eliminate duplicate content via canonical tags, resolve Cumulative Layout Shift (CLS), accelerate Largest Contentful Paint (LCP), and deploy rich Schema.org JSON-LD microdata so Google understands your business entities immediately.",
     deliverables: [
-      "Core Web Vitals remediation: INP, LCP, and CLS optimized to sub-second thresholds",
-      "Advanced Schema.org JSON-LD implementation (Organization, LocalBusiness, FAQ, Service)",
-      "Crawl budget optimization, XML sitemaps, robots.txt, and clean URL canonicalization",
-      "Next.js SSR & static prerendering architecture for lightning-fast Googlebot indexing",
-      "Comprehensive site hygiene: 404 elimination, 301 redirect chains & orphan page fixes"
+      "Core Web Vitals remediation: Achieving sub-second LCP, sub-200ms INP, and zero layout shift (CLS)",
+      "Advanced Schema.org JSON-LD microdata: LocalBusiness, MedicalOrganization, RealEstateAgent, FAQPage, and BreadcrumbList",
+      "Crawl budget optimization: Dynamic XML sitemaps, robots.txt directives, canonical tag audits, and 301 redirect chain cleanups",
+      "Mobile-first indexing audit: Server-side rendering (SSR) acceleration, touch target sizing, and viewport performance",
+      "Search Console hygiene: Fixing indexation exclusions, soft 404s, page redirect anomalies, and schema validation errors"
     ],
-    bestFor: "Modern Web Apps, SaaS Platforms, High-Traffic Portals & Complex Websites"
+    bestFor: "Businesses with slow websites, complex catalogs, custom web apps, or recent traffic drops"
   },
   {
-    id: "on-page-seo",
-    title: "On-Page SEO & Semantic Intent",
-    badge: "AI & NLP Ready",
+    id: "on-page-semantic-seo",
+    title: "On-Page SEO & Intent Clustering",
+    badge: "AI Overview & Semantic Ready",
     icon: FileText,
-    metricValue: "+84%",
-    metricLabel: "Average Surge in Search Intent Relevance & Dwell Time",
-    tagline: "Aligning your content with the exact language and intent of your highest-value buyers.",
-    description: "Modern search engines do not look for repeated keywords; they understand semantic entities, user intent, and topical depth. We rebuild your on-page architecture with Natural Language Processing (NLP) models, compelling commercial headlines, internal link silos, and conversion-engineered layouts that turn searchers into paying clients.",
+    metricValue: "Top 1%",
+    metricLabel: "Topical Depth & Natural Language Processing Relevance",
+    tagline: "Structure content that answers search intent so thoroughly that Google and AI Overviews cite you first.",
+    description: "Google's ranking systems have moved beyond basic keyword matching. Modern search algorithms evaluate topical authority, search intent (informational, commercial, or transactional), and entity relationships. We build topical content clusters around your core offerings, rewrite your title tags and meta descriptions to maximize click-through rates (CTR), optimize heading structures (H1 to H4), and interlink supporting articles to pass PageRank directly to your highest-value money pages.",
     deliverables: [
-      "Commercial & Transactional search intent mapping for maximum conversion value",
-      "Semantic topic cluster architecture establishing topical authority across your niche",
-      "CTR-engineered Title Tags, Meta Descriptions, and H1-H4 semantic header structures",
-      "Strategic internal linking silos that channel link equity to highest-converting pages",
-      "Full image SEO: Next-gen AVIF/WebP formats, responsive sizing, and descriptive ALT tagging"
+      "Commercial intent keyword mapping: Separating informational research queries from high-intent purchase searches",
+      "Topical cluster architecture: Creating comprehensive pillar pages and interlinked supporting topic hubs",
+      "CTR-engineered Title Tags and Meta Descriptions tested against real Google search behavior in Karnataka",
+      "Semantic header hierarchy (H1-H4) structured to capture Google Featured Snippets and AI Overviews",
+      "Image SEO: Next-generation WebP/AVIF compression, descriptive alt text, and contextual file naming"
     ],
-    bestFor: "B2B Companies, Professional Services, Agencies & Enterprise Brands"
+    bestFor: "B2B companies, industrial manufacturers, professional consultants, and service firms"
   },
   {
-    id: "authority-pr",
+    id: "authority-digital-pr",
     title: "Authority Link Building & Digital PR",
     badge: "100% White-Hat Only",
     icon: Globe,
-    metricValue: "+140%",
-    metricLabel: "Domain Authority & Organic Referral Footprint Growth",
-    tagline: "Earning editorial placements and digital PR mentions that make your brand an undisputed authority.",
-    description: "Cheap spam links can permanently destroy your search rankings. Zaviroq executes authentic, editorial digital PR campaigns. We secure contextual links on reputable news outlets, industry journals, and regional business publications that boost your domain rating and protect your rankings from algorithmic penalties.",
+    metricValue: "0 Penalties",
+    metricLabel: "Guaranteed Zero Private Blog Networks (PBNs) or Spam Links",
+    tagline: "Build genuine industry authority with verified editorial placements on real websites.",
+    description: "Low-quality link building destroys businesses. Buying bulk links on Fiverr or spam directory blast networks will eventually trigger a manual action or algorithmic penalty from Google. Zaviroq operates an authentic digital PR and editorial outreach process. We identify high-authority industry journals, regional Karnataka news publications, and reputable trade portals to earn contextual backlinks that build defensible domain rating (DR) and drive qualified referral visits.",
     deliverables: [
-      "Strict zero-spam, zero-PBN policy: Only genuine, high-authority editorial links",
-      "Digital PR outreach pitch campaigns targeting national and industry-specific publishers",
-      "Competitive backlink gap audits to cannibalize high-value competitor placements",
-      "Unlinked brand mention reclamation and authoritative partner citation building",
-      "Full transparent backlink reporting ledger with live URLs, DR/DA, and anchor text"
+      "Strict white-hat policy: Zero private blog networks (PBNs), zero link farms, and zero comment spam",
+      "Contextual editorial placements on legitimate, high-DR news and industry-specific websites",
+      "Competitor backlink gap analysis: Reverse-engineering competitor links to secure higher-authority placements",
+      "Unlinked brand mention reclamation and local business chamber association link building",
+      "Itemized monthly backlink ledger: Every single acquired URL is shared with live anchor text and domain metrics"
     ],
-    bestFor: "Businesses seeking sustainable, defensible Page 1 rankings against entrenched rivals"
+    bestFor: "Established brands competing against entrenched regional competitors in high-stakes industries"
   },
   {
-    id: "ecommerce-seo",
-    title: "Ecommerce SEO & Revenue Velocity",
-    badge: "Commercial Transaction Focus",
+    id: "ecommerce-catalog-seo",
+    title: "E-Commerce SEO & Revenue Velocity",
+    badge: "High-Intent Sales Focus",
     icon: TrendingUp,
-    metricValue: "5.4x",
-    metricLabel: "Organic Revenue & Add-to-Cart Conversion Multiplier",
-    tagline: "Turn your product catalog into a 24/7 customer acquisition machine.",
-    description: "For online stores, ranking collections and high-margin product pages is the difference between surviving and dominating. We optimize faceted navigation, implement live stock & price schema, fix thin-content duplicate issues on Shopify/WooCommerce, and capture high-intent transactional queries.",
+    metricValue: "+260%",
+    metricLabel: "Average Increase in Organic Product Category Transactions",
+    tagline: "Turn your online store catalog into a predictable, non-paid customer acquisition channel.",
+    description: "Ranking an e-commerce website requires a specialized approach. Online stores frequently suffer from duplicate content caused by faceted navigation, thin product descriptions, and unoptimized category hierarchies. We configure canonical tags across product filters, add Product and Offer schema with live stock and pricing indicators, optimize category titles for commercial intent, and integrate your store with Google Merchant Center to capture free organic product listings.",
     deliverables: [
-      "Faceted navigation & filter taxonomy optimization without index bloat",
-      "Product rich snippet schema with real-time in-stock, pricing, and review ratings",
-      "Google Merchant Center organic product feed synchronization & enhancement",
-      "High-intent transactional keyword targeting for collections and seasonal sales",
-      "Conversion Rate Optimization (CRO) audits on product pages to reduce cart abandonment"
+      "Faceted navigation and URL filter optimization without creating index bloat or duplicate content penalties",
+      "Product structured data schema with live pricing, stock availability, and verified customer review aggregates",
+      "High-intent transactional keyword optimization across product collection headers and descriptions",
+      "Google Merchant Center organic product feed synchronization and rich snippet enhancement",
+      "Category page architecture designed to convert searchers into completed checkout transactions"
     ],
-    bestFor: "D2C Brands, Shopify Stores, WooCommerce Sellers, and Multi-Category Marketplaces"
+    bestFor: "D2C brands, Shopify & WooCommerce store owners, regional retailers, and niche marketplaces"
   },
   {
-    id: "enterprise-seo",
+    id: "enterprise-international-seo",
     title: "Enterprise & Global Multi-Region SEO",
-    badge: "Global Scalability",
+    badge: "Gulf & International Expansion",
     icon: Layers,
-    metricValue: "Global",
-    metricLabel: "Multi-Market Domination (India, UAE, Saudi Arabia & Worldwide)",
-    tagline: "Scale across regional languages, international currencies, and thousands of pages seamlessly.",
-    description: "Whether you're expanding your Mangalore business into the Middle East (Dubai, Abu Dhabi, Riyadh) or managing a 50,000-page web portal, our enterprise SEO strategies deploy flawless hreflang attributes, multi-region CDN routing, and automated health monitoring to capture international market share.",
+    metricValue: "Multi-Market",
+    metricLabel: "Targeted Search Domination Across India, UAE & Saudi Arabia",
+    tagline: "Help your Mangalore business win high-value corporate clients across Dubai, Riyadh, and Western markets.",
+    description: "Mangalore has deep commercial ties with the Middle East. Many local firms in healthcare, education, construction, and IT seek clients in the UAE (Dubai, Abu Dhabi), Saudi Arabia (Riyadh, Jeddah), and Qatar. We implement multi-region international SEO with precise hreflang tags, subfolder or ccTLD localization, and regional content targeting to ensure your business ranks in Gulf searches without cross-cannibalizing your Indian rankings.",
     deliverables: [
-      "Multi-country hreflang architecture for India, UAE, Saudi Arabia, Qatar, and USA",
-      "Scalable taxonomy and programmatic SEO templates for large product catalogs",
-      "Multi-language SEO optimization (English, Arabic, Kannada, Hindi)",
-      "Automated algorithmic change monitoring and weekly regression testing",
-      "Dedicated Enterprise Account Director & C-Suite strategic executive reporting"
+      "Correct hreflang implementation for regional targeting across India, UAE, Saudi Arabia, Qatar, and USA",
+      "Multi-market taxonomy structure preventing keyword cannibalization between Indian and Gulf landing pages",
+      "Bilingual search optimization support (English and Arabic search intent alignment)",
+      "Enterprise technical monitoring to detect and fix indexation anomalies across thousands of URLs",
+      "Executive bi-weekly reporting focused on international lead volume, pipeline value, and return on investment"
     ],
-    bestFor: "Export-Import Firms, Healthcare Tourism, Multi-Location Franchises & Tech Companies"
+    bestFor: "Medical tourism hospitals, educational institutions, export manufacturers, and IT firms"
   }
 ];
 
@@ -234,7 +234,7 @@ export function SeoPillarsTabs({ locale }: { locale: string }) {
           <div className={styles.pillarHeaderLeft}>
             <div className={styles.pillarBadgeRow}>
               <span className={styles.pillarBadge}>{currentPillar.badge}</span>
-              <span className={styles.pillarSubtag}>Target: {currentPillar.bestFor.split(',')[0]}</span>
+              <span className={styles.pillarSubtag}>Focus: {currentPillar.bestFor.split(',')[0]}</span>
             </div>
             <h3 className={styles.pillarTitle}>
               <IconComponent size={28} className={styles.pillarTitleIcon} />
@@ -256,7 +256,7 @@ export function SeoPillarsTabs({ locale }: { locale: string }) {
 
           <div className={styles.pillarDeliverablesSection}>
             <h4 className={styles.deliverablesHeading}>
-              <Sparkles size={16} /> Key Strategic Deliverables Included:
+              <Sparkles size={16} /> Verified Deliverables Included:
             </h4>
             <div className={styles.deliverablesGrid}>
               {currentPillar.deliverables.map((item, dIdx) => (
@@ -270,13 +270,13 @@ export function SeoPillarsTabs({ locale }: { locale: string }) {
 
           <div className={styles.pillarCardFooter}>
             <div className={styles.bestForNote}>
-              <strong>Ideal For:</strong> {currentPillar.bestFor}
+              <strong>Recommended For:</strong> {currentPillar.bestFor}
             </div>
             <Link 
-              href={`/${locale}/contact?service=${currentPillar.id}`}
+              href={`/contact?service=${currentPillar.id}`}
               className={styles.pillarActionBtn}
             >
-              Deploy This Pillar <ArrowRight size={16} />
+              Discuss This Service <ArrowRight size={16} />
             </Link>
           </div>
         </div>
@@ -286,38 +286,38 @@ export function SeoPillarsTabs({ locale }: { locale: string }) {
 }
 
 // ==========================================
-// 3. SEO Diagnostic Matrix (Comparison)
+// 3. SEO Diagnostic Matrix (Realistic Comparison)
 // ==========================================
 const COMPARISONS = [
   {
     feature: "Keyword Strategy",
-    traditional: "Random keyword stuffing & vanity rankings for low-intent zero-search terms.",
-    zaviroq: "Deep search intent clustering (Commercial & Transactional) mapped to revenue outcomes."
+    traditional: "Stuffs exact-match keywords into low-quality pages. Chases vanity terms with zero buyer intent.",
+    zaviroq: "Maps high-intent commercial and transactional queries in Mangalore directly to specific service pages."
+  },
+  {
+    feature: "Local Google Maps",
+    traditional: "Sets up a basic Google profile and abandons it. Ignores citation errors and postal geo-grids.",
+    zaviroq: "Optimizes categories, standardizes NAP across 60+ directories, and tracks rankings across all Mangalore pin codes."
   },
   {
     feature: "Technical Performance",
-    traditional: "Basic WordPress plugins, slow hosting, ignored Core Web Vitals and heavy bloated code.",
-    zaviroq: "Sub-second Next.js server-side rendering, 100/100 Core Web Vitals, and zero CLS layout shifts."
-  },
-  {
-    feature: "Local Search & Maps",
-    traditional: "Simple Google map verification with no geo-grid tracking or citation consistency.",
-    zaviroq: "Hyper-local geo-grid optimization across Mangalore & Udupi pin codes with review acquisition."
+    traditional: "Relies on generic WordPress plugins that add bloat, slow down mobile pages, and fail Core Web Vitals.",
+    zaviroq: "Engineers clean code, achieves sub-second load times, fixes crawl issues, and configures Schema.org microdata."
   },
   {
     feature: "Backlink Acquisition",
-    traditional: "Spam directory submissions, comment links, and dangerous PBNs risking Google penalties.",
-    zaviroq: "100% white-hat editorial digital PR, regional industry mentions, and verified authoritative links."
+    traditional: "Purchases cheap automated links from spam networks and PBNs, exposing your site to Google penalties.",
+    zaviroq: "Secures genuine editorial placements, trade citations, and regional news coverage with complete URL transparency."
   },
   {
     feature: "Reporting & Transparency",
-    traditional: "Confusing monthly PDF charts sent weeks late with zero actionable business insights.",
-    zaviroq: "Real-time 24/7 analytics dashboard, live rank tracking, and bi-weekly executive review calls."
+    traditional: "Sends auto-generated PDF reports weeks late filled with confusing technical metrics and no clear takeaways.",
+    zaviroq: "Provides real-time 24/7 dashboard access, weekly rank tracking, and scheduled review calls with your strategist."
   },
   {
-    feature: "Primary Goal",
-    traditional: "Just traffic numbers and impressions that never turn into phone calls or orders.",
-    zaviroq: "Qualified inbound pipeline leads, phone inquiries, store visits, and measurable ROI."
+    feature: "Commercial Focus",
+    traditional: "Focuses on impressions and raw traffic counts that fail to generate actual phone calls or customer inquiries.",
+    zaviroq: "Measures success by inbound phone calls, qualified consultation inquiries, and verifiable business revenue."
   }
 ];
 
@@ -326,8 +326,8 @@ export function SeoDiagnosticMatrix() {
     <div className={styles.matrixWrapper}>
       <div className={styles.matrixHeaderRow}>
         <div className={styles.matrixColFeature}>Evaluation Criteria</div>
-        <div className={styles.matrixColBad}>Traditional Agencies in Mangalore</div>
-        <div className={styles.matrixColGood}>Zaviroq Performance SEO Engine</div>
+        <div className={styles.matrixColBad}>Traditional Agency Approach in Mangalore</div>
+        <div className={styles.matrixColGood}>Zaviroq Technical Performance Framework</div>
       </div>
 
       <div className={styles.matrixList}>
@@ -352,46 +352,46 @@ export function SeoDiagnosticMatrix() {
 }
 
 // ==========================================
-// 4. Interactive 90-Day Execution Roadmap
+// 4. 90-Day Execution Roadmap (Realistic Milestones)
 // ==========================================
 const ROADMAP_MONTHS = [
   {
     month: "Month 01",
-    phase: "Discovery & Technical Foundation",
-    focus: "Eliminating Crawl Roadblocks & Mapping Commercial Queries",
-    highlight: "150-Point Full Audit & Technical Cleanup",
+    phase: "Audit, Foundation & Technical Cleanup",
+    focus: "Eliminating Crawl Roadblocks & Aligning Local Profiles",
+    highlight: "150-Point Deep Crawl & Fixes",
     milestones: [
-      "Complete 150-point technical site crawl & Google Search Console anomaly audit",
-      "Core Web Vitals remediation (LCP, INP, CLS) & server response time acceleration",
-      "Full competitor search footprint & backlink gap analysis in Mangalore & Karnataka",
-      "Comprehensive commercial keyword intent research & mapping across core URLs",
-      "Google Business Profile (GBP) audit, categorization & local citation synchronization"
+      "Run a 150-point technical crawl to uncover 404s, redirect chains, indexation blocks, and canonical issues",
+      "Benchmark mobile Core Web Vitals (LCP, INP, CLS) and deploy server-level speed optimizations",
+      "Conduct in-depth competitor gap analysis across top-ranking websites in Mangalore and Karnataka",
+      "Audit and standardize Google Business Profile categories, hours, address, and local directory citations",
+      "Define primary high-intent commercial keywords and map each query to a designated landing page"
     ]
   },
   {
     month: "Month 02",
-    phase: "On-Page Overhaul & Content Velocity",
-    focus: "Topical Authority Clustering & Local Page Deployment",
-    highlight: "Semantic Intent & Content Infrastructure",
+    phase: "On-Page Restructuring & Local Landing Pages",
+    focus: "Topical Content Authority & Schema Architecture",
+    highlight: "Content & Entity Optimization",
     milestones: [
-      "Rewriting & optimization of high-priority Title tags, Meta descriptions & H-tags",
-      "Publication of high-intent topical authority pillar pages and service hubs",
-      "Deployment of localized geo-landing pages for Mangalore, Udupi & nearby commercial hubs",
-      "Internal linking architecture restructuring to channel PageRank to commercial pages",
-      "Implementation of rich JSON-LD Schema markup across all service & product categories"
+      "Rewrite Title tags, Meta descriptions, and H1/H2 header hierarchies for maximum click-through rates",
+      "Deploy localized landing pages for key commercial hubs: Mangalore, Hampankatta, Kadri, Deralakatte, and Udupi",
+      "Implement comprehensive Schema.org JSON-LD structured data (LocalBusiness, Service, and FAQPage)",
+      "Restructure internal linking to funnel PageRank authority directly to high-converting service offerings",
+      "Publish authoritative, helpful topical content pieces answering real customer questions"
     ]
   },
   {
     month: "Month 03",
-    phase: "Authority Building, PR & Revenue Scale",
-    focus: "Digital PR Outreach, Map Pack Dominance & CRO",
-    highlight: "Market Dominance & Conversion Optimization",
+    phase: "Authority Building, Maps Push & Lead Optimization",
+    focus: "Digital PR Outreach, Review Flywheel & Conversion Rate Testing",
+    highlight: "Maps 3-Pack & Rank Elevation",
     milestones: [
-      "Tier-1 editorial outreach and digital PR placements on authoritative industry domains",
-      "Local Maps 3-Pack citation push and customer review acquisition system activation",
-      "Conversion Rate Optimization (CRO) heatmaps, CTA testing, and lead form optimization",
-      "Bi-weekly executive ROI review: Keyword rankings, organic pipeline leads & revenue",
-      "Roadmap expansion for multi-region or global markets (UAE, Saudi Arabia, International)"
+      "Execute targeted white-hat editorial outreach on authoritative regional and industry trade websites",
+      "Activate automated customer review collection flywheel to increase Google 5-star sentiment safely",
+      "Audit and refine user conversion funnels: CTA placement, click-to-call buttons, and contact form performance",
+      "Review bi-weekly ranking movements across desktop, mobile, and Google Maps local 3-pack grids",
+      "Plan expansion strategies for multi-region targeting across Karnataka, Bangalore, and Gulf markets"
     ]
   }
 ];

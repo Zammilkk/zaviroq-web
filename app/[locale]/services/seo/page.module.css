@@ -69,6 +69,9 @@
   line-height: 1.7;
   max-width: 600px;
   margin-bottom: 30px;
+
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 :global([data-theme="dark"]) .heroTopSub { color: #bbb; }
@@ -188,10 +191,10 @@
   color: var(--primary-purple, #7b61ff);
 }
 .sectionTitle {
-  font-size: clamp(2rem, 3vw, 2.8rem);
-  font-weight: 800;
+  font-size: clamp(1.5rem, 2.4vw, 2rem);
+  font-weight: 700;
   color: var(--text-main, #111);
-  letter-spacing: -1px;
+  letter-spacing: -0.02em;
 }
 :global([data-theme="dark"]) .sectionTitle {
   color: #fff;
@@ -253,6 +256,9 @@
   max-width: 600px;
   margin: 0 auto;
   line-height: 1.6;
+
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .carouselWrapper {
@@ -451,12 +457,12 @@
   display: inline-block;
 }
 .whyTitle {
-  font-size: clamp(2.5rem, 4vw, 3.5rem);
-  font-weight: 800;
+  font-size: clamp(1.85rem, 3.2vw, 2.65rem);
+  font-weight: 700;
   color: var(--text-main, #111);
-  line-height: 1.1;
-  margin-bottom: 24px;
-  letter-spacing: -1px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  letter-spacing: -0.02em;
 }
 :global([data-theme="dark"]) .whyTitle { color: #fff; }
 .whyHighlight {
@@ -966,12 +972,12 @@
   display: inline-block;
 }
 .ctaTitle {
-  font-size: clamp(2.5rem, 4vw, 3.5rem);
-  font-weight: 800;
+  font-size: clamp(1.85rem, 3.2vw, 2.65rem);
+  font-weight: 700;
   color: var(--text-main, #111);
-  line-height: 1.1;
-  margin-bottom: 24px;
-  letter-spacing: -1px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  letter-spacing: -0.02em;
 }
 :global([data-theme="dark"]) .ctaTitle { color: #fff; }
 .ctaHighlight {
@@ -985,6 +991,9 @@
   color: var(--text-muted, #777);
   line-height: 1.6;
   margin-bottom: 32px;
+
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .ctaButtonGroup {
@@ -1468,6 +1477,9 @@
   color: var(--text-muted, #718096);
   line-height: 1.5;
   margin: 0;
+
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 /* 4. Interactive 6-Pillar Tab Showcase */
@@ -1629,9 +1641,15 @@
   line-height: 1.7;
   color: var(--text-muted, #4a5568);
   margin-bottom: 28px;
+
+  text-align: justify;
+  text-justify: inter-word;
 }
 :global([data-theme="dark"]) .pillarDescription {
   color: #cbd5e0;
+
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .pillarDeliverablesSection {
@@ -1766,6 +1784,9 @@
   line-height: 1.6;
   margin-bottom: 20px;
   flex-grow: 1;
+
+  text-align: justify;
+  text-justify: inter-word;
 }
 .goalSolution {
   background: rgba(139, 92, 246, 0.08);
@@ -1861,6 +1882,9 @@
   color: var(--text-muted, #718096);
   padding-right: 15px;
   line-height: 1.5;
+
+  text-align: justify;
+  text-justify: inter-word;
 }
 .badIcon {
   color: #ef4444;
@@ -1875,6 +1899,9 @@
   color: var(--text-main, #111);
   font-weight: 500;
   line-height: 1.5;
+
+  text-align: justify;
+  text-justify: inter-word;
 }
 :global([data-theme="dark"]) .matrixGoodCell { color: #f7fafc; }
 .goodIcon {
@@ -2028,6 +2055,9 @@
   color: var(--text-main, #111);
   line-height: 1.6;
   margin: 0;
+
+  text-align: justify;
+  text-justify: inter-word;
 }
 :global([data-theme="dark"]) .roadmapStepText { color: #e2e8f0; }
 
@@ -2084,6 +2114,9 @@
   color: var(--text-muted, #718096);
   line-height: 1.6;
   margin: 0;
+
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 /* 9. Interactive FAQ Accordion */
@@ -2144,6 +2177,9 @@
   color: var(--text-muted, #4a5568);
   font-size: 0.95rem;
   line-height: 1.7;
+
+  text-align: justify;
+  text-justify: inter-word;
 }
 :global([data-theme="dark"]) .faqAnswerBody { color: #cbd5e0; }
 

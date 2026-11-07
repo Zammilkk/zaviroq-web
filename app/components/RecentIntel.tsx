@@ -28,7 +28,7 @@ export default function RecentIntel({ locale }: { locale: string }) {
   return (
     <div className={styles.intelGrid}>
       {articles.map((article, i) => (
-        <a key={i} href={`/${locale}/blog/${article.id}`} style={{textDecoration: 'none'}}>
+        <a key={i} href={`/blog/${article.id}`} style={{textDecoration: 'none'}}>
           <div className={styles.intelCard}>
             <div className={styles.intelImage}>
               <span className={styles.intelBadge}>{article.tag}</span>

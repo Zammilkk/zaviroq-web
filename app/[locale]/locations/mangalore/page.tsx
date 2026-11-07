@@ -44,9 +44,10 @@ export default async function DynamicGeneratedPage({ params }: { params: Promise
     metaDesc: "Zaviroq is Mangalore's premier digital marketing agency. We engineer custom web design, high-impact SEO, and high-ROI Google Ads to help businesses scale.",
     keywords: "Digital marketing agency Mangalore, Web design company Mangalore, SEO services Mangalore, Advertising agency Mangalore",
     title: "Digital Marketing in Mangalore",
-    heroDesc: "Empowering Mangalore and Karnataka brands with enterprise-tier digital growth. We build fast, high-converting websites and deploy targeted search and social campaigns that generate measurable revenue.",
+    heroDesc: "Empowering Mangaluru and Karnataka brands with enterprise-tier digital growth from our headquarters at Jannath Complex, Naringana, Konaje Proper. We build fast, high-converting websites and deploy targeted search and social campaigns that generate measurable revenue.",
     color: "var(--primary-purple)",
     deliverables: [
+      "Headquarters: Jannath Complex, Naringana, Mangaluru, Konaje Proper 574199",
       "Full-Funnel Digital Growth Strategy",
       "Custom Next.js & WordPress Web Design",
       "High-Intent SEO & Google Maps Dominance",
@@ -60,8 +61,8 @@ export default async function DynamicGeneratedPage({ params }: { params: Promise
     <ServiceLayout 
       locale={locale} 
       service={serviceData} 
-      parentPath="locations" 
-      parentName="Markets" 
+      parentPath="services" 
+      parentName="Services" 
     />
   );
 }

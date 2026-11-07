@@ -33,6 +33,7 @@ export default function RevealOnScroll({
   return (
     <div
       ref={ref}
+      className={className}
       style={{
         opacity: isVisible ? 1 : 0,
         transform: isVisible ? `translateY(0)` : `translateY(${yOffset}px)`,
@@ -41,7 +42,8 @@ export default function RevealOnScroll({
         minWidth: minWidth,
         flex: minWidth ? `0 0 ${minWidth}` : undefined,
         display: 'flex',
-        flexDirection: 'column'
+        flexDirection: 'column',
+        alignItems: 'center'
       }}
     >
       {children}

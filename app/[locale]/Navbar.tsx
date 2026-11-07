@@ -15,11 +15,11 @@ import {
   Mail,
   Phone,
   ArrowRight,
-  Building2,
-  Stethoscope,
   Cpu,
   ShoppingBag,
-  UserCheck,
+  Megaphone,
+  TrendingUp,
+  Video,
 } from 'lucide-react';
 import { Linkedin, Instagram, Youtube, Facebook } from '../components/SocialIcons';
 import styles from './Navbar.module.css';
@@ -33,7 +33,6 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [servicesMobileOpen, setServicesMobileOpen] = useState(false);
-  const [industriesMobileOpen, setIndustriesMobileOpen] = useState(false);
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
   const navLinksRef = useRef<HTMLDivElement>(null);
 
@@ -49,7 +48,6 @@ export default function Navbar() {
   const closeMenu = useCallback(() => {
     setMenuOpen(false);
     setServicesMobileOpen(false);
-    setIndustriesMobileOpen(false);
     setActiveCategory(null);
   }, []);
 
@@ -280,74 +278,194 @@ export default function Navbar() {
                 {/* Desktop Mega Menu */}
                 <div className={`${styles.megaMenu} ${styles.desktopOnly}`}>
                   <div className={styles.megaMenuGrid}>
+                    {/* Column 1: Marketing & Search */}
                     <div className={styles.megaMenuColumn}>
-                      <h4>SEO</h4>
-                      <Link href="/services/seo/technical-seo" onClick={closeMenu}>Technical SEO</Link>
-                      <Link href="/services/seo/on-page-seo" onClick={closeMenu}>On-Page SEO</Link>
-                      <Link href="/services/seo/off-page-seo" onClick={closeMenu}>Off-Page SEO</Link>
-                      <Link href="/services/seo/seo-audit" onClick={closeMenu}>SEO Audit</Link>
-                      <Link href="/services/seo/keyword-research" onClick={closeMenu}>Keyword Research</Link>
-                      <Link href="/services/seo/ai-seo" onClick={closeMenu}>AI SEO</Link>
-                      <Link href="/services/seo/seo-strategy" onClick={closeMenu}>SEO Strategy</Link>
-                      <Link href="/services/seo/agency-seo" onClick={closeMenu}>Agency SEO</Link>
+                      <div className={styles.megaMenuGroup}>
+                        <h4>
+                          <Link href="/services/digital-marketing" onClick={closeMenu}>
+                            Digital Marketing
+                          </Link>
+                        </h4>
+                        <Link href="/services/digital-marketing/content-marketing" onClick={closeMenu}>Content Marketing</Link>
+                        <Link href="/services/digital-marketing/lead-generation" onClick={closeMenu}>Lead Generation</Link>
+                        <Link href="/services/digital-marketing/digital-strategy" onClick={closeMenu}>Digital Strategy</Link>
+                        <Link href="/services/digital-marketing/marketing-automation" onClick={closeMenu}>Marketing Automation</Link>
+                      </div>
+
+                      <div className={styles.megaMenuGroup}>
+                        <h4>
+                          <Link href="/services/seo" onClick={closeMenu}>
+                            SEO Services
+                          </Link>
+                        </h4>
+                        <Link href="/services/seo/local-seo" onClick={closeMenu}>Local SEO (Mangalore)</Link>
+                        <Link href="/services/seo/technical-seo" onClick={closeMenu}>Technical SEO</Link>
+                        <Link href="/services/seo/on-page-seo" onClick={closeMenu}>On-Page SEO</Link>
+                        <Link href="/services/seo/link-building" onClick={closeMenu}>Link Building</Link>
+                      </div>
                     </div>
 
+                    {/* Column 2: Paid Ads, Social & Email */}
                     <div className={styles.megaMenuColumn}>
-                      <h4>Web Development</h4>
-                      <Link href="/services/web-development/custom-website" onClick={closeMenu}>Custom Website</Link>
-                      <Link href="/services/web-development/business-website" onClick={closeMenu}>Business Website</Link>
-                      <Link href="/services/web-development/landing-page" onClick={closeMenu}>Landing Page</Link>
-                      <Link href="/services/web-development/wordpress-development" onClick={closeMenu}>WordPress Dev</Link>
-                      <Link href="/services/web-development/react-development" onClick={closeMenu}>React.js Dev</Link>
-                      <Link href="/services/web-development/nextjs-development" onClick={closeMenu}>Next.js Dev</Link>
+                      <div className={styles.megaMenuGroup}>
+                        <h4>
+                          <Link href="/services/paid-advertising" onClick={closeMenu}>
+                            Google &amp; Paid Ads
+                          </Link>
+                        </h4>
+                        <Link href="/services/paid-advertising/google-ads" onClick={closeMenu}>Google Search Ads</Link>
+                        <Link href="/services/paid-advertising/meta-ads" onClick={closeMenu}>Meta &amp; Instagram Ads</Link>
+                        <Link href="/services/paid-advertising/ppc-management" onClick={closeMenu}>PPC Management</Link>
+                        <Link href="/services/paid-advertising/youtube-advertising" onClick={closeMenu}>YouTube Advertising</Link>
+                      </div>
+
+                      <div className={styles.megaMenuGroup}>
+                        <h4>
+                          <Link href="/services/social-media-marketing" onClick={closeMenu}>
+                            Social Media Marketing
+                          </Link>
+                        </h4>
+                        <Link href="/services/social-media-marketing/instagram-marketing" onClick={closeMenu}>Instagram Growth</Link>
+                        <Link href="/services/social-media-marketing/reels-creation" onClick={closeMenu}>Viral Reels Creation</Link>
+                        <Link href="/services/social-media-marketing/social-media-management" onClick={closeMenu}>Social Management</Link>
+                      </div>
+
+                      <div className={styles.megaMenuGroup}>
+                        <h4>
+                          <Link href="/services/email-marketing" onClick={closeMenu}>
+                            Email Marketing
+                          </Link>
+                        </h4>
+                        <Link href="/services/email-marketing/newsletter-campaigns" onClick={closeMenu}>Newsletter Campaigns</Link>
+                        <Link href="/services/email-marketing/drip-sequences" onClick={closeMenu}>Automated Drip Flows</Link>
+                      </div>
                     </div>
 
+                    {/* Column 3: Web & E-Commerce */}
                     <div className={styles.megaMenuColumn}>
-                      <h4>Ecommerce & Systems</h4>
-                      <Link href="/services/ecommerce-systems/ecommerce-development" onClick={closeMenu}>Ecommerce Dev</Link>
-                      <Link href="/services/ecommerce-systems/custom-ecommerce" onClick={closeMenu}>Custom Ecommerce</Link>
-                      <Link href="/services/ecommerce-systems/admin-dashboard" onClick={closeMenu}>Admin Dashboard</Link>
-                      <Link href="/services/ecommerce-systems/web-application" onClick={closeMenu}>Web Application</Link>
-                      <Link href="/services/ecommerce-systems/saas-platform" onClick={closeMenu}>SaaS Platform</Link>
+                      <div className={styles.megaMenuGroup}>
+                        <h4>
+                          <Link href="/services/website-design" onClick={closeMenu}>
+                            Website Design
+                          </Link>
+                        </h4>
+                        <Link href="/services/website-design/ui-ux-design" onClick={closeMenu}>UI/UX Design</Link>
+                        <Link href="/services/website-design/landing-page-design" onClick={closeMenu}>Landing Page Design</Link>
+                        <Link href="/services/website-design/website-redesign" onClick={closeMenu}>Website Redesign</Link>
+                      </div>
+
+                      <div className={styles.megaMenuGroup}>
+                        <h4>
+                          <Link href="/services/website-development" onClick={closeMenu}>
+                            Website Development
+                          </Link>
+                        </h4>
+                        <Link href="/services/website-development/custom-website-development" onClick={closeMenu}>Custom Web Dev</Link>
+                        <Link href="/services/website-development/nextjs-development" onClick={closeMenu}>Next.js &amp; React Dev</Link>
+                        <Link href="/services/website-development/wordpress-development" onClick={closeMenu}>WordPress Dev</Link>
+                        <Link href="/services/website-development/website-performance-optimization" onClick={closeMenu}>Speed Optimization</Link>
+                      </div>
+
+                      <div className={styles.megaMenuGroup}>
+                        <h4>
+                          <Link href="/services/ecommerce-development" onClick={closeMenu}>
+                            E-Commerce Development
+                          </Link>
+                        </h4>
+                        <Link href="/services/ecommerce-development/shopify-development" onClick={closeMenu}>Shopify Stores</Link>
+                        <Link href="/services/ecommerce-development/woocommerce-development" onClick={closeMenu}>WooCommerce</Link>
+                        <Link href="/services/ecommerce-development/custom-ecommerce" onClick={closeMenu}>Custom Storefronts</Link>
+                      </div>
                     </div>
 
+                    {/* Column 4: Creative, AI & Software */}
                     <div className={styles.megaMenuColumn}>
-                      <h4>Performance Marketing</h4>
-                      <Link href="/services/performance-marketing/google-ads" onClick={closeMenu}>Google Ads</Link>
-                      <Link href="/services/performance-marketing/meta-ads" onClick={closeMenu}>Meta Ads</Link>
-                      <Link href="/services/performance-marketing/linkedin-ads" onClick={closeMenu}>LinkedIn Ads</Link>
-                      <Link href="/services/performance-marketing/tiktok-ads" onClick={closeMenu}>TikTok Ads</Link>
-                      <Link href="/services/performance-marketing/youtube-ads" onClick={closeMenu}>YouTube Ads</Link>
-                      <Link href="/services/performance-marketing/ppc-management" onClick={closeMenu}>PPC Management</Link>
-                    </div>
+                      <div className={styles.megaMenuGroup}>
+                        <h4>
+                          <Link href="/services/branding" onClick={closeMenu}>
+                            Branding &amp; Creative
+                          </Link>
+                        </h4>
+                        <Link href="/services/branding/logo-design" onClick={closeMenu}>Logo Design</Link>
+                        <Link href="/services/branding/brand-identity" onClick={closeMenu}>Brand Identity Systems</Link>
+                        <Link href="/services/branding/company-profile-design" onClick={closeMenu}>Company Profile Design</Link>
+                      </div>
 
-                    <div className={styles.megaMenuColumn}>
-                      <h4>Branding & Design</h4>
-                      <Link href="/services/branding-design/logo-design" onClick={closeMenu}>Logo Design</Link>
-                      <Link href="/services/branding-design/brand-identity" onClick={closeMenu}>Brand Identity</Link>
-                      <Link href="/services/branding-design/company-profile" onClick={closeMenu}>Company Profile</Link>
-                      <Link href="/services/branding-design/social-media-design" onClick={closeMenu}>Social Media Design</Link>
-                    </div>
+                      <div className={styles.megaMenuGroup}>
+                        <h4>
+                          <Link href="/services/video-production" onClick={closeMenu}>
+                            Video Production
+                          </Link>
+                        </h4>
+                        <Link href="/services/video-production/video-editing" onClick={closeMenu}>Video Editing</Link>
+                        <Link href="/services/video-production/promotional-videos" onClick={closeMenu}>Promotional Brand Videos</Link>
+                      </div>
 
-                    <div className={styles.megaMenuColumn}>
-                      <h4>Industries</h4>
-                      <Link href="/industries/real-estate" onClick={closeMenu}>Real Estate</Link>
-                      <Link href="/industries/healthcare" onClick={closeMenu}>Healthcare</Link>
-                      <Link href="/industries/saas" onClick={closeMenu}>SaaS</Link>
-                      <Link href="/industries/ecommerce" onClick={closeMenu}>Ecommerce</Link>
-                      <Link href="/industries/doctor" onClick={closeMenu}>Doctor</Link>
+                      <div className={styles.megaMenuGroup}>
+                        <h4>
+                          <Link href="/services/ai-automation" onClick={closeMenu}>
+                            AI Automation
+                          </Link>
+                        </h4>
+                        <Link href="/services/ai-automation/ai-chatbot-development" onClick={closeMenu}>AI Chatbots</Link>
+                        <Link href="/services/ai-automation/workflow-automation" onClick={closeMenu}>Workflow Automation</Link>
+                      </div>
+
+                      <div className={styles.megaMenuGroup}>
+                        <h4>
+                          <Link href="/services/business-software" onClick={closeMenu}>
+                            Business Software
+                          </Link>
+                        </h4>
+                        <Link href="/services/business-software/hotel-erp-system" onClick={closeMenu}>Hotel ERP Systems</Link>
+                        <Link href="/services/business-software/custom-business-software" onClick={closeMenu}>Custom ERP &amp; Software</Link>
+                      </div>
                     </div>
                   </div>
 
                   <Link href="/services" className={`${styles.dropdownItem} ${styles.viewAllEndpoint}`} onClick={closeMenu}>
-                    <span className={styles.dropdownIcon}>⚡</span> View All 30+ Services
+                    <span className={styles.dropdownIcon}>⚡</span> View All 12 Services &amp; 64 Capabilities →
                   </Link>
                 </div>
 
                 {/* Mobile Services Accordion */}
                 <div className={`${styles.mobileMegaMenu} ${styles.mobileOnly} ${servicesMobileOpen ? styles.mobileSubmenuExpanded : ''}`}>
                   <div className={styles.mobileAccordion}>
-                    {/* SEO */}
+                    {/* Digital Marketing */}
+                    <div className={styles.accordionSection}>
+                      <button
+                        type="button"
+                        className={`${styles.accordionHeader} ${activeCategory === 'digital-marketing' ? styles.accordionHeaderActive : ''}`}
+                        onClick={() => toggleCategory('digital-marketing')}
+                      >
+                        <span className={styles.accordionTitle}>
+                          <Megaphone size={16} /> Digital Marketing
+                        </span>
+                        <ChevronDown
+                          size={15}
+                          className={`${styles.accordionChevron} ${activeCategory === 'digital-marketing' ? styles.chevronRotated : ''}`}
+                        />
+                      </button>
+                      <AnimatePresence initial={false}>
+                        {activeCategory === 'digital-marketing' && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: 'auto', opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.2 }}
+                            className={styles.accordionContent}
+                          >
+                            <Link href="/services/digital-marketing" onClick={closeMenu}>Overview</Link>
+                            <Link href="/services/digital-marketing/content-marketing" onClick={closeMenu}>Content Marketing</Link>
+                            <Link href="/services/digital-marketing/lead-generation" onClick={closeMenu}>Lead Generation</Link>
+                            <Link href="/services/digital-marketing/digital-strategy" onClick={closeMenu}>Digital Strategy</Link>
+                            <Link href="/services/digital-marketing/marketing-automation" onClick={closeMenu}>Marketing Automation</Link>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+
+                    {/* SEO Services */}
                     <div className={styles.accordionSection}>
                       <button
                         type="button"
@@ -371,20 +489,84 @@ export default function Navbar() {
                             transition={{ duration: 0.2 }}
                             className={styles.accordionContent}
                           >
+                            <Link href="/services/seo" onClick={closeMenu}>Overview</Link>
+                            <Link href="/services/seo/local-seo" onClick={closeMenu}>Local SEO (Mangalore)</Link>
                             <Link href="/services/seo/technical-seo" onClick={closeMenu}>Technical SEO</Link>
                             <Link href="/services/seo/on-page-seo" onClick={closeMenu}>On-Page SEO</Link>
-                            <Link href="/services/seo/off-page-seo" onClick={closeMenu}>Off-Page SEO</Link>
+                            <Link href="/services/seo/link-building" onClick={closeMenu}>Link Building</Link>
                             <Link href="/services/seo/seo-audit" onClick={closeMenu}>SEO Audit</Link>
-                            <Link href="/services/seo/keyword-research" onClick={closeMenu}>Keyword Research</Link>
-                            <Link href="/services/seo/ai-seo" onClick={closeMenu}>AI SEO</Link>
-                            <Link href="/services/seo/seo-strategy" onClick={closeMenu}>SEO Strategy</Link>
-                            <Link href="/services/seo/agency-seo" onClick={closeMenu}>Agency SEO</Link>
                           </motion.div>
                         )}
                       </AnimatePresence>
                     </div>
 
-                    {/* Web Development */}
+                    {/* Paid Advertising */}
+                    <div className={styles.accordionSection}>
+                      <button
+                        type="button"
+                        className={`${styles.accordionHeader} ${activeCategory === 'paid-ads' ? styles.accordionHeaderActive : ''}`}
+                        onClick={() => toggleCategory('paid-ads')}
+                      >
+                        <span className={styles.accordionTitle}>
+                          <BarChart size={16} /> Google &amp; Paid Ads
+                        </span>
+                        <ChevronDown
+                          size={15}
+                          className={`${styles.accordionChevron} ${activeCategory === 'paid-ads' ? styles.chevronRotated : ''}`}
+                        />
+                      </button>
+                      <AnimatePresence initial={false}>
+                        {activeCategory === 'paid-ads' && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: 'auto', opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.2 }}
+                            className={styles.accordionContent}
+                          >
+                            <Link href="/services/paid-advertising" onClick={closeMenu}>Overview</Link>
+                            <Link href="/services/paid-advertising/google-ads" onClick={closeMenu}>Google Ads</Link>
+                            <Link href="/services/paid-advertising/meta-ads" onClick={closeMenu}>Meta &amp; Instagram Ads</Link>
+                            <Link href="/services/paid-advertising/ppc-management" onClick={closeMenu}>PPC Management</Link>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+
+                    {/* Social Media & Email */}
+                    <div className={styles.accordionSection}>
+                      <button
+                        type="button"
+                        className={`${styles.accordionHeader} ${activeCategory === 'social-email' ? styles.accordionHeaderActive : ''}`}
+                        onClick={() => toggleCategory('social-email')}
+                      >
+                        <span className={styles.accordionTitle}>
+                          <Globe size={16} /> Social Media &amp; Email
+                        </span>
+                        <ChevronDown
+                          size={15}
+                          className={`${styles.accordionChevron} ${activeCategory === 'social-email' ? styles.chevronRotated : ''}`}
+                        />
+                      </button>
+                      <AnimatePresence initial={false}>
+                        {activeCategory === 'social-email' && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: 'auto', opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.2 }}
+                            className={styles.accordionContent}
+                          >
+                            <Link href="/services/social-media-marketing" onClick={closeMenu}>Social Media Marketing</Link>
+                            <Link href="/services/social-media-marketing/instagram-marketing" onClick={closeMenu}>Instagram Growth</Link>
+                            <Link href="/services/social-media-marketing/reels-creation" onClick={closeMenu}>Reels Creation</Link>
+                            <Link href="/services/email-marketing" onClick={closeMenu}>Email Marketing</Link>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+
+                    {/* Web Design & Dev */}
                     <div className={styles.accordionSection}>
                       <button
                         type="button"
@@ -392,7 +574,7 @@ export default function Navbar() {
                         onClick={() => toggleCategory('web')}
                       >
                         <span className={styles.accordionTitle}>
-                          <Code size={16} /> Web Development
+                          <Code size={16} /> Web Design &amp; Dev
                         </span>
                         <ChevronDown
                           size={15}
@@ -408,18 +590,17 @@ export default function Navbar() {
                             transition={{ duration: 0.2 }}
                             className={styles.accordionContent}
                           >
-                            <Link href="/services/web-development/custom-website" onClick={closeMenu}>Custom Website</Link>
-                            <Link href="/services/web-development/business-website" onClick={closeMenu}>Business Website</Link>
-                            <Link href="/services/web-development/landing-page" onClick={closeMenu}>Landing Page</Link>
-                            <Link href="/services/web-development/wordpress-development" onClick={closeMenu}>WordPress Dev</Link>
-                            <Link href="/services/web-development/react-development" onClick={closeMenu}>React.js Dev</Link>
-                            <Link href="/services/web-development/nextjs-development" onClick={closeMenu}>Next.js Dev</Link>
+                            <Link href="/services/website-design" onClick={closeMenu}>Website Design</Link>
+                            <Link href="/services/website-development" onClick={closeMenu}>Website Development</Link>
+                            <Link href="/services/website-development/custom-website-development" onClick={closeMenu}>Custom Web Dev</Link>
+                            <Link href="/services/website-development/nextjs-development" onClick={closeMenu}>Next.js &amp; React Dev</Link>
+                            <Link href="/services/website-development/wordpress-development" onClick={closeMenu}>WordPress Dev</Link>
                           </motion.div>
                         )}
                       </AnimatePresence>
                     </div>
 
-                    {/* Ecommerce & Systems */}
+                    {/* E-Commerce Systems */}
                     <div className={styles.accordionSection}>
                       <button
                         type="button"
@@ -427,7 +608,7 @@ export default function Navbar() {
                         onClick={() => toggleCategory('ecom')}
                       >
                         <span className={styles.accordionTitle}>
-                          <Layers size={16} /> Ecommerce & Systems
+                          <ShoppingBag size={16} /> E-Commerce Systems
                         </span>
                         <ChevronDown
                           size={15}
@@ -443,33 +624,32 @@ export default function Navbar() {
                             transition={{ duration: 0.2 }}
                             className={styles.accordionContent}
                           >
-                            <Link href="/services/ecommerce-systems/ecommerce-development" onClick={closeMenu}>Ecommerce Dev</Link>
-                            <Link href="/services/ecommerce-systems/custom-ecommerce" onClick={closeMenu}>Custom Ecommerce</Link>
-                            <Link href="/services/ecommerce-systems/admin-dashboard" onClick={closeMenu}>Admin Dashboard</Link>
-                            <Link href="/services/ecommerce-systems/web-application" onClick={closeMenu}>Web Application</Link>
-                            <Link href="/services/ecommerce-systems/saas-platform" onClick={closeMenu}>SaaS Platform</Link>
+                            <Link href="/services/ecommerce-development" onClick={closeMenu}>E-Commerce Overview</Link>
+                            <Link href="/services/ecommerce-development/shopify-development" onClick={closeMenu}>Shopify Stores</Link>
+                            <Link href="/services/ecommerce-development/woocommerce-development" onClick={closeMenu}>WooCommerce</Link>
+                            <Link href="/services/ecommerce-development/custom-ecommerce" onClick={closeMenu}>Custom Storefronts</Link>
                           </motion.div>
                         )}
                       </AnimatePresence>
                     </div>
 
-                    {/* Performance Marketing */}
+                    {/* Branding & Video */}
                     <div className={styles.accordionSection}>
                       <button
                         type="button"
-                        className={`${styles.accordionHeader} ${activeCategory === 'marketing' ? styles.accordionHeaderActive : ''}`}
-                        onClick={() => toggleCategory('marketing')}
+                        className={`${styles.accordionHeader} ${activeCategory === 'creative' ? styles.accordionHeaderActive : ''}`}
+                        onClick={() => toggleCategory('creative')}
                       >
                         <span className={styles.accordionTitle}>
-                          <BarChart size={16} /> Performance Marketing
+                          <PenTool size={16} /> Branding &amp; Video
                         </span>
                         <ChevronDown
                           size={15}
-                          className={`${styles.accordionChevron} ${activeCategory === 'marketing' ? styles.chevronRotated : ''}`}
+                          className={`${styles.accordionChevron} ${activeCategory === 'creative' ? styles.chevronRotated : ''}`}
                         />
                       </button>
                       <AnimatePresence initial={false}>
-                        {activeCategory === 'marketing' && (
+                        {activeCategory === 'creative' && (
                           <motion.div
                             initial={{ height: 0, opacity: 0 }}
                             animate={{ height: 'auto', opacity: 1 }}
@@ -477,34 +657,33 @@ export default function Navbar() {
                             transition={{ duration: 0.2 }}
                             className={styles.accordionContent}
                           >
-                            <Link href="/services/performance-marketing/google-ads" onClick={closeMenu}>Google Ads</Link>
-                            <Link href="/services/performance-marketing/meta-ads" onClick={closeMenu}>Meta Ads</Link>
-                            <Link href="/services/performance-marketing/linkedin-ads" onClick={closeMenu}>LinkedIn Ads</Link>
-                            <Link href="/services/performance-marketing/tiktok-ads" onClick={closeMenu}>TikTok Ads</Link>
-                            <Link href="/services/performance-marketing/youtube-ads" onClick={closeMenu}>YouTube Ads</Link>
-                            <Link href="/services/performance-marketing/ppc-management" onClick={closeMenu}>PPC Management</Link>
+                            <Link href="/services/branding" onClick={closeMenu}>Branding Overview</Link>
+                            <Link href="/services/branding/logo-design" onClick={closeMenu}>Logo Design</Link>
+                            <Link href="/services/branding/brand-identity" onClick={closeMenu}>Brand Identity</Link>
+                            <Link href="/services/video-production" onClick={closeMenu}>Video Production</Link>
+                            <Link href="/services/video-production/video-editing" onClick={closeMenu}>Video Editing</Link>
                           </motion.div>
                         )}
                       </AnimatePresence>
                     </div>
 
-                    {/* Branding & Design */}
+                    {/* AI & Business Software */}
                     <div className={styles.accordionSection}>
                       <button
                         type="button"
-                        className={`${styles.accordionHeader} ${activeCategory === 'branding' ? styles.accordionHeaderActive : ''}`}
-                        onClick={() => toggleCategory('branding')}
+                        className={`${styles.accordionHeader} ${activeCategory === 'software' ? styles.accordionHeaderActive : ''}`}
+                        onClick={() => toggleCategory('software')}
                       >
                         <span className={styles.accordionTitle}>
-                          <PenTool size={16} /> Branding & Design
+                          <Cpu size={16} /> AI &amp; Business Software
                         </span>
                         <ChevronDown
                           size={15}
-                          className={`${styles.accordionChevron} ${activeCategory === 'branding' ? styles.chevronRotated : ''}`}
+                          className={`${styles.accordionChevron} ${activeCategory === 'software' ? styles.chevronRotated : ''}`}
                         />
                       </button>
                       <AnimatePresence initial={false}>
-                        {activeCategory === 'branding' && (
+                        {activeCategory === 'software' && (
                           <motion.div
                             initial={{ height: 0, opacity: 0 }}
                             animate={{ height: 'auto', opacity: 1 }}
@@ -512,10 +691,10 @@ export default function Navbar() {
                             transition={{ duration: 0.2 }}
                             className={styles.accordionContent}
                           >
-                            <Link href="/services/branding-design/logo-design" onClick={closeMenu}>Logo Design</Link>
-                            <Link href="/services/branding-design/brand-identity" onClick={closeMenu}>Brand Identity</Link>
-                            <Link href="/services/branding-design/company-profile" onClick={closeMenu}>Company Profile</Link>
-                            <Link href="/services/branding-design/social-media-design" onClick={closeMenu}>Social Media Design</Link>
+                            <Link href="/services/ai-automation" onClick={closeMenu}>AI Automation</Link>
+                            <Link href="/services/ai-automation/ai-chatbot-development" onClick={closeMenu}>AI Chatbots</Link>
+                            <Link href="/services/business-software" onClick={closeMenu}>Business Software</Link>
+                            <Link href="/services/business-software/hotel-erp-system" onClick={closeMenu}>Hotel ERP Systems</Link>
                           </motion.div>
                         )}
                       </AnimatePresence>
@@ -524,99 +703,9 @@ export default function Navbar() {
 
                   {/* View All Services Link */}
                   <Link href="/services" className={styles.viewAllMobile} onClick={closeMenu}>
-                    ⚡ View All 30+ Services
+                    ⚡ View All 12 Services &amp; 64 Capabilities
                   </Link>
                 </div>
-              </div>
-
-              {/* Industries (Dropdown) */}
-              <div className={`${styles.hasDropdown} ${isActive('/industries') ? styles.dropdownActive : ''}`}>
-                <div
-                  className={styles.navLinkTrigger}
-                  onClick={() => {
-                    if (typeof window !== 'undefined' && window.innerWidth <= 1100) {
-                      setIndustriesMobileOpen(!industriesMobileOpen);
-                    }
-                  }}
-                >
-                  <Link
-                    href="/industries"
-                    className={`${styles.navLink} ${isActive('/industries') ? styles.active : ''}`}
-                    onClick={(e) => {
-                      if (window.innerWidth <= 1100) {
-                        e.preventDefault();
-                        setIndustriesMobileOpen(!industriesMobileOpen);
-                      } else {
-                        closeMenu();
-                      }
-                    }}
-                  >
-                    Industries
-                  </Link>
-                  <button
-                    type="button"
-                    className={styles.dropdownToggle}
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setIndustriesMobileOpen(!industriesMobileOpen);
-                    }}
-                    aria-label="Toggle industries menu"
-                    aria-expanded={industriesMobileOpen}
-                  >
-                    <ChevronDown
-                      size={14}
-                      className={`${styles.navChevron} ${industriesMobileOpen ? styles.chevronRotated : ''}`}
-                    />
-                  </button>
-                </div>
-
-                {/* Desktop Industries Dropdown */}
-                <div className={`${styles.dropdownMenu} ${styles.desktopOnly}`}>
-                  <Link href="/industries/real-estate" className={styles.dropdownItem} onClick={closeMenu}>
-                    <Building2 size={16} className={styles.dropdownIconItem} /> Real Estate
-                  </Link>
-                  <Link href="/industries/healthcare" className={styles.dropdownItem} onClick={closeMenu}>
-                    <Stethoscope size={16} className={styles.dropdownIconItem} /> Healthcare
-                  </Link>
-                  <Link href="/industries/saas" className={styles.dropdownItem} onClick={closeMenu}>
-                    <Cpu size={16} className={styles.dropdownIconItem} /> SaaS
-                  </Link>
-                  <Link href="/industries/ecommerce" className={styles.dropdownItem} onClick={closeMenu}>
-                    <ShoppingBag size={16} className={styles.dropdownIconItem} /> Ecommerce
-                  </Link>
-                  <Link href="/industries/doctor" className={styles.dropdownItem} onClick={closeMenu}>
-                    <UserCheck size={16} className={styles.dropdownIconItem} /> Doctor & Clinics
-                  </Link>
-                  <Link href="/industries" className={`${styles.dropdownItem} ${styles.viewAllEndpoint}`} onClick={closeMenu}>
-                    ⚡ Explore All Industries
-                  </Link>
-                </div>
-
-                {/* Mobile Industries Accordion */}
-                <div className={`${styles.mobileMegaMenu} ${styles.mobileOnly} ${industriesMobileOpen ? styles.mobileSubmenuExpanded : ''}`}>
-                  <div className={styles.accordionContent} style={{ paddingLeft: '14px' }}>
-                    <Link href="/industries/real-estate" onClick={closeMenu}>Real Estate</Link>
-                    <Link href="/industries/healthcare" onClick={closeMenu}>Healthcare</Link>
-                    <Link href="/industries/saas" onClick={closeMenu}>SaaS</Link>
-                    <Link href="/industries/ecommerce" onClick={closeMenu}>Ecommerce</Link>
-                    <Link href="/industries/doctor" onClick={closeMenu}>Doctor & Clinics</Link>
-                    <Link href="/industries" className={styles.viewAllMobile} style={{ marginTop: '6px' }} onClick={closeMenu}>
-                      ⚡ Explore All Industries
-                    </Link>
-                  </div>
-                </div>
-              </div>
-
-              {/* Markets */}
-              <div className={styles.navLinkWrapper}>
-                <Link
-                  href="/locations"
-                  className={`${styles.navLink} ${isActive('/locations') ? styles.active : ''}`}
-                  onClick={closeMenu}
-                >
-                  Markets
-                </Link>
-                {isActive('/locations') && <div className={styles.activeGlow}></div>}
               </div>
 
               {/* Portfolio */}
@@ -629,6 +718,18 @@ export default function Navbar() {
                   Portfolio
                 </Link>
                 {isActive('/portfolio') && <div className={styles.activeGlow}></div>}
+              </div>
+
+              {/* Industries */}
+              <div className={styles.navLinkWrapper}>
+                <Link
+                  href="/industries"
+                  className={`${styles.navLink} ${isActive('/industries') ? styles.active : ''}`}
+                  onClick={closeMenu}
+                >
+                  Industries
+                </Link>
+                {isActive('/industries') && <div className={styles.activeGlow}></div>}
               </div>
 
               {/* Contact */}
@@ -712,7 +813,6 @@ export default function Navbar() {
                     const next = !prev;
                     if (!next) {
                       setServicesMobileOpen(false);
-                      setIndustriesMobileOpen(false);
                       setActiveCategory(null);
                     }
                     return next;

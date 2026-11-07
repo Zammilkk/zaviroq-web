@@ -1,0 +1,178 @@
+{
+  "industries": {
+    "hero": {
+      "badge": "Industries We Serve",
+      "title": "Digital Growth Solutions",
+      "accentTitle": "Diverse Industries",
+      "description": "Industry-focused digital marketing, web, and technology solutions designed for real business outcomes.",
+      "primaryCtaText": "Discuss Your Industry Needs",
+      "primaryCtaLink": "/#contact",
+      "secondaryCtaText": "See Our Work",
+      "secondaryCtaLink": "/portfolio"
+    },
+    "spotlight": {
+      "badge": "Industry Spotlight",
+      "title": "Real Estate",
+      "accentTitle": "Marketing",
+      "description": "End-to-end digital growth for real estate brands — from lead generation and project promotions to a high-performing online presence.",
+      "stat1Value": "3.8x",
+      "stat1Label": "Lead Growth",
+      "stat2Value": "-42%",
+      "stat2Label": "Cost Per Lead",
+      "stat3Value": "+65%",
+      "stat3Label": "Site Conversions",
+      "ctaText": "Explore Real Estate Solutions",
+      "ctaLink": "/#contact"
+    },
+    "values": [
+      {
+        "title": "Industry Expertise",
+        "description": "Deep understanding of your market and customer behavior."
+      },
+      {
+        "title": "Tailored Strategies",
+        "description": "Custom plans for your industry, not a one-size-fits-all approach."
+      },
+      {
+        "title": "Measurable Results",
+        "description": "Performance-driven campaigns with clear business impact."
+      },
+      {
+        "title": "Long-Term Growth",
+        "description": "Build a strong, sustainable digital presence."
+      }
+    ],
+    "banner": {
+      "badge": "Let's Grow Your Industry Presence",
+      "title": "Ready to Grow Your Business in Your Industry?",
+      "description": "Get a customized digital strategy tailored to your industry, goals, and market.",
+      "primaryCtaText": "Talk to Our Experts",
+      "primaryCtaLink": "/#contact",
+      "secondaryCtaText": "View Our Portfolio",
+      "secondaryCtaLink": "/portfolio"
+    }
+  },
+  "services": {
+    "hero": {
+      "eyebrow": "Enterprise Engineering & Marketing",
+      "title": "Master Services Ecosystem",
+      "description": "Engineered for aggressive pipeline growth, sub-second web speed, and search dominance across the GCC and India.",
+      "primaryCtaText": "Explore Sub-Services",
+      "primaryCtaLink": "#services-grid"
+    },
+    "highlights": [
+      { "title": "Algorithmic SEO Architecture", "desc": "Semantic HTML, Schema markup, and Core Web Vitals optimization." },
+      { "title": "Precision Paid Media", "desc": "Targeted Google Ads and Meta campaigns mapped for high buyer intent." },
+      { "title": "Full-Stack Web Engineering", "desc": "Bespoke Next.js Server Components with instant load times." }
+    ]
+  },
+  "content_marketing": {
+    "hero": {
+      "badge": "Content Strategy & Distribution",
+      "title": "Production-Grade",
+      "accentTitle": "Content Marketing",
+      "description": "End-to-end research, high-authority thought leadership, and organic distribution engineered to convert cold readers into qualified pipeline.",
+      "primaryCtaText": "Launch Content Engine",
+      "primaryCtaLink": "/#contact"
+    },
+    "stages": [
+      { "num": "01", "name": "Audience & Intent Intel", "detail": "Algorithmic search data and competitor gap mapping to uncover buyer queries." },
+      { "num": "02", "name": "Content Architecture", "detail": "Pillar content outlines and editorial calendars mapped to pipeline goals." },
+      { "num": "03", "name": "Production & Polish", "detail": "Subject-matter research, semantic keyword optimization, and custom visuals." },
+      { "num": "04", "name": "Multi-Channel Distribution", "detail": "Omnichannel syndication across search, social, newsletter, and PR." },
+      { "num": "05", "name": "Conversion Tracking", "detail": "Full attribution tracking measuring pipeline impact and organic ROI." }
+    ],
+    "stats": [
+      { "value": "4.2x", "label": "Organic Traffic Growth" },
+      { "value": "12+", "label": "Industry Publications" },
+      { "value": "88%", "label": "First-Page Search Reach" }
+    ]
+  },
+  "performance_marketing": {
+    "hero": {
+      "badge": "Data-Driven Acquisition",
+      "title": "High-ROAS",
+      "accentTitle": "Performance Marketing",
+      "description": "Stop paying for impressions. Start paying for pipeline. Custom ad frameworks built to capture high-intent localized search and aggressive social disruption.",
+      "primaryCtaText": "Scale Your Pipeline",
+      "primaryCtaLink": "/#contact"
+    },
+    "tactics": [
+      { "title": "Dynamic Search & Intent Capture", "desc": "Bid directly on high-intent commercial keywords with automated bidding protocols." },
+      { "title": "Server-Side Pixel Tracking", "desc": "Conversions API (CAPI) setup guaranteeing 100% data fidelity past ad-blockers." },
+      { "title": "Lookalike AI Audiences", "desc": "Deep customer list matching and high-converting retargeting funnels." },
+      { "title": "Creative Split Testing", "desc": "Continuous A/B copy and asset testing ensuring lowest cost-per-acquisition." }
+    ]
+  },
+  "web_development": {
+    "hero": {
+      "badge": "Next.js & Cloud Engineering",
+      "title": "Next-Generation",
+      "accentTitle": "Web Architecture",
+      "description": "We engineer bespoke Next.js Server Components, guaranteeing sub-second load times that drastically reduce bounce rates and maximize conversion.",
+      "primaryCtaText": "Build Your Application",
+      "primaryCtaLink": "/#contact"
+    },
+    "deliverables": [
+      { "title": "Next.js App Router Core", "desc": "Server-side rendering and streaming components for instant paint." },
+      { "title": "Turbopack Speed Optimizations", "desc": "Sub-millisecond hydration and perfect 100 Google PageSpeed scores." },
+      { "title": "Custom Interactive 3D & UI", "desc": "Glassmorphism aesthetics with smooth 60fps micro-interactions." },
+      { "title": "Postgres & API Integrations", "desc": "Supabase, Prisma, and robust enterprise backend pipelines." }
+    ]
+  },
+  "seo": {
+    "hero": {
+      "badge": "Algorithmic Search Mastery",
+      "title": "Search Engine",
+      "accentTitle": "Dominance",
+      "description": "Reverse-engineering Google search algorithms. Mapping exact buyer intent and capturing organic market share locally and internationally.",
+      "primaryCtaText": "Audit Your Site",
+      "primaryCtaLink": "/#contact"
+    },
+    "deliverables": [
+      { "title": "Semantic HTML & Structured Schema", "desc": "JSON-LD rich snippets and Google Search Console optimization." },
+      { "title": "Core Web Vitals Engineering", "desc": "LCP, FID, and CLS tuning for peak algorithmic rank signals." },
+      { "title": "High Authority DR Link Acquisition", "desc": "White-hat editorial outreach and high-relevance domain backlinks." },
+      { "title": "Hyper-Local Map Pack Dominance", "desc": "Google Business Profile optimization across Dubai, Riyadh, and India." }
+    ]
+  },
+  "portfolio": {
+    "hero": {
+      "badge": "Audited Client Results",
+      "title": "Engineered for",
+      "accentTitle": "Proven ROI",
+      "description": "Real transformations and measurable business impact across real estate, healthcare, B2B SaaS, and consumer brands."
+    },
+    "stats": [
+      { "value": "180M+", "label": "Impressions Delivered" },
+      { "value": "$14M+", "label": "Client Pipeline Generated" },
+      { "value": "99.4%", "label": "Client Retention Rate" }
+    ]
+  },
+  "locations": {
+    "dubai": {
+      "cityName": "Dubai, UAE",
+      "heroTitle": "Elite Digital Marketing & Web Design in Dubai",
+      "heroDesc": "Hyper-fast Next.js engineering and ROI-focused marketing architectures designed specifically for elite brands in Dubai & UAE.",
+      "phone": "+971 4 000 0000",
+      "email": "dubai@zaviroq.com",
+      "address": "Downtown Dubai, Business Bay, Dubai, UAE"
+    },
+    "riyadh": {
+      "cityName": "Riyadh, Saudi Arabia",
+      "heroTitle": "Saudi Arabia Search Engine & Digital Dominance",
+      "heroDesc": "Dominate commerce hubs across Riyadh, Jeddah, and Dammam. We outrank local competitors organically with Saudi-targeted pipelines.",
+      "phone": "+966 1 000 0000",
+      "email": "riyadh@zaviroq.com",
+      "address": "King Fahd Road, Riyadh, Kingdom of Saudi Arabia"
+    },
+    "mangalore": {
+      "cityName": "Mangaluru, India",
+      "heroTitle": "Premier Digital Marketing Agency in Mangaluru",
+      "heroDesc": "Scale your hyper-local or nationwide operations with algorithmic SEO, Google Ads scaling, and full-stack web engineering from our Mangaluru headquarters.",
+      "phone": "+91 74838 30582",
+      "email": "info@zaviroq.com",
+      "address": "Jannath Complex, Naringana, Mangaluru, Konaje Proper, Karnataka 574199"
+    }
+  }
+}

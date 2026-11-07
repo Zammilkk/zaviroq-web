@@ -111,11 +111,11 @@ export default function ServiceLayout({
 
       {/* ── Breadcrumb ── */}
       <nav className={styles.breadcrumb} aria-label="Breadcrumb">
-        <Link href={`/${locale}`}>Home</Link>
+        <Link href="/">Home</Link>
         <span>›</span>
-        <Link href={`/${locale}/services`}>Services</Link>
+        <Link href="/services">Services</Link>
         <span>›</span>
-        <Link href={`/${locale}/${parentPath}`}>{parentName}</Link>
+        <Link href={`/${parentPath}`}>{parentName}</Link>
         <span>›</span>
         <span style={{ color: '#888' }}>{service.title}</span>
       </nav>
@@ -143,10 +143,10 @@ export default function ServiceLayout({
 
           <RevealOnScroll delay={200}>
             <div className={styles.heroCta}>
-              <Link href={`/${locale}/contact`} className={styles.heroBtn}>
+              <Link href="/contact" className={styles.heroBtn}>
                 Get Started ↗
               </Link>
-              <Link href={`/${locale}/${parentPath}`} className={styles.heroLink}>
+              <Link href={`/${parentPath}`} className={styles.heroLink}>
                 ← {parentName} Overview
               </Link>
             </div>
@@ -253,7 +253,7 @@ export default function ServiceLayout({
             <p>
               Our engineers are standing by to connect this architecture directly to your business logic — tailored, fast, and built to scale.
             </p>
-            <Link href={`/${locale}/contact`} className={`btn-primary ${styles.ctaBtn}`}>
+            <Link href="/contact" className={`btn-primary ${styles.ctaBtn}`}>
               Launch Integration ↗
             </Link>
           </div>

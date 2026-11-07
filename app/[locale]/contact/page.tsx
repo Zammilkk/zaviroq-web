@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import styles from './page.module.css';
 import RevealOnScroll from '../../components/RevealOnScroll';
-import { Mail, Phone, Globe, ArrowRight, Lock } from 'lucide-react';
+import { Mail, Phone, Globe, ArrowRight, Lock, MapPin } from 'lucide-react';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -108,9 +108,18 @@ export default function ContactPage() {
                 </div>
 
                 <div className={styles.contactCard}>
+                  <div className={styles.cardIconBox}><MapPin size={20} /></div>
+                  <div className={styles.cardInfo}>
+                    <h4>Office Headquarters</h4>
+                    <p>Jannath Complex, Naringana, Mangaluru, Konaje Proper, Karnataka 574199</p>
+                  </div>
+                  <div className={styles.cardArrow}>→</div>
+                </div>
+
+                <div className={styles.contactCard}>
                   <div className={styles.cardIconBox}><Globe size={20} /></div>
                   <div className={styles.cardInfo}>
-                    <h4>Our Presence</h4>
+                    <h4>Global Presence</h4>
                     <p>India | UAE | Saudi Arabia | Qatar | Global</p>
                   </div>
                   <div className={styles.cardArrow}>→</div>
